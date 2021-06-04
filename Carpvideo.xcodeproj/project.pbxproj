@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A26B09A266A161B008199BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B099266A161B008199BD /* AppDelegate.m */; };
+		8A26B09D266A161B008199BD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B09C266A161B008199BD /* SceneDelegate.m */; };
+		8A26B0A0266A161B008199BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B09F266A161B008199BD /* ViewController.m */; };
+		8A26B0A3266A161B008199BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A26B0A1266A161B008199BD /* Main.storyboard */; };
+		8A26B0A5266A161D008199BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A26B0A4266A161D008199BD /* Assets.xcassets */; };
+		8A26B0A8266A161D008199BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A26B0A6266A161D008199BD /* LaunchScreen.storyboard */; };
+		8A26B0AB266A161D008199BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B0AA266A161D008199BD /* main.m */; };
+		8A26B0B5266A161D008199BD /* CarpvideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B0B4266A161D008199BD /* CarpvideoTests.m */; };
+		8A26B0C0266A161D008199BD /* CarpvideoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B0BF266A161D008199BD /* CarpvideoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A26B0B1266A161D008199BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A26B08D266A161B008199BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A26B094266A161B008199BD;
+			remoteInfo = Carpvideo;
+		};
+		8A26B0BC266A161D008199BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A26B08D266A161B008199BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A26B094266A161B008199BD;
+			remoteInfo = Carpvideo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A26B095266A161B008199BD /* Carpvideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carpvideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A26B098266A161B008199BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8A26B099266A161B008199BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8A26B09B266A161B008199BD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		8A26B09C266A161B008199BD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		8A26B09E266A161B008199BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8A26B09F266A161B008199BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8A26B0A2266A161B008199BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A26B0A4266A161D008199BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A26B0A7266A161D008199BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A26B0A9266A161D008199BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A26B0AA266A161D008199BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A26B0B0266A161D008199BD /* CarpvideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarpvideoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A26B0B4266A161D008199BD /* CarpvideoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpvideoTests.m; sourceTree = "<group>"; };
+		8A26B0B6266A161D008199BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A26B0BB266A161D008199BD /* CarpvideoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarpvideoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A26B0BF266A161D008199BD /* CarpvideoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpvideoUITests.m; sourceTree = "<group>"; };
+		8A26B0C1266A161D008199BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A26B092266A161B008199BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26B0AD266A161D008199BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26B0B8266A161D008199BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A26B08C266A161B008199BD = {
+			isa = PBXGroup;
+			children = (
+				8A26B097266A161B008199BD /* Carpvideo */,
+				8A26B0B3266A161D008199BD /* CarpvideoTests */,
+				8A26B0BE266A161D008199BD /* CarpvideoUITests */,
+				8A26B096266A161B008199BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A26B096266A161B008199BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A26B095266A161B008199BD /* Carpvideo.app */,
+				8A26B0B0266A161D008199BD /* CarpvideoTests.xctest */,
+				8A26B0BB266A161D008199BD /* CarpvideoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A26B097266A161B008199BD /* Carpvideo */ = {
+			isa = PBXGroup;
+			children = (
+				8A26B098266A161B008199BD /* AppDelegate.h */,
+				8A26B099266A161B008199BD /* AppDelegate.m */,
+				8A26B09B266A161B008199BD /* SceneDelegate.h */,
+				8A26B09C266A161B008199BD /* SceneDelegate.m */,
+				8A26B09E266A161B008199BD /* ViewController.h */,
+				8A26B09F266A161B008199BD /* ViewController.m */,
+				8A26B0A1266A161B008199BD /* Main.storyboard */,
+				8A26B0A4266A161D008199BD /* Assets.xcassets */,
+				8A26B0A6266A161D008199BD /* LaunchScreen.storyboard */,
+				8A26B0A9266A161D008199BD /* Info.plist */,
+				8A26B0AA266A161D008199BD /* main.m */,
+			);
+			path = Carpvideo;
+			sourceTree = "<group>";
+		};
+		8A26B0B3266A161D008199BD /* CarpvideoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A26B0B4266A161D008199BD /* CarpvideoTests.m */,
+				8A26B0B6266A161D008199BD /* Info.plist */,
+			);
+			path = CarpvideoTests;
+			sourceTree = "<group>";
+		};
+		8A26B0BE266A161D008199BD /* CarpvideoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8A26B0BF266A161D008199BD /* CarpvideoUITests.m */,
+				8A26B0C1266A161D008199BD /* Info.plist */,
+			);
+			path = CarpvideoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A26B094266A161B008199BD /* Carpvideo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A26B0C4266A161D008199BD /* Build configuration list for PBXNativeTarget "Carpvideo" */;
+			buildPhases = (
+				8A26B091266A161B008199BD /* Sources */,
+				8A26B092266A161B008199BD /* Frameworks */,
+				8A26B093266A161B008199BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Carpvideo;
+			productName = Carpvideo;
+			productReference = 8A26B095266A161B008199BD /* Carpvideo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A26B0AF266A161D008199BD /* CarpvideoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A26B0C7266A161D008199BD /* Build configuration list for PBXNativeTarget "CarpvideoTests" */;
+			buildPhases = (
+				8A26B0AC266A161D008199BD /* Sources */,
+				8A26B0AD266A161D008199BD /* Frameworks */,
+				8A26B0AE266A161D008199BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A26B0B2266A161D008199BD /* PBXTargetDependency */,
+			);
+			name = CarpvideoTests;
+			productName = CarpvideoTests;
+			productReference = 8A26B0B0266A161D008199BD /* CarpvideoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8A26B0BA266A161D008199BD /* CarpvideoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A26B0CA266A161D008199BD /* Build configuration list for PBXNativeTarget "CarpvideoUITests" */;
+			buildPhases = (
+				8A26B0B7266A161D008199BD /* Sources */,
+				8A26B0B8266A161D008199BD /* Frameworks */,
+				8A26B0B9266A161D008199BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A26B0BD266A161D008199BD /* PBXTargetDependency */,
+			);
+			name = CarpvideoUITests;
+			productName = CarpvideoUITests;
+			productReference = 8A26B0BB266A161D008199BD /* CarpvideoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A26B08D266A161B008199BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8A26B094266A161B008199BD = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					8A26B0AF266A161D008199BD = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8A26B094266A161B008199BD;
+					};
+					8A26B0BA266A161D008199BD = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8A26B094266A161B008199BD;
+					};
+				};
+			};
+			buildConfigurationList = 8A26B090266A161B008199BD /* Build configuration list for PBXProject "Carpvideo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A26B08C266A161B008199BD;
+			productRefGroup = 8A26B096266A161B008199BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A26B094266A161B008199BD /* Carpvideo */,
+				8A26B0AF266A161D008199BD /* CarpvideoTests */,
+				8A26B0BA266A161D008199BD /* CarpvideoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A26B093266A161B008199BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26B0A8266A161D008199BD /* LaunchScreen.storyboard in Resources */,
+				8A26B0A5266A161D008199BD /* Assets.xcassets in Resources */,
+				8A26B0A3266A161B008199BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26B0AE266A161D008199BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26B0B9266A161D008199BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A26B091266A161B008199BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26B0A0266A161B008199BD /* ViewController.m in Sources */,
+				8A26B09A266A161B008199BD /* AppDelegate.m in Sources */,
+				8A26B0AB266A161D008199BD /* main.m in Sources */,
+				8A26B09D266A161B008199BD /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26B0AC266A161D008199BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26B0B5266A161D008199BD /* CarpvideoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26B0B7266A161D008199BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26B0C0266A161D008199BD /* CarpvideoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A26B0B2266A161D008199BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A26B094266A161B008199BD /* Carpvideo */;
+			targetProxy = 8A26B0B1266A161D008199BD /* PBXContainerItemProxy */;
+		};
+		8A26B0BD266A161D008199BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A26B094266A161B008199BD /* Carpvideo */;
+			targetProxy = 8A26B0BC266A161D008199BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A26B0A1266A161B008199BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A26B0A2266A161B008199BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8A26B0A6266A161D008199BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A26B0A7266A161D008199BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A26B0C2266A161D008199BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8A26B0C3266A161D008199BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A26B0C5266A161D008199BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 329332R7J7;
+				INFOPLIST_FILE = Carpvideo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.Carpvideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A26B0C6266A161D008199BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 329332R7J7;
+				INFOPLIST_FILE = Carpvideo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.Carpvideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8A26B0C8266A161D008199BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 329332R7J7;
+				INFOPLIST_FILE = CarpvideoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.CarpvideoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carpvideo.app/Carpvideo";
+			};
+			name = Debug;
+		};
+		8A26B0C9266A161D008199BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 329332R7J7;
+				INFOPLIST_FILE = CarpvideoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.CarpvideoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carpvideo.app/Carpvideo";
+			};
+			name = Release;
+		};
+		8A26B0CB266A161D008199BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 329332R7J7;
+				INFOPLIST_FILE = CarpvideoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.CarpvideoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Carpvideo;
+			};
+			name = Debug;
+		};
+		8A26B0CC266A161D008199BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 329332R7J7;
+				INFOPLIST_FILE = CarpvideoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.CarpvideoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Carpvideo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A26B090266A161B008199BD /* Build configuration list for PBXProject "Carpvideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A26B0C2266A161D008199BD /* Debug */,
+				8A26B0C3266A161D008199BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A26B0C4266A161D008199BD /* Build configuration list for PBXNativeTarget "Carpvideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A26B0C5266A161D008199BD /* Debug */,
+				8A26B0C6266A161D008199BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A26B0C7266A161D008199BD /* Build configuration list for PBXNativeTarget "CarpvideoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A26B0C8266A161D008199BD /* Debug */,
+				8A26B0C9266A161D008199BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A26B0CA266A161D008199BD /* Build configuration list for PBXNativeTarget "CarpvideoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A26B0CB266A161D008199BD /* Debug */,
+				8A26B0CC266A161D008199BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A26B08D266A161B008199BD /* Project object */;
+}
