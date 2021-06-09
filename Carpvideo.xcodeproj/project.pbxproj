@@ -15,6 +15,79 @@
 		8A26B0AB266A161D008199BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B0AA266A161D008199BD /* main.m */; };
 		8A26B0B5266A161D008199BD /* CarpvideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B0B4266A161D008199BD /* CarpvideoTests.m */; };
 		8A26B0C0266A161D008199BD /* CarpvideoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B0BF266A161D008199BD /* CarpvideoUITests.m */; };
+		8A77B60726708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B60626708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.m */; };
+		8A77B60D26708F26007CF3A3 /* CarpVideoCenterBtnHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B60C26708F26007CF3A3 /* CarpVideoCenterBtnHeaderView.m */; };
+		8A77B621267098D7007CF3A3 /* LKWebsiteEditTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B61E267098D6007CF3A3 /* LKWebsiteEditTopView.m */; };
+		8A77B622267098D7007CF3A3 /* LKSavedeleteBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B61F267098D6007CF3A3 /* LKSavedeleteBtnView.m */; };
+		8A77B6282670A0EA007CF3A3 /* LKWebsiteEditCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6262670A0EA007CF3A3 /* LKWebsiteEditCollectionView.m */; };
+		8A77B6312670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B62C2670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.m */; };
+		8A77B64C2670A123007CF3A3 /* ZBWPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B63D2670A123007CF3A3 /* ZBWPhotoModel.m */; };
+		8A77B64D2670A123007CF3A3 /* ZBWAlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6412670A123007CF3A3 /* ZBWAlbumView.m */; };
+		8A77B64E2670A123007CF3A3 /* ZBWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6422670A123007CF3A3 /* ZBWButton.m */; };
+		8A77B64F2670A123007CF3A3 /* ZBWAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6432670A123007CF3A3 /* ZBWAlbumCollectionViewCell.m */; };
+		8A77B6502670A123007CF3A3 /* ZBWAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6442670A123007CF3A3 /* ZBWAlbumViewController.m */; };
+		8A77B6512670A123007CF3A3 /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6452670A123007CF3A3 /* UIColor+Custom.m */; };
+		8A77B6522670A123007CF3A3 /* ZBWAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6462670A123007CF3A3 /* ZBWAlbumTableViewCell.m */; };
+		8A77B6532670A123007CF3A3 /* ZBWPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6472670A123007CF3A3 /* ZBWPhotosManager.m */; };
+		8A77B6542670A123007CF3A3 /* ZBWPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6482670A123007CF3A3 /* ZBWPhotoManager.m */; };
+		8A77B6552670A123007CF3A3 /* ZBWAlbumTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6492670A123007CF3A3 /* ZBWAlbumTableView.m */; };
+		8A77B6562670A123007CF3A3 /* ZBWAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B64A2670A123007CF3A3 /* ZBWAlbumModel.m */; };
+		8A77B65C2670A137007CF3A3 /* LKCollectionBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B65A2670A137007CF3A3 /* LKCollectionBaseCell.m */; };
+		8A77B6652670A159007CF3A3 /* LKWebsiteEditModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6632670A158007CF3A3 /* LKWebsiteEditModel.m */; };
+		8A77B69F2670A473007CF3A3 /* MBImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B69D2670A473007CF3A3 /* MBImagePicker.m */; };
+		8A77B6C22670B5B2007CF3A3 /* CarpVideoMessageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6BE2670B5B2007CF3A3 /* CarpVideoMessageHeaderView.m */; };
+		8A77B6C32670B5B2007CF3A3 /* CarpVideoMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6BF2670B5B2007CF3A3 /* CarpVideoMessageTableViewCell.m */; };
+		8A77B6C42670B5B2007CF3A3 /* CarpVideoMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6C02670B5B2007CF3A3 /* CarpVideoMessageViewController.m */; };
+		8A77B6CD2670B9C4007CF3A3 /* CarpVideoMessageBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6CC2670B9C4007CF3A3 /* CarpVideoMessageBtn.m */; };
+		8A77B6D42670C6A6007CF3A3 /* CarpVideoLogoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6D32670C6A6007CF3A3 /* CarpVideoLogoinViewController.m */; };
+		8AA9A965266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A964266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m */; };
+		8AA9A96B266EFC0E00EB786A /* CarpVideoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A96A266EFC0E00EB786A /* CarpVideoBaseViewController.m */; };
+		8AA9A971266EFC2300EB786A /* CarpVideoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A970266EFC2300EB786A /* CarpVideoHomeViewController.m */; };
+		8AA9A977266EFC2F00EB786A /* CarpVideoCatagroyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A976266EFC2F00EB786A /* CarpVideoCatagroyViewController.m */; };
+		8AA9A983266EFC4000EB786A /* CarpVideoMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A982266EFC4000EB786A /* CarpVideoMineViewController.m */; };
+		8AA9A9C4266EFC7F00EB786A /* NSDictionary+DeleteNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A988266EFC7C00EB786A /* NSDictionary+DeleteNull.m */; };
+		8AA9A9C5266EFC7F00EB786A /* LMJHorizontalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A989266EFC7C00EB786A /* LMJHorizontalScrollText.m */; };
+		8AA9A9C6266EFC7F00EB786A /* CHCardItemCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A990266EFC7C00EB786A /* CHCardItemCustomView.m */; };
+		8AA9A9C7266EFC7F00EB786A /* CHCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A991266EFC7C00EB786A /* CHCardView.m */; };
+		8AA9A9C8266EFC7F00EB786A /* CHCardItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A992266EFC7C00EB786A /* CHCardItemModel.m */; };
+		8AA9A9C9266EFC7F00EB786A /* CHCardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A993266EFC7C00EB786A /* CHCardItemView.m */; };
+		8AA9A9CA266EFC7F00EB786A /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A994266EFC7C00EB786A /* NSString+MD5.m */; };
+		8AA9A9CB266EFC7F00EB786A /* JRWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A996266EFC7C00EB786A /* JRWaterFallLayout.m */; };
+		8AA9A9CC266EFC7F00EB786A /* UIColor+CHRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A998266EFC7C00EB786A /* UIColor+CHRegex.m */; };
+		8AA9A9CD266EFC7F00EB786A /* ZLCollectionBaseDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A99C266EFC7D00EB786A /* ZLCollectionBaseDecorationView.m */; };
+		8AA9A9CE266EFC7F00EB786A /* ZLCellFakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A99D266EFC7D00EB786A /* ZLCellFakeView.m */; };
+		8AA9A9CF266EFC7F00EB786A /* ZLCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A99E266EFC7D00EB786A /* ZLCollectionViewLayoutAttributes.m */; };
+		8AA9A9D0266EFC7F00EB786A /* ZLCollectionViewHorzontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9A2266EFC7D00EB786A /* ZLCollectionViewHorzontalLayout.m */; };
+		8AA9A9D1266EFC7F00EB786A /* ZLCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9A3266EFC7D00EB786A /* ZLCollectionReusableView.m */; };
+		8AA9A9D2266EFC7F00EB786A /* ZLCollectionViewBaseFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9A4266EFC7D00EB786A /* ZLCollectionViewBaseFlowLayout.m */; };
+		8AA9A9D3266EFC7F00EB786A /* ZLCollectionViewBackgroundViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9A8266EFC7D00EB786A /* ZLCollectionViewBackgroundViewLayoutAttributes.m */; };
+		8AA9A9D4266EFC7F00EB786A /* ZLBaseEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9A9266EFC7D00EB786A /* ZLBaseEventModel.m */; };
+		8AA9A9D5266EFC7F00EB786A /* ZLCollectionViewVerticalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9AC266EFC7D00EB786A /* ZLCollectionViewVerticalLayout.m */; };
+		8AA9A9D6266EFC7F00EB786A /* UIView+shadowPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9AF266EFC7D00EB786A /* UIView+shadowPath.m */; };
+		8AA9A9D7266EFC7F00EB786A /* UILabel+CDGPSpaceLb.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9B3266EFC7D00EB786A /* UILabel+CDGPSpaceLb.m */; };
+		8AA9A9D8266EFC7F00EB786A /* FilmChatZoneChatDetailToolsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9B4266EFC7D00EB786A /* FilmChatZoneChatDetailToolsView.m */; };
+		8AA9A9D9266EFC7F00EB786A /* NSString+CHRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9B5266EFC7E00EB786A /* NSString+CHRegex.m */; };
+		8AA9A9DA266EFC7F00EB786A /* UIButton+CHRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9B6266EFC7E00EB786A /* UIButton+CHRegex.m */; };
+		8AA9A9DB266EFC7F00EB786A /* NSTimer+KJSolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9B7266EFC7E00EB786A /* NSTimer+KJSolve.m */; };
+		8AA9A9DC266EFC7F00EB786A /* UIView+ACSLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9BA266EFC7E00EB786A /* UIView+ACSLayer.m */; };
+		8AA9A9DD266EFC7F00EB786A /* UIView+HZXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9BD266EFC7E00EB786A /* UIView+HZXFrame.m */; };
+		8AA9A9DE266EFC7F00EB786A /* WWStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9BF266EFC7E00EB786A /* WWStarView.m */; };
+		8AA9A9DF266EFC7F00EB786A /* UIViewController+IOS13.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9C0266EFC7F00EB786A /* UIViewController+IOS13.m */; };
+		8AA9A9E0266EFC7F00EB786A /* UITextField+AddPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9C3266EFC7F00EB786A /* UITextField+AddPlaceholder.m */; };
+		8AA9A9FD266EFDD000EB786A /* PandaMovieLoginAccoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A9FC266EFDD000EB786A /* PandaMovieLoginAccoutModel.m */; };
+		8AA9AA03266EFE1800EB786A /* CoreAnimationEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA02266EFE1800EB786A /* CoreAnimationEffect.m */; };
+		8AA9AA09266EFE2B00EB786A /* CHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA07266EFE2B00EB786A /* CHTabBar.m */; };
+		8AA9AA10266F023600EB786A /* CarpVideoCenterBtnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA0F266F023600EB786A /* CarpVideoCenterBtnViewController.m */; };
+		8AA9AA19266F125000EB786A /* CarpVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA18266F125000EB786A /* CarpVideoListViewController.m */; };
+		8AA9AA1F266F12FE00EB786A /* CarpVideoBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA1E266F12FE00EB786A /* CarpVideoBaseTableViewCell.m */; };
+		8AA9AA25266F13F700EB786A /* CarpVideoHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA24266F13F700EB786A /* CarpVideoHomeTableViewCell.m */; };
+		8AA9AA2B266F143000EB786A /* CarpVideoHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA2A266F143000EB786A /* CarpVideoHomeHeaderView.m */; };
+		8AA9AA31266F44BC00EB786A /* CarpVideoHomeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA30266F44BC00EB786A /* CarpVideoHomeBtn.m */; };
+		8AA9AA37266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA36266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.m */; };
+		8AA9AA3C266F5B8F00EB786A /* FZPWJW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8AA9AA3B266F5B8F00EB786A /* FZPWJW.TTF */; };
+		8AA9AA45266F62C600EB786A /* CarpVideoCatagroySubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA44266F62C600EB786A /* CarpVideoCatagroySubViewController.m */; };
+		8AA9AA4E266F6A3C00EB786A /* CarpVideocatagoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA4D266F6A3C00EB786A /* CarpVideocatagoryCollectionViewCell.m */; };
+		8AA9AA54266F6AAC00EB786A /* CarpVideoCatagoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9AA53266F6AAC00EB786A /* CarpVideoCatagoryModel.m */; };
 		CEA8F6FA78247FA824083D6E /* Pods_Carpvideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9734B6D71CE74F58CA1159D /* Pods_Carpvideo.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +126,153 @@
 		8A26B0BB266A161D008199BD /* CarpvideoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarpvideoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A26B0BF266A161D008199BD /* CarpvideoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpvideoUITests.m; sourceTree = "<group>"; };
 		8A26B0C1266A161D008199BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A77B60526708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoCenterBtnTableViewCell.h; sourceTree = "<group>"; };
+		8A77B60626708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoCenterBtnTableViewCell.m; sourceTree = "<group>"; };
+		8A77B60B26708F26007CF3A3 /* CarpVideoCenterBtnHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoCenterBtnHeaderView.h; sourceTree = "<group>"; };
+		8A77B60C26708F26007CF3A3 /* CarpVideoCenterBtnHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoCenterBtnHeaderView.m; sourceTree = "<group>"; };
+		8A77B61D267098D6007CF3A3 /* LKWebsiteEditTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKWebsiteEditTopView.h; sourceTree = "<group>"; };
+		8A77B61E267098D6007CF3A3 /* LKWebsiteEditTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKWebsiteEditTopView.m; sourceTree = "<group>"; };
+		8A77B61F267098D6007CF3A3 /* LKSavedeleteBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKSavedeleteBtnView.m; sourceTree = "<group>"; };
+		8A77B620267098D7007CF3A3 /* LKSavedeleteBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKSavedeleteBtnView.h; sourceTree = "<group>"; };
+		8A77B6262670A0EA007CF3A3 /* LKWebsiteEditCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKWebsiteEditCollectionView.m; sourceTree = "<group>"; };
+		8A77B6272670A0EA007CF3A3 /* LKWebsiteEditCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKWebsiteEditCollectionView.h; sourceTree = "<group>"; };
+		8A77B62C2670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKWebsiteEditCollectionViewCell.m; sourceTree = "<group>"; };
+		8A77B6302670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKWebsiteEditCollectionViewCell.h; sourceTree = "<group>"; };
+		8A77B6362670A123007CF3A3 /* ZBWAlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWAlbumCollectionViewCell.h; sourceTree = "<group>"; };
+		8A77B6372670A123007CF3A3 /* ZBWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWButton.h; sourceTree = "<group>"; };
+		8A77B6382670A123007CF3A3 /* ZBWAlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWAlbumView.h; sourceTree = "<group>"; };
+		8A77B6392670A123007CF3A3 /* ZBWAlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWAlbumTableViewCell.h; sourceTree = "<group>"; };
+		8A77B63A2670A123007CF3A3 /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
+		8A77B63B2670A123007CF3A3 /* ZBWAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWAlbumViewController.h; sourceTree = "<group>"; };
+		8A77B63C2670A123007CF3A3 /* ZBWPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWPhotosManager.h; sourceTree = "<group>"; };
+		8A77B63D2670A123007CF3A3 /* ZBWPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWPhotoModel.m; sourceTree = "<group>"; };
+		8A77B63E2670A123007CF3A3 /* ZBWAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWAlbumModel.h; sourceTree = "<group>"; };
+		8A77B63F2670A123007CF3A3 /* ZBWAlbumTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWAlbumTableView.h; sourceTree = "<group>"; };
+		8A77B6402670A123007CF3A3 /* ZBWPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWPhotoManager.h; sourceTree = "<group>"; };
+		8A77B6412670A123007CF3A3 /* ZBWAlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWAlbumView.m; sourceTree = "<group>"; };
+		8A77B6422670A123007CF3A3 /* ZBWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWButton.m; sourceTree = "<group>"; };
+		8A77B6432670A123007CF3A3 /* ZBWAlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWAlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		8A77B6442670A123007CF3A3 /* ZBWAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWAlbumViewController.m; sourceTree = "<group>"; };
+		8A77B6452670A123007CF3A3 /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
+		8A77B6462670A123007CF3A3 /* ZBWAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWAlbumTableViewCell.m; sourceTree = "<group>"; };
+		8A77B6472670A123007CF3A3 /* ZBWPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWPhotosManager.m; sourceTree = "<group>"; };
+		8A77B6482670A123007CF3A3 /* ZBWPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWPhotoManager.m; sourceTree = "<group>"; };
+		8A77B6492670A123007CF3A3 /* ZBWAlbumTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWAlbumTableView.m; sourceTree = "<group>"; };
+		8A77B64A2670A123007CF3A3 /* ZBWAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBWAlbumModel.m; sourceTree = "<group>"; };
+		8A77B64B2670A123007CF3A3 /* ZBWPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBWPhotoModel.h; sourceTree = "<group>"; };
+		8A77B65A2670A137007CF3A3 /* LKCollectionBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKCollectionBaseCell.m; sourceTree = "<group>"; };
+		8A77B65B2670A137007CF3A3 /* LKCollectionBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKCollectionBaseCell.h; sourceTree = "<group>"; };
+		8A77B6632670A158007CF3A3 /* LKWebsiteEditModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKWebsiteEditModel.m; sourceTree = "<group>"; };
+		8A77B6642670A159007CF3A3 /* LKWebsiteEditModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKWebsiteEditModel.h; sourceTree = "<group>"; };
+		8A77B69D2670A473007CF3A3 /* MBImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBImagePicker.m; sourceTree = "<group>"; };
+		8A77B69E2670A473007CF3A3 /* MBImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBImagePicker.h; sourceTree = "<group>"; };
+		8A77B6BC2670B5B2007CF3A3 /* CarpVideoMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarpVideoMessageTableViewCell.h; sourceTree = "<group>"; };
+		8A77B6BD2670B5B2007CF3A3 /* CarpVideoMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarpVideoMessageViewController.h; sourceTree = "<group>"; };
+		8A77B6BE2670B5B2007CF3A3 /* CarpVideoMessageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarpVideoMessageHeaderView.m; sourceTree = "<group>"; };
+		8A77B6BF2670B5B2007CF3A3 /* CarpVideoMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarpVideoMessageTableViewCell.m; sourceTree = "<group>"; };
+		8A77B6C02670B5B2007CF3A3 /* CarpVideoMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarpVideoMessageViewController.m; sourceTree = "<group>"; };
+		8A77B6C12670B5B2007CF3A3 /* CarpVideoMessageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarpVideoMessageHeaderView.h; sourceTree = "<group>"; };
+		8A77B6CB2670B9C4007CF3A3 /* CarpVideoMessageBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoMessageBtn.h; sourceTree = "<group>"; };
+		8A77B6CC2670B9C4007CF3A3 /* CarpVideoMessageBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoMessageBtn.m; sourceTree = "<group>"; };
+		8A77B6D22670C6A6007CF3A3 /* CarpVideoLogoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoLogoinViewController.h; sourceTree = "<group>"; };
+		8A77B6D32670C6A6007CF3A3 /* CarpVideoLogoinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoLogoinViewController.m; sourceTree = "<group>"; };
+		8AA9A963266EFBF800EB786A /* CarpVideoBaseTabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoBaseTabbarViewController.h; sourceTree = "<group>"; };
+		8AA9A964266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoBaseTabbarViewController.m; sourceTree = "<group>"; };
+		8AA9A969266EFC0E00EB786A /* CarpVideoBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoBaseViewController.h; sourceTree = "<group>"; };
+		8AA9A96A266EFC0E00EB786A /* CarpVideoBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoBaseViewController.m; sourceTree = "<group>"; };
+		8AA9A96F266EFC2300EB786A /* CarpVideoHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoHomeViewController.h; sourceTree = "<group>"; };
+		8AA9A970266EFC2300EB786A /* CarpVideoHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoHomeViewController.m; sourceTree = "<group>"; };
+		8AA9A975266EFC2F00EB786A /* CarpVideoCatagroyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoCatagroyViewController.h; sourceTree = "<group>"; };
+		8AA9A976266EFC2F00EB786A /* CarpVideoCatagroyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoCatagroyViewController.m; sourceTree = "<group>"; };
+		8AA9A981266EFC4000EB786A /* CarpVideoMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoMineViewController.h; sourceTree = "<group>"; };
+		8AA9A982266EFC4000EB786A /* CarpVideoMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoMineViewController.m; sourceTree = "<group>"; };
+		8AA9A988266EFC7C00EB786A /* NSDictionary+DeleteNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DeleteNull.m"; sourceTree = "<group>"; };
+		8AA9A989266EFC7C00EB786A /* LMJHorizontalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHorizontalScrollText.m; sourceTree = "<group>"; };
+		8AA9A98A266EFC7C00EB786A /* LMJHorizontalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHorizontalScrollText.h; sourceTree = "<group>"; };
+		8AA9A98C266EFC7C00EB786A /* CHCardItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCardItemModel.h; sourceTree = "<group>"; };
+		8AA9A98D266EFC7C00EB786A /* CHCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCardView.h; sourceTree = "<group>"; };
+		8AA9A98E266EFC7C00EB786A /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		8AA9A98F266EFC7C00EB786A /* CHCardItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCardItemView.h; sourceTree = "<group>"; };
+		8AA9A990266EFC7C00EB786A /* CHCardItemCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCardItemCustomView.m; sourceTree = "<group>"; };
+		8AA9A991266EFC7C00EB786A /* CHCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCardView.m; sourceTree = "<group>"; };
+		8AA9A992266EFC7C00EB786A /* CHCardItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCardItemModel.m; sourceTree = "<group>"; };
+		8AA9A993266EFC7C00EB786A /* CHCardItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCardItemView.m; sourceTree = "<group>"; };
+		8AA9A994266EFC7C00EB786A /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		8AA9A995266EFC7C00EB786A /* CHCardItemCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCardItemCustomView.h; sourceTree = "<group>"; };
+		8AA9A996266EFC7C00EB786A /* JRWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRWaterFallLayout.m; sourceTree = "<group>"; };
+		8AA9A997266EFC7C00EB786A /* NSDictionary+DeleteNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DeleteNull.h"; sourceTree = "<group>"; };
+		8AA9A998266EFC7C00EB786A /* UIColor+CHRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CHRegex.m"; sourceTree = "<group>"; };
+		8AA9A999266EFC7D00EB786A /* UIButton+CHRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CHRegex.h"; sourceTree = "<group>"; };
+		8AA9A99A266EFC7D00EB786A /* UIColor+CHRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CHRegex.h"; sourceTree = "<group>"; };
+		8AA9A99C266EFC7D00EB786A /* ZLCollectionBaseDecorationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionBaseDecorationView.m; sourceTree = "<group>"; };
+		8AA9A99D266EFC7D00EB786A /* ZLCellFakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCellFakeView.m; sourceTree = "<group>"; };
+		8AA9A99E266EFC7D00EB786A /* ZLCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		8AA9A99F266EFC7D00EB786A /* ZLBaseEventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLBaseEventModel.h; sourceTree = "<group>"; };
+		8AA9A9A0266EFC7D00EB786A /* ZLCollectionViewBackgroundViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionViewBackgroundViewLayoutAttributes.h; sourceTree = "<group>"; };
+		8AA9A9A1266EFC7D00EB786A /* ZLCollectionViewVerticalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionViewVerticalLayout.h; sourceTree = "<group>"; };
+		8AA9A9A2266EFC7D00EB786A /* ZLCollectionViewHorzontalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionViewHorzontalLayout.m; sourceTree = "<group>"; };
+		8AA9A9A3266EFC7D00EB786A /* ZLCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionReusableView.m; sourceTree = "<group>"; };
+		8AA9A9A4266EFC7D00EB786A /* ZLCollectionViewBaseFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionViewBaseFlowLayout.m; sourceTree = "<group>"; };
+		8AA9A9A5266EFC7D00EB786A /* ZLCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		8AA9A9A6266EFC7D00EB786A /* ZLCellFakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCellFakeView.h; sourceTree = "<group>"; };
+		8AA9A9A7266EFC7D00EB786A /* ZLCollectionBaseDecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionBaseDecorationView.h; sourceTree = "<group>"; };
+		8AA9A9A8266EFC7D00EB786A /* ZLCollectionViewBackgroundViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionViewBackgroundViewLayoutAttributes.m; sourceTree = "<group>"; };
+		8AA9A9A9266EFC7D00EB786A /* ZLBaseEventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLBaseEventModel.m; sourceTree = "<group>"; };
+		8AA9A9AA266EFC7D00EB786A /* ZLCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionReusableView.h; sourceTree = "<group>"; };
+		8AA9A9AB266EFC7D00EB786A /* ZLCollectionViewHorzontalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionViewHorzontalLayout.h; sourceTree = "<group>"; };
+		8AA9A9AC266EFC7D00EB786A /* ZLCollectionViewVerticalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCollectionViewVerticalLayout.m; sourceTree = "<group>"; };
+		8AA9A9AD266EFC7D00EB786A /* ZLCollectionViewBaseFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCollectionViewBaseFlowLayout.h; sourceTree = "<group>"; };
+		8AA9A9AE266EFC7D00EB786A /* JRWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRWaterFallLayout.h; sourceTree = "<group>"; };
+		8AA9A9AF266EFC7D00EB786A /* UIView+shadowPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+shadowPath.m"; sourceTree = "<group>"; };
+		8AA9A9B0266EFC7D00EB786A /* WWStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWStarView.h; sourceTree = "<group>"; };
+		8AA9A9B1266EFC7D00EB786A /* UIView+shadowPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+shadowPath.h"; sourceTree = "<group>"; };
+		8AA9A9B2266EFC7D00EB786A /* UIView+HZXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HZXFrame.h"; sourceTree = "<group>"; };
+		8AA9A9B3266EFC7D00EB786A /* UILabel+CDGPSpaceLb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CDGPSpaceLb.m"; sourceTree = "<group>"; };
+		8AA9A9B4266EFC7D00EB786A /* FilmChatZoneChatDetailToolsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmChatZoneChatDetailToolsView.m; sourceTree = "<group>"; };
+		8AA9A9B5266EFC7E00EB786A /* NSString+CHRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CHRegex.m"; sourceTree = "<group>"; };
+		8AA9A9B6266EFC7E00EB786A /* UIButton+CHRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CHRegex.m"; sourceTree = "<group>"; };
+		8AA9A9B7266EFC7E00EB786A /* NSTimer+KJSolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+KJSolve.m"; sourceTree = "<group>"; };
+		8AA9A9B8266EFC7E00EB786A /* FilmChatZoneChatDetailToolsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmChatZoneChatDetailToolsView.h; sourceTree = "<group>"; };
+		8AA9A9B9266EFC7E00EB786A /* UITextField+AddPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+AddPlaceholder.h"; sourceTree = "<group>"; };
+		8AA9A9BA266EFC7E00EB786A /* UIView+ACSLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ACSLayer.m"; sourceTree = "<group>"; };
+		8AA9A9BB266EFC7E00EB786A /* UILabel+CDGPSpaceLb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CDGPSpaceLb.h"; sourceTree = "<group>"; };
+		8AA9A9BC266EFC7E00EB786A /* UIViewController+IOS13.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IOS13.h"; sourceTree = "<group>"; };
+		8AA9A9BD266EFC7E00EB786A /* UIView+HZXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HZXFrame.m"; sourceTree = "<group>"; };
+		8AA9A9BE266EFC7E00EB786A /* NSString+CHRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CHRegex.h"; sourceTree = "<group>"; };
+		8AA9A9BF266EFC7E00EB786A /* WWStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWStarView.m; sourceTree = "<group>"; };
+		8AA9A9C0266EFC7F00EB786A /* UIViewController+IOS13.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IOS13.m"; sourceTree = "<group>"; };
+		8AA9A9C1266EFC7F00EB786A /* NSTimer+KJSolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+KJSolve.h"; sourceTree = "<group>"; };
+		8AA9A9C2266EFC7F00EB786A /* UIView+ACSLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ACSLayer.h"; sourceTree = "<group>"; };
+		8AA9A9C3266EFC7F00EB786A /* UITextField+AddPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+AddPlaceholder.m"; sourceTree = "<group>"; };
+		8AA9A9E4266EFC8D00EB786A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		8AA9A9E5266EFC9800EB786A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8AA9A9FB266EFDD000EB786A /* PandaMovieLoginAccoutModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaMovieLoginAccoutModel.h; sourceTree = "<group>"; };
+		8AA9A9FC266EFDD000EB786A /* PandaMovieLoginAccoutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaMovieLoginAccoutModel.m; sourceTree = "<group>"; };
+		8AA9AA01266EFE1800EB786A /* CoreAnimationEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimationEffect.h; sourceTree = "<group>"; };
+		8AA9AA02266EFE1800EB786A /* CoreAnimationEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationEffect.m; sourceTree = "<group>"; };
+		8AA9AA07266EFE2B00EB786A /* CHTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBar.m; sourceTree = "<group>"; };
+		8AA9AA08266EFE2B00EB786A /* CHTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBar.h; sourceTree = "<group>"; };
+		8AA9AA0E266F023600EB786A /* CarpVideoCenterBtnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoCenterBtnViewController.h; sourceTree = "<group>"; };
+		8AA9AA0F266F023600EB786A /* CarpVideoCenterBtnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoCenterBtnViewController.m; sourceTree = "<group>"; };
+		8AA9AA17266F125000EB786A /* CarpVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoListViewController.h; sourceTree = "<group>"; };
+		8AA9AA18266F125000EB786A /* CarpVideoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoListViewController.m; sourceTree = "<group>"; };
+		8AA9AA1D266F12FE00EB786A /* CarpVideoBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoBaseTableViewCell.h; sourceTree = "<group>"; };
+		8AA9AA1E266F12FE00EB786A /* CarpVideoBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoBaseTableViewCell.m; sourceTree = "<group>"; };
+		8AA9AA23266F13F700EB786A /* CarpVideoHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoHomeTableViewCell.h; sourceTree = "<group>"; };
+		8AA9AA24266F13F700EB786A /* CarpVideoHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoHomeTableViewCell.m; sourceTree = "<group>"; };
+		8AA9AA29266F143000EB786A /* CarpVideoHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoHomeHeaderView.h; sourceTree = "<group>"; };
+		8AA9AA2A266F143000EB786A /* CarpVideoHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoHomeHeaderView.m; sourceTree = "<group>"; };
+		8AA9AA2F266F44BC00EB786A /* CarpVideoHomeBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoHomeBtn.h; sourceTree = "<group>"; };
+		8AA9AA30266F44BC00EB786A /* CarpVideoHomeBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoHomeBtn.m; sourceTree = "<group>"; };
+		8AA9AA35266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoHomeCollectionViewCell.h; sourceTree = "<group>"; };
+		8AA9AA36266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoHomeCollectionViewCell.m; sourceTree = "<group>"; };
+		8AA9AA3B266F5B8F00EB786A /* FZPWJW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZPWJW.TTF; sourceTree = "<group>"; };
+		8AA9AA43266F62C500EB786A /* CarpVideoCatagroySubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoCatagroySubViewController.h; sourceTree = "<group>"; };
+		8AA9AA44266F62C600EB786A /* CarpVideoCatagroySubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoCatagroySubViewController.m; sourceTree = "<group>"; };
+		8AA9AA4C266F6A3C00EB786A /* CarpVideocatagoryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideocatagoryCollectionViewCell.h; sourceTree = "<group>"; };
+		8AA9AA4D266F6A3C00EB786A /* CarpVideocatagoryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideocatagoryCollectionViewCell.m; sourceTree = "<group>"; };
+		8AA9AA52266F6AAC00EB786A /* CarpVideoCatagoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoCatagoryModel.h; sourceTree = "<group>"; };
+		8AA9AA53266F6AAC00EB786A /* CarpVideoCatagoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoCatagoryModel.m; sourceTree = "<group>"; };
 		917B9929249608A9D0C68CDF /* Pods-Carpvideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpvideo.debug.xcconfig"; path = "Target Support Files/Pods-Carpvideo/Pods-Carpvideo.debug.xcconfig"; sourceTree = "<group>"; };
 		F9734B6D71CE74F58CA1159D /* Pods_Carpvideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carpvideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +336,8 @@
 		8A26B097266A161B008199BD /* Carpvideo */ = {
 			isa = PBXGroup;
 			children = (
+				8AA9A987266EFC4700EB786A /* CarpVideoTool */,
+				8AA9A95E266EFB7E00EB786A /* CardVideoBase */,
 				8A26B112266A2AED008199BD /* CarpVideo */,
 				8A26B098266A161B008199BD /* AppDelegate.h */,
 				8A26B099266A161B008199BD /* AppDelegate.m */,
@@ -126,6 +348,7 @@
 				8A26B0A6266A161D008199BD /* LaunchScreen.storyboard */,
 				8A26B0A9266A161D008199BD /* Info.plist */,
 				8A26B0AA266A161D008199BD /* main.m */,
+				8AA9AA3B266F5B8F00EB786A /* FZPWJW.TTF */,
 			);
 			path = Carpvideo;
 			sourceTree = "<group>";
@@ -151,8 +374,240 @@
 		8A26B112266A2AED008199BD /* CarpVideo */ = {
 			isa = PBXGroup;
 			children = (
+				8A77B6D12670C688007CF3A3 /* CarpVideo_Logoin */,
+				8A77B6BB2670B5B2007CF3A3 /* CarpVideo_Message */,
+				8AA9AA0D266F021B00EB786A /* CarpVideo_CenterBtn */,
+				8AA9A962266EFBB400EB786A /* Carp_Mine */,
+				8AA9A960266EFB9900EB786A /* CarpVideo_Catagory */,
+				8AA9A95F266EFB8D00EB786A /* CarpVideo_home */,
 			);
 			path = CarpVideo;
+			sourceTree = "<group>";
+		};
+		8A77B6352670A123007CF3A3 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				8A77B6362670A123007CF3A3 /* ZBWAlbumCollectionViewCell.h */,
+				8A77B6372670A123007CF3A3 /* ZBWButton.h */,
+				8A77B6382670A123007CF3A3 /* ZBWAlbumView.h */,
+				8A77B6392670A123007CF3A3 /* ZBWAlbumTableViewCell.h */,
+				8A77B63A2670A123007CF3A3 /* UIColor+Custom.h */,
+				8A77B63B2670A123007CF3A3 /* ZBWAlbumViewController.h */,
+				8A77B63C2670A123007CF3A3 /* ZBWPhotosManager.h */,
+				8A77B63D2670A123007CF3A3 /* ZBWPhotoModel.m */,
+				8A77B63E2670A123007CF3A3 /* ZBWAlbumModel.h */,
+				8A77B63F2670A123007CF3A3 /* ZBWAlbumTableView.h */,
+				8A77B6402670A123007CF3A3 /* ZBWPhotoManager.h */,
+				8A77B6412670A123007CF3A3 /* ZBWAlbumView.m */,
+				8A77B6422670A123007CF3A3 /* ZBWButton.m */,
+				8A77B6432670A123007CF3A3 /* ZBWAlbumCollectionViewCell.m */,
+				8A77B6442670A123007CF3A3 /* ZBWAlbumViewController.m */,
+				8A77B6452670A123007CF3A3 /* UIColor+Custom.m */,
+				8A77B6462670A123007CF3A3 /* ZBWAlbumTableViewCell.m */,
+				8A77B6472670A123007CF3A3 /* ZBWPhotosManager.m */,
+				8A77B6482670A123007CF3A3 /* ZBWPhotoManager.m */,
+				8A77B6492670A123007CF3A3 /* ZBWAlbumTableView.m */,
+				8A77B64A2670A123007CF3A3 /* ZBWAlbumModel.m */,
+				8A77B64B2670A123007CF3A3 /* ZBWPhotoModel.h */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		8A77B6BB2670B5B2007CF3A3 /* CarpVideo_Message */ = {
+			isa = PBXGroup;
+			children = (
+				8A77B6BC2670B5B2007CF3A3 /* CarpVideoMessageTableViewCell.h */,
+				8A77B6BF2670B5B2007CF3A3 /* CarpVideoMessageTableViewCell.m */,
+				8A77B6BD2670B5B2007CF3A3 /* CarpVideoMessageViewController.h */,
+				8A77B6C02670B5B2007CF3A3 /* CarpVideoMessageViewController.m */,
+				8A77B6C12670B5B2007CF3A3 /* CarpVideoMessageHeaderView.h */,
+				8A77B6BE2670B5B2007CF3A3 /* CarpVideoMessageHeaderView.m */,
+				8A77B6CB2670B9C4007CF3A3 /* CarpVideoMessageBtn.h */,
+				8A77B6CC2670B9C4007CF3A3 /* CarpVideoMessageBtn.m */,
+			);
+			path = CarpVideo_Message;
+			sourceTree = "<group>";
+		};
+		8A77B6D12670C688007CF3A3 /* CarpVideo_Logoin */ = {
+			isa = PBXGroup;
+			children = (
+				8A77B6D22670C6A6007CF3A3 /* CarpVideoLogoinViewController.h */,
+				8A77B6D32670C6A6007CF3A3 /* CarpVideoLogoinViewController.m */,
+			);
+			path = CarpVideo_Logoin;
+			sourceTree = "<group>";
+		};
+		8AA9A95E266EFB7E00EB786A /* CardVideoBase */ = {
+			isa = PBXGroup;
+			children = (
+				8A77B65B2670A137007CF3A3 /* LKCollectionBaseCell.h */,
+				8A77B65A2670A137007CF3A3 /* LKCollectionBaseCell.m */,
+				8AA9A9FB266EFDD000EB786A /* PandaMovieLoginAccoutModel.h */,
+				8AA9A9FC266EFDD000EB786A /* PandaMovieLoginAccoutModel.m */,
+				8AA9A963266EFBF800EB786A /* CarpVideoBaseTabbarViewController.h */,
+				8AA9A964266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m */,
+				8AA9A969266EFC0E00EB786A /* CarpVideoBaseViewController.h */,
+				8AA9A96A266EFC0E00EB786A /* CarpVideoBaseViewController.m */,
+				8AA9AA17266F125000EB786A /* CarpVideoListViewController.h */,
+				8AA9AA18266F125000EB786A /* CarpVideoListViewController.m */,
+				8AA9AA1D266F12FE00EB786A /* CarpVideoBaseTableViewCell.h */,
+				8AA9AA1E266F12FE00EB786A /* CarpVideoBaseTableViewCell.m */,
+				8AA9A9E4266EFC8D00EB786A /* Header.h */,
+				8AA9A9E5266EFC9800EB786A /* PrefixHeader.pch */,
+			);
+			path = CardVideoBase;
+			sourceTree = "<group>";
+		};
+		8AA9A95F266EFB8D00EB786A /* CarpVideo_home */ = {
+			isa = PBXGroup;
+			children = (
+				8AA9A96F266EFC2300EB786A /* CarpVideoHomeViewController.h */,
+				8AA9A970266EFC2300EB786A /* CarpVideoHomeViewController.m */,
+				8AA9AA23266F13F700EB786A /* CarpVideoHomeTableViewCell.h */,
+				8AA9AA24266F13F700EB786A /* CarpVideoHomeTableViewCell.m */,
+				8AA9AA35266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.h */,
+				8AA9AA36266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.m */,
+				8AA9AA29266F143000EB786A /* CarpVideoHomeHeaderView.h */,
+				8AA9AA2A266F143000EB786A /* CarpVideoHomeHeaderView.m */,
+				8AA9AA2F266F44BC00EB786A /* CarpVideoHomeBtn.h */,
+				8AA9AA30266F44BC00EB786A /* CarpVideoHomeBtn.m */,
+			);
+			path = CarpVideo_home;
+			sourceTree = "<group>";
+		};
+		8AA9A960266EFB9900EB786A /* CarpVideo_Catagory */ = {
+			isa = PBXGroup;
+			children = (
+				8AA9A975266EFC2F00EB786A /* CarpVideoCatagroyViewController.h */,
+				8AA9A976266EFC2F00EB786A /* CarpVideoCatagroyViewController.m */,
+				8AA9AA43266F62C500EB786A /* CarpVideoCatagroySubViewController.h */,
+				8AA9AA44266F62C600EB786A /* CarpVideoCatagroySubViewController.m */,
+				8AA9AA4C266F6A3C00EB786A /* CarpVideocatagoryCollectionViewCell.h */,
+				8AA9AA4D266F6A3C00EB786A /* CarpVideocatagoryCollectionViewCell.m */,
+				8AA9AA52266F6AAC00EB786A /* CarpVideoCatagoryModel.h */,
+				8AA9AA53266F6AAC00EB786A /* CarpVideoCatagoryModel.m */,
+			);
+			path = CarpVideo_Catagory;
+			sourceTree = "<group>";
+		};
+		8AA9A962266EFBB400EB786A /* Carp_Mine */ = {
+			isa = PBXGroup;
+			children = (
+				8AA9A981266EFC4000EB786A /* CarpVideoMineViewController.h */,
+				8AA9A982266EFC4000EB786A /* CarpVideoMineViewController.m */,
+			);
+			path = Carp_Mine;
+			sourceTree = "<group>";
+		};
+		8AA9A987266EFC4700EB786A /* CarpVideoTool */ = {
+			isa = PBXGroup;
+			children = (
+				8A77B69E2670A473007CF3A3 /* MBImagePicker.h */,
+				8A77B69D2670A473007CF3A3 /* MBImagePicker.m */,
+				8A77B6352670A123007CF3A3 /* Album */,
+				8AA9AA08266EFE2B00EB786A /* CHTabBar.h */,
+				8AA9AA07266EFE2B00EB786A /* CHTabBar.m */,
+				8AA9AA01266EFE1800EB786A /* CoreAnimationEffect.h */,
+				8AA9AA02266EFE1800EB786A /* CoreAnimationEffect.m */,
+				8AA9A98B266EFC7C00EB786A /* CHCardView */,
+				8AA9A9B8266EFC7E00EB786A /* FilmChatZoneChatDetailToolsView.h */,
+				8AA9A9B4266EFC7D00EB786A /* FilmChatZoneChatDetailToolsView.m */,
+				8AA9A9AE266EFC7D00EB786A /* JRWaterFallLayout.h */,
+				8AA9A996266EFC7C00EB786A /* JRWaterFallLayout.m */,
+				8AA9A98A266EFC7C00EB786A /* LMJHorizontalScrollText.h */,
+				8AA9A989266EFC7C00EB786A /* LMJHorizontalScrollText.m */,
+				8AA9A997266EFC7C00EB786A /* NSDictionary+DeleteNull.h */,
+				8AA9A988266EFC7C00EB786A /* NSDictionary+DeleteNull.m */,
+				8AA9A9BE266EFC7E00EB786A /* NSString+CHRegex.h */,
+				8AA9A9B5266EFC7E00EB786A /* NSString+CHRegex.m */,
+				8AA9A9C1266EFC7F00EB786A /* NSTimer+KJSolve.h */,
+				8AA9A9B7266EFC7E00EB786A /* NSTimer+KJSolve.m */,
+				8AA9A999266EFC7D00EB786A /* UIButton+CHRegex.h */,
+				8AA9A9B6266EFC7E00EB786A /* UIButton+CHRegex.m */,
+				8AA9A99A266EFC7D00EB786A /* UIColor+CHRegex.h */,
+				8AA9A998266EFC7C00EB786A /* UIColor+CHRegex.m */,
+				8AA9A9BB266EFC7E00EB786A /* UILabel+CDGPSpaceLb.h */,
+				8AA9A9B3266EFC7D00EB786A /* UILabel+CDGPSpaceLb.m */,
+				8AA9A9B9266EFC7E00EB786A /* UITextField+AddPlaceholder.h */,
+				8AA9A9C3266EFC7F00EB786A /* UITextField+AddPlaceholder.m */,
+				8AA9A9C2266EFC7F00EB786A /* UIView+ACSLayer.h */,
+				8AA9A9BA266EFC7E00EB786A /* UIView+ACSLayer.m */,
+				8AA9A9B2266EFC7D00EB786A /* UIView+HZXFrame.h */,
+				8AA9A9BD266EFC7E00EB786A /* UIView+HZXFrame.m */,
+				8AA9A9B1266EFC7D00EB786A /* UIView+shadowPath.h */,
+				8AA9A9AF266EFC7D00EB786A /* UIView+shadowPath.m */,
+				8AA9A9BC266EFC7E00EB786A /* UIViewController+IOS13.h */,
+				8AA9A9C0266EFC7F00EB786A /* UIViewController+IOS13.m */,
+				8AA9A9B0266EFC7D00EB786A /* WWStarView.h */,
+				8AA9A9BF266EFC7E00EB786A /* WWStarView.m */,
+				8AA9A99B266EFC7D00EB786A /* ZLCollectionFlowLayout */,
+			);
+			path = CarpVideoTool;
+			sourceTree = "<group>";
+		};
+		8AA9A98B266EFC7C00EB786A /* CHCardView */ = {
+			isa = PBXGroup;
+			children = (
+				8AA9A98C266EFC7C00EB786A /* CHCardItemModel.h */,
+				8AA9A98D266EFC7C00EB786A /* CHCardView.h */,
+				8AA9A98E266EFC7C00EB786A /* NSString+MD5.h */,
+				8AA9A98F266EFC7C00EB786A /* CHCardItemView.h */,
+				8AA9A990266EFC7C00EB786A /* CHCardItemCustomView.m */,
+				8AA9A991266EFC7C00EB786A /* CHCardView.m */,
+				8AA9A992266EFC7C00EB786A /* CHCardItemModel.m */,
+				8AA9A993266EFC7C00EB786A /* CHCardItemView.m */,
+				8AA9A994266EFC7C00EB786A /* NSString+MD5.m */,
+				8AA9A995266EFC7C00EB786A /* CHCardItemCustomView.h */,
+			);
+			path = CHCardView;
+			sourceTree = "<group>";
+		};
+		8AA9A99B266EFC7D00EB786A /* ZLCollectionFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				8AA9A99C266EFC7D00EB786A /* ZLCollectionBaseDecorationView.m */,
+				8AA9A99D266EFC7D00EB786A /* ZLCellFakeView.m */,
+				8AA9A99E266EFC7D00EB786A /* ZLCollectionViewLayoutAttributes.m */,
+				8AA9A99F266EFC7D00EB786A /* ZLBaseEventModel.h */,
+				8AA9A9A0266EFC7D00EB786A /* ZLCollectionViewBackgroundViewLayoutAttributes.h */,
+				8AA9A9A1266EFC7D00EB786A /* ZLCollectionViewVerticalLayout.h */,
+				8AA9A9A2266EFC7D00EB786A /* ZLCollectionViewHorzontalLayout.m */,
+				8AA9A9A3266EFC7D00EB786A /* ZLCollectionReusableView.m */,
+				8AA9A9A4266EFC7D00EB786A /* ZLCollectionViewBaseFlowLayout.m */,
+				8AA9A9A5266EFC7D00EB786A /* ZLCollectionViewLayoutAttributes.h */,
+				8AA9A9A6266EFC7D00EB786A /* ZLCellFakeView.h */,
+				8AA9A9A7266EFC7D00EB786A /* ZLCollectionBaseDecorationView.h */,
+				8AA9A9A8266EFC7D00EB786A /* ZLCollectionViewBackgroundViewLayoutAttributes.m */,
+				8AA9A9A9266EFC7D00EB786A /* ZLBaseEventModel.m */,
+				8AA9A9AA266EFC7D00EB786A /* ZLCollectionReusableView.h */,
+				8AA9A9AB266EFC7D00EB786A /* ZLCollectionViewHorzontalLayout.h */,
+				8AA9A9AC266EFC7D00EB786A /* ZLCollectionViewVerticalLayout.m */,
+				8AA9A9AD266EFC7D00EB786A /* ZLCollectionViewBaseFlowLayout.h */,
+			);
+			path = ZLCollectionFlowLayout;
+			sourceTree = "<group>";
+		};
+		8AA9AA0D266F021B00EB786A /* CarpVideo_CenterBtn */ = {
+			isa = PBXGroup;
+			children = (
+				8AA9AA0E266F023600EB786A /* CarpVideoCenterBtnViewController.h */,
+				8AA9AA0F266F023600EB786A /* CarpVideoCenterBtnViewController.m */,
+				8A77B60526708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.h */,
+				8A77B60626708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.m */,
+				8A77B60B26708F26007CF3A3 /* CarpVideoCenterBtnHeaderView.h */,
+				8A77B60C26708F26007CF3A3 /* CarpVideoCenterBtnHeaderView.m */,
+				8A77B6272670A0EA007CF3A3 /* LKWebsiteEditCollectionView.h */,
+				8A77B6262670A0EA007CF3A3 /* LKWebsiteEditCollectionView.m */,
+				8A77B6302670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.h */,
+				8A77B62C2670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.m */,
+				8A77B620267098D7007CF3A3 /* LKSavedeleteBtnView.h */,
+				8A77B61F267098D6007CF3A3 /* LKSavedeleteBtnView.m */,
+				8A77B61D267098D6007CF3A3 /* LKWebsiteEditTopView.h */,
+				8A77B61E267098D6007CF3A3 /* LKWebsiteEditTopView.m */,
+				8A77B6642670A159007CF3A3 /* LKWebsiteEditModel.h */,
+				8A77B6632670A158007CF3A3 /* LKWebsiteEditModel.m */,
+			);
+			path = CarpVideo_CenterBtn;
 			sourceTree = "<group>";
 		};
 		DE451BCDB9AC102BA0CA6CEF /* Pods */ = {
@@ -271,6 +726,7 @@
 			files = (
 				8A26B0A8266A161D008199BD /* LaunchScreen.storyboard in Resources */,
 				8A26B0A5266A161D008199BD /* Assets.xcassets in Resources */,
+				8AA9AA3C266F5B8F00EB786A /* FZPWJW.TTF in Resources */,
 				8A26B0A3266A161B008199BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,9 +811,81 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA9AA10266F023600EB786A /* CarpVideoCenterBtnViewController.m in Sources */,
+				8AA9A9D5266EFC7F00EB786A /* ZLCollectionViewVerticalLayout.m in Sources */,
+				8AA9AA2B266F143000EB786A /* CarpVideoHomeHeaderView.m in Sources */,
+				8A77B60726708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.m in Sources */,
+				8AA9A9C9266EFC7F00EB786A /* CHCardItemView.m in Sources */,
+				8A77B6532670A123007CF3A3 /* ZBWPhotosManager.m in Sources */,
+				8AA9AA19266F125000EB786A /* CarpVideoListViewController.m in Sources */,
+				8A77B622267098D7007CF3A3 /* LKSavedeleteBtnView.m in Sources */,
+				8AA9AA09266EFE2B00EB786A /* CHTabBar.m in Sources */,
+				8A77B64F2670A123007CF3A3 /* ZBWAlbumCollectionViewCell.m in Sources */,
+				8A77B65C2670A137007CF3A3 /* LKCollectionBaseCell.m in Sources */,
+				8AA9A9D2266EFC7F00EB786A /* ZLCollectionViewBaseFlowLayout.m in Sources */,
+				8AA9A9CC266EFC7F00EB786A /* UIColor+CHRegex.m in Sources */,
+				8AA9A9CA266EFC7F00EB786A /* NSString+MD5.m in Sources */,
 				8A26B0A0266A161B008199BD /* ViewController.m in Sources */,
+				8AA9AA1F266F12FE00EB786A /* CarpVideoBaseTableViewCell.m in Sources */,
+				8AA9A9C4266EFC7F00EB786A /* NSDictionary+DeleteNull.m in Sources */,
+				8A77B6282670A0EA007CF3A3 /* LKWebsiteEditCollectionView.m in Sources */,
+				8AA9A965266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m in Sources */,
+				8A77B64E2670A123007CF3A3 /* ZBWButton.m in Sources */,
+				8AA9A9CE266EFC7F00EB786A /* ZLCellFakeView.m in Sources */,
+				8AA9AA54266F6AAC00EB786A /* CarpVideoCatagoryModel.m in Sources */,
+				8A77B6CD2670B9C4007CF3A3 /* CarpVideoMessageBtn.m in Sources */,
+				8AA9A9DF266EFC7F00EB786A /* UIViewController+IOS13.m in Sources */,
+				8AA9A977266EFC2F00EB786A /* CarpVideoCatagroyViewController.m in Sources */,
+				8A77B6D42670C6A6007CF3A3 /* CarpVideoLogoinViewController.m in Sources */,
+				8A77B6C42670B5B2007CF3A3 /* CarpVideoMessageViewController.m in Sources */,
+				8AA9A9C8266EFC7F00EB786A /* CHCardItemModel.m in Sources */,
+				8AA9A9DD266EFC7F00EB786A /* UIView+HZXFrame.m in Sources */,
+				8A77B6522670A123007CF3A3 /* ZBWAlbumTableViewCell.m in Sources */,
+				8A77B621267098D7007CF3A3 /* LKWebsiteEditTopView.m in Sources */,
+				8AA9AA03266EFE1800EB786A /* CoreAnimationEffect.m in Sources */,
+				8AA9A9CD266EFC7F00EB786A /* ZLCollectionBaseDecorationView.m in Sources */,
+				8AA9AA45266F62C600EB786A /* CarpVideoCatagroySubViewController.m in Sources */,
+				8A77B6C32670B5B2007CF3A3 /* CarpVideoMessageTableViewCell.m in Sources */,
+				8AA9AA4E266F6A3C00EB786A /* CarpVideocatagoryCollectionViewCell.m in Sources */,
+				8AA9A9D6266EFC7F00EB786A /* UIView+shadowPath.m in Sources */,
+				8A77B6C22670B5B2007CF3A3 /* CarpVideoMessageHeaderView.m in Sources */,
 				8A26B09A266A161B008199BD /* AppDelegate.m in Sources */,
+				8AA9A9C5266EFC7F00EB786A /* LMJHorizontalScrollText.m in Sources */,
+				8AA9A9C7266EFC7F00EB786A /* CHCardView.m in Sources */,
+				8A77B6512670A123007CF3A3 /* UIColor+Custom.m in Sources */,
+				8AA9A9CB266EFC7F00EB786A /* JRWaterFallLayout.m in Sources */,
+				8A77B6312670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.m in Sources */,
+				8A77B69F2670A473007CF3A3 /* MBImagePicker.m in Sources */,
+				8AA9AA31266F44BC00EB786A /* CarpVideoHomeBtn.m in Sources */,
+				8AA9A9D7266EFC7F00EB786A /* UILabel+CDGPSpaceLb.m in Sources */,
+				8AA9A971266EFC2300EB786A /* CarpVideoHomeViewController.m in Sources */,
+				8AA9A9D0266EFC7F00EB786A /* ZLCollectionViewHorzontalLayout.m in Sources */,
+				8AA9A9D1266EFC7F00EB786A /* ZLCollectionReusableView.m in Sources */,
+				8AA9A983266EFC4000EB786A /* CarpVideoMineViewController.m in Sources */,
+				8A77B6652670A159007CF3A3 /* LKWebsiteEditModel.m in Sources */,
+				8AA9A9DB266EFC7F00EB786A /* NSTimer+KJSolve.m in Sources */,
 				8A26B0AB266A161D008199BD /* main.m in Sources */,
+				8A77B6502670A123007CF3A3 /* ZBWAlbumViewController.m in Sources */,
+				8AA9A9DA266EFC7F00EB786A /* UIButton+CHRegex.m in Sources */,
+				8A77B64D2670A123007CF3A3 /* ZBWAlbumView.m in Sources */,
+				8AA9A9DC266EFC7F00EB786A /* UIView+ACSLayer.m in Sources */,
+				8AA9A9D4266EFC7F00EB786A /* ZLBaseEventModel.m in Sources */,
+				8A77B6552670A123007CF3A3 /* ZBWAlbumTableView.m in Sources */,
+				8AA9A96B266EFC0E00EB786A /* CarpVideoBaseViewController.m in Sources */,
+				8A77B64C2670A123007CF3A3 /* ZBWPhotoModel.m in Sources */,
+				8AA9A9E0266EFC7F00EB786A /* UITextField+AddPlaceholder.m in Sources */,
+				8A77B60D26708F26007CF3A3 /* CarpVideoCenterBtnHeaderView.m in Sources */,
+				8AA9A9C6266EFC7F00EB786A /* CHCardItemCustomView.m in Sources */,
+				8AA9AA25266F13F700EB786A /* CarpVideoHomeTableViewCell.m in Sources */,
+				8A77B6562670A123007CF3A3 /* ZBWAlbumModel.m in Sources */,
+				8A77B6542670A123007CF3A3 /* ZBWPhotoManager.m in Sources */,
+				8AA9A9D9266EFC7F00EB786A /* NSString+CHRegex.m in Sources */,
+				8AA9A9D3266EFC7F00EB786A /* ZLCollectionViewBackgroundViewLayoutAttributes.m in Sources */,
+				8AA9AA37266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.m in Sources */,
+				8AA9A9CF266EFC7F00EB786A /* ZLCollectionViewLayoutAttributes.m in Sources */,
+				8AA9A9DE266EFC7F00EB786A /* WWStarView.m in Sources */,
+				8AA9A9D8266EFC7F00EB786A /* FilmChatZoneChatDetailToolsView.m in Sources */,
+				8AA9A9FD266EFDD000EB786A /* PandaMovieLoginAccoutModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,13 +1060,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 329332R7J7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/zjlk03/Desktop/Carpvideo/Carpvideo/CardVideoBase/PrefixHeader.pch;
 				INFOPLIST_FILE = Carpvideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.Carpvideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -553,13 +1085,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 329332R7J7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/zjlk03/Desktop/Carpvideo/Carpvideo/CardVideoBase/PrefixHeader.pch;
 				INFOPLIST_FILE = Carpvideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.penguinChasing.Carpvideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

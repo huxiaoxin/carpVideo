@@ -68,5 +68,7 @@ target 'Carpvideo' do
   pod 'XHInputView', '~> 1.1.1'
   pod 'QRCodeReaderViewController', :git => 'https://github.com/zhengjinghua/MQRCodeReaderViewController.git'
   pod 'WMDragView', '~> 1.0.1'
+  pod 'GKPhotoBrowser', '~> 2.2.1'
+
 end 
 

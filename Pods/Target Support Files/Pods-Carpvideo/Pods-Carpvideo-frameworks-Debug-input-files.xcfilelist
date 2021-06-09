@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-Carpvideo/Pods-Carpvideo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework
 ${BUILT_PRODUCTS_DIR}/GKNavigationBarViewController/GKNavigationBarViewController.framework
+${BUILT_PRODUCTS_DIR}/GKPhotoBrowser/GKPhotoBrowser.framework
 ${BUILT_PRODUCTS_DIR}/HUPhotoBrowser/HUPhotoBrowser.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework

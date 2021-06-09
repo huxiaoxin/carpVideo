@@ -17,6 +17,12 @@ PODS:
   - Bytedance-UnionAD (3.3.6.2)
   - CocoaAsyncSocket (7.6.5)
   - GKNavigationBarViewController (2.7.0)
+  - GKPhotoBrowser (2.2.1):
+    - GKPhotoBrowser/SD (= 2.2.1)
+  - GKPhotoBrowser/Core (2.2.1)
+  - GKPhotoBrowser/SD (2.2.1):
+    - GKPhotoBrowser/Core
+    - SDWebImage (~> 5.0)
   - glm (0.9.4.6)
   - HUPhotoBrowser (1.4.5):
     - SVProgressHUD
@@ -323,6 +329,7 @@ DEPENDENCIES:
   - AFNetworking (= 4.0.0)
   - Bytedance-UnionAD (~> 3.3.6.2)
   - GKNavigationBarViewController (~> 2.7.0)
+  - GKPhotoBrowser (~> 2.2.1)
   - glm (= 0.9.4.6)
   - HUPhotoBrowser (~> 1.4.5)
   - IQKeyboardManager (= 6.5.5)
@@ -371,6 +378,7 @@ SPEC REPOS:
     - Bytedance-UnionAD
     - CocoaAsyncSocket
     - GKNavigationBarViewController
+    - GKPhotoBrowser
     - glm
     - HUPhotoBrowser
     - IQKeyboardManager
@@ -428,6 +436,7 @@ SPEC CHECKSUMS:
   Bytedance-UnionAD: e9f83939e2a5d857e104f6a91035bbf504b603e5
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   GKNavigationBarViewController: 72b8d2c6da7d1f02e44d5cf06b149b3616e48d9e
+  GKPhotoBrowser: 16a9f50f2a8ff253e576659a74ecf938fb700a39
   glm: e22c8d9df10404059b19c2952f9fa44d9a9f3056
   HUPhotoBrowser: 87a8333c111a4e71ebf5400bf66d0eeb522c0098
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
@@ -472,6 +481,6 @@ SPEC CHECKSUMS:
   ZWLimitCounter: 382d8a4f063980f18022749672b89e0558087007
   ZWPlaceHolder: d55cce10c9930b48c31bf48e7f4748974a31f7e0
 
-PODFILE CHECKSUM: 28871274d246419fb0e5854008c8e02632fd1eb5
+PODFILE CHECKSUM: 31ba7afcaddcec6491aedd7d625b4d5ebf6d8091
 
 COCOAPODS: 1.10.1

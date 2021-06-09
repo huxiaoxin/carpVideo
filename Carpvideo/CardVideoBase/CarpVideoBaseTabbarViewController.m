@@ -1,0 +1,122 @@
+//
+//  CarpVideoBaseTabbarViewController.m
+//  Carpvideo
+//
+//  Created by zjlk03 on 2021/6/8.
+//
+
+#import "CarpVideoBaseTabbarViewController.h"
+#import "CHTabBar.h"
+#import "CoreAnimationEffect.h"
+
+#import "CarpVideoHomeViewController.h"
+#import "CarpVideoCatagroyViewController.h"
+#import "CarpVideoMessageViewController.h"
+#import "CarpVideoMineViewController.h"
+#import "CarpVideoCenterBtnViewController.h"
+@interface CarpVideoBaseTabbarViewController ()<UITabBarControllerDelegate>
+@property (nonatomic, strong)UITabBarItem *lastItem; // 标记上一次点击的TabBarItem
+
+@end
+
+@implementation CarpVideoBaseTabbarViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.delegate = self;
+    CHTabBar *tabbar = [[CHTabBar alloc] init];
+    tabbar.translucent = NO;
+    tabbar.barTintColor = LGDMianColor;
+    [self setValue:tabbar forKeyPath:@"tabBar"];
+
+
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateSelected];
+    
+    
+    NSMutableArray *titleArr;
+    NSMutableArray *imageNormalArr;
+    NSMutableArray *imageSelectedArr;
+    NSArray *controArray;
+    titleArr = [NSMutableArray arrayWithObjects:@"首页",@"动态", @"",@"消息",@"我的", nil];
+    imageNormalArr = [NSMutableArray arrayWithObjects:@"panda_homenomal",@"panda_yuyuenomal",@"fabu",@"panda_msgnoaml",@"panda_centernomal", nil];
+    imageSelectedArr = [NSMutableArray arrayWithObjects:@"panda_homesel",@"panda_yuyuesel",@"fabu",@"panda_msgsel",@"panda_centersel", nil];
+
+   controArray = @[[CarpVideoHomeViewController new], [CarpVideoCatagroyViewController new], [CarpVideoCenterBtnViewController new],[CarpVideoMessageViewController new], [CarpVideoMineViewController new]];
+    for (int i = 0; i < titleArr.count; i++) {
+    UINavigationController *nav = [UINavigationController rootVC:controArray[i] translationScale:YES];
+    [self addChildViewController:nav andTitle:titleArr[i] image:imageNormalArr[i] selectImage:imageSelectedArr[i]];
+    }
+    
+    self.selectedIndex =  0;
+}
+#pragma mark - 控制器跳转拦截
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+//    UINavigationController * baseNav  = (UINavigationController *)viewController;
+//    if ([NSStringFromClass(baseNav.topViewController.class) isEqualToString:@"CarpVideoCenterBtnViewController"]) {
+//        return NO;
+//    }else{
+        return YES;
+//    }
+   
+}
+-(void)addChildViewController:(UIViewController *)vc andTitle:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage{
+    vc.tabBarItem.title = title;
+    UIImage *rootNotImage;
+    UIImage *rootSelectImage;
+    rootNotImage = [UIImage imageNamed:image];
+    rootSelectImage = [UIImage imageNamed:selectImage];
+    
+    vc.tabBarItem.image = [rootNotImage imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    vc.tabBarItem.selectedImage = [rootSelectImage imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    vc.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -1);
+    CGFloat tabbarIItemMakeFloat = [NSString isBlankString:title] ? 0: 0;
+
+    vc.tabBarItem.imageInsets = UIEdgeInsetsMake(-tabbarIItemMakeFloat, 0, tabbarIItemMakeFloat, 0);
+    //添加到
+    [self addChildViewController:vc];
+}
+#pragma mark - <UITabBarControllerDelegate>
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    //点击tabBarItem动画
+    [self tabBarButtonClick:[self getTabBarButton]];
+}
+#pragma mark - 禁止屏幕旋转
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+- (UIControl *)getTabBarButton{
+    NSMutableArray *tabBarButtons = [[NSMutableArray alloc]initWithCapacity:0];
+    for (UIView *tabBarButton in self.tabBar.subviews) {
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]){
+            [tabBarButtons addObject:tabBarButton];
+        }
+    }
+    UIControl *tabBarButton = [tabBarButtons objectAtIndex:self.selectedIndex];
+    return tabBarButton;
+}
+#pragma mark - 点击动画
+- (void)tabBarButtonClick:(UIControl *)tabBarButton {
+    for (UIView *imageView in tabBarButton.subviews) {
+        if ([imageView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+            [CoreAnimationEffect showCAKeyframeAnimationsForView:imageView keyPath:@"transform.scale" values1:1 values2:1.1 values3:.9 values4:1 duration:.3 repatCount:1];
+        }
+    }
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
