@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarpVideoBaseViewController : GKNavigationBarViewController
-
+-(void)CarpVideoShowLoginVc;
 @end
 
 NS_ASSUME_NONNULL_END

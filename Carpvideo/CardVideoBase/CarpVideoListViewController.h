@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
     UITableView * _CarpVideoTableView;
     
 }
-
+-(void)CarpVideoShowLoginVc;
 @end
 
 NS_ASSUME_NONNULL_END

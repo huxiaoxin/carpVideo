@@ -8,7 +8,11 @@
 #import "CarpVideoHomeViewController.h"
 #import "CarpVideoHomeTableViewCell.h"
 #import "CarpVideoHomeHeaderView.h"
-@interface CarpVideoHomeViewController ()
+#import "CarpVideoMoreDayListViewController.h"
+#import "CarpMoreHomeViewController.h"
+#import "CarpVideoSearchViewController.h"
+#import "CarpVideoBandanViewController.h"
+@interface CarpVideoHomeViewController ()<CarpVideoHomeHeaderViewDelegate>
 @property(nonatomic,strong) CarpVideoHomeHeaderView * carpVideoHeader;
 @end
 
@@ -24,6 +28,7 @@
 -(CarpVideoHomeHeaderView *)carpVideoHeader{
     if (!_carpVideoHeader) {
         _carpVideoHeader = [[CarpVideoHomeHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(500))];
+        _carpVideoHeader.delegate = self;
     }
     return _carpVideoHeader;
 }
@@ -79,7 +84,35 @@
     return Header;
 }
 -(void)CarpVideoMoreBtnClick{
-    
+    CarpMoreHomeViewController * CarpMorehomeVc =[[CarpMoreHomeViewController alloc]init];
+    CarpMorehomeVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:CarpMorehomeVc animated:YES];
+}
+#pragma mark--CarpVideoHomeHeaderViewDelegate
+-(void)CarpVideoHomeHeaderViewSearchAction{
+    CarpVideoSearchViewController * CarpSearchVc = [[CarpVideoSearchViewController alloc]init];
+    CarpSearchVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:CarpSearchVc animated:YES];
+}
+-(void)CarpVideoHomeHeaderViewMoreDayAction{
+    CarpVideoMoreDayListViewController * carpVideoVc = [[CarpVideoMoreDayListViewController alloc]init];
+    carpVideoVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:carpVideoVc animated:YES];
+}
+-(void)CarpVideoHomeHeaderViewWithbtnIndex:(NSInteger)btnIndex{
+    if (btnIndex == 0) {
+        [[GKNavigationBarConfigure sharedInstance] updateConfigure:^(GKNavigationBarConfigure *configure) {
+            configure.backStyle =  GKNavigationBarBackStyleWhite;
+            configure.titleColor = [UIColor whiteColor];
+        }];
+        CarpVideoBandanViewController * carpbandaVc = [[CarpVideoBandanViewController alloc]init];
+        carpbandaVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:carpbandaVc animated:YES];
+    }else if (btnIndex == 1){
+        
+    }else if (btnIndex == 2){
+        
+    }
     
 }
 /*

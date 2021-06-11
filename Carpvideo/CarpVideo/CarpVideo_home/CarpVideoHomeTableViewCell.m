@@ -17,6 +17,7 @@
 @implementation CarpVideoHomeTableViewCell
 -(void)setContentUI{
     self.backgroundColor = LGDViewBJColor;
+    self.selectionStyle =  UITableViewCellSelectionStyleNone;
     [self.contentView addSubview:self.CarpVideoContentView];
     [_CarpVideoContentView addSubview:self.CarpVideoThubImgView];
     [_CarpVideoContentView addSubview:self.CarpVideoTitle];
@@ -64,7 +65,7 @@
         [_CarpVideoTpsilb setText:@"鲤鱼视频"];
         _CarpVideoTpsilb.textColor = LGDMianColor;
         _CarpVideoTpsilb.font = [UIFont systemFontOfSize:10];
-        [_CarpVideoTpsilb setBackgroundColor:[UIColor colorWithHexString:@"21C47D" Alpha:0.2]];
+        [_CarpVideoTpsilb setBackgroundColor:[UIColor colorWithHexString:@"FC305A" Alpha:0.2]];
     }
     return _CarpVideoTpsilb;
 }

@@ -20,12 +20,14 @@
         UIView * CarpVideoTopView = [[UIView alloc]initWithFrame:CGRectMake(0, -GK_SCREEN_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT)];
         CarpVideoTopView.backgroundColor =  LGDMianColor;
         [self addSubview:CarpVideoTopView];
+        
+        
         UIImageView *  CarpBackImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(150))];
         CarpBackImgView.image =[UIImage imageNamed:@"lk_CloudImgV"];
         [self  addSubview:CarpBackImgView];
         
         
-        UIImageView * CarpVideoLogoImgView  = [[UIImageView alloc]initWithFrame:CGRectMake(RealWidth(15), 0, RealWidth(30), RealWidth(30))];
+        UIImageView * CarpVideoLogoImgView  = [[UIImageView alloc]initWithFrame:CGRectMake(RealWidth(15), GK_STATUSBAR_HEIGHT, RealWidth(30), RealWidth(30))];
         CarpVideoLogoImgView.image = [UIImage imageNamed:@"backLogo"];
         [CarpBackImgView addSubview:CarpVideoLogoImgView];
         
@@ -43,12 +45,12 @@
         
         
         UIButton * CarpMsgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [CarpMsgBtn setFrame:CGRectMake(GK_SCREEN_WIDTH-RealWidth(35), 0, RealWidth(20), RealWidth(20))];
+        [CarpMsgBtn setFrame:CGRectMake(GK_SCREEN_WIDTH-RealWidth(35), GK_STATUSBAR_HEIGHT, RealWidth(20), RealWidth(20))];
         [CarpMsgBtn setImage:[UIImage imageNamed:@"sousuo"] forState:UIControlStateNormal];
         [CarpMsgBtn addTarget:self action:@selector(CarpMsgBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [CarpBackImgView addSubview:CarpMsgBtn];
         
-        SDCycleScrollView * SDCView = [[SDCycleScrollView alloc]initWithFrame:CGRectMake(RealWidth(15), RealWidth(50), GK_SCREEN_WIDTH-RealWidth(30), RealWidth(150))];
+        SDCycleScrollView * SDCView = [[SDCycleScrollView alloc]initWithFrame:CGRectMake(RealWidth(15), RealWidth(50+30), GK_SCREEN_WIDTH-RealWidth(30), RealWidth(150))];
         SDCView.showPageControl = NO;
         SDCView.layer.cornerRadius = RealWidth(5);
         SDCView.layer.masksToBounds = YES;
@@ -68,11 +70,10 @@
         for (int index = 0; index < BtnArr.count; index ++) {
             CarpVideoHomeBtn * carpBtn =  [[CarpVideoHomeBtn alloc]initWithFrame:CGRectMake(CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count* index, 0, CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count, CGRectGetHeight(carpVideobtnView.frame))];
             carpBtn.CarpVideoBtomlb.text =  BtnArr[index];
+            carpBtn.tag =  index;
+            [carpBtn addTarget:self action:@selector(CarpVideoHomeBtnClick:) forControlEvents:UIControlEventTouchUpInside];
             [carpVideobtnView addSubview:carpBtn];
         }
-        
-        
-        
         UIView * CarpViewHotView = [[UIView alloc]initWithFrame:CGRectMake(RealWidth(15), CGRectGetMaxY(carpVideobtnView.frame)+RealWidth(15), GK_SCREEN_WIDTH-RealWidth(30), RealWidth(170))];
         CarpViewHotView.backgroundColor = [UIColor whiteColor];
         CarpViewHotView.layer.cornerRadius = RealWidth(5);
@@ -123,16 +124,18 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 10;
 }
-
+-(void)CarpVideoHomeBtnClick:(CarpVideoHomeBtn *)homeBtn{
+    [self.delegate CarpVideoHomeHeaderViewWithbtnIndex:homeBtn.tag];
+}
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CarpVideoHomeCollectionViewCell * carpVideoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarpVideoHomeCollectionViewCell" forIndexPath:indexPath];
     return carpVideoCell;
 }
 -(void)CarpMsgBtnClick{
-    
+    [self.delegate CarpVideoHomeHeaderViewSearchAction];
 }
 -(void)CarpVideoMoreBtnClick{
-    
+    [self.delegate CarpVideoHomeHeaderViewMoreDayAction];
 }
 @end

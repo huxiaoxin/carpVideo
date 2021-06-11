@@ -5,11 +5,11 @@
 //  Created by zjlk03 on 2021/6/8.
 //
 
-#import "CarpVideoBaseViewController.h"
+#import "CarpVideoListViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CarpVideoMineViewController : CarpVideoBaseViewController
+@interface CarpVideoMineViewController : CarpVideoListViewController
 
 @end
 

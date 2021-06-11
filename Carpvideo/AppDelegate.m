@@ -6,7 +6,6 @@
 //
 
 #import "AppDelegate.h"
-#import "CarpVideoBaseTabbarViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,14 +15,19 @@
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
-
+- (CarpVideoBaseTabbarViewController *)CarpVideoTabbar{
+    if (!_CarpVideoTabbar) {
+        _CarpVideoTabbar = [[CarpVideoBaseTabbarViewController alloc]init];
+    }
+    return _CarpVideoTabbar;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    #pragma mark -- 初始化导航配置
    [self initGKNavConfigers];
     self.window =  [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [NSClassFromString(@"CarpVideoBaseTabbarViewController") new];
+    self.window.rootViewController = self.CarpVideoTabbar;
     // Override point for customization after application launch.
     return YES;
 }
@@ -35,6 +39,12 @@
     CarpVideoCofigers.backStyle = GKNavigationBarBackStyleBlack;
     CarpVideoCofigers.titleColor = [UIColor blackColor];
     CarpVideoCofigers.titleFont = KFZPFont(16);
+    if (@available(ios 11.0,*)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        UITableView.appearance.estimatedRowHeight = 0;
+        UITableView.appearance.estimatedSectionFooterHeight = 0;
+        UITableView.appearance.estimatedSectionHeaderHeight = 0;
+    }
 }
 
 @end

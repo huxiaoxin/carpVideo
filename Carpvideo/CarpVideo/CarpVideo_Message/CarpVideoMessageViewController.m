@@ -8,6 +8,11 @@
 #import "CarpVideoMessageViewController.h"
 #import "CarpVideoMessageHeaderView.h"
 #import "CarpVideoMessageTableViewCell.h"
+#import "CarpVideoNotificationViewController.h"
+#import "CarpVideoKefuViewController.h"
+#import "CarpVideoZanViewController.h"
+#import "CarpVideoComentViewController.h"
+#import "CarpVideoMySendZoneViewController.h"
 @interface CarpVideoMessageViewController ()
 @property(nonatomic,strong) CarpVideoMessageHeaderView * CarpHeaderView;
 
@@ -25,7 +30,28 @@
 }
 - (CarpVideoMessageHeaderView *)CarpHeaderView{
     if (!_CarpHeaderView) {
-        _CarpHeaderView = [[CarpVideoMessageHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(80))];
+        MJWeakSelf;
+        _CarpHeaderView = [[CarpVideoMessageHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(80)) Configugration:^(NSInteger index) {
+            if (index == 0) {
+                CarpVideoNotificationViewController * CarpVideoNotiVc = [[CarpVideoNotificationViewController alloc]init];
+                CarpVideoNotiVc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:CarpVideoNotiVc animated:YES];
+            }else if (index == 1){
+                CarpVideoKefuViewController * CarpVideoKefuVc = [[CarpVideoKefuViewController alloc]init];
+                CarpVideoKefuVc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:CarpVideoKefuVc animated:YES];
+            }else if (index == 2){
+                CarpVideoZanViewController * carpZanvc = [[CarpVideoZanViewController alloc]init];
+                carpZanvc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:carpZanvc animated:YES];
+            }else if (index == 3){
+                CarpVideoComentViewController * carpComentVc =  [[CarpVideoComentViewController alloc]init];
+                carpComentVc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:carpComentVc animated:YES];
+            }
+
+        }];
+        
     }
     return _CarpHeaderView;
 }

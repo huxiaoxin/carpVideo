@@ -28,10 +28,7 @@
     CHTabBar *tabbar = [[CHTabBar alloc] init];
     tabbar.translucent = NO;
     tabbar.barTintColor = LGDMianColor;
-    [self setValue:tabbar forKeyPath:@"tabBar"];
-
-
-    
+    [self setValue:tabbar forKeyPath:@"tabBar"];    
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateSelected];
     

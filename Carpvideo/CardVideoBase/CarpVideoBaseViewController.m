@@ -6,13 +6,21 @@
 //
 
 #import "CarpVideoBaseViewController.h"
-
+#import "CarpVideoLogoinViewController.h"
 @interface CarpVideoBaseViewController ()
 
 @end
 
 @implementation CarpVideoBaseViewController
+-(void)CarpVideoShowLoginVc{
 
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        CarpVideoLogoinViewController * carologinVc = [[CarpVideoLogoinViewController alloc]init];
+        UINavigationController * carpLoNav = [UINavigationController rootVC:carologinVc translationScale:YES];
+        [self  presentViewController:carpLoNav animated:YES completion:nil];
+    });
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = LGDViewBJColor;

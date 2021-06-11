@@ -40,6 +40,7 @@
         _CarpVideo_ContentView.backgroundColor = [UIColor redColor];
         _CarpVideo_ContentView.layer.cornerRadius = RealWidth(20);
         _CarpVideo_ContentView.layer.masksToBounds = YES;
+        _CarpVideo_ContentView.userInteractionEnabled = NO;
     }
     return _CarpVideo_ContentView;
 }
@@ -47,6 +48,7 @@
     if (!_CarpImgView) {
         _CarpImgView = [UIImageView new];
         _CarpImgView.backgroundColor = LGDMianColor;
+        _CarpImgView.userInteractionEnabled = YES;
     }
     return _CarpImgView;
 }
