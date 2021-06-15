@@ -76,7 +76,7 @@
     [CarpVideoMoreBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -25, 0, 25)];
     [CarpVideoMoreBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 25, 0, -25)];
     [CarpVideoMoreBtn setTitle:@"更多" forState:UIControlStateNormal];
-    [CarpVideoMoreBtn setImage:[UIImage imageNamed:@"youbian"] forState:UIControlStateNormal];
+    [CarpVideoMoreBtn setImage:[UIImage imageNamed:@"youbian-small"] forState:UIControlStateNormal];
     [CarpVideoMoreBtn addTarget:self action:@selector(CarpVideoMoreBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [Contetnheader addSubview:CarpVideoMoreBtn];
     

@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = LGDViewBJColor;
-    self.gk_navLineHidden =  YES;
+//    self.gk_navLineHidden =  YES;
     // Do any additional setup after loading the view.
 }
 

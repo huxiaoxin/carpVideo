@@ -27,26 +27,22 @@
     self.delegate = self;
     CHTabBar *tabbar = [[CHTabBar alloc] init];
     tabbar.translucent = NO;
-    tabbar.barTintColor = LGDMianColor;
+    tabbar.barTintColor = [UIColor whiteColor];
     [self setValue:tabbar forKeyPath:@"tabBar"];    
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateSelected];
-    
-    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:LGDGaryColor} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:LGDMianColor} forState:UIControlStateSelected];
     NSMutableArray *titleArr;
     NSMutableArray *imageNormalArr;
     NSMutableArray *imageSelectedArr;
     NSArray *controArray;
     titleArr = [NSMutableArray arrayWithObjects:@"首页",@"动态", @"",@"消息",@"我的", nil];
-    imageNormalArr = [NSMutableArray arrayWithObjects:@"panda_homenomal",@"panda_yuyuenomal",@"fabu",@"panda_msgnoaml",@"panda_centernomal", nil];
-    imageSelectedArr = [NSMutableArray arrayWithObjects:@"panda_homesel",@"panda_yuyuesel",@"fabu",@"panda_msgsel",@"panda_centersel", nil];
-
+    imageNormalArr = [NSMutableArray arrayWithObjects:@"carpVideo_home_nomal",@"carpVideo_DT_Nomal",@"fabu",@"CarpVideo_Msg_nomal",@"carpVideo_mine_nomal", nil];
+    imageSelectedArr = [NSMutableArray arrayWithObjects:@"carpVideo_home_seltecd",@"carpVideo_DT_Seltecd",@"fabu",@"CarpVideo_Msg_selted",@"carpVideo_mine_seltecd", nil];
    controArray = @[[CarpVideoHomeViewController new], [CarpVideoCatagroyViewController new], [CarpVideoCenterBtnViewController new],[CarpVideoMessageViewController new], [CarpVideoMineViewController new]];
     for (int i = 0; i < titleArr.count; i++) {
     UINavigationController *nav = [UINavigationController rootVC:controArray[i] translationScale:YES];
     [self addChildViewController:nav andTitle:titleArr[i] image:imageNormalArr[i] selectImage:imageSelectedArr[i]];
     }
-    
     self.selectedIndex =  0;
 }
 #pragma mark - 控制器跳转拦截
@@ -57,7 +53,6 @@
 //    }else{
         return YES;
 //    }
-   
 }
 -(void)addChildViewController:(UIViewController *)vc andTitle:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage{
     vc.tabBarItem.title = title;

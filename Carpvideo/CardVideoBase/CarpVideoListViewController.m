@@ -21,7 +21,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navLineHidden = YES;
+//    self.gk_navLineHidden = YES;
     self.view.backgroundColor = LGDViewBJColor;
     _CarpVideoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT - GK_STATUSBAR_NAVBAR_HEIGHT - GK_SAFEAREA_BTM) style:UITableViewStylePlain];
     _CarpVideoTableView.delegate = self;

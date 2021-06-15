@@ -8,8 +8,14 @@
 #import <UIKit/UIKit.h>
 #import "CarpVideoCatagoryModel.h"
 NS_ASSUME_NONNULL_BEGIN
-
+@protocol CarpVideocatagoryCollectionViewCellDelegate <NSObject>
+-(void)CarpVideocatagoryCollectionViewCellWithPlayVideoIndex:(NSInteger)cellIndex; //播放
+-(void)CarpVideocatagoryCollectionViewCellWithShare:(NSInteger)cellIndex; //分享
+-(void)CarpVideocatagoryCollectionViewCellWithComent:(NSInteger)cellIndex; //评论
+-(void)CarpVideocatagoryCollectionViewCellWithLike:(NSInteger)cellIndex; //点赞
+@end
 @interface CarpVideocatagoryCollectionViewCell : UICollectionViewCell
+@property(nonatomic,weak) id <CarpVideocatagoryCollectionViewCellDelegate>delegate;
 @property(nonatomic,strong) CarpVideoCatagoryModel  * carpVideoModel;
 @end
 

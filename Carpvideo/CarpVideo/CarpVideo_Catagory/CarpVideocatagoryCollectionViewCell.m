@@ -6,6 +6,7 @@
 //
 
 #import "CarpVideocatagoryCollectionViewCell.h"
+#import "CarpVideoCatagoryBtn.h"
 @interface CarpVideocatagoryCollectionViewCell ()
 @property(nonatomic,strong) UIView       * CarpVideoContentView;
 @property(nonatomic,strong) UIImageView  * CarpVideouserImgView;
@@ -14,11 +15,12 @@
 @property(nonatomic,strong) UILabel      * carpVideoTitlelb;
 @property(nonatomic,strong) UIButton     * carpVideoDelebtn;
 @property(nonatomic,strong) UIImageView  * CarpVideoThubImgView;
-
-@property(nonatomic,strong) UIButton     * CarpVideoLikeBtn;  //点赞
-@property(nonatomic,strong) UIButton     * CarpComentBtn;    //评论
-@property(nonatomic,strong) UIButton     * CarpPinbiBtn;     //屏蔽
-@property(nonatomic,strong) UIButton     * CarpJuboaBtn;    //举报
+@property(nonatomic,strong) UIButton     * CarpVideoPlayBtn;
+@property(nonatomic,strong) UIView       * CarpVideoGaryView;
+@property(nonatomic,strong) CarpVideoCatagoryBtn     * CarpVideoLikeBtn;  //点赞
+@property(nonatomic,strong) CarpVideoCatagoryBtn     * CarpComentBtn;    //评论
+@property(nonatomic,strong) CarpVideoCatagoryBtn     * CarpPinbiBtn;     //屏蔽
+@property(nonatomic,strong) UIButton                 * CarpJuboaBtn;    //举报
 
 @end
 @implementation CarpVideocatagoryCollectionViewCell
@@ -32,15 +34,16 @@
         [_CarpVideoContentView addSubview:self.carpVideoDelebtn];
         [_CarpVideoContentView addSubview:self.carpVideoTitlelb];
         [_CarpVideoContentView addSubview:self.CarpVideoThubImgView];
-        
+        [_CarpVideoThubImgView addSubview:self.CarpVideoGaryView];
+        [_CarpVideoGaryView    addSubview:self.CarpVideoPlayBtn];
         [_CarpVideoContentView addSubview:self.CarpVideoLikeBtn];
         [_CarpVideoContentView addSubview:self.CarpComentBtn];
         [_CarpVideoContentView addSubview:self.CarpPinbiBtn];
-//        [_CarpVideoContentView addSubview:self.CarpJuboaBtn];
 
         
         [_CarpVideoContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(self.contentView);
+            make.left.right.top.mas_equalTo(self.contentView);
+            make.bottom.mas_equalTo(_CarpPinbiBtn.mas_bottom);
         }];
         
         [_CarpVideouserImgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -72,25 +75,33 @@
             make.height.mas_equalTo(RealWidth(100));
         }];
         
+        
+        [_CarpVideoGaryView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(_CarpVideoThubImgView);
+        }];
+        [_CarpVideoPlayBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(_CarpVideoGaryView);
+            make.size.mas_equalTo(CGSizeMake(RealWidth(30), RealWidth(30)));
+        }];
         [_CarpVideoLikeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.inset(RealWidth(5));
+            make.left.inset(RealWidth(10));
+            make.right.mas_equalTo(_CarpVideoLikeBtn.CarpVideoTitle.mas_right);
             make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(10);
         }];
         
         [_CarpComentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(_CarpVideoLikeBtn.mas_right).offset(RealWidth(15));
+            make.centerX.mas_equalTo(_CarpVideoContentView.mas_centerX);
+            make.right.mas_equalTo(_CarpComentBtn.CarpVideoTitle.mas_right);
             make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(10);
         }];
         
         [_CarpPinbiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(_CarpComentBtn.mas_right).offset(RealWidth(15));
+            make.left.mas_equalTo(_CarpComentBtn.mas_right).offset(RealWidth(18));
+            make.right.mas_equalTo(_CarpPinbiBtn.CarpVideoTitle.mas_right);
             make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(10);
         }];
         
-//        [_CarpJuboaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.mas_equalTo(_CarpPinbiBtn.mas_right).offset(RealWidth(5));
-//            make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(10);
-//        }];
+
     }
     return self;
 }
@@ -108,7 +119,7 @@
         _CarpVideouserImgView = [UIImageView new];
         _CarpVideouserImgView.layer.cornerRadius = RealWidth(15);
         _CarpVideouserImgView.layer.masksToBounds = YES;
-        _CarpVideouserImgView.backgroundColor = LGDMianColor;
+        _CarpVideouserImgView.image = [UIImage imageNamed:@"whiteLogo"];
     }
     return _CarpVideouserImgView;
 }
@@ -133,9 +144,9 @@
 - (UIButton *)carpVideoDelebtn{
     if (!_carpVideoDelebtn) {
         _carpVideoDelebtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_carpVideoDelebtn setBackgroundColor:LGDMianColor];
-        [_carpVideoDelebtn addTarget:self action:@selector(carpVideoDelebtnClick) forControlEvents:UIControlEventTouchUpInside];
-        [_carpVideoDelebtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_carpVideoDelebtn setImage:[UIImage imageNamed:@"add_nomal"] forState:UIControlStateNormal];
+        [_carpVideoDelebtn setImage:[UIImage imageNamed:@"add_seltecd"] forState:UIControlStateSelected];
+        [_carpVideoDelebtn addTarget:self action:@selector(carpVideoDelebtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _carpVideoDelebtn;
 }
@@ -152,63 +163,94 @@
 - (UIImageView *)CarpVideoThubImgView{
     if (!_CarpVideoThubImgView) {
         _CarpVideoThubImgView = [UIImageView new];
-        _CarpVideoThubImgView.backgroundColor = LGDMianColor;
+        _CarpVideoThubImgView.userInteractionEnabled = YES;
+        _CarpVideoThubImgView.contentMode =  UIViewContentModeScaleAspectFill;
+        _CarpVideoThubImgView.layer.masksToBounds = YES;
     }
     return _CarpVideoThubImgView;
 }
-- (UIButton *)CarpVideoLikeBtn{
+- (UIView *)CarpVideoGaryView{
+if (!_CarpVideoGaryView) {
+    _CarpVideoGaryView  = [UIView new];
+    _CarpVideoGaryView.backgroundColor =[UIColor colorWithHexString:@"2c2c2c" Alpha:0.6];
+ }
+return _CarpVideoGaryView;
+}
+- (UIButton *)CarpVideoPlayBtn{
+    if (!_CarpVideoPlayBtn) {
+        _CarpVideoPlayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_CarpVideoPlayBtn setImage:[UIImage imageNamed:@"bofang"] forState:UIControlStateNormal];
+        [_CarpVideoPlayBtn addTarget:self action:@selector(CarpVideoPlayBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _CarpVideoPlayBtn;
+}
+- (CarpVideoCatagoryBtn *)CarpVideoLikeBtn{
     if (!_CarpVideoLikeBtn) {
-        _CarpVideoLikeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_CarpVideoLikeBtn setImage:[UIImage imageNamed:@"pinglun"] forState:UIControlStateNormal];
-        [_CarpVideoLikeBtn setTitle:@"21" forState:UIControlStateNormal];
-        _CarpVideoLikeBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [_CarpVideoLikeBtn setTitleColor:LGDGaryColor forState:UIControlStateNormal];
-        [_CarpVideoLikeBtn addTarget:self action:@selector(CarpVideoLikeBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _CarpVideoLikeBtn = [CarpVideoCatagoryBtn buttonWithType:UIButtonTypeCustom];
+        _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+        _CarpVideoLikeBtn.CarpVideoTitle.text = @"21";
+        [_CarpVideoLikeBtn addTarget:self action:@selector(CarpVideoCatagoryBtnLikeAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _CarpVideoLikeBtn;
 }
-- (UIButton *)CarpComentBtn{
+- (CarpVideoCatagoryBtn *)CarpComentBtn{
     if (!_CarpComentBtn) {
-        _CarpComentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_CarpComentBtn setImage:[UIImage imageNamed:@"pinglun"] forState:UIControlStateNormal];
-        [_CarpComentBtn setTitle:@"评论" forState:UIControlStateNormal];
-        _CarpComentBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [_CarpComentBtn setTitleColor:LGDGaryColor forState:UIControlStateNormal];
-        [_CarpComentBtn addTarget:self action:@selector(CarpVideoLikeBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _CarpComentBtn = [CarpVideoCatagoryBtn buttonWithType:UIButtonTypeCustom];
+        _CarpComentBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"dianping"];
+        _CarpComentBtn.CarpVideoTitle.text = @"评论";
+        [_CarpComentBtn addTarget:self action:@selector(CarpVideoCatagoryBtnWithComentAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _CarpComentBtn;
 }
-- (UIButton *)CarpPinbiBtn{
+- (CarpVideoCatagoryBtn *)CarpPinbiBtn{
     if (!_CarpPinbiBtn) {
-        _CarpPinbiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_CarpPinbiBtn setImage:[UIImage imageNamed:@"pinglun"] forState:UIControlStateNormal];
-        [_CarpPinbiBtn setTitle:@"屏蔽" forState:UIControlStateNormal];
-        _CarpPinbiBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [_CarpPinbiBtn setTitleColor:LGDGaryColor forState:UIControlStateNormal];
-        [_CarpPinbiBtn addTarget:self action:@selector(CarpVideoLikeBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _CarpPinbiBtn = [CarpVideoCatagoryBtn buttonWithType:UIButtonTypeCustom];
+        _CarpPinbiBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+        _CarpPinbiBtn.CarpVideoTitle.text = @"分享";
+        [_CarpPinbiBtn addTarget:self action:@selector(CarpVideoCatagoryBtnWithShareAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _CarpPinbiBtn;
 }
-- (UIButton *)CarpJuboaBtn{
-    if (!_CarpJuboaBtn) {
-        _CarpJuboaBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_CarpJuboaBtn setImage:[UIImage imageNamed:@"pinglun"] forState:UIControlStateNormal];
-        [_CarpJuboaBtn setTitle:@"举报" forState:UIControlStateNormal];
-        _CarpJuboaBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [_CarpJuboaBtn setTitleColor:LGDGaryColor forState:UIControlStateNormal];
-        [_CarpJuboaBtn addTarget:self action:@selector(CarpVideoLikeBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _CarpJuboaBtn;
-}
+
 - (void)setCarpVideoModel:(CarpVideoCatagoryModel *)carpVideoModel{
     _carpVideoModel = carpVideoModel;
-    carpVideoModel.CarpCellHeight = RealWidth(280);
+    [_CarpVideouserImgView sd_setImageWithURL:[NSURL URLWithString:carpVideoModel.imgIcon] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];
+    _CarpVideoNamelb.text =  carpVideoModel.userName;
+    _carpVideoLocationlb.text = carpVideoModel.userlocation;
+    _carpVideoTitlelb.text =  carpVideoModel.title;
+    [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carpVideoModel.imgs.firstObject] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoGaryView.hidden =  !carpVideoModel.isVideo;
 
-}
--(void)carpVideoDelebtnClick{
-    NSLog(@"%s",__func__);
-}
--(void)CarpVideoLikeBtnClick{
+    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        
+    }else{
+        
+    }
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    carpVideoModel.CarpCellHeight = CGRectGetHeight(_CarpVideoContentView.frame);
+
     
+}
+-(void)carpVideoDelebtnClick:(UIButton *)addbtn{
+    addbtn.selected = !addbtn.selected;
+}
+-(void)CarpVideoCatagoryBtnLikeAction:(CarpVideoCatagoryBtn * )likeBtn{
+    [self.delegate CarpVideocatagoryCollectionViewCellWithLike:self.tag];
+    likeBtn.selected = !likeBtn.selected;
+    if(likeBtn.selected){
+        likeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like-seltecd"];
+    }else{
+        likeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+    }
+}
+-(void)CarpVideoPlayBtnClick:(UIButton *)CarpPinbiBtn{
+    [self.delegate CarpVideocatagoryCollectionViewCellWithPlayVideoIndex:self.tag];
+}
+-(void)CarpVideoCatagoryBtnWithShareAction:(CarpVideoCatagoryBtn *)shareBtn{
+    [self.delegate CarpVideocatagoryCollectionViewCellWithShare:self.tag];
+}
+-(void)CarpVideoCatagoryBtnWithComentAction:(CarpVideoCatagoryBtn *)comentBtn{
+    [self.delegate CarpVideocatagoryCollectionViewCellWithComent:self.tag];
 }
 @end

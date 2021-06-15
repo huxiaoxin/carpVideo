@@ -37,7 +37,7 @@
     }];
     
     UIImageView * CarpVideoRightImgView = [UIImageView new];
-    CarpVideoRightImgView.image = [UIImage imageNamed:@"youbian"];
+    CarpVideoRightImgView.image = [UIImage imageNamed:@"youbian-small"];
     [self.contentView addSubview:CarpVideoRightImgView];
     
     [CarpVideoRightImgView mas_makeConstraints:^(MASConstraintMaker *make) {

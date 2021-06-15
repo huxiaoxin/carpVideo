@@ -35,7 +35,7 @@
 #import <WHC_ModelSqliteKit-umbrella.h>
 #import "NSString+CHRegex.h"
 #import <LYEmptyView-umbrella.h>
-#import "PandaMovieLoginAccoutModel.h"
+#import "CarpVideoLoginVideModelTool.h"
 #import <GKNavigationBarViewController-umbrella.h>
 #import "UIColor+CHRegex.h"
 #import "UILabel+CDGPSpaceLb.h"

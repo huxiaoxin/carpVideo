@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+SafeApp.h"
 @interface AppDelegate ()
 
 @end
@@ -22,6 +23,7 @@
     return _CarpVideoTabbar;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AppDelegate AppDelegateConfiguartionsafe];
    #pragma mark -- 初始化导航配置
    [self initGKNavConfigers];
     self.window =  [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
