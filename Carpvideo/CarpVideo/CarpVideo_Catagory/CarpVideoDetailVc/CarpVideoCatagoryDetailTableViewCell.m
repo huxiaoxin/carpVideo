@@ -42,6 +42,17 @@
         make.top.mas_equalTo(_CarpVideouserImgView.mas_bottom).offset(RealWidth(10));
     }];
     
+    [_CarpVideoLHBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.mas_right).offset(-RealWidth(15));
+        make.centerY.mas_equalTo(_CarpVideouserImgView.mas_centerY);
+    }];
+    
+    [_CarpVideoJBBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(_CarpVideoLHBtn.mas_left).offset(-RealWidth(10));
+        make.centerY.mas_equalTo(_CarpVideouserImgView.mas_centerY);
+    }];
+    
+    
 }
 - (UIImageView *)CarpVideouserImgView{
     if (!_CarpVideouserImgView) {
@@ -76,10 +87,31 @@
         _CarpVideoContentlb.textColor = LGDGaryColor;
         _CarpVideoContentlb.font = [UIFont systemFontOfSize:13];
         _CarpVideoContentlb.numberOfLines = 0;
-//        _CarpVideoContentlb.text = @"12:21";
         
     }
     return _CarpVideoContentlb;
+}
+- (UIButton *)CarpVideoLHBtn{
+    if (!_CarpVideoLHBtn) {
+        _CarpVideoLHBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_CarpVideoLHBtn setTitle:@"拉黑" forState:UIControlStateNormal];
+        [_CarpVideoLHBtn setTitleColor:LGDMianColor forState:UIControlStateNormal];
+        _CarpVideoLHBtn.titleLabel.font = KBlFont(14);
+        [_CarpVideoLHBtn addTarget:self action:@selector(CarpVideoLHBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _CarpVideoLHBtn.tag = 1;
+    }
+    return _CarpVideoLHBtn;
+}
+- (UIButton *)CarpVideoJBBtn{
+    if (!_CarpVideoJBBtn) {
+        _CarpVideoJBBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _CarpVideoJBBtn.tag = 0;
+        [_CarpVideoJBBtn setTitle:@"举报" forState:UIControlStateNormal];
+        [_CarpVideoJBBtn setTitleColor:LGDMianColor forState:UIControlStateNormal];
+        [_CarpVideoJBBtn addTarget:self action:@selector(CarpVideoJBBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _CarpVideoJBBtn.titleLabel.font = KBlFont(14);
+    }
+    return _CarpVideoJBBtn;
 }
 - (void)setDertailModel:(CarpVideoCatagoryDetailModel *)dertailModel{
     _dertailModel = dertailModel;
@@ -90,6 +122,13 @@
     [self setNeedsLayout];
     [self layoutIfNeeded];
     dertailModel.CellHeight =  CGRectGetMaxY(_CarpVideoContentlb.frame);
+}
+-(void)CarpVideoLHBtnClick{
+    [self.delegate CarpVideoCatagoryDetailTableViewCellDidSeltecdWithModel:_dertailModel btnIndex:1];
+
+}
+-(void)CarpVideoJBBtnClick{
+    [self.delegate CarpVideoCatagoryDetailTableViewCellDidSeltecdWithModel:_dertailModel btnIndex:0];
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

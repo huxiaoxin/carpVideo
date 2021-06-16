@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarpVideoMessageBtn : UIButton
+@property(nonatomic,strong) UIView      * CarpVideo_ContentView;
+@property(nonatomic,strong) UIImageView * CarpImgView;
+@property(nonatomic,strong) UILabel     * CarpBtomlb;
 @end
 
 NS_ASSUME_NONNULL_END

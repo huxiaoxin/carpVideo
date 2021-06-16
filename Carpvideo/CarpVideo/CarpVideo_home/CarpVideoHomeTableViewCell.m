@@ -39,7 +39,7 @@
         _CarpVideoThubImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(_CarpVideoContentView.frame), RealWidth(100))];
         _CarpVideoThubImgView.contentMode  = UIViewContentModeScaleAspectFill;
         _CarpVideoThubImgView.layer.masksToBounds = YES;
-        [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgss0.baidu.com%2F-Po3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2Fd01373f082025aafa76ca384feedab64034f1a26.jpg&refer=http%3A%2F%2Fgss0.baidu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625723785&t=3afef2da688f45415bcbb13917b2a0de"]];
+//        [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgss0.baidu.com%2F-Po3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2Fd01373f082025aafa76ca384feedab64034f1a26.jpg&refer=http%3A%2F%2Fgss0.baidu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625723785&t=3afef2da688f45415bcbb13917b2a0de"]];
     }
     return _CarpVideoThubImgView;
 }
@@ -90,6 +90,14 @@
         _CarpVideoMoreBtn.layer.borderWidth = RealWidth(1);
     }
     return _CarpVideoMoreBtn;
+}
+- (void)setCarpNewsModel:(CarpVideoHomenewsModel *)carpNewsModel{
+    _carpNewsModel = carpNewsModel;
+    [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carpNewsModel.imgUrl] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoTitle.text = carpNewsModel.title;
+    _CarpVideoTimelb.text =  carpNewsModel.time;
+    
+
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

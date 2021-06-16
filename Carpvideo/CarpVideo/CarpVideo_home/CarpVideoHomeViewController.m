@@ -12,18 +12,73 @@
 #import "CarpMoreHomeViewController.h"
 #import "CarpVideoSearchViewController.h"
 #import "CarpVideoBandanViewController.h"
+#import "CarpVideoHomenewsModel.h"
+#import "PandaHotnewsSizeTool.h"
+#import "CarpVideoHomeNewsDetailViewController.h"
+#import "CarpVideoNewsListViewController.h"
+#import "CarpVideoAcotityViewController.h"
 @interface CarpVideoHomeViewController ()<CarpVideoHomeHeaderViewDelegate>
 @property(nonatomic,strong) CarpVideoHomeHeaderView * carpVideoHeader;
+@property(nonatomic,strong) NSMutableArray * CarpVideoHomeDataArr;
 @end
 
 @implementation CarpVideoHomeViewController
-
+- (NSMutableArray *)CarpVideoHomeDataArr{
+    if (!_CarpVideoHomeDataArr) {
+        _CarpVideoHomeDataArr = [NSMutableArray array];
+    }
+    return _CarpVideoHomeDataArr;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_navigationBar.hidden = YES;
     [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT)];
     _CarpVideoTableView.tableHeaderView = self.carpVideoHeader;
+    _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoTableViewHeaderClicks)];
+//    [_CarpVideoTableView.mj_header beginRefreshing];
     
+}
+-(void)CarpVideoTableViewHeaderClicks{
+    
+    [LCProgressHUD showLoading:@""];
+    NSDictionary * dictionary =   [self getJsonDataJsonname:@"pandaMoview"];
+    MJWeakSelf;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSArray * PandaHoemNewsArr =[[[dictionary objectForKey:@"result"] objectForKey:@"result"] objectForKey:@"list"];
+        NSMutableArray * PandaHoemTempArr= [[NSMutableArray alloc]init];
+        for (NSDictionary * PandaHoemDic in PandaHoemNewsArr) {
+            CarpVideoHomenewsModel * PandaHoemitem = [CarpVideoHomenewsModel BaseinitWithDic:PandaHoemDic];
+            if (![PandaHoemitem.imgUrl containsString:@"https://interface.sina.cn/wap_api/video_location.d.html"]) {
+                if (![PandaHoemitem.imgUrl containsString:@"https://n.sinaimg.cn/default/2fb77759/20151125/320X320.png"]) {
+                    CGSize PandaSize = [PandaHotnewsSizeTool getImageSizeWithURL:PandaHoemitem.imgUrl];
+                    PandaHoemitem.height = PandaSize.height;
+                    PandaHoemitem.width = PandaSize.width;
+                    [PandaHoemTempArr addObject:PandaHoemitem];
+                }
+                
+            }
+        }
+        [LCProgressHUD hide];
+        weakSelf.CarpVideoHomeDataArr = [PandaHoemTempArr subarrayWithRange:NSMakeRange(0, 5)].mutableCopy;
+        [self->_CarpVideoTableView reloadData];
+        [self->_CarpVideoTableView.mj_header endRefreshing];
+        
+    });
+    
+    
+}
+- (id)getJsonDataJsonname:(NSString *)jsonname
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:jsonname ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        return nil;
+    } else {
+        return jsonObj;
+    }
 }
 -(CarpVideoHomeHeaderView *)carpVideoHeader{
     if (!_carpVideoHeader) {
@@ -33,11 +88,11 @@
     return _carpVideoHeader;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.CarpVideoHomeDataArr.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CarpVideoHomeTableViewCell * carpVideoCell = [CarpVideoHomeTableViewCell createCellWithTheTableView:tableView AndTheIndexPath:indexPath];
-    
+    carpVideoCell.carpNewsModel = self.CarpVideoHomeDataArr[indexPath.row];
     return carpVideoCell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,6 +138,12 @@
     
     return Header;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CarpVideoHomeNewsDetailViewController * CarpVideoDetailVc = [[CarpVideoHomeNewsDetailViewController alloc]init];
+    CarpVideoDetailVc.hidesBottomBarWhenPushed = YES;
+    CarpVideoDetailVc.carpNewsModel = self.CarpVideoHomeDataArr[indexPath.row];
+    [self.navigationController pushViewController:CarpVideoDetailVc animated:YES];
+}
 -(void)CarpVideoMoreBtnClick{
     CarpMoreHomeViewController * CarpMorehomeVc =[[CarpMoreHomeViewController alloc]init];
     CarpMorehomeVc.hidesBottomBarWhenPushed = YES;
@@ -111,7 +172,13 @@
     }else if (btnIndex == 1){
         
     }else if (btnIndex == 2){
-        
+        CarpVideoNewsListViewController  * carpListVc =  [[CarpVideoNewsListViewController alloc]init];
+        carpListVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:carpListVc animated:YES];
+    }else if (btnIndex == 3){
+        CarpVideoAcotityViewController  * carpVideoVc = [[CarpVideoAcotityViewController alloc]init];
+        carpVideoVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:carpVideoVc animated:YES];
     }
     
 }

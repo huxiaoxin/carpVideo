@@ -72,7 +72,7 @@
         _CarpVideoTimelb.textAlignment = NSTextAlignmentCenter;
         _CarpVideoTimelb.font = [UIFont systemFontOfSize:12];
         _CarpVideoTimelb.textColor = LGDGaryColor;
-        _CarpVideoTimelb.text =  @"2021-12-12 15:02:03";
+        _CarpVideoTimelb.text =  @"2021-06-10 15:02:03";
     }
     return _CarpVideoTimelb;
 }
@@ -84,7 +84,7 @@
         _CarpVideoContentlb.font = [UIFont systemFontOfSize:14];
         _CarpVideoContentlb.textColor = LGDBLackColor;
         NSString * TempFirstStr  = @"【系统提醒】 ";
-        NSString * TempSecondStr = @"你已经成功获得一次实习机会，请尽快阅读实习详情，祝实习顺利";
+        NSString * TempSecondStr = @"因服务器升级需要，鲤鱼视频将于2021年6月25号服务器停机进行升级";
         NSMutableParagraphStyle * parStyle = [[NSMutableParagraphStyle alloc]init];
         parStyle.lineSpacing = RealWidth(3);
         NSMutableAttributedString * mutablAtt = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@%@",TempFirstStr,TempSecondStr]];

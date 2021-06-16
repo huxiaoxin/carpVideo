@@ -38,8 +38,8 @@
         _lkDeleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_lkDeleteBtn setTitle:@"删除此数据" forState:UIControlStateNormal];
         [_lkDeleteBtn setBackgroundColor:[UIColor whiteColor]];
-        [_lkDeleteBtn setTitleColor:[UIColor colorWithHexString:@"FF6C00"] forState:UIControlStateNormal];
-        _lkDeleteBtn.layer.borderColor = [UIColor colorWithHexString:@"FF6C00"].CGColor;
+        [_lkDeleteBtn setTitleColor:LGDMianColor forState:UIControlStateNormal];
+        _lkDeleteBtn.layer.borderColor = LGDMianColor.CGColor;
         _lkDeleteBtn.titleLabel.font = [UIFont systemFontOfSize:16];
         _lkDeleteBtn.tag = 1;
         _lkDeleteBtn.layer.borderWidth = 1;
@@ -53,7 +53,7 @@
     if (!_lkSaveBtn) {
         _lkSaveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_lkSaveBtn setTitle:@"保存" forState:UIControlStateNormal];
-        [_lkSaveBtn setBackgroundColor:[UIColor colorWithHexString:@"FF6C00"]];
+        [_lkSaveBtn setBackgroundColor:LGDMianColor];
         [_lkSaveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _lkSaveBtn.titleLabel.font = [UIFont systemFontOfSize:16];
         _lkSaveBtn.tag = 0;

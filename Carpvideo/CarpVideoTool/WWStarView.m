@@ -26,8 +26,6 @@ typedef void(^completeBlock)(CGFloat currentStar);
         _complete = ^(CGFloat currentScore){
             finish(currentScore);
         };
-        [self setNeedsLayout];
-        [self layoutIfNeeded];
         [self createStarView];
     }
         return self;

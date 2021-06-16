@@ -13,7 +13,6 @@
 #import "MBImagePicker.h"
 @interface LKWebsiteEditCollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource,LKWebsiteEditCollectionViewCellDelegate>
 @property(nonatomic,strong) UICollectionView * LkCollectionView;
-@property(nonatomic,strong) NSMutableArray   * LKWebsiteDataSoure;
 @property(nonatomic,assign) CGSize             itemSize;
 @property(nonatomic,assign) BOOL               ShowdisplayLine;
 @end

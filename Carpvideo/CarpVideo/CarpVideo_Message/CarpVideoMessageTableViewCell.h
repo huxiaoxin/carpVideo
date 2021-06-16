@@ -6,11 +6,11 @@
 //
 
 #import "CarpVideoBaseTableViewCell.h"
-
+#import "PandaMovieMsgModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarpVideoMessageTableViewCell : CarpVideoBaseTableViewCell
-
+@property(nonatomic,strong) PandaMovieMsgModel * carpModel;
 @end
 
 NS_ASSUME_NONNULL_END

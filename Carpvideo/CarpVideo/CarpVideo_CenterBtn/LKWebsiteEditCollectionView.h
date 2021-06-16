@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^CollectionViewHeightBlock)(CGFloat viewHeight);
 @interface LKWebsiteEditCollectionView : UIView
 @property(nonatomic,copy) NSArray * dataSoure;
+@property(nonatomic,strong) NSMutableArray   * LKWebsiteDataSoure;
+
 @property(nonatomic,copy) CollectionViewHeightBlock currentViewHeightBlock;
 //isShow 计算collectionview的内容高度 YES代表需要减去间隔 NO 默认不处理
 -(instancetype)initWithFrame:(CGRect)frame withItemSize:(CGSize)itemSize isShowDisplayline:(BOOL)isShow;

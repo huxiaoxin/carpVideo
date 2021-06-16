@@ -9,6 +9,7 @@
 #import <SDCycleScrollView-umbrella.h>
 #import "CarpVideoHomeBtn.h"
 #import "CarpVideoHomeCollectionViewCell.h"
+#import "CarpVideoMessageBtn.h"
 @interface CarpVideoHomeHeaderView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong) UIView * CarpVideoBtnView;
 @property(nonatomic,strong) UICollectionView  * CarpVideoCollectionView;
@@ -65,12 +66,14 @@
         carpVideobtnView.layer.cornerRadius = RealWidth(5);
         carpVideobtnView.layer.masksToBounds = YES;
         [self addSubview:carpVideobtnView];
-        NSArray * BtnArr = @[@"实时榜单",@"热门推荐",@"影视报道",@"特色影院"];
-        
+        NSArray * BtnArr = @[@"实时榜单",@"热门推荐",@"影视报道",@"首映活动"];
+        NSArray *  ColorArr = @[@"FC305A",@"594d9c",@"d9830b",@"bd8cbb"];
         for (int index = 0; index < BtnArr.count; index ++) {
-            CarpVideoHomeBtn * carpBtn =  [[CarpVideoHomeBtn alloc]initWithFrame:CGRectMake(CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count* index, 0, CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count, CGRectGetHeight(carpVideobtnView.frame))];
-            carpBtn.CarpVideoBtomlb.text =  BtnArr[index];
+            CarpVideoMessageBtn * carpBtn =  [[CarpVideoMessageBtn alloc]initWithFrame:CGRectMake(CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count* index, RealWidth(10), CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count, CGRectGetHeight(carpVideobtnView.frame))];
             carpBtn.tag =  index;
+            carpBtn.CarpVideo_ContentView.backgroundColor = [UIColor colorWithHexString:ColorArr[index] Alpha:0.15];
+            carpBtn.CarpBtomlb.text =  BtnArr[index];
+            carpBtn.CarpImgView.image  = [UIImage imageNamed:BtnArr[index]];
             [carpBtn addTarget:self action:@selector(CarpVideoHomeBtnClick:) forControlEvents:UIControlEventTouchUpInside];
             [carpVideobtnView addSubview:carpBtn];
         }

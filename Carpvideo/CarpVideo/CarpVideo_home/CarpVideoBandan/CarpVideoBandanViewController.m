@@ -30,7 +30,7 @@
     return CarpVideoCell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return RealWidth(155);
+    return RealWidth(160);
 }
 - (CarpVieoBangdanHeaderView *)CarpHeader{
     if (!_CarpHeader) {

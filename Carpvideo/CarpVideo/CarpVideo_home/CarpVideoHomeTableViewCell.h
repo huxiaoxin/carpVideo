@@ -6,11 +6,11 @@
 //
 
 #import "CarpVideoBaseTableViewCell.h"
-
+#import "CarpVideoHomenewsModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarpVideoHomeTableViewCell : CarpVideoBaseTableViewCell
-
+@property(nonatomic,strong) CarpVideoHomenewsModel * carpNewsModel;
 @end
 
 NS_ASSUME_NONNULL_END

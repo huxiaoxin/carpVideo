@@ -138,7 +138,49 @@
     }
     
 }
-
+- (void)setCarpDetalMoel:(PandaMsgDetailModel *)carpDetalMoel{
+    _carpDetalMoel =  carpDetalMoel;
+    [_CarpVideoChatSEND_userImgView sd_setImageWithURL:[NSURL URLWithString:@"https://p.qqan.com/up/2021-4/16194921988015974.jpg"]];
+    [_CarpVideoChatReVICE_userImgView sd_setImageWithURL:[NSURL URLWithString:carpDetalMoel.imgUrl] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];
+    if (_carpDetalMoel.msgisMe) {
+        _CarpVideoChatReVICE_paopaoIMgView.hidden = YES;
+        _CarpVideoChatReVICE_userImgView.hidden = YES;
+        _CarpVideoChatReVICE_contelb.hidden = YES;
+        
+        _CarpVideoChatSEND_paopaoImgView.hidden = NO;
+        _CarpVideoChatSEND_userImgView.hidden = NO;
+        _CarpVideoChatSEND_Contentlb.hidden = NO;
+        
+        [_CarpVideoChatSEND_Contentlb setText:carpDetalMoel.msgname];
+        CGRect contetnRect =  [carpDetalMoel.msgname cxl_sizeWithMoreString:[UIFont systemFontOfSize:15] maxWidth:SCREEN_Width-RealWidth(150)];
+        
+        _CarpVideoChatSEND_Contentlb.frame = CGRectMake(RealWidth(10), RealWidth(10), contetnRect.size.width, contetnRect.size.height);
+        
+        _CarpVideoChatSEND_paopaoImgView.frame = CGRectMake(SCREEN_Width-contetnRect.size.width-RealWidth(45+15+25), RealWidth(15), contetnRect.size.width+RealWidth(20), contetnRect.size.height+RealWidth(20));
+        carpDetalMoel.CellHeight =  CGRectGetMaxY(_CarpVideoChatSEND_paopaoImgView.frame)+RealWidth(30);
+        
+    }else{
+        
+        _CarpVideoChatReVICE_paopaoIMgView.hidden = NO;
+        _CarpVideoChatReVICE_userImgView.hidden = NO;
+        _CarpVideoChatReVICE_contelb.hidden = NO;
+        
+        _CarpVideoChatSEND_paopaoImgView.hidden = YES;
+        _CarpVideoChatSEND_userImgView.hidden = YES;
+        _CarpVideoChatSEND_Contentlb.hidden = YES;
+        
+        
+        [_CarpVideoChatReVICE_contelb setText:carpDetalMoel.msgname];
+        CGRect contetnRect =  [carpDetalMoel.msgname cxl_sizeWithMoreString:[UIFont systemFontOfSize:15] maxWidth:SCREEN_Width-RealWidth(150)];
+        
+        _CarpVideoChatReVICE_contelb.frame = CGRectMake(RealWidth(10), RealWidth(10), contetnRect.size.width, contetnRect.size.height);
+        
+        _CarpVideoChatReVICE_paopaoIMgView.frame = CGRectMake(CGRectGetMaxX(_CarpVideoChatReVICE_userImgView.frame)+RealWidth(10), RealWidth(15), contetnRect.size.width+RealWidth(20), contetnRect.size.height+RealWidth(20));
+        carpDetalMoel.CellHeight =  CGRectGetMaxY(_CarpVideoChatReVICE_paopaoIMgView.frame)+RealWidth(30);
+        
+    }
+    
+}
 
 @end
 

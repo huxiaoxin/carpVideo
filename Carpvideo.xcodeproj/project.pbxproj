@@ -35,6 +35,23 @@
 		8A487A6326789918006F0A8E /* CarpVideoCatagoryComentDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A487A6226789918006F0A8E /* CarpVideoCatagoryComentDetailView.m */; };
 		8A487A6926789CF6006F0A8E /* CarpVideoCatagoryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A487A6826789CF6006F0A8E /* CarpVideoCatagoryDetailModel.m */; };
 		8A487A6F2678A4E8006F0A8E /* CarpVideoPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A487A6E2678A4E8006F0A8E /* CarpVideoPhotoCollectionViewCell.m */; };
+		8A50F44F26799BB800E49391 /* CarpVideoJBLitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F44E26799BB800E49391 /* CarpVideoJBLitsViewController.m */; };
+		8A50F47D2679A19F00E49391 /* WindwoundwarningTabeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F47B2679A19F00E49391 /* WindwoundwarningTabeCell.m */; };
+		8A50F47E2679A19F00E49391 /* WindwoundWarningModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F47C2679A19F00E49391 /* WindwoundWarningModel.m */; };
+		8A50F4B72679D42200E49391 /* PandaMovieMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4B52679D42200E49391 /* PandaMovieMsgModel.m */; };
+		8A50F4C02679D6A400E49391 /* PandaMsgDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4BE2679D6A400E49391 /* PandaMsgDetailViewController.m */; };
+		8A50F4C12679D6A400E49391 /* PandaMsgDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4BF2679D6A400E49391 /* PandaMsgDetailModel.m */; };
+		8A50F4C62679EC2800E49391 /* pandaMoview.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A50F4C52679EC2800E49391 /* pandaMoview.json */; };
+		8A50F4CC2679EC4E00E49391 /* CarpVideoHomenewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4CB2679EC4E00E49391 /* CarpVideoHomenewsModel.m */; };
+		8A50F4D22679EC6C00E49391 /* CarpVideoBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4D12679EC6C00E49391 /* CarpVideoBaseModel.m */; };
+		8A50F4DB2679ED9400E49391 /* PandaHotnewsSizeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4DA2679ED9400E49391 /* PandaHotnewsSizeTool.m */; };
+		8A50F4E12679EF0400E49391 /* CarpVideoHomeNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4E02679EF0400E49391 /* CarpVideoHomeNewsDetailViewController.m */; };
+		8A50F4E82679EFFC00E49391 /* CarpVideoNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4E72679EFFC00E49391 /* CarpVideoNewsListViewController.m */; };
+		8A50F4F12679F09900E49391 /* PandaHotNewsLayoutTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4F02679F09900E49391 /* PandaHotNewsLayoutTool.m */; };
+		8A50F4F72679F0AA00E49391 /* PandaHotNewsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4F62679F0AA00E49391 /* PandaHotNewsCollectionCell.m */; };
+		8A50F4FE2679F15F00E49391 /* CarpVideoAcotityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F4FD2679F15F00E49391 /* CarpVideoAcotityViewController.m */; };
+		8A50F5102679F32E00E49391 /* PadaCatagoryweizhiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F50F2679F32E00E49391 /* PadaCatagoryweizhiModel.m */; };
+		8A50F5162679F43A00E49391 /* CarpVideoAcityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A50F5152679F43A00E49391 /* CarpVideoAcityTableViewCell.m */; };
 		8A62CF852671A79A00F568E9 /* CarpVideoNotifiCationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62CF842671A79A00F568E9 /* CarpVideoNotifiCationDetailViewController.m */; };
 		8A62CFC02671A9D800F568E9 /* CarpVideoKefuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62CFBC2671A9D700F568E9 /* CarpVideoKefuTableViewCell.m */; };
 		8A62CFC12671A9D800F568E9 /* CarpVideoKefuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62CFBF2671A9D800F568E9 /* CarpVideoKefuModel.m */; };
@@ -201,6 +218,39 @@
 		8A487A6826789CF6006F0A8E /* CarpVideoCatagoryDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoCatagoryDetailModel.m; sourceTree = "<group>"; };
 		8A487A6D2678A4E8006F0A8E /* CarpVideoPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		8A487A6E2678A4E8006F0A8E /* CarpVideoPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		8A50F44D26799BB800E49391 /* CarpVideoJBLitsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoJBLitsViewController.h; sourceTree = "<group>"; };
+		8A50F44E26799BB800E49391 /* CarpVideoJBLitsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoJBLitsViewController.m; sourceTree = "<group>"; };
+		8A50F4792679A19E00E49391 /* WindwoundWarningModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindwoundWarningModel.h; sourceTree = "<group>"; };
+		8A50F47A2679A19E00E49391 /* WindwoundwarningTabeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindwoundwarningTabeCell.h; sourceTree = "<group>"; };
+		8A50F47B2679A19F00E49391 /* WindwoundwarningTabeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindwoundwarningTabeCell.m; sourceTree = "<group>"; };
+		8A50F47C2679A19F00E49391 /* WindwoundWarningModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindwoundWarningModel.m; sourceTree = "<group>"; };
+		8A50F4B52679D42200E49391 /* PandaMovieMsgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaMovieMsgModel.m; sourceTree = "<group>"; };
+		8A50F4B62679D42200E49391 /* PandaMovieMsgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaMovieMsgModel.h; sourceTree = "<group>"; };
+		8A50F4BC2679D6A400E49391 /* PandaMsgDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaMsgDetailViewController.h; sourceTree = "<group>"; };
+		8A50F4BD2679D6A400E49391 /* PandaMsgDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaMsgDetailModel.h; sourceTree = "<group>"; };
+		8A50F4BE2679D6A400E49391 /* PandaMsgDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaMsgDetailViewController.m; sourceTree = "<group>"; };
+		8A50F4BF2679D6A400E49391 /* PandaMsgDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaMsgDetailModel.m; sourceTree = "<group>"; };
+		8A50F4C52679EC2800E49391 /* pandaMoview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pandaMoview.json; sourceTree = "<group>"; };
+		8A50F4CA2679EC4E00E49391 /* CarpVideoHomenewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarpVideoHomenewsModel.h; sourceTree = "<group>"; };
+		8A50F4CB2679EC4E00E49391 /* CarpVideoHomenewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarpVideoHomenewsModel.m; sourceTree = "<group>"; };
+		8A50F4D02679EC6C00E49391 /* CarpVideoBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoBaseModel.h; sourceTree = "<group>"; };
+		8A50F4D12679EC6C00E49391 /* CarpVideoBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoBaseModel.m; sourceTree = "<group>"; };
+		8A50F4D92679ED9300E49391 /* PandaHotnewsSizeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHotnewsSizeTool.h; sourceTree = "<group>"; };
+		8A50F4DA2679ED9400E49391 /* PandaHotnewsSizeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHotnewsSizeTool.m; sourceTree = "<group>"; };
+		8A50F4DF2679EF0400E49391 /* CarpVideoHomeNewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoHomeNewsDetailViewController.h; sourceTree = "<group>"; };
+		8A50F4E02679EF0400E49391 /* CarpVideoHomeNewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoHomeNewsDetailViewController.m; sourceTree = "<group>"; };
+		8A50F4E62679EFFC00E49391 /* CarpVideoNewsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoNewsListViewController.h; sourceTree = "<group>"; };
+		8A50F4E72679EFFC00E49391 /* CarpVideoNewsListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoNewsListViewController.m; sourceTree = "<group>"; };
+		8A50F4EF2679F09900E49391 /* PandaHotNewsLayoutTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHotNewsLayoutTool.h; sourceTree = "<group>"; };
+		8A50F4F02679F09900E49391 /* PandaHotNewsLayoutTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHotNewsLayoutTool.m; sourceTree = "<group>"; };
+		8A50F4F52679F0AA00E49391 /* PandaHotNewsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHotNewsCollectionCell.h; sourceTree = "<group>"; };
+		8A50F4F62679F0AA00E49391 /* PandaHotNewsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHotNewsCollectionCell.m; sourceTree = "<group>"; };
+		8A50F4FC2679F15F00E49391 /* CarpVideoAcotityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoAcotityViewController.h; sourceTree = "<group>"; };
+		8A50F4FD2679F15F00E49391 /* CarpVideoAcotityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoAcotityViewController.m; sourceTree = "<group>"; };
+		8A50F50E2679F32E00E49391 /* PadaCatagoryweizhiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadaCatagoryweizhiModel.h; sourceTree = "<group>"; };
+		8A50F50F2679F32E00E49391 /* PadaCatagoryweizhiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadaCatagoryweizhiModel.m; sourceTree = "<group>"; };
+		8A50F5142679F43A00E49391 /* CarpVideoAcityTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoAcityTableViewCell.h; sourceTree = "<group>"; };
+		8A50F5152679F43A00E49391 /* CarpVideoAcityTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoAcityTableViewCell.m; sourceTree = "<group>"; };
 		8A62CF832671A79A00F568E9 /* CarpVideoNotifiCationDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoNotifiCationDetailViewController.h; sourceTree = "<group>"; };
 		8A62CF842671A79A00F568E9 /* CarpVideoNotifiCationDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoNotifiCationDetailViewController.m; sourceTree = "<group>"; };
 		8A62CFBC2671A9D700F568E9 /* CarpVideoKefuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarpVideoKefuTableViewCell.m; sourceTree = "<group>"; };
@@ -458,6 +508,7 @@
 				8A26B0A9266A161D008199BD /* Info.plist */,
 				8A26B0AA266A161D008199BD /* main.m */,
 				8AA9AA3B266F5B8F00EB786A /* FZPWJW.TTF */,
+				8A50F4C52679EC2800E49391 /* pandaMoview.json */,
 			);
 			path = Carpvideo;
 			sourceTree = "<group>";
@@ -550,6 +601,54 @@
 				8A487A6E2678A4E8006F0A8E /* CarpVideoPhotoCollectionViewCell.m */,
 			);
 			path = CarpVideoDetailVc;
+			sourceTree = "<group>";
+		};
+		8A50F44C26799B9900E49391 /* CarpVideoJBVC */ = {
+			isa = PBXGroup;
+			children = (
+				8A50F44D26799BB800E49391 /* CarpVideoJBLitsViewController.h */,
+				8A50F44E26799BB800E49391 /* CarpVideoJBLitsViewController.m */,
+				8A50F4792679A19E00E49391 /* WindwoundWarningModel.h */,
+				8A50F47C2679A19F00E49391 /* WindwoundWarningModel.m */,
+				8A50F47A2679A19E00E49391 /* WindwoundwarningTabeCell.h */,
+				8A50F47B2679A19F00E49391 /* WindwoundwarningTabeCell.m */,
+			);
+			path = CarpVideoJBVC;
+			sourceTree = "<group>";
+		};
+		8A50F4BB2679D67800E49391 /* CarpVideoMessage_Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8A50F4BD2679D6A400E49391 /* PandaMsgDetailModel.h */,
+				8A50F4BF2679D6A400E49391 /* PandaMsgDetailModel.m */,
+				8A50F4BC2679D6A400E49391 /* PandaMsgDetailViewController.h */,
+				8A50F4BE2679D6A400E49391 /* PandaMsgDetailViewController.m */,
+			);
+			path = CarpVideoMessage_Detail;
+			sourceTree = "<group>";
+		};
+		8A50F4E52679EFE800E49391 /* CarpVideoNewsList */ = {
+			isa = PBXGroup;
+			children = (
+				8A50F4E62679EFFC00E49391 /* CarpVideoNewsListViewController.h */,
+				8A50F4E72679EFFC00E49391 /* CarpVideoNewsListViewController.m */,
+				8A50F4F52679F0AA00E49391 /* PandaHotNewsCollectionCell.h */,
+				8A50F4F62679F0AA00E49391 /* PandaHotNewsCollectionCell.m */,
+			);
+			path = CarpVideoNewsList;
+			sourceTree = "<group>";
+		};
+		8A50F4FB2679F13B00E49391 /* CarpVideoActity */ = {
+			isa = PBXGroup;
+			children = (
+				8A50F4FC2679F15F00E49391 /* CarpVideoAcotityViewController.h */,
+				8A50F4FD2679F15F00E49391 /* CarpVideoAcotityViewController.m */,
+				8A50F5142679F43A00E49391 /* CarpVideoAcityTableViewCell.h */,
+				8A50F5152679F43A00E49391 /* CarpVideoAcityTableViewCell.m */,
+				8A50F50E2679F32E00E49391 /* PadaCatagoryweizhiModel.h */,
+				8A50F50F2679F32E00E49391 /* PadaCatagoryweizhiModel.m */,
+			);
+			path = CarpVideoActity;
 			sourceTree = "<group>";
 		};
 		8A62D04D2671EA7800F568E9 /* CarpVideo_mysend */ = {
@@ -675,6 +774,7 @@
 		8A77B6BB2670B5B2007CF3A3 /* CarpVideo_Message */ = {
 			isa = PBXGroup;
 			children = (
+				8A50F4BB2679D67800E49391 /* CarpVideoMessage_Detail */,
 				8A75A35626719C7600455EF0 /* CarpVideo_Coment */,
 				8A75A34C26719C5E00455EF0 /* CarpVideo_Zan */,
 				8A75A34526719C4800455EF0 /* CarpVideo_kefu */,
@@ -687,6 +787,8 @@
 				8A77B6BE2670B5B2007CF3A3 /* CarpVideoMessageHeaderView.m */,
 				8A77B6CB2670B9C4007CF3A3 /* CarpVideoMessageBtn.h */,
 				8A77B6CC2670B9C4007CF3A3 /* CarpVideoMessageBtn.m */,
+				8A50F4B62679D42200E49391 /* PandaMovieMsgModel.h */,
+				8A50F4B52679D42200E49391 /* PandaMovieMsgModel.m */,
 			);
 			path = CarpVideo_Message;
 			sourceTree = "<group>";
@@ -717,6 +819,8 @@
 				8AA9AA1E266F12FE00EB786A /* CarpVideoBaseTableViewCell.m */,
 				8AA9A9E4266EFC8D00EB786A /* Header.h */,
 				8AA9A9E5266EFC9800EB786A /* PrefixHeader.pch */,
+				8A50F4D02679EC6C00E49391 /* CarpVideoBaseModel.h */,
+				8A50F4D12679EC6C00E49391 /* CarpVideoBaseModel.m */,
 			);
 			path = CardVideoBase;
 			sourceTree = "<group>";
@@ -724,6 +828,8 @@
 		8AA9A95F266EFB8D00EB786A /* CarpVideo_home */ = {
 			isa = PBXGroup;
 			children = (
+				8A50F4FB2679F13B00E49391 /* CarpVideoActity */,
+				8A50F4E52679EFE800E49391 /* CarpVideoNewsList */,
 				8A4850BE26734F66003CF1FB /* CarpVideoBandan */,
 				8A4850B426734C85003CF1FB /* CarpVideoSeach */,
 				8A4850AA26734B57003CF1FB /* CarpVideoMoreHome */,
@@ -734,10 +840,16 @@
 				8AA9AA24266F13F700EB786A /* CarpVideoHomeTableViewCell.m */,
 				8AA9AA35266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.h */,
 				8AA9AA36266F4C1F00EB786A /* CarpVideoHomeCollectionViewCell.m */,
+				8A50F4DF2679EF0400E49391 /* CarpVideoHomeNewsDetailViewController.h */,
+				8A50F4E02679EF0400E49391 /* CarpVideoHomeNewsDetailViewController.m */,
 				8AA9AA29266F143000EB786A /* CarpVideoHomeHeaderView.h */,
 				8AA9AA2A266F143000EB786A /* CarpVideoHomeHeaderView.m */,
 				8AA9AA2F266F44BC00EB786A /* CarpVideoHomeBtn.h */,
 				8AA9AA30266F44BC00EB786A /* CarpVideoHomeBtn.m */,
+				8A50F4CA2679EC4E00E49391 /* CarpVideoHomenewsModel.h */,
+				8A50F4CB2679EC4E00E49391 /* CarpVideoHomenewsModel.m */,
+				8A50F4D92679ED9300E49391 /* PandaHotnewsSizeTool.h */,
+				8A50F4DA2679ED9400E49391 /* PandaHotnewsSizeTool.m */,
 			);
 			path = CarpVideo_home;
 			sourceTree = "<group>";
@@ -745,6 +857,7 @@
 		8AA9A960266EFB9900EB786A /* CarpVideo_Catagory */ = {
 			isa = PBXGroup;
 			children = (
+				8A50F44C26799B9900E49391 /* CarpVideoJBVC */,
 				8A487A4226787A76006F0A8E /* CarpVideoDetailVc */,
 				8AA9A975266EFC2F00EB786A /* CarpVideoCatagroyViewController.h */,
 				8AA9A976266EFC2F00EB786A /* CarpVideoCatagroyViewController.m */,
@@ -787,6 +900,8 @@
 				8A77B6352670A123007CF3A3 /* Album */,
 				8A4850422672F4A5003CF1FB /* EqualSpaceFlowLayout.h */,
 				8A4850432672F4A5003CF1FB /* EqualSpaceFlowLayout.m */,
+				8A50F4EF2679F09900E49391 /* PandaHotNewsLayoutTool.h */,
+				8A50F4F02679F09900E49391 /* PandaHotNewsLayoutTool.m */,
 				8A77B69E2670A473007CF3A3 /* MBImagePicker.h */,
 				8A77B69D2670A473007CF3A3 /* MBImagePicker.m */,
 				8AA9AA08266EFE2B00EB786A /* CHTabBar.h */,
@@ -1007,6 +1122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A26B0A8266A161D008199BD /* LaunchScreen.storyboard in Resources */,
+				8A50F4C62679EC2800E49391 /* pandaMoview.json in Resources */,
 				8A26B0A5266A161D008199BD /* Assets.xcassets in Resources */,
 				8A48505426733D88003CF1FB /* Carpvideo.html in Resources */,
 				8AA9AA3C266F5B8F00EB786A /* FZPWJW.TTF in Resources */,
@@ -1095,6 +1211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AA9AA10266F023600EB786A /* CarpVideoCenterBtnViewController.m in Sources */,
+				8A50F4F12679F09900E49391 /* PandaHotNewsLayoutTool.m in Sources */,
 				8A487A6F2678A4E8006F0A8E /* CarpVideoPhotoCollectionViewCell.m in Sources */,
 				8AA9A9D5266EFC7F00EB786A /* ZLCollectionViewVerticalLayout.m in Sources */,
 				8AA9AA2B266F143000EB786A /* CarpVideoHomeHeaderView.m in Sources */,
@@ -1114,12 +1231,18 @@
 				8AA9A9CA266EFC7F00EB786A /* NSString+MD5.m in Sources */,
 				8A26B0A0266A161B008199BD /* ViewController.m in Sources */,
 				8A62CFC12671A9D800F568E9 /* CarpVideoKefuModel.m in Sources */,
+				8A50F4E82679EFFC00E49391 /* CarpVideoNewsListViewController.m in Sources */,
 				8A487A4526787AA3006F0A8E /* CarpVideoCatagoryDetailViewController.m in Sources */,
+				8A50F4B72679D42200E49391 /* PandaMovieMsgModel.m in Sources */,
+				8A50F4FE2679F15F00E49391 /* CarpVideoAcotityViewController.m in Sources */,
+				8A50F4D22679EC6C00E49391 /* CarpVideoBaseModel.m in Sources */,
 				8AA9AA1F266F12FE00EB786A /* CarpVideoBaseTableViewCell.m in Sources */,
+				8A50F47D2679A19F00E49391 /* WindwoundwarningTabeCell.m in Sources */,
 				8AA9A9C4266EFC7F00EB786A /* NSDictionary+DeleteNull.m in Sources */,
 				8A77B6282670A0EA007CF3A3 /* LKWebsiteEditCollectionView.m in Sources */,
 				8AA9A965266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m in Sources */,
 				8A487A6926789CF6006F0A8E /* CarpVideoCatagoryDetailModel.m in Sources */,
+				8A50F5102679F32E00E49391 /* PadaCatagoryweizhiModel.m in Sources */,
 				8A487A5426787AE0006F0A8E /* CarpVideoCatagoryDetailTableViewCell.m in Sources */,
 				8A62CFCD2671B24C00F568E9 /* CarpVideoMineTableViewCell.m in Sources */,
 				8A77B64E2670A123007CF3A3 /* ZBWButton.m in Sources */,
@@ -1130,13 +1253,18 @@
 				8A62CFC02671A9D800F568E9 /* CarpVideoKefuTableViewCell.m in Sources */,
 				8AA9A9DF266EFC7F00EB786A /* UIViewController+IOS13.m in Sources */,
 				8A48505D26733F1D003CF1FB /* CarpVideoMyInfoEditViewController.m in Sources */,
+				8A50F4E12679EF0400E49391 /* CarpVideoHomeNewsDetailViewController.m in Sources */,
+				8A50F4DB2679ED9400E49391 /* PandaHotnewsSizeTool.m in Sources */,
 				8AA9A977266EFC2F00EB786A /* CarpVideoCatagroyViewController.m in Sources */,
+				8A50F4C12679D6A400E49391 /* PandaMsgDetailModel.m in Sources */,
 				8A77B6D42670C6A6007CF3A3 /* CarpVideoLogoinViewController.m in Sources */,
 				8A62CF852671A79A00F568E9 /* CarpVideoNotifiCationDetailViewController.m in Sources */,
 				8A77B6C42670B5B2007CF3A3 /* CarpVideoMessageViewController.m in Sources */,
 				8A487A5A267884D3006F0A8E /* CarpVideoCatagoryBtn.m in Sources */,
 				8AA9A9C8266EFC7F00EB786A /* CHCardItemModel.m in Sources */,
 				8AA9A9DD266EFC7F00EB786A /* UIView+HZXFrame.m in Sources */,
+				8A50F4F72679F0AA00E49391 /* PandaHotNewsCollectionCell.m in Sources */,
+				8A50F4C02679D6A400E49391 /* PandaMsgDetailViewController.m in Sources */,
 				8A4850CA2673502E003CF1FB /* CarpVieoBangdanHeaderView.m in Sources */,
 				8A77B6522670A123007CF3A3 /* ZBWAlbumTableViewCell.m in Sources */,
 				8A77B621267098D7007CF3A3 /* LKWebsiteEditTopView.m in Sources */,
@@ -1159,11 +1287,14 @@
 				8A4850D026735590003CF1FB /* CarpVideoBangdanTableViewCell.m in Sources */,
 				8AA9A9C5266EFC7F00EB786A /* LMJHorizontalScrollText.m in Sources */,
 				8AA9A9C7266EFC7F00EB786A /* CHCardView.m in Sources */,
+				8A50F47E2679A19F00E49391 /* WindwoundWarningModel.m in Sources */,
 				8A77B6512670A123007CF3A3 /* UIColor+Custom.m in Sources */,
 				8AA9A9CB266EFC7F00EB786A /* JRWaterFallLayout.m in Sources */,
 				8A77B6312670A10D007CF3A3 /* LKWebsiteEditCollectionViewCell.m in Sources */,
+				8A50F44F26799BB800E49391 /* CarpVideoJBLitsViewController.m in Sources */,
 				8A77B69F2670A473007CF3A3 /* MBImagePicker.m in Sources */,
 				8A48504A2672F512003CF1FB /* CarpVideoSugestionModel.m in Sources */,
+				8A50F4CC2679EC4E00E49391 /* CarpVideoHomenewsModel.m in Sources */,
 				8AA9AA31266F44BC00EB786A /* CarpVideoHomeBtn.m in Sources */,
 				8A487A6326789918006F0A8E /* CarpVideoCatagoryComentDetailView.m in Sources */,
 				8AA9A9D7266EFC7F00EB786A /* UILabel+CDGPSpaceLb.m in Sources */,
@@ -1181,6 +1312,7 @@
 				8A26B0AB266A161D008199BD /* main.m in Sources */,
 				8A77B6502670A123007CF3A3 /* ZBWAlbumViewController.m in Sources */,
 				8AA9A9DA266EFC7F00EB786A /* UIButton+CHRegex.m in Sources */,
+				8A50F5162679F43A00E49391 /* CarpVideoAcityTableViewCell.m in Sources */,
 				8A77B64D2670A123007CF3A3 /* ZBWAlbumView.m in Sources */,
 				8AA9A9DC266EFC7F00EB786A /* UIView+ACSLayer.m in Sources */,
 				8A75A34F26719C7200455EF0 /* CarpVideoZanViewController.m in Sources */,

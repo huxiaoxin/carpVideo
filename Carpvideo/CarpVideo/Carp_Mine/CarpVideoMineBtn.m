@@ -28,7 +28,6 @@
 - (UIImageView *)CarpVideoTopImgView{
     if (!_CarpVideoTopImgView) {
         _CarpVideoTopImgView = [UIImageView new];
-        _CarpVideoTopImgView.backgroundColor = LGDMianColor;
     }
     return _CarpVideoTopImgView;
 }

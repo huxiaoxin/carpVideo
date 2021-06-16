@@ -36,6 +36,7 @@
     [_CarpVideoDetailb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_CarpVideouserImgView.mas_right).offset(RealWidth(5));
         make.top.mas_equalTo(_CarpVideoNamelb.mas_bottom).offset(5);
+        make.right.mas_equalTo(-RealWidth(60));
     }];
     [_CarpVideoTimelb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-RealWidth(10));
@@ -58,6 +59,7 @@
         _CarpVideouserImgView.layer.masksToBounds = YES;
         _CarpVideouserImgView.layer.masksToBounds = YES;
         _CarpVideouserImgView.backgroundColor = LGDMianColor;
+       
     }
     return _CarpVideouserImgView;
 }
@@ -101,6 +103,19 @@
         _CarpVideoNumslb.textAlignment = NSTextAlignmentCenter;
     }
     return _CarpVideoNumslb;
+}
+- (void)setCarpModel:(PandaMovieMsgModel *)carpModel{
+    _carpModel = carpModel;
+    [_CarpVideouserImgView sd_setImageWithURL:[NSURL URLWithString:carpModel.imgurl] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];
+    _CarpVideoNamelb.text =  carpModel.topname;
+    _CarpVideoDetailb.text =  carpModel.content;
+    _CarpVideoTimelb.text = carpModel.time;
+    _CarpVideoNumslb.text =  [NSString stringWithFormat:@"%ld",carpModel.redNum];
+    if (carpModel.isShowRed) {
+        _CarpVideoNumslb.hidden = NO;
+    }else{
+        _CarpVideoNumslb.hidden = YES;
+    }
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -14,6 +14,7 @@
 #import "CarpVideoMessageViewController.h"
 #import "CarpVideoMineViewController.h"
 #import "CarpVideoCenterBtnViewController.h"
+#import "CarpVideoLogoinViewController.h"
 @interface CarpVideoBaseTabbarViewController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong)UITabBarItem *lastItem; // 标记上一次点击的TabBarItem
 
@@ -47,12 +48,25 @@
 }
 #pragma mark - 控制器跳转拦截
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-//    UINavigationController * baseNav  = (UINavigationController *)viewController;
-//    if ([NSStringFromClass(baseNav.topViewController.class) isEqualToString:@"CarpVideoCenterBtnViewController"]) {
-//        return NO;
-//    }else{
+    UINavigationController * baseNav  = (UINavigationController *)viewController;
+    if ([NSStringFromClass(baseNav.topViewController.class) isEqualToString:@"CarpVideoCenterBtnViewController"]) {
+        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                    CarpVideoLogoinViewController  * carpVc = [[CarpVideoLogoinViewController alloc]init];
+                    
+                    UINavigationController * nav = [UINavigationController rootVC:carpVc translationScale:YES];
+                    
+                    [self presentViewController:nav animated:YES completion:nil];
+            });
+            
+            return NO;
+        }else{
+            return YES;
+        }
+    }else{
         return YES;
-//    }
+    }
 }
 -(void)addChildViewController:(UIViewController *)vc andTitle:(NSString *)title image:(NSString *)image selectImage:(NSString *)selectImage{
     vc.tabBarItem.title = title;

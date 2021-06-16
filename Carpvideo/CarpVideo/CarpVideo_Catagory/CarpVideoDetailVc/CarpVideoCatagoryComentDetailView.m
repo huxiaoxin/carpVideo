@@ -60,6 +60,7 @@
     return self;
 }
 -(void)CarpVideoSendBtnClick{
+    self.CarpVideoTextField.text = nil;
     if (self.CarpVideoTextField.text.length > 0) {
         self.sendBlock(self.CarpVideoTextField.text);
     }

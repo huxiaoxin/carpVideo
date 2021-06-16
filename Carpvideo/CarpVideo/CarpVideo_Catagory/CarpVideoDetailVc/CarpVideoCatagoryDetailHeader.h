@@ -8,9 +8,12 @@
 #import <UIKit/UIKit.h>
 #import "CarpVideoCatagoryModel.h"
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^CarpVideoCatagoryDetailAction)(NSInteger index);
+typedef void(^CarpVideoCatagoryHeaderHeight)(CGFloat  headerHeight);
 
 @interface CarpVideoCatagoryDetailHeader : UIView
--(instancetype)initWithFrame:(CGRect)frame cobfigerationModel:(CarpVideoCatagoryModel * )carpModel;
+@property(nonatomic,copy)  CarpVideoCatagoryHeaderHeight headerHeightBlock;
+-(instancetype)initWithFrame:(CGRect)frame cobfigerationModel:(CarpVideoCatagoryModel * )carpModel CarpVideoCatagoryDetailActionBlokc:(CarpVideoCatagoryDetailAction)btnIndexBlock;
 @end
 
 NS_ASSUME_NONNULL_END

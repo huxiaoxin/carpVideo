@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)CarpVideocatagoryCollectionViewCellWithShare:(NSInteger)cellIndex; //分享
 -(void)CarpVideocatagoryCollectionViewCellWithComent:(NSInteger)cellIndex; //评论
 -(void)CarpVideocatagoryCollectionViewCellWithLike:(NSInteger)cellIndex; //点赞
+-(void)CarpVideocatagoryCollectionViewCellAddFalow:(NSInteger)cellIndex faloowBtn:(UIButton *)falowBtn;
+-(void)CarpVideocatagoryCollectionViewCellToChat:(NSInteger)cellIndex; //聊天
 @end
 @interface CarpVideocatagoryCollectionViewCell : UICollectionViewCell
 @property(nonatomic,weak) id <CarpVideocatagoryCollectionViewCellDelegate>delegate;

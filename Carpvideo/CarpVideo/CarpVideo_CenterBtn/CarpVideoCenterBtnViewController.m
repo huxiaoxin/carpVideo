@@ -33,8 +33,30 @@
 - (LKSavedeleteBtnView *)CarpBtnVBtomView{
     if (!_CarpBtnVBtomView) {
         MJWeakSelf;
-        _CarpBtnVBtomView = [[LKSavedeleteBtnView alloc]initWithFrame:CGRectMake(0, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT-RealWidth(105), GK_SCREEN_WIDTH, RealWidth(105)) configurationBtnClick:^(NSInteger index) {
+        _CarpBtnVBtomView = [[LKSavedeleteBtnView alloc]initWithFrame:CGRectMake(0, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT-RealWidth(105), GK_SCREEN_WIDTH, RealWidth(105)+GK_SAFEAREA_BTM) configurationBtnClick:^(NSInteger index) {
             if (index == 0) {
+                if (weakSelf.carpVideoHeader.CarpVideoTextView.text.length == 0) {
+                    
+                    [LCProgressHUD showInfoMsg:@"请添加描述！"];
+                    return;
+                }
+                
+                if (weakSelf.carpVideoHeader.LKCollectionView.LKWebsiteDataSoure.count <=1) {
+                    
+                    [LCProgressHUD showInfoMsg:@"请选择图片"];
+                    return;
+                }
+                
+                [LCProgressHUD showLoading:@""];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [LCProgressHUD showSuccess:@"发布成功！，等待审核后展示"];
+                    [weakSelf.carpVideoHeader CarpVideoCenterBtnHeaderViewResetData];
+
+                    
+                });
+                
+                
                 
             }else{
                 [weakSelf.carpVideoHeader CarpVideoCenterBtnHeaderViewResetData];

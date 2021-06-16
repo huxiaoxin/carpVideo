@@ -6,14 +6,9 @@
 //
 
 #import "CarpVideoCenterBtnHeaderView.h"
-#import "LKWebsiteEditTopView.h"
-#import <UITextView+ZWPlaceHolder.h>
-#import <UITextView+ZWLimitCounter.h>
-#import "LKWebsiteEditCollectionView.h"
+
 @interface CarpVideoCenterBtnHeaderView ()
-@property(nonatomic,strong) LKWebsiteEditTopView * carpEditTopView;
-@property(nonatomic,strong) LKWebsiteEditCollectionView * LKCollectionView;
-@property(nonatomic,strong)  UITextView  * CarpVideoTextView;
+
 
 @end
 @implementation CarpVideoCenterBtnHeaderView

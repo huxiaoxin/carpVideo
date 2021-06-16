@@ -7,9 +7,7 @@
 
 #import "CarpVideoMessageBtn.h"
 @interface CarpVideoMessageBtn  ()
-@property(nonatomic,strong) UIView      * CarpVideo_ContentView;
-@property(nonatomic,strong) UIImageView * CarpImgView;
-@property(nonatomic,strong) UILabel     * CarpBtomlb;
+
 @end
 @implementation CarpVideoMessageBtn
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -24,7 +22,7 @@
             make.size.mas_equalTo(CGSizeMake(RealWidth(40), RealWidth(40)));
         }];
         [_CarpImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(RealWidth(12), RealWidth(12), RealWidth(12), RealWidth(12)));
+            make.edges.mas_equalTo(UIEdgeInsetsMake(RealWidth(8), RealWidth(8), RealWidth(8), RealWidth(8)));
         }];
         [_CarpBtomlb mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(self);
@@ -47,7 +45,6 @@
 - (UIImageView *)CarpImgView{
     if (!_CarpImgView) {
         _CarpImgView = [UIImageView new];
-        _CarpImgView.backgroundColor = LGDMianColor;
         _CarpImgView.userInteractionEnabled = YES;
     }
     return _CarpImgView;

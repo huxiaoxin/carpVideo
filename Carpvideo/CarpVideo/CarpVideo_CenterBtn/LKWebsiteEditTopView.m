@@ -58,7 +58,7 @@
 - (UIView *)LKContentView{
     if (!_LKContentView) {
         _LKContentView = [UIView new];
-        _LKContentView.backgroundColor = [UIColor colorWithHexString:@"#FFF3EA"];
+        _LKContentView.backgroundColor = [UIColor colorWithHexString:@"FC305A" Alpha:0.1];
         _LKContentView.layer.cornerRadius = 6;
         _LKContentView.layer.masksToBounds = YES;
     }
@@ -68,7 +68,7 @@
     if (!_LKToplb) {
         _LKToplb =  [UILabel new];
         _LKToplb.font =KBlFont(18);
-        _LKToplb.textColor = [UIColor colorWithHexString:@"#FF6C00"];
+        _LKToplb.textColor = LGDMianColor;
 //        _LKToplb.text = @"完善个人简介";
     }
     return _LKToplb;
@@ -78,7 +78,7 @@
         _LKBtomlb =[UILabel new];
         _LKBtomlb.numberOfLines = 0;
         _LKBtomlb.font = [UIFont systemFontOfSize:12];
-        _LKBtomlb.textColor = [UIColor colorWithHexString:@"#FF9E59"];
+        _LKBtomlb.textColor = [UIColor colorWithHexString:@"FC305A" Alpha:1];
 //        _LKBtomlb.text = @"让好友更快的认识你";
 
     }

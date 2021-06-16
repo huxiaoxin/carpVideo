@@ -12,6 +12,7 @@
 #import <MJRefresh.h>
 #import "CarpVideoCatagoryDetailViewController.h"
 #import <AVKit/AVKit.h>
+#import "PandaMsgDetailViewController.h"
 @interface CarpVideoCatagroySubViewController ()<JRWaterFallLayoutDelegate,UICollectionViewDelegate,UICollectionViewDataSource,CarpVideocatagoryCollectionViewCellDelegate>
 @property(nonatomic,strong) UICollectionView * CarpVideoCollectionView;
 @property(nonatomic,strong) NSMutableArray   * CarpVideoDataArr;
@@ -34,12 +35,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_navigationBar.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginSuccedNotifiCation" object:nil];
     [self.view addSubview:self.CarpVideoCollectionView];
     [_CarpVideoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
         }];
     [_CarpVideoCollectionView registerClass:[CarpVideocatagoryCollectionViewCell class] forCellWithReuseIdentifier:@"CarpVideocatagoryCollectionViewCell"];
     [_CarpVideoCollectionView reloadData];
+}
+-(void)CarpVideoLoginSuccedNotifiCation{
+    [_CarpVideoCollectionView.mj_header beginRefreshing];
 }
 - (UICollectionView *)CarpVideoCollectionView{
     if (!_CarpVideoCollectionView) {
@@ -95,15 +101,38 @@
 }
 -(void)CarpVideoCollectionViewHeaderClick{
     MJWeakSelf;
-    NSArray * dataArr = [WHC_ModelSqlite  query:[CarpVideoCatagoryModel class]];
+    NSArray * dataArr;
+    if (self.VCIndex == 0) {
+        dataArr =  [WHC_ModelSqlite query:[CarpVideoCatagoryModel class] where:[NSString stringWithFormat:@"isFallow = '%@'",@(YES)]];
+    }else{
+        dataArr =  [WHC_ModelSqlite  query:[CarpVideoCatagoryModel class]];
+    }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (weakSelf.CarpVideoDataArr.count > 0) {
             [weakSelf.CarpVideoDataArr removeAllObjects];
         }
-        weakSelf.CarpVideoDataArr = dataArr.mutableCopy;
+        if (weakSelf.VCIndex == 0) {
+        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+            LYEmptyView * emtyView = [LYEmptyView emptyActionViewWithImage:[UIImage imageNamed:@""] titleStr:@"未登录" detailStr:nil btnTitleStr:@"去登录" target:self action:@selector(gotoLoginAction)];
+            weakSelf.CarpVideoCollectionView.ly_emptyView = emtyView;
+        }else{
+            weakSelf.CarpVideoDataArr =  dataArr.mutableCopy;
+        }
+        }else{
+            weakSelf.CarpVideoDataArr = dataArr.mutableCopy;
+
+        }
         [weakSelf.CarpVideoCollectionView reloadData];
         [weakSelf.CarpVideoCollectionView.mj_header endRefreshing];
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.CarpVideoCollectionView reloadData];
+
+        });
     });
+}
+-(void)gotoLoginAction{
+    [self CarpVideoShowLoginVc];
 }
 #pragma mark--CarpVideocatagoryCollectionViewCellDelegate
 //播放视频
@@ -176,8 +205,58 @@
     CarpVideoDetailVc.catagoryModel = self.CarpVideoDataArr[cellIndex];
     [self.navigationController pushViewController:CarpVideoDetailVc animated:YES];
 }
-//点赞
+//点赞    
 -(void)CarpVideocatagoryCollectionViewCellWithLike:(NSInteger)cellIndex{
+    CarpVideoCatagoryModel * catagoryModel = self.CarpVideoDataArr[cellIndex];
+    catagoryModel.isLike = !catagoryModel.isLike;
+    if (catagoryModel.isLike) {
+        catagoryModel.likeNums +=1;
+    }else{
+        catagoryModel.likeNums -=1;
+    }
+    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        [LCProgressHUD showLoading:@""];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [LCProgressHUD hide];
+            [WHC_ModelSqlite update:[CarpVideoCatagoryModel class] value:[NSString stringWithFormat:@"isLike = '%@'",@(catagoryModel.isLike)] where:[NSString stringWithFormat:@"userID = '%ld'",catagoryModel.userID]];
+            [WHC_ModelSqlite update:[CarpVideoCatagoryModel class] value:[NSString stringWithFormat:@"likeNums = '%ld'",catagoryModel.likeNums] where:[NSString stringWithFormat:@"userID = '%ld'",catagoryModel.userID]];
+            [self.CarpVideoCollectionView reloadData];
+        });
+    }else{
+        [self CarpVideoShowLoginVc];
+    }
+    
+}
+//添加关注
+-(void)CarpVideocatagoryCollectionViewCellAddFalow:(NSInteger)cellIndex faloowBtn:(UIButton *)falowBtn{
+    CarpVideoCatagoryModel * catagoryModel = self.CarpVideoDataArr[cellIndex];
+    catagoryModel.isFallow = !catagoryModel.isFallow;
+    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        [LCProgressHUD showLoading:@""];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [LCProgressHUD hide];
+            [WHC_ModelSqlite update:[CarpVideoCatagoryModel class] value:[NSString stringWithFormat:@"isFallow = '%@'",@(catagoryModel.isFallow)] where:[NSString stringWithFormat:@"userID = '%ld'",catagoryModel.userID]];
+            [self.CarpVideoCollectionView reloadData];
+        });
+    }else{
+        [self CarpVideoShowLoginVc];
+    }
+}
+-(void)CarpVideocatagoryCollectionViewCellToChat:(NSInteger)cellIndex{
+    CarpVideoCatagoryModel * catagoryModel = self.CarpVideoDataArr[cellIndex];
+    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        [self CarpVideoShowLoginVc];
+        return;
+    }
+    PandaMovieMsgModel *  mdeld = [[PandaMovieMsgModel alloc]init];
+    mdeld.ChatID =  catagoryModel.userID;
+    mdeld.imgurl = catagoryModel.imgIcon;
+    mdeld.topname = catagoryModel.userName;
+    PandaMsgDetailViewController * CarpVideoDetailVc  = [[PandaMsgDetailViewController alloc]init];
+    CarpVideoDetailVc.hidesBottomBarWhenPushed = YES;
+    CarpVideoDetailVc.pandModel =mdeld;
+    [self.navigationController pushViewController:CarpVideoDetailVc animated:YES];
+    
     
 }
 /*

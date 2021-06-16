@@ -120,6 +120,11 @@
         _CarpVideouserImgView.layer.cornerRadius = RealWidth(15);
         _CarpVideouserImgView.layer.masksToBounds = YES;
         _CarpVideouserImgView.image = [UIImage imageNamed:@"whiteLogo"];
+        _CarpVideouserImgView.userInteractionEnabled = YES;
+        
+        UITapGestureRecognizer  * carpVideoChatTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(CarpVideouserImgViewClicks)];
+        [_CarpVideouserImgView addGestureRecognizer:carpVideoChatTap];
+        
     }
     return _CarpVideouserImgView;
 }
@@ -188,7 +193,6 @@ return _CarpVideoGaryView;
     if (!_CarpVideoLikeBtn) {
         _CarpVideoLikeBtn = [CarpVideoCatagoryBtn buttonWithType:UIButtonTypeCustom];
         _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
-        _CarpVideoLikeBtn.CarpVideoTitle.text = @"21";
         [_CarpVideoLikeBtn addTarget:self action:@selector(CarpVideoCatagoryBtnLikeAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _CarpVideoLikeBtn;
@@ -220,29 +224,25 @@ return _CarpVideoGaryView;
     _carpVideoTitlelb.text =  carpVideoModel.title;
     [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carpVideoModel.imgs.firstObject] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
     _CarpVideoGaryView.hidden =  !carpVideoModel.isVideo;
-
+    _CarpVideoLikeBtn.CarpVideoTitle.text = [NSString stringWithFormat:@"%ld",carpVideoModel.likeNums];
+    
     if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        
+        _carpVideoDelebtn.selected =  carpVideoModel.isFallow;
+        _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:carpVideoModel.isLike ? @"like-seltecd" : @"like_nomal"];
     }else{
-        
+        _carpVideoDelebtn.selected =  NO;
+        _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
     }
     [self setNeedsLayout];
     [self layoutIfNeeded];
     carpVideoModel.CarpCellHeight = CGRectGetHeight(_CarpVideoContentView.frame);
-
     
 }
 -(void)carpVideoDelebtnClick:(UIButton *)addbtn{
-    addbtn.selected = !addbtn.selected;
+    [self.delegate CarpVideocatagoryCollectionViewCellAddFalow:self.tag faloowBtn:addbtn];
 }
 -(void)CarpVideoCatagoryBtnLikeAction:(CarpVideoCatagoryBtn * )likeBtn{
     [self.delegate CarpVideocatagoryCollectionViewCellWithLike:self.tag];
-    likeBtn.selected = !likeBtn.selected;
-    if(likeBtn.selected){
-        likeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like-seltecd"];
-    }else{
-        likeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
-    }
 }
 -(void)CarpVideoPlayBtnClick:(UIButton *)CarpPinbiBtn{
     [self.delegate CarpVideocatagoryCollectionViewCellWithPlayVideoIndex:self.tag];
@@ -252,5 +252,8 @@ return _CarpVideoGaryView;
 }
 -(void)CarpVideoCatagoryBtnWithComentAction:(CarpVideoCatagoryBtn *)comentBtn{
     [self.delegate CarpVideocatagoryCollectionViewCellWithComent:self.tag];
+}
+-(void)CarpVideouserImgViewClicks{
+    [self.delegate CarpVideocatagoryCollectionViewCellToChat:self.tag];
 }
 @end

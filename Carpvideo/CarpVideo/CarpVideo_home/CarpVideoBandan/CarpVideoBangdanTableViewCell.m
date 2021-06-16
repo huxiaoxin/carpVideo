@@ -30,7 +30,7 @@
     [_CarpVideoContentView addSubview:self.CarpVideoSecondlb];
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    [_CarpVideoContentView addSubview:self.CarpStarView];
+//    [_CarpVideoContentView addSubview:self.CarpStarView];
     [_CarpVideoContentView addSubview:self.CarpThreelb];
     [_CarpVideoContentView addSubview:self.CarpFourelb];
     [_CarpVideoContentView addSubview:self.CarpFivelb];
@@ -66,18 +66,19 @@
     [_CarpFivelb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
         make.top.mas_equalTo(_CarpFourelb.mas_bottom).offset(RealWidth(7));
+        make.right.mas_equalTo(-RealWidth(15));
     }];
     
     [_CarpBtomView  mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.inset(RealWidth(15));
-        make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(RealWidth(5));
+        make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(RealWidth(10));
         make.height.mas_equalTo(RealWidth(24));
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-        _CarpStarView.currentStar = 3;
-        [self->_CarpVideoContentView viewShadowPathWithColor:LGDMianColor shadowOpacity:0.2 shadowRadius:RealWidth(5) shadowPathType:LeShadowPathAround shadowPathWidth:RealWidth(5)];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//        _CarpStarView.currentStar = 3;
+//        [self->_CarpVideoContentView viewShadowPathWithColor:LGDMianColor shadowOpacity:0.2 shadowRadius:RealWidth(5) shadowPathType:LeShadowPathAround shadowPathWidth:RealWidth(5)];
+//    });
     
 }
 -(UIView *)CarpVideoContentView{
@@ -116,14 +117,14 @@
     }
     return _CarpVideoSecondlb;
 }
-- (WWStarView *)CarpStarView{
-    if (!_CarpStarView) {
-        _CarpStarView = [[WWStarView alloc]initWithFrame:CGRectMake(RealWidth(130), RealWidth(29.5), RealWidth(50), RealWidth(20)) numberOfStars:5 currentStar:3 rateStyle:WholeStar isAnination:YES andamptyImageName:@"xingxing-nomal" fullImageName:@"xingxing" finish:^(CGFloat currentStar) {
-        }];
-        _CarpStarView.backgroundColor = [UIColor whiteColor];
-    }
-    return _CarpStarView;
-}
+//- (WWStarView *)CarpStarView{
+//    if (!_CarpStarView) {
+//        _CarpStarView = [[WWStarView alloc]initWithFrame:CGRectMake(RealWidth(130), RealWidth(29.5), RealWidth(50), RealWidth(20)) numberOfStars:5 currentStar:3 rateStyle:WholeStar isAnination:YES andamptyImageName:@"xingxing-nomal" fullImageName:@"xingxing" finish:^(CGFloat currentStar) {
+//        }];
+//        _CarpStarView.backgroundColor = [UIColor whiteColor];
+//    }
+//    return _CarpStarView;
+//}
 - (UILabel *)CarpThreelb{
     if (!_CarpThreelb) {
         _CarpThreelb = [UILabel new];
