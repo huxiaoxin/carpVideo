@@ -80,8 +80,8 @@
     
     [_CarpEnterBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-RealWidth(15));
-        make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(RealWidth(12));
-        make.size.mas_equalTo(CGSizeMake(RealWidth(60), RealWidth(26)));
+        make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(RealWidth(10));
+        make.size.mas_equalTo(CGSizeMake(RealWidth(60), RealWidth(20)));
     }];
 }
 - (UIView *)CarpVideoContentView{
@@ -173,7 +173,7 @@
         [_CarpEnterBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _CarpEnterBtn.titleLabel.font = KBlFont(12);
         _CarpEnterBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        _CarpEnterBtn.layer.cornerRadius = RealWidth(13);
+        _CarpEnterBtn.layer.cornerRadius = RealWidth(10);
         _CarpEnterBtn.layer.masksToBounds = YES;
     }
     return _CarpEnterBtn;

@@ -7,6 +7,7 @@
 
 #import "CarpVideoAcotityViewController.h"
 #import "CarpVideoAcityTableViewCell.h"
+#import "CarpVideoActityDetailViewController.h"
 @interface CarpVideoAcotityViewController ()
 @property(nonatomic,strong) NSMutableArray * CarpVideoDataArr;
 @end
@@ -34,6 +35,10 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return RealWidth(170);
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CarpVideoActityDetailViewController * caropVideoDetailVc = [[CarpVideoActityDetailViewController alloc]init];
+    [self.navigationController pushViewController:caropVideoDetailVc animated:YES];
 }
 -(void)CarpVideoActityHeaderClicks{
     MJWeakSelf;

@@ -7,6 +7,7 @@
 
 #import "CarpVideoBangdanTableViewCell.h"
 #import "WWStarView.h"
+#import "LMJHorizontalScrollText.h"
 @interface CarpVideoBangdanTableViewCell ()
 @property(nonatomic,strong) UIView * CarpVideoContentView;
 @property(nonatomic,strong) UIImageView * CarpVideoThubImgView;
@@ -18,7 +19,8 @@
 @property(nonatomic,strong) UILabel     * CarpFivelb;
 @property(nonatomic,strong) UIView      * CarpBtomView;
 @property(nonatomic,strong) UIImageView * CarpTopImgView;
-
+@property(nonatomic,strong) UIImageView * CarpHotComentImgView;
+@property(nonatomic,strong) LMJHorizontalScrollText * CarpScrolText;
 @end
 @implementation CarpVideoBangdanTableViewCell
 -(void)setContentUI{
@@ -28,57 +30,96 @@
     [_CarpVideoContentView addSubview:self.CarpVideoThubImgView];
     [_CarpVideoContentView addSubview:self.CarpVideoTitle];
     [_CarpVideoContentView addSubview:self.CarpVideoSecondlb];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
-//    [_CarpVideoContentView addSubview:self.CarpStarView];
+    [_CarpVideoContentView addSubview:self.CarpStarView];
     [_CarpVideoContentView addSubview:self.CarpThreelb];
     [_CarpVideoContentView addSubview:self.CarpFourelb];
     [_CarpVideoContentView addSubview:self.CarpFivelb];
-    [self addSubview:self.CarpBtomView];
-    [_CarpVideoContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(RealWidth(5), RealWidth(10), RealWidth(5), RealWidth(10)));
-    }];
+    [_CarpVideoContentView addSubview:self.CarpBtomView];
+    [_CarpBtomView addSubview:self.CarpHotComentImgView];
+    [_CarpBtomView addSubview:self.CarpScrolText];
     
-    [_CarpVideoThubImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.inset(RealWidth(10));
-        make.size.mas_equalTo(CGSizeMake(RealWidth(70), RealWidth(100)));
-    }];
-    [_CarpVideoTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
-        make.top.mas_equalTo(RealWidth(10));
-    }];
+    [_CarpVideoContentView setFrame:CGRectMake(RealWidth(10), RealWidth(10), GK_SCREEN_WIDTH-RealWidth(20), RealWidth(150))];
     
-    [_CarpVideoSecondlb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
-        make.top.mas_equalTo(_CarpVideoTitle.mas_bottom).offset(RealWidth(7));
-    }];
+//    [_CarpVideoContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.mas_equalTo(UIEdgeInsetsMake(RealWidth(5), RealWidth(10), RealWidth(5), RealWidth(10)));
+//    }];
     
-    [_CarpThreelb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
-        make.top.mas_equalTo(_CarpVideoSecondlb.mas_bottom).offset(RealWidth(7));
-    }];
+    [_CarpVideoThubImgView setFrame:CGRectMake(RealWidth(10), RealWidth(10), RealWidth(70), RealWidth(100))];
     
-    [_CarpFourelb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
-        make.top.mas_equalTo(_CarpThreelb.mas_bottom).offset(RealWidth(7));
-    }];
     
-    [_CarpFivelb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
-        make.top.mas_equalTo(_CarpFourelb.mas_bottom).offset(RealWidth(7));
-        make.right.mas_equalTo(-RealWidth(15));
-    }];
+//    [_CarpVideoThubImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.inset(RealWidth(10));
+//        make.size.mas_equalTo(CGSizeMake(RealWidth(70), RealWidth(100)));
+//    }];
     
-    [_CarpBtomView  mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.inset(RealWidth(15));
-        make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(RealWidth(10));
-        make.height.mas_equalTo(RealWidth(24));
-    }];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [_CarpVideoTitle setFrame:CGRectMake(CGRectGetMaxX(_CarpVideoThubImgView.frame)+RealWidth(10), RealWidth(10), CGRectGetWidth(_CarpVideoContentView.frame)-CGRectGetMaxX(_CarpVideoThubImgView.frame)-RealWidth(10), RealWidth(15))];
+    
+//    [_CarpVideoTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
+//        make.top.mas_equalTo(RealWidth(10));
+//    }];
 //
-//        _CarpStarView.currentStar = 3;
-//        [self->_CarpVideoContentView viewShadowPathWithColor:LGDMianColor shadowOpacity:0.2 shadowRadius:RealWidth(5) shadowPathType:LeShadowPathAround shadowPathWidth:RealWidth(5)];
-//    });
+    
+    CGSize SecondSize = [@"推荐指数" cxl_sizeWithString:[UIFont systemFontOfSize:12]];
+    [_CarpVideoSecondlb setFrame:CGRectMake(CGRectGetMaxX(_CarpVideoThubImgView.frame)+RealWidth(10), CGRectGetMaxY(_CarpVideoTitle.frame)+RealWidth(7), SecondSize.width, RealWidth(15))];
+    _CarpStarView.x = CGRectGetMaxX(_CarpVideoSecondlb.frame)+RealWidth(5);
+    
+//    [_CarpVideoSecondlb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
+//        make.top.mas_equalTo(_CarpVideoTitle.mas_bottom).offset(RealWidth(7));
+//    }];
+//
+    
+    
+    
+    [_CarpThreelb setFrame:CGRectMake(CGRectGetMaxX(_CarpVideoThubImgView.frame)+RealWidth(10), CGRectGetMaxY(_CarpVideoSecondlb.frame)+RealWidth(7), CGRectGetWidth(_CarpVideoContentView.frame)-CGRectGetMaxX(_CarpVideoThubImgView.frame)-RealWidth(10), RealWidth(15))];
+    
+    
+    
+    
+    
+    
+//    [_CarpThreelb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
+//        make.top.mas_equalTo(_CarpVideoSecondlb.mas_bottom).offset(RealWidth(7));
+//    }];
+//
+    
+    [_CarpFourelb setFrame:CGRectMake(CGRectGetMaxX(_CarpVideoThubImgView.frame)+RealWidth(10), CGRectGetMaxY(_CarpThreelb.frame)+RealWidth(7), CGRectGetWidth(_CarpVideoContentView.frame)-CGRectGetMaxX(_CarpVideoThubImgView.frame)-RealWidth(10), RealWidth(15))];
+    
+    
+    
+    
+//    [_CarpFourelb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
+//        make.top.mas_equalTo(_CarpThreelb.mas_bottom).offset(RealWidth(7));
+//    }];
+//
+    [_CarpFivelb setFrame:CGRectMake(CGRectGetMaxX(_CarpVideoThubImgView.frame)+RealWidth(10), CGRectGetMaxY(_CarpFourelb.frame)+RealWidth(7), CGRectGetWidth(_CarpVideoContentView.frame)-CGRectGetMaxX(_CarpVideoThubImgView.frame)-RealWidth(10), RealWidth(15))];
+    
+    
+//    [_CarpFivelb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_CarpVideoThubImgView.mas_right).offset(RealWidth(10));
+//        make.top.mas_equalTo(_CarpFourelb.mas_bottom).offset(RealWidth(7));
+//        make.right.mas_equalTo(-RealWidth(15));
+//    }];
+//
+    
+    [_CarpBtomView setFrame:CGRectMake(RealWidth(15), CGRectGetMaxY(_CarpVideoThubImgView.frame)+RealWidth(10), CGRectGetWidth(_CarpVideoContentView.frame)-RealWidth(30), RealWidth(24))];
+    
+    [_CarpScrolText setFrame:CGRectMake(RealWidth(50),0, CGRectGetWidth(_CarpBtomView.frame)-RealWidth(50), CGRectGetHeight(_CarpBtomView.frame))];
+
+    [_CarpHotComentImgView setFrame:CGRectMake(RealWidth(5), RealWidth(2), RealWidth(40), RealWidth(20))];
+//    [_CarpBtomView  mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.inset(RealWidth(15));
+//        make.top.mas_equalTo(_CarpVideoThubImgView.mas_bottom).offset(RealWidth(10));
+//        make.height.mas_equalTo(RealWidth(24));
+//    }];
+
+    //repingicon
+    
+    
+    
     
 }
 -(UIView *)CarpVideoContentView{
@@ -117,14 +158,14 @@
     }
     return _CarpVideoSecondlb;
 }
-//- (WWStarView *)CarpStarView{
-//    if (!_CarpStarView) {
-//        _CarpStarView = [[WWStarView alloc]initWithFrame:CGRectMake(RealWidth(130), RealWidth(29.5), RealWidth(50), RealWidth(20)) numberOfStars:5 currentStar:3 rateStyle:WholeStar isAnination:YES andamptyImageName:@"xingxing-nomal" fullImageName:@"xingxing" finish:^(CGFloat currentStar) {
-//        }];
-//        _CarpStarView.backgroundColor = [UIColor whiteColor];
-//    }
-//    return _CarpStarView;
-//}
+- (WWStarView *)CarpStarView{
+    if (!_CarpStarView) {
+        _CarpStarView = [[WWStarView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_CarpVideoSecondlb.frame)+RealWidth(5), RealWidth(29.5), RealWidth(50), RealWidth(20)) numberOfStars:5 currentStar:3 rateStyle:WholeStar isAnination:YES andamptyImageName:@"xingxing-nomal" fullImageName:@"xingxing" finish:^(CGFloat currentStar) {
+        }];
+        _CarpStarView.backgroundColor = [UIColor whiteColor];
+    }
+    return _CarpStarView;
+}
 - (UILabel *)CarpThreelb{
     if (!_CarpThreelb) {
         _CarpThreelb = [UILabel new];
@@ -160,6 +201,26 @@
         _CarpBtomView.layer.masksToBounds = YES;
     }
     return _CarpBtomView;
+}
+- (LMJHorizontalScrollText *)CarpScrolText{
+    if (!_CarpScrolText) {
+        _CarpScrolText = [[LMJHorizontalScrollText alloc]initWithFrame:CGRectMake(RealWidth(30), 0, CGRectGetWidth(_CarpBtomView.frame)-RealWidth(40), CGRectGetHeight(_CarpBtomView.frame))];
+        _CarpScrolText.textColor = LGDLightBLackColor;
+        _CarpScrolText.textFont = [UIFont boldSystemFontOfSize:10];
+        _CarpScrolText.text = @"3213215472615467125487612548712";
+        _CarpScrolText.backgroundColor = LGDMianColor;
+        _CarpScrolText.moveDirection = LMJTextScrollMoveLeft;
+        _CarpScrolText.speed = 0.5;
+    }
+    return _CarpScrolText;
+    
+}
+- (UIImageView *)CarpHotComentImgView{
+    if (!_CarpHotComentImgView) {
+        _CarpHotComentImgView = [[UIImageView alloc]init];
+        _CarpHotComentImgView.image = [UIImage imageNamed:@"repingicon"];
+    }
+    return _CarpHotComentImgView;
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

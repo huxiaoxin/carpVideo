@@ -8,6 +8,7 @@
 #import "CarpVideoBandanViewController.h"
 #import "CarpVieoBangdanHeaderView.h"
 #import "CarpVideoBangdanTableViewCell.h"
+#import "CarpVideoDetailViewController.h"
 @interface CarpVideoBandanViewController ()
 @property(nonatomic,strong) CarpVieoBangdanHeaderView * CarpHeader;
 @end
@@ -31,6 +32,11 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return RealWidth(160);
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CarpVideoDetailViewController * carpVideoDetailVc = [[CarpVideoDetailViewController alloc]init];
+    carpVideoDetailVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:carpVideoDetailVc animated:YES];
 }
 - (CarpVieoBangdanHeaderView *)CarpHeader{
     if (!_CarpHeader) {

@@ -56,6 +56,34 @@
     [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#FF6C00"] range:NSMakeRange(text.length, appendingstr.length)];
     self.attributedText = attributedString;
 }
+- (void)setText:(NSString *)text  textColor:(UIColor *)textColor appendingImg:(NSString *)appendingimg  imgIndex:(NSInteger)imgIndex lineSpacing:(CGFloat)lineSpacing{
+    if (!text || lineSpacing < 0.01) {
+        self.text = text;
+        return;
+    }
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:lineSpacing];
+    [paragraphStyle setLineBreakMode:self.lineBreakMode];
+    [paragraphStyle setAlignment:self.textAlignment];
+    NSString * TottalText = [NSString stringWithFormat:@"%@",text];
+    
+    UIImage * myImgName = [UIImage imageNamed:appendingimg];
+    NSTextAttachment * attment = [[NSTextAttachment alloc]init];
+    attment.image = myImgName;
+    CGFloat mid = self.font.descender + self.font.capHeight;
+    CGFloat imgY = self.font.descender - attment.image.size.height/2 + mid + 2;
+    attment.bounds = CGRectMake(0, imgY, attment.image.size.width, attment.image.size.height);
+    
+    NSAttributedString * myAttbute  = [NSAttributedString attributedStringWithAttachment:attment];
+   
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:TottalText];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [TottalText length])];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:textColor range:NSMakeRange(0, text.length)];
+    [attributedString insertAttributedString:myAttbute atIndex:imgIndex];
+    self.userInteractionEnabled = YES;
+
+    self.attributedText = attributedString;
+}
 - (void)setText:(NSString *)text  textColor:(UIColor *)textColor appendingImg:(NSString *)appendingimg lineSpacing:(CGFloat)lineSpacing{
     if (!text || lineSpacing < 0.01) {
         self.text = text;

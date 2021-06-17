@@ -12,6 +12,7 @@ typedef void(^lbTapAction)(id object);
 //计算行数
 -(NSInteger)rowsOfString:(NSString *)text withFont:(UIFont *)font withWidth:(CGFloat)width;
 - (void)setText:(NSString *)text  textColor:(UIColor *)textColor appendingImg:(NSString *)appendingimg lineSpacing:(CGFloat)lineSpacing;
+- (void)setText:(NSString *)text  textColor:(UIColor *)textColor appendingImg:(NSString *)appendingimg  imgIndex:(NSInteger)imgIndex lineSpacing:(CGFloat)lineSpacing;
 
 @end
 NS_ASSUME_NONNULL_END

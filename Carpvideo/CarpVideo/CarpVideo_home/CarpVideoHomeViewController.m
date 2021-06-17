@@ -17,6 +17,7 @@
 #import "CarpVideoHomeNewsDetailViewController.h"
 #import "CarpVideoNewsListViewController.h"
 #import "CarpVideoAcotityViewController.h"
+#import "CarpVieoAdviceViewController.h"
 @interface CarpVideoHomeViewController ()<CarpVideoHomeHeaderViewDelegate>
 @property(nonatomic,strong) CarpVideoHomeHeaderView * carpVideoHeader;
 @property(nonatomic,strong) NSMutableArray * CarpVideoHomeDataArr;
@@ -145,9 +146,9 @@
     [self.navigationController pushViewController:CarpVideoDetailVc animated:YES];
 }
 -(void)CarpVideoMoreBtnClick{
-    CarpMoreHomeViewController * CarpMorehomeVc =[[CarpMoreHomeViewController alloc]init];
-    CarpMorehomeVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:CarpMorehomeVc animated:YES];
+    CarpVideoNewsListViewController  * carpListVc =  [[CarpVideoNewsListViewController alloc]init];
+    carpListVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:carpListVc animated:YES];
 }
 #pragma mark--CarpVideoHomeHeaderViewDelegate
 -(void)CarpVideoHomeHeaderViewSearchAction{
@@ -170,7 +171,9 @@
         carpbandaVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:carpbandaVc animated:YES];
     }else if (btnIndex == 1){
-        
+        CarpVieoAdviceViewController * carpVideoAdviceVc =  [[CarpVieoAdviceViewController alloc]init];
+        carpVideoAdviceVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:carpVideoAdviceVc animated:YES];
     }else if (btnIndex == 2){
         CarpVideoNewsListViewController  * carpListVc =  [[CarpVideoNewsListViewController alloc]init];
         carpListVc.hidesBottomBarWhenPushed = YES;
