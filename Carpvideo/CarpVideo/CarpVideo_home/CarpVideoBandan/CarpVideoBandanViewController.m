@@ -11,23 +11,46 @@
 #import "CarpVideoDetailViewController.h"
 @interface CarpVideoBandanViewController ()
 @property(nonatomic,strong) CarpVieoBangdanHeaderView * CarpHeader;
+@property(nonatomic,strong) NSMutableArray            * CarpVideoDataArr;
 @end
 
 @implementation CarpVideoBandanViewController
-
+- (NSMutableArray *)CarpVideoDataArr{
+    if (!_CarpVideoDataArr) {
+        _CarpVideoDataArr = [NSMutableArray array];
+    }
+    return _CarpVideoDataArr;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_navBarAlpha = 0;
     
     [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM)];
     _CarpVideoTableView.tableHeaderView = self.CarpHeader;
+    _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoBandanHeaderClicks)];
+    [_CarpVideoTableView.mj_header beginRefreshing];
     // Do any additional setup after loading the view.
 }
+-(void)CarpVideoBandanHeaderClicks{
+    [LCProgressHUD showLoading:@""];
+    NSArray * dataArr = [WHC_ModelSqlite query:[CarpVideoHomeModels class]];
+    MJWeakSelf;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (weakSelf.CarpVideoDataArr.count > 0) {
+            [weakSelf.CarpVideoDataArr removeAllObjects];
+        }
+        [LCProgressHUD hide];
+        weakSelf.CarpVideoDataArr = dataArr.mutableCopy;
+        [self->_CarpVideoTableView reloadData];
+        [self->_CarpVideoTableView.mj_header endRefreshing];
+    });
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.CarpVideoDataArr.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CarpVideoBangdanTableViewCell * CarpVideoCell = [CarpVideoBangdanTableViewCell createCellWithTheTableView:tableView AndTheIndexPath:indexPath];
+    CarpVideoCell.carpModel = self.CarpVideoDataArr[indexPath.row];
     return CarpVideoCell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -36,6 +59,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CarpVideoDetailViewController * carpVideoDetailVc = [[CarpVideoDetailViewController alloc]init];
     carpVideoDetailVc.hidesBottomBarWhenPushed = YES;
+    carpVideoDetailVc.carpMoel = self.CarpVideoDataArr[indexPath.row];
     [self.navigationController pushViewController:carpVideoDetailVc animated:YES];
 }
 - (CarpVieoBangdanHeaderView *)CarpHeader{

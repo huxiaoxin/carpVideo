@@ -18,9 +18,12 @@
 #import "CarpVideoNewsListViewController.h"
 #import "CarpVideoAcotityViewController.h"
 #import "CarpVieoAdviceViewController.h"
+#import "CarpVideoDetailViewController.h"
 @interface CarpVideoHomeViewController ()<CarpVideoHomeHeaderViewDelegate>
 @property(nonatomic,strong) CarpVideoHomeHeaderView * carpVideoHeader;
 @property(nonatomic,strong) NSMutableArray * CarpVideoHomeDataArr;
+@property(nonatomic,copy) NSArray * CarpVideoHeaderDataArr;
+@property(nonatomic,copy) NSArray * CarpVieeobananrDataArr;
 @end
 
 @implementation CarpVideoHomeViewController
@@ -36,12 +39,13 @@
     [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT)];
     _CarpVideoTableView.tableHeaderView = self.carpVideoHeader;
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoTableViewHeaderClicks)];
-//    [_CarpVideoTableView.mj_header beginRefreshing];
+    [_CarpVideoTableView.mj_header beginRefreshing];
     
 }
 -(void)CarpVideoTableViewHeaderClicks{
     
     [LCProgressHUD showLoading:@""];
+    NSArray * CarpVideoDataArr = [WHC_ModelSqlite query:[CarpVideoHomeModels class]];
     NSDictionary * dictionary =   [self getJsonDataJsonname:@"pandaMoview"];
     MJWeakSelf;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -61,7 +65,29 @@
             }
         }
         [LCProgressHUD hide];
-        weakSelf.CarpVideoHomeDataArr = [PandaHoemTempArr subarrayWithRange:NSMakeRange(0, 5)].mutableCopy;
+        if (CarpVideoDataArr.count > 5) {
+            weakSelf.CarpVideoHeaderDataArr =  [CarpVideoDataArr subarrayWithRange:NSMakeRange(0, 4)];
+            weakSelf.carpVideoHeader.VideoDataArr = [CarpVideoDataArr subarrayWithRange:NSMakeRange(0, 4)];
+            weakSelf.CarpVideoHomeDataArr = [PandaHoemTempArr subarrayWithRange:NSMakeRange(0, 5)].mutableCopy;
+        }else{
+            weakSelf.CarpVideoHeaderDataArr = CarpVideoDataArr;
+            weakSelf.carpVideoHeader.VideoDataArr = CarpVideoDataArr;
+            weakSelf.CarpVideoHomeDataArr  = PandaHoemTempArr;
+        }
+        NSMutableArray * tempBanararr = [NSMutableArray array];
+        NSMutableArray * tempBannaImgArr = [NSMutableArray array];
+        NSMutableArray * tempBannaTitleArr = [NSMutableArray array];
+        NSMutableArray * tempModelbanr = [NSMutableArray array];
+        for (int i = 7 ; i < 9 ; i ++) {
+            CarpVideoHomeModels * mdoel = CarpVideoDataArr[i];
+            [tempModelbanr addObject:mdoel];
+            [tempBannaImgArr addObject:mdoel.carpVideoImgThub];
+            [tempBannaTitleArr addObject:mdoel.carpVideoHomeName];
+        }
+        weakSelf.CarpVieeobananrDataArr = tempModelbanr.copy;
+        [tempBanararr addObject:tempBannaImgArr];
+        [tempBanararr addObject:tempBannaTitleArr];
+        weakSelf.carpVideoHeader.BanarArr = tempBanararr.copy;
         [self->_CarpVideoTableView reloadData];
         [self->_CarpVideoTableView.mj_header endRefreshing];
         
@@ -184,6 +210,21 @@
         [self.navigationController pushViewController:carpVideoVc animated:YES];
     }
     
+}
+-(void)CarpVideoHomeHeaderViewWitBanarDidIndex:(NSInteger)banarIndex{
+    CarpVideoHomeModels * carpModel  =self.CarpVieeobananrDataArr[banarIndex];
+    
+    CarpVideoDetailViewController * carpDetailVc = [[CarpVideoDetailViewController alloc]init];
+    carpDetailVc.carpMoel = carpModel;
+    carpDetailVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:carpDetailVc animated:YES];
+    
+}
+-(void)CarpVideoHomeHeaderViewCollectionDidSelecWith:(CarpVideoHomeModels *)mdoel{
+    CarpVideoDetailViewController * carpDetailVc = [[CarpVideoDetailViewController alloc]init];
+    carpDetailVc.carpMoel = mdoel;
+    carpDetailVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:carpDetailVc animated:YES];
 }
 /*
 #pragma mark - Navigation

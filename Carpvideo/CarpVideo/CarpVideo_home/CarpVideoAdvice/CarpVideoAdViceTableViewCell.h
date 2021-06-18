@@ -6,7 +6,7 @@
 //
 
 #import "CarpVideoBaseTableViewCell.h"
-
+#import "CarpVideoHomeModels.h"
 NS_ASSUME_NONNULL_BEGIN
 @protocol CarpVideoAdViceTableViewCellDelegate <NSObject>
 
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 @interface CarpVideoAdViceTableViewCell : CarpVideoBaseTableViewCell
 @property(nonatomic,weak) id <CarpVideoAdViceTableViewCellDelegate>delegate;
+@property(nonatomic,strong) CarpVideoHomeModels *  carpMoel;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -28,9 +28,9 @@
 - (UIImageView *)CarpThubImgView{
     if (!_CarpThubImgView) {
         _CarpThubImgView = [UIImageView new];
-        _CarpThubImgView.backgroundColor = LGDMianColor;
         _CarpThubImgView.layer.cornerRadius = RealWidth(20);
         _CarpThubImgView.layer.masksToBounds = YES;
+        _CarpThubImgView.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _CarpThubImgView;
 }
@@ -43,6 +43,13 @@
         _CarpTitle.text = @"吴亦凡00";
     }
     return _CarpTitle;
+}
+- (void)setCarpDic:(NSDictionary *)carpDic{
+    _carpDic = carpDic;
+    NSString * imgUrl = [carpDic objectForKey:@"img"];
+    NSString * articlName = [carpDic objectForKey:@"title"];
+    [_CarpThubImgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpTitle.text = articlName;
 }
 
 @end

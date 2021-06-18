@@ -4,8 +4,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PadaCatagoryweizhiModel : NSObject
-@property(nonatomic,copy) NSString * FilmThubImgView;
+@interface carpVideoAcitytyModel : NSObject
+@property(nonatomic,copy) NSString * carpVideoThub;
 @property(nonatomic,copy) NSString * title;
 @property(nonatomic,copy) NSString * titleDesc;
 @property(nonatomic,copy) NSString * DetailDesc;
@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) BOOL isBaoming;
 @property(nonatomic,assign) NSInteger coinNum;
 @property(nonatomic,assign) CGFloat ComentCoinNum;
+@property(nonatomic,assign) NSInteger totalPersonNum;
+@property(nonatomic,assign) CGFloat preogrese;
+@property(nonatomic,assign) NSInteger  lastPersonNum;
 @end
 
 NS_ASSUME_NONNULL_END

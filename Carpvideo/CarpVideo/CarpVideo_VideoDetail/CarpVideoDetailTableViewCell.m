@@ -19,6 +19,7 @@
 @end
 @implementation CarpVideoDetailTableViewCell
 -(void)setContentUI{
+    self.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.CarpVideoThubImgView];
     [self.contentView addSubview:self.CarpNamelb];
     [self.contentView addSubview:self.CarpStarView];
@@ -31,12 +32,18 @@
 
     
 }
+- (UIView *)CarpLine{
+    if (!_CarpLine) {
+        _CarpLine = [[UIView alloc]initWithFrame:CGRectMake(RealWidth(15), 0, GK_SCREEN_WIDTH-RealWidth(15), RealWidth(1))];
+        _CarpLine.backgroundColor = LGDLightGaryColor;
+    }
+    return _CarpLine;
+}
 - (UIImageView *)CarpVideoThubImgView{
     if (!_CarpVideoThubImgView) {
         _CarpVideoThubImgView = [[UIImageView alloc]initWithFrame:CGRectMake(RealWidth(15), RealWidth(15), RealWidth(40), RealWidth(40))];
         _CarpVideoThubImgView.layer.cornerRadius = RealWidth(20);
         _CarpVideoThubImgView.layer.masksToBounds =  YES;
-        _CarpVideoThubImgView.backgroundColor = LGDMianColor;
     }
     return _CarpVideoThubImgView;
 }
@@ -76,7 +83,7 @@
     if (!_CarpVideoJBBtn) {
         _CarpVideoJBBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         CGSize JBBtnSize = [@"举报" cxl_sizeWithString:KBlFont(14)];
-        [_CarpVideoJBBtn setFrame:CGRectMake(GK_SCREEN_WIDTH-RealWidth(10)-JBBtnSize.width, CGRectGetMidY(_CarpVideoThubImgView.frame)-RealWidth(7.5), JBBtnSize.width+RealWidth(10), RealWidth(15))];
+        [_CarpVideoJBBtn setFrame:CGRectMake(GK_SCREEN_WIDTH-RealWidth(15)-JBBtnSize.width, CGRectGetMidY(_CarpVideoThubImgView.frame)-RealWidth(7.5), JBBtnSize.width+RealWidth(10), RealWidth(15))];
         _CarpVideoJBBtn.tag = 0;
         [_CarpVideoJBBtn setTitle:@"举报" forState:UIControlStateNormal];
         [_CarpVideoJBBtn setTitleColor:LGDMianColor forState:UIControlStateNormal];
@@ -99,15 +106,31 @@
         _CarpContentlb = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_CarpVideoThubImgView.frame)+RealWidth(5), CGRectGetMaxY(_CarpVideoThubImgView.frame)+RealWidth(10), GK_SCREEN_WIDTH-CGRectGetMaxX(_CarpVideoThubImgView.frame)-RealWidth(10), RealWidth(40))];
         _CarpContentlb.numberOfLines =  0;
         _CarpContentlb.font = [UIFont systemFontOfSize:RealWidth(14)];
-        _CarpContentlb.text = @"2134287648792547623514678321546728315478621547862154872154214762174287145827145217421342876487925476235146783215467283154786215478621548721542147621742871458271452174";
+//        _CarpContentlb.text = @"2134287648792547623514678321546728315478621547862154872154214762174287145827145217421342876487925476235146783215467283154786215478621548721542147621742871458271452174";
     }
     return _CarpContentlb;
 }
--(void)CarpVideoLHBtnClick{
+- (void)setCarHotModel:(carpVideoRemneAdviceModel *)carHotModel{
+    _carHotModel = carHotModel;
+    [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carHotModel.imgurl] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpNamelb.text =  carHotModel.name;
+    [_CarpStarView setCurrentStar:carHotModel.StarNum];
+    _CarpNumlb.text = [NSString stringWithFormat:@"%ld星",carHotModel.StarNum];
+    [_CarpContentlb setText:carHotModel.content lineSpacing:RealWidth(3)];
+    CGSize contenSize  = [_CarpContentlb getSpaceLabelSize:carHotModel.content withFont:[UIFont systemFontOfSize:RealWidth(14)] withWidth:GK_SCREEN_WIDTH-CGRectGetMaxX(_CarpVideoThubImgView.frame)-RealWidth(10) lineSpacing:RealWidth(3)];
+    _CarpContentlb.size = contenSize;
+    
+    _CarpLine.y = CGRectGetMaxY(_CarpContentlb.frame)+RealWidth(10);
+
+    carHotModel.CellHeight = CGRectGetMaxY(_CarpLine.frame);
     
 }
+-(void)CarpVideoLHBtnClick{
+    [self.delegate CarpVideoDetailTableViewCellDidSeltecdWithBtnIndex:1 cellIndex:self.tag];
+
+}
 -(void)CarpVideoJBBtnClick{
-    
+    [self.delegate CarpVideoDetailTableViewCellDidSeltecdWithBtnIndex:0 cellIndex:self.tag];
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

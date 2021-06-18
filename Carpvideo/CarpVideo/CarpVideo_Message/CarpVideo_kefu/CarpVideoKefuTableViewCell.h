@@ -4,12 +4,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CarpVideoKefuModel.h"
-#import "PandaMsgDetailModel.h"
+#import "carpVideoMessageDetailModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarpVideoKefuTableViewCell : UITableViewCell
 @property(nonatomic,strong) CarpVideoKefuModel * carpVideoModel;
-@property(nonatomic,strong) PandaMsgDetailModel * carpDetalMoel;
+@property(nonatomic,strong) carpVideoMessageDetailModel * carpDetalMoel;
 @end
 
 NS_ASSUME_NONNULL_END

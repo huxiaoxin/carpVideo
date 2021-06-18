@@ -138,7 +138,7 @@
     }
     
 }
-- (void)setCarpDetalMoel:(PandaMsgDetailModel *)carpDetalMoel{
+- (void)setCarpDetalMoel:(carpVideoMessageDetailModel *)carpDetalMoel{
     _carpDetalMoel =  carpDetalMoel;
     [_CarpVideoChatSEND_userImgView sd_setImageWithURL:[NSURL URLWithString:@"https://p.qqan.com/up/2021-4/16194921988015974.jpg"]];
     [_CarpVideoChatReVICE_userImgView sd_setImageWithURL:[NSURL URLWithString:carpDetalMoel.imgUrl] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];

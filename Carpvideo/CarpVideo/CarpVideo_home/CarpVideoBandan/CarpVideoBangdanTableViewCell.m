@@ -117,10 +117,7 @@
 //    }];
 
     //repingicon
-    
-    
-    
-    
+
 }
 -(UIView *)CarpVideoContentView{
     if (!_CarpVideoContentView) {
@@ -136,7 +133,6 @@
         _CarpVideoThubImgView.layer.cornerRadius = RealWidth(5);
         _CarpVideoThubImgView.contentMode = UIViewContentModeScaleAspectFill;
         _CarpVideoThubImgView.layer.masksToBounds = YES;
-        [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.article.pchome.net%2F00%2F31%2F46%2F66%2Fpic_lib%2Fs960x639%2Fgg03s960x639.jpg&refer=http%3A%2F%2Fimg.article.pchome.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625992936&t=e902edd64727ba65fbf9287b4fa6b738"]];
     }
     return _CarpVideoThubImgView;
 }
@@ -207,8 +203,6 @@
         _CarpScrolText = [[LMJHorizontalScrollText alloc]initWithFrame:CGRectMake(RealWidth(30), 0, CGRectGetWidth(_CarpBtomView.frame)-RealWidth(40), CGRectGetHeight(_CarpBtomView.frame))];
         _CarpScrolText.textColor = LGDLightBLackColor;
         _CarpScrolText.textFont = [UIFont boldSystemFontOfSize:10];
-        _CarpScrolText.text = @"3213215472615467125487612548712";
-        _CarpScrolText.backgroundColor = LGDMianColor;
         _CarpScrolText.moveDirection = LMJTextScrollMoveLeft;
         _CarpScrolText.speed = 0.5;
     }
@@ -221,6 +215,17 @@
         _CarpHotComentImgView.image = [UIImage imageNamed:@"repingicon"];
     }
     return _CarpHotComentImgView;
+}
+- (void)setCarpModel:(CarpVideoHomeModels *)carpModel{
+    _carpModel = carpModel;
+    [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carpModel.carpVideoImgThub] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoTitle.text = carpModel.carpVideoHomeName;
+    [_CarpStarView setCurrentStar:carpModel.carp_starNum];
+    _CarpThreelb.text = [NSString stringWithFormat:@"%@ | %@",carpModel.carpVideoHomes_tagOne,carpModel.carpVideoHome_tagtwo];
+    _CarpFourelb.text = carpModel.carpVideoHomeArtislist;
+    _CarpFivelb.text = carpModel.carpVideoHome_intrduce;
+    [_CarpScrolText setText:carpModel.carpVideoHome_intrduce];
+    [_CarpScrolText move];
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

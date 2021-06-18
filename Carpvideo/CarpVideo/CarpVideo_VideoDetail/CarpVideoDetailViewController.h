@@ -10,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarpVideoDetailViewController : CarpVideoListViewController
-
+@property(nonatomic,strong) CarpVideoHomeModels * carpMoel;
+@property(nonatomic,assign) BOOL  isShowInput;
 @end
 
 NS_ASSUME_NONNULL_END

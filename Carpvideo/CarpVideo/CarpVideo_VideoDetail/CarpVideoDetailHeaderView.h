@@ -6,11 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CarpVideoCatagoryBtn.h"
 NS_ASSUME_NONNULL_BEGIN
-
+@protocol CarpVideoDetailHeaderViewDelegate <NSObject>
+-(void)CarpVideoDetailHeaderViewWithColltecd:(CarpVideoCatagoryBtn *)btn;
+@end
+typedef void(^CarpVideoHeaderBlock)(CGFloat headerHeight);
 @interface CarpVideoDetailHeaderView : UIView
-
+@property(nonatomic,strong) CarpVideoHomeModels * carMoell;
+@property(nonatomic,copy) CarpVideoHeaderBlock haederBlock;
+@property(nonatomic,weak) id <CarpVideoDetailHeaderViewDelegate>delegate;
 @end
 
 NS_ASSUME_NONNULL_END

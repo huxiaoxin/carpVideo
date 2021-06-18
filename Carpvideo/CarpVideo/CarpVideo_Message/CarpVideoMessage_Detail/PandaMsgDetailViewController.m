@@ -2,7 +2,7 @@
 #import "PandaMsgDetailViewController.h"
 #import "CarpVideoKefuTableViewCell.h"
 #import "FilmChatZoneChatDetailToolsView.h"
-#import "PandaMsgDetailModel.h"
+#import "carpVideoMessageDetailModel.h"
 @interface PandaMsgDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView * PandaMsgDetasilTableView;
 @property(nonatomic,strong) NSMutableArray * PandaMsgDataList;
@@ -24,7 +24,7 @@
             [LCProgressHUD showLoading:@""];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [LCProgressHUD hide];
-                PandaMsgDetailModel  * models = [[PandaMsgDetailModel alloc]init];
+                carpVideoMessageDetailModel  * models = [[carpVideoMessageDetailModel alloc]init];
                 models.msgname = textView.text;
                 models.userID = self.pandModel.ChatID;
                 models.msgisMe = YES;
@@ -33,9 +33,9 @@
                 
                 [weakSelf.PandaMsgDataList addObject:models];
                 [WHC_ModelSqlite insert:models];
-                NSArray * arr =   [WHC_ModelSqlite query:[PandaMovieMsgModel class] where:[NSString stringWithFormat:@"ChatID ='%ld'",(long)self.pandModel.ChatID]];
+                NSArray * arr =   [WHC_ModelSqlite query:[carpVideoMessageModel class] where:[NSString stringWithFormat:@"ChatID ='%ld'",(long)self.pandModel.ChatID]];
                 if (arr.count == 0) {
-                    PandaMovieMsgModel * listModl  = [[PandaMovieMsgModel alloc]init];
+                    carpVideoMessageModel * listModl  = [[carpVideoMessageModel alloc]init];
                     listModl.ChatID = self.pandModel.ChatID;
                     listModl.imgurl = self.pandModel.imgurl;
                     listModl.topname = self.pandModel.topname;
@@ -43,7 +43,7 @@
                     listModl.content = textView.text;
                     [WHC_ModelSqlite insert:listModl];
                 }else{
-                    [WHC_ModelSqlite update:[PandaMovieMsgModel class] value:[NSString stringWithFormat:@"content = '%@'",textView.text] where:[NSString stringWithFormat:@"ChatID ='%ld'",(long)self.pandModel.ChatID]];
+                    [WHC_ModelSqlite update:[carpVideoMessageModel class] value:[NSString stringWithFormat:@"content = '%@'",textView.text] where:[NSString stringWithFormat:@"ChatID ='%ld'",(long)self.pandModel.ChatID]];
                 }
                 [weakSelf.PandaMsgDetasilTableView reloadData];
                 [weakSelf.PandaMsgDetasilTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:weakSelf.PandaMsgDataList.count-1 inSection:0]
@@ -97,12 +97,12 @@
     return PandaMsgCell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PandaMsgDetailModel * listModel  =self.PandaMsgDataList[indexPath.row];
+    carpVideoMessageDetailModel * listModel  =self.PandaMsgDataList[indexPath.row];
     return listModel.CellHeight;
 }
 -(void)PandaMsgDetasilTableViewClicks{
     MJWeakSelf;
-    NSArray  * dataArr = [WHC_ModelSqlite query:[PandaMsgDetailModel class] where:[NSString stringWithFormat:@"userID = '%@'",[NSString stringWithFormat:@"%ld",self.pandModel.ChatID]]];
+    NSArray  * dataArr = [WHC_ModelSqlite query:[carpVideoMessageDetailModel class] where:[NSString stringWithFormat:@"userID = '%@'",[NSString stringWithFormat:@"%ld",self.pandModel.ChatID]]];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (weakSelf.PandaMsgDataList.count > 0) {
             [weakSelf.PandaMsgDataList removeAllObjects];

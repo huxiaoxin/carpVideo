@@ -13,7 +13,7 @@
 #import "CarpVideoZanViewController.h"
 #import "CarpVideoComentViewController.h"
 #import "CarpVideoMySendZoneViewController.h"
-#import "PandaMovieMsgModel.h"
+#import "carpVideoMessageModel.h"
 #import "PandaMsgDetailViewController.h"
 @interface CarpVideoMessageViewController ()
 @property(nonatomic,strong) CarpVideoMessageHeaderView * CarpHeaderView;
@@ -43,7 +43,7 @@
     [self carpVideoLoadData];
 }
 -(void)carpVideoLoadData{
-    NSArray * dataArr = [WHC_ModelSqlite query:[PandaMovieMsgModel class]];
+    NSArray * dataArr = [WHC_ModelSqlite query:[carpVideoMessageModel class]];
     
     MJWeakSelf;
     [LCProgressHUD showLoading:@""];
@@ -65,7 +65,7 @@
 }
 -(void)CarpVideoMessageHeaderClicks{
     
-    NSArray * dataArr = [WHC_ModelSqlite query:[PandaMovieMsgModel class]];
+    NSArray * dataArr = [WHC_ModelSqlite query:[carpVideoMessageModel class]];
     
     MJWeakSelf;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

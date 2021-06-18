@@ -25,6 +25,20 @@
     _CarpVideoTableView.tableHeaderView = self.carpHeader;
     _CarpVideoTableView.tableFooterView = self.CarpFooter;
     // Do any additional setup after loading the view.
+
+    MJWeakSelf;
+    _carpHeader.headerBlock = ^(CGFloat headerHeight) {
+        weakSelf.carpHeader.height = headerHeight;
+        self->_CarpVideoTableView.tableHeaderView = weakSelf.carpHeader;
+    };
+    
+    _CarpFooter.footerBlock = ^(CGFloat fotterHeight) {
+        weakSelf.CarpFooter.height = fotterHeight;
+        _CarpVideoTableView.tableFooterView = weakSelf.CarpFooter;
+    };
+    _CarpFooter.carpModel = self.carpselMoel;
+    _carpHeader.carpModel = self.carpselMoel;
+
     [self.view addSubview:self.CarpCollectibtn];
     [self.view addSubview:self.CaroBaominBtn];
 }
@@ -36,8 +50,7 @@
 }
 - (CarpVideoActityDetailHeader *)carpHeader{
     if (!_carpHeader) {
-        _carpHeader = [[CarpVideoActityDetailHeader alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(280)+GK_SAFEAREA_TOP)];
-        
+        _carpHeader = [[CarpVideoActityDetailHeader alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(0)+GK_SAFEAREA_TOP)];
     }
     return _carpHeader;
 }

@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CaroVideoDayListCollectionViewCell : LKCollectionBaseCell
+@property(nonatomic,strong) CarpVideoHomeModels * carModel;
 
 @end
 

@@ -6,8 +6,9 @@
 //
 
 #import "CarpVideoActityDetailHeader.h"
+#import <SDCycleScrollView.h>
 @interface CarpVideoActityDetailHeader  ()
-@property(nonatomic,strong) UIImageView * CarpVideoImgView;
+@property(nonatomic,strong) SDCycleScrollView * CarpVideoSDCView;
 @property(nonatomic,strong) UIView      * CarVideoContentView;
 @property(nonatomic,strong) UILabel     * CarpVideoTtitle;
 @property(nonatomic,strong) UIImageView * CarVieoJinxingzhonImgView;
@@ -21,8 +22,8 @@
 @implementation CarpVideoActityDetailHeader
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = LGDMianColor;
-        [self addSubview:self.CarpVideoImgView];
+        self.backgroundColor = LGDViewBJColor;
+        [self addSubview:self.CarpVideoSDCView];
         [self addSubview:self.CarVideoContentView];
         [_CarVideoContentView addSubview:self.CarpVideoTtitle];
         [_CarVideoContentView addSubview:self.CarVieoJinxingzhonImgView];
@@ -32,14 +33,14 @@
         [_CarVideoContentView addSubview:self.CarpVideoSYlb];
         [_CarVideoContentView addSubview:self.CarpVideoSYNumlb];
         
-        [_CarpVideoImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_CarpVideoSDCView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.mas_equalTo(self);
             make.height.mas_equalTo(RealWidth(120)+GK_SAFEAREA_TOP);
         }];
         
         [_CarVideoContentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(self);
-            make.top.mas_equalTo(_CarpVideoImgView.mas_bottom).offset(-RealWidth(20));
+            make.top.mas_equalTo(_CarpVideoSDCView.mas_bottom).offset(-RealWidth(20));
             make.height.mas_equalTo(RealWidth(180));
         }];
         [_CarpVideoTtitle mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -74,24 +75,53 @@
             make.left.mas_equalTo(_CarpVideoSYlb.mas_right).offset(RealWidth(5));
             make.centerY.mas_equalTo(_CarpVideoProgresView.mas_centerY);
         }];
-        [self setNeedsLayout];
-        [self layoutIfNeeded];
+//        [self setNeedsLayout];
+//        [self layoutIfNeeded];
         _CarpVideoProgresView.layer.cornerRadius = _CarpVideoProgresView.height/2;
 
     }
     return self;
 }
-- (UIImageView *)CarpVideoImgView{
-    if (!_CarpVideoImgView) {
-        _CarpVideoImgView = [UIImageView new];
-        [_CarpVideoImgView sd_setImageWithURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftxt39-1.book118.com%2F2017%2F1217%2Fbook144628%2F144627049.jpg&refer=http%3A%2F%2Ftxt39-1.book118.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626506754&t=afd999788957d2bd25de13ee43b8e2c6"]];
+- (void)setCarpModel:(carpVideoAcitytyModel *)carpModel{
+    _carpModel = carpModel;
+    _CarpVideoSDCView.imageURLStringsGroup = carpModel.imgArrs;
+    _CarpVideoTtitle.text = carpModel.title;
+    [_CarVideoContenlb setText:carpModel.DetailDesc lineSpacing:RealWidth(3)];
+    [_CarpVideoProgresView setProgress:carpModel.preogrese animated:YES];
+    _CarpVideoSYNumlb.text = [NSString stringWithFormat:@"%ld",carpModel.lastPersonNum];
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
+    
+    [_CarVideoContentView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(CGRectGetMaxY(_CarpVideoSYNumlb.frame));
+    }];
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    if (self.headerBlock) {
+        self.headerBlock(CGRectGetMaxY(_CarVideoContentView.frame)+RealWidth(15));
+    }else{
+        NSLog(@"NO---------");
     }
-    return _CarpVideoImgView;
+//     NSLog(@"--------%f",CGRectGetMaxY(_CarVideoContentView.frame)-RealWidth(100));
+//    self.headerBlock(CGRectGetMaxY(_CarVideoContentView.frame));
+   
+}
+- (SDCycleScrollView *)CarpVideoSDCView{
+    if (!_CarpVideoSDCView) {
+        _CarpVideoSDCView = [SDCycleScrollView new];
+        _CarpVideoSDCView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
+
+//        [_CarpVideoImgView sd_setImageWithURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftxt39-1.book118.com%2F2017%2F1217%2Fbook144628%2F144627049.jpg&refer=http%3A%2F%2Ftxt39-1.book118.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626506754&t=afd999788957d2bd25de13ee43b8e2c6"]];
+    }
+    return _CarpVideoSDCView;
 }
 - (UIView *)CarVideoContentView{
     if (!_CarVideoContentView) {
         _CarVideoContentView = [UIView new];
-        _CarVideoContentView.backgroundColor = LGDLightGaryColor;
+        _CarVideoContentView.backgroundColor = LGDViewBJColor;
         [_CarVideoContentView acs_radiusWithRadius:RealWidth(15) corner:UIRectCornerTopLeft | UIRectCornerTopRight];
     }
     return _CarVideoContentView;
@@ -101,7 +131,7 @@
         _CarpVideoTtitle = [UILabel new];
         _CarpVideoTtitle.textColor = LGDBLackColor;
         _CarpVideoTtitle.font = [UIFont boldSystemFontOfSize:15];
-        _CarpVideoTtitle.text = @"ekqyeiuqyteukawtyeiuqwtueqtwietqo";
+        _CarpVideoTtitle.text = @"";
     }
     return _CarpVideoTtitle;
 }
@@ -127,7 +157,6 @@
         _CarVideoContenlb.textColor = LGDGaryColor;
         _CarVideoContenlb.font = [UIFont boldSystemFontOfSize:13];
         _CarVideoContenlb.numberOfLines = 0 ;
-        [_CarVideoContenlb setText:@"31232142482364826`48257452374652763457285831232142482364826`4825745237465276345728587231232142482364826`4825745237465276345728587231232142482364826`4825745237465276345728587272" lineSpacing:RealWidth(3)];
         
     }
     return _CarVideoContenlb;
@@ -156,7 +185,7 @@
         _CarpVideoSYNumlb = [UILabel new];
         _CarpVideoSYNumlb.textColor = LGDMianColor;
         _CarpVideoSYNumlb.font = KFZPFont(16);
-        _CarpVideoSYNumlb.text = @"125";
+        _CarpVideoSYNumlb.text = @"";
     }
     return _CarpVideoSYNumlb;
 }

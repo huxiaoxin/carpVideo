@@ -10,9 +10,10 @@
 #import "CarpVideoHomeBtn.h"
 #import "CarpVideoHomeCollectionViewCell.h"
 #import "CarpVideoMessageBtn.h"
-@interface CarpVideoHomeHeaderView ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface CarpVideoHomeHeaderView ()<UICollectionViewDelegate,UICollectionViewDataSource,SDCycleScrollViewDelegate>
 @property(nonatomic,strong) UIView * CarpVideoBtnView;
 @property(nonatomic,strong) UICollectionView  * CarpVideoCollectionView;
+@property(nonatomic,strong)  SDCycleScrollView * SDCView;
 @end
 @implementation CarpVideoHomeHeaderView
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -55,10 +56,10 @@
         SDCView.showPageControl = NO;
         SDCView.layer.cornerRadius = RealWidth(5);
         SDCView.layer.masksToBounds = YES;
-        SDCView.imageURLStringsGroup = @[@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs13.sinaimg.cn%2Fmiddle%2F4c69906bx93d4c708facc%26690&refer=http%3A%2F%2Fs13.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625723785&t=af2d1e0ae47dd0306adddfbb67fb6366",@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgss0.baidu.com%2F-Po3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2Fd01373f082025aafa76ca384feedab64034f1a26.jpg&refer=http%3A%2F%2Fgss0.baidu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625723785&t=3afef2da688f45415bcbb13917b2a0de"];
-        SDCView.titlesGroup =  @[@"风云兴霸天下",@"速度与激情9"];
+        SDCView.delegate = self;
+        SDCView.bannerImageViewContentMode =  UIViewContentModeScaleAspectFill;
         [self addSubview:SDCView];
-        
+        _SDCView = SDCView;
         
         
         UIView * carpVideobtnView = [[UIView alloc]initWithFrame:CGRectMake(RealWidth(15), CGRectGetMaxY(SDCView.frame)+RealWidth(15), GK_SCREEN_WIDTH-RealWidth(30), RealWidth(80))];
@@ -66,7 +67,7 @@
         carpVideobtnView.layer.cornerRadius = RealWidth(5);
         carpVideobtnView.layer.masksToBounds = YES;
         [self addSubview:carpVideobtnView];
-        NSArray * BtnArr = @[@"实时榜单",@"热门推荐",@"影视报道",@"首映活动"];
+        NSArray * BtnArr = @[@"好评榜单",@"热门推荐",@"影视报道",@"首映活动"];
         NSArray *  ColorArr = @[@"FC305A",@"594d9c",@"d9830b",@"bd8cbb"];
         for (int index = 0; index < BtnArr.count; index ++) {
             CarpVideoMessageBtn * carpBtn =  [[CarpVideoMessageBtn alloc]initWithFrame:CGRectMake(CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count* index, RealWidth(10), CGRectGetWidth(carpVideobtnView.frame)/BtnArr.count, CGRectGetHeight(carpVideobtnView.frame))];
@@ -119,13 +120,20 @@
         CarpVideoCollectionView.showsHorizontalScrollIndicator = NO;
         [CarpViewHotView addSubview:CarpVideoCollectionView];
         [CarpVideoCollectionView registerClass:[CarpVideoHomeCollectionViewCell class] forCellWithReuseIdentifier:@"CarpVideoHomeCollectionViewCell"];
-        
+        _CarpVideoCollectionView = CarpVideoCollectionView;
         
     }
     return self;
 }
+- (void)setBanarArr:(NSArray *)BanarArr{
+    _BanarArr = BanarArr;
+    NSArray* ImgArr = [BanarArr firstObject];
+    NSArray * titleArr = [BanarArr lastObject];
+    _SDCView.imageURLStringsGroup = ImgArr;
+    _SDCView.titlesGroup = titleArr;
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return _VideoDataArr.count;
 }
 -(void)CarpVideoHomeBtnClick:(CarpVideoHomeBtn *)homeBtn{
     [self.delegate CarpVideoHomeHeaderViewWithbtnIndex:homeBtn.tag];
@@ -133,12 +141,23 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CarpVideoHomeCollectionViewCell * carpVideoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarpVideoHomeCollectionViewCell" forIndexPath:indexPath];
+    carpVideoCell.carpModel = self.VideoDataArr[indexPath.row];
     return carpVideoCell;
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.delegate CarpVideoHomeHeaderViewCollectionDidSelecWith:self.VideoDataArr[indexPath.row]];
 }
 -(void)CarpMsgBtnClick{
     [self.delegate CarpVideoHomeHeaderViewSearchAction];
 }
 -(void)CarpVideoMoreBtnClick{
     [self.delegate CarpVideoHomeHeaderViewMoreDayAction];
+}
+- (void)setVideoDataArr:(NSArray *)VideoDataArr{
+    _VideoDataArr = VideoDataArr;
+    [_CarpVideoCollectionView reloadData];
+}
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    [self.delegate CarpVideoHomeHeaderViewWitBanarDidIndex:index];
 }
 @end

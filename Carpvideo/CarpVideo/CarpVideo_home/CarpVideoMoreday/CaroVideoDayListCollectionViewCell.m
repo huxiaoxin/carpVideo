@@ -30,7 +30,7 @@
         _carpThubImgView.contentMode =  UIViewContentModeScaleAspectFill;
         _carpThubImgView.layer.cornerRadius = RealWidth(5);
         _carpThubImgView.layer.masksToBounds = YES;
-        _carpThubImgView.backgroundColor = LGDMianColor;
+//        _carpThubImgView.backgroundColor = LGDMianColor;
     }
     return _carpThubImgView;
 }
@@ -39,8 +39,13 @@
         _CarpVideoTitle = [UILabel new];
         _CarpVideoTitle.textColor = LGDBLackColor;
         _CarpVideoTitle.font = [UIFont systemFontOfSize:12];
-        _CarpVideoTitle.text = @"312372157351273512735761235761";
+//        _CarpVideoTitle.text = @"312372157351273512735761235761";
     }
     return _CarpVideoTitle;
+}
+- (void)setCarModel:(CarpVideoHomeModels *)carModel{
+    _carModel = carModel;
+    [_carpThubImgView sd_setImageWithURL:[NSURL URLWithString:carModel.carpVideoImgThub] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoTitle.text =  carModel.carpVideoHomeName;
 }
 @end

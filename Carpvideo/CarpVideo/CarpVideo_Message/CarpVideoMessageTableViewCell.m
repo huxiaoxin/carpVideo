@@ -104,7 +104,7 @@
     }
     return _CarpVideoNumslb;
 }
-- (void)setCarpModel:(PandaMovieMsgModel *)carpModel{
+- (void)setCarpModel:(carpVideoMessageModel *)carpModel{
     _carpModel = carpModel;
     [_CarpVideouserImgView sd_setImageWithURL:[NSURL URLWithString:carpModel.imgurl] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];
     _CarpVideoNamelb.text =  carpModel.topname;

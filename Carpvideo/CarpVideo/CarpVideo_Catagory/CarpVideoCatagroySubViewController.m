@@ -248,7 +248,7 @@
         [self CarpVideoShowLoginVc];
         return;
     }
-    PandaMovieMsgModel *  mdeld = [[PandaMovieMsgModel alloc]init];
+    carpVideoMessageModel *  mdeld = [[carpVideoMessageModel alloc]init];
     mdeld.ChatID =  catagoryModel.userID;
     mdeld.imgurl = catagoryModel.imgIcon;
     mdeld.topname = catagoryModel.userName;

@@ -8,7 +8,6 @@
 #import "CarpVideoDetailHeaderView.h"
 #import "CarpVideoDetaillb.h"
 #import "CarpVideoArticlCollectionViewCell.h"
-#import "CarpVideoCatagoryBtn.h"
 
 @interface CarpVideoDetailHeaderView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong) UIImageView * CarpVideoThubImgView;
@@ -28,13 +27,62 @@
 @property(nonatomic,strong) UILabel     * CarpVideoArticlb;
 @property(nonatomic,strong) UICollectionView * CarpVideoArticlCollecionView;
 @property(nonatomic,strong) UILabel     * CarpVideoHotComentlb;
+//@property(nonatomic,strong) CarpVideoHomeModels * carSelModel;
 @end
 @implementation CarpVideoDetailHeaderView
+- (void)setCarMoell:(CarpVideoHomeModels *)carMoell{
+    _carMoell = carMoell;
+    
+    [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carMoell.carpVideoImgThub] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoNamelb.text = carMoell.carpVideoHomeName;
+    _CarpVideoTotalTimelb.text = [NSString stringWithFormat:@"上映时间：%@",carMoell.time];
+    _CarpVideoLikeBtn.CarpVideoTitle.text = [NSString stringWithFormat:@"%ld万人",carMoell.shangyinNum];
+
+    _CarpVideoTagOnelb.text =  [NSString stringWithFormat:@"%@",carMoell.carpVideoHomes_tagOne];
+    _CarpVideoTagTwolb.text = [NSString stringWithFormat:@"%@",carMoell.carpVideoHome_tagtwo];
+    _CarpVideoTagThreelb.hidden = YES;
+    _CarpVideoTimelb.text = carMoell.watchingNum;
+    _CarpVideoFirstlb.CarpVideoToplb.text =  [NSString stringWithFormat:@"%.2f",carMoell.carpVideoHomes_DBNums];
+    _CarpVideoSecondlb.CarpVideoToplb.text = [NSString stringWithFormat:@"%ld",carMoell.carpVideoHome_soureNums];
+    [_CarpVideoIntroduceDetaillb setText:carMoell.carpVideoHome_intrduce lineSpacing:RealWidth(3)];
+    
+    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        if (carMoell.carpVideo_isCollected) {
+            _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like-seltecd"];
+
+        }else{
+            _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+
+        }
+    }else{
+        _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+    }
+    [_CarpVideoArticlCollecionView reloadData];
+
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    _CarpVideoTagOnelb.layer.cornerRadius = _CarpVideoTagOnelb.size.height/2;
+    _CarpVideoTagTwolb.layer.cornerRadius = _CarpVideoTagTwolb.size.height/2;
+    _CarpVideoTagThreelb.layer.cornerRadius = _CarpVideoTagThreelb.size.height/2;
+    [_CarpWhiteView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(CGRectGetMaxY(_CarpVideoHotComentlb.frame)+RealWidth(10));
+    }];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    if (self.haederBlock) {
+        self.haederBlock(CGRectGetMaxY(_CarpWhiteView.frame));
+    }else{
+        NSLog(@"NO-------");
+    }
+}
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+//        self.carSelModel = carMoell;
         [self addSubview:self.CarpVideoThubImgView];
         [_CarpVideoThubImgView addSubview:self.CarpVideoPlayBtn];
         [self addSubview:self.CarpWhiteView];
+        
+        
   
         [_CarpWhiteView addSubview:self.CarpVideoNamelb];
         [_CarpWhiteView addSubview:self.CarpVideoTotalTimelb];
@@ -50,12 +98,19 @@
         [_CarpWhiteView addSubview:self.CarpVideoArticlb];
         [_CarpWhiteView addSubview:self.CarpVideoArticlCollecionView];
         [_CarpWhiteView addSubview:self.CarpVideoHotComentlb];
-
         
-        
-        
-        
-        
+//        [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carMoell.pandaMoiveThuburl] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+//        _CarpVideoNamelb.text = carMoell.carpVideoHomeName;
+//        _CarpVideoTotalTimelb.text = [NSString stringWithFormat:@"上映时间：%@",carMoell.time];
+//        _CarpVideoLikeBtn.CarpVideoTitle.text = [NSString stringWithFormat:@"%ld万人",carMoell.shangyinNum];
+//
+//        _CarpVideoTagOnelb.text =  [NSString stringWithFormat:@"%@",carMoell.carpVideoHomes_tagOne];
+//        _CarpVideoTagTwolb.text = [NSString stringWithFormat:@"%@",carMoell.carpVideoHome_tagtwo];
+//        _CarpVideoTagThreelb.hidden = YES;
+//        _CarpVideoTimelb.text = carMoell.watchingNum;
+//        _CarpVideoFirstlb.CarpVideoToplb.text =  [NSString stringWithFormat:@"%.2f",carMoell.carpVideoHomes_DBNums];
+//        _CarpVideoSecondlb.CarpVideoToplb.text = [NSString stringWithFormat:@"%ld",carMoell.carpVideoHome_soureNums];
+//        [_CarpVideoIntroduceDetaillb setText:carMoell.carpVideoHome_intrduce lineSpacing:RealWidth(3)];
         
         [_CarpVideoThubImgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.mas_equalTo(self);
@@ -64,7 +119,7 @@
         
         [_CarpVideoPlayBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.mas_equalTo(_CarpVideoThubImgView);
-            make.size.mas_equalTo(CGSizeMake(RealWidth(40), RealWidth(40)));
+            make.size.mas_equalTo(CGSizeMake(RealWidth(0), RealWidth(0)));
         }];
         
         [_CarpWhiteView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -147,12 +202,29 @@
             make.top.mas_equalTo(_CarpVideoArticlCollecionView.mas_bottom).offset(RealWidth(10));
         }];
         
-        [self setNeedsLayout];
-        [self layoutIfNeeded];
-        _CarpVideoTagOnelb.layer.cornerRadius = _CarpVideoTagOnelb.size.height/2;
-        _CarpVideoTagTwolb.layer.cornerRadius = _CarpVideoTagTwolb.size.height/2;
-        _CarpVideoTagThreelb.layer.cornerRadius = _CarpVideoTagThreelb.size.height/2;
-
+//        if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+//            if (carMoell.carpVideo_isCollected) {
+//                _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like-seltecd"];
+//
+//            }else{
+//                _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+//
+//            }
+//        }else{
+//            _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+//        }
+//
+//        [self setNeedsLayout];
+//        [self layoutIfNeeded];
+//        _CarpVideoTagOnelb.layer.cornerRadius = _CarpVideoTagOnelb.size.height/2;
+//        _CarpVideoTagTwolb.layer.cornerRadius = _CarpVideoTagTwolb.size.height/2;
+//        _CarpVideoTagThreelb.layer.cornerRadius = _CarpVideoTagThreelb.size.height/2;
+//        [_CarpWhiteView mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(CGRectGetMaxY(_CarpVideoHotComentlb.frame)+RealWidth(10));
+//        }];
+//        if (self.haederBlock) {
+//            self.haederBlock(CGRectGetMaxY(_CarpWhiteView.frame)-RealWidth(0));
+//        }
     }
     return self;
 }
@@ -161,7 +233,6 @@
         _CarpVideoThubImgView = [UIImageView new];
         _CarpVideoThubImgView.contentMode = UIViewContentModeScaleAspectFill;
         _CarpVideoThubImgView.layer.masksToBounds = YES;
-        [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic3.zhimg.com%2Fv2-1175bd3fe4c04cc63b64a0a1f9fd954b_1200x500.jpg&refer=http%3A%2F%2Fpic3.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626486586&t=1221d5b2c9840a12ec15e30f17362cf3"]];
     }
     return _CarpVideoThubImgView;
 }
@@ -176,7 +247,7 @@
 - (UIView *)CarpWhiteView{
     if (!_CarpWhiteView) {
         _CarpWhiteView = [UIView new];
-        _CarpWhiteView.backgroundColor = [UIColor whiteColor];
+            _CarpWhiteView.backgroundColor = [UIColor whiteColor];
         [_CarpWhiteView acs_radiusWithRadius:RealWidth(15) corner:UIRectCornerTopLeft | UIRectCornerTopRight];
     }
     return _CarpWhiteView;
@@ -186,7 +257,6 @@
         _CarpVideoNamelb = [UILabel new];
         _CarpVideoNamelb.font = [UIFont boldSystemFontOfSize:16];
         _CarpVideoNamelb.textColor = [UIColor blackColor];
-        _CarpVideoNamelb.text = @"黑豹终极任务";
     }
     return _CarpVideoNamelb;
 }
@@ -195,7 +265,6 @@
         _CarpVideoTotalTimelb = [UILabel new];
         _CarpVideoTotalTimelb.font = [UIFont boldSystemFontOfSize:12];
         _CarpVideoTotalTimelb.textColor = LGDGaryColor;
-        _CarpVideoTotalTimelb.text = @"上映时间：2019-06-28 （美国）";
     }
     return _CarpVideoTotalTimelb;
 }
@@ -205,7 +274,6 @@
         _CarpVideoTagOnelb = [UILabel new];
         _CarpVideoTagOnelb.font = [UIFont boldSystemFontOfSize:10];
         _CarpVideoTagOnelb.textColor = LGDGaryColor;
-        _CarpVideoTagOnelb.text = @"科幻";
         _CarpVideoTagOnelb.backgroundColor  = LGDLightGaryColor;
         _CarpVideoTagOnelb.textAlignment =  NSTextAlignmentCenter;
         _CarpVideoTagOnelb.layer.masksToBounds = YES;
@@ -218,7 +286,6 @@
         _CarpVideoTagTwolb = [UILabel new];
         _CarpVideoTagTwolb.font = [UIFont boldSystemFontOfSize:10];
         _CarpVideoTagTwolb.textColor = LGDGaryColor;
-        _CarpVideoTagTwolb.text = @"冒险";
         _CarpVideoTagTwolb.backgroundColor  = LGDLightGaryColor;
         _CarpVideoTagTwolb.textAlignment =  NSTextAlignmentCenter;
         _CarpVideoTagTwolb.layer.masksToBounds = YES;
@@ -231,7 +298,6 @@
         _CarpVideoTagThreelb = [UILabel new];
         _CarpVideoTagThreelb.font = [UIFont boldSystemFontOfSize:10];
         _CarpVideoTagThreelb.textColor = LGDGaryColor;
-        _CarpVideoTagThreelb.text = @"动作";
         _CarpVideoTagThreelb.backgroundColor  = LGDLightGaryColor;
         _CarpVideoTagThreelb.textAlignment =  NSTextAlignmentCenter;
         _CarpVideoTagThreelb.layer.masksToBounds = YES;
@@ -244,7 +310,6 @@
         _CarpVideoTimelb = [UILabel new];
         _CarpVideoTimelb.font = [UIFont boldSystemFontOfSize:12];
         _CarpVideoTimelb.textColor = LGDGaryColor;
-        _CarpVideoTimelb.text = @"180分钟";
         
     }
     return _CarpVideoTimelb;
@@ -252,10 +317,9 @@
 - (CarpVideoCatagoryBtn *)CarpVideoLikeBtn{
     if (!_CarpVideoLikeBtn) {
         _CarpVideoLikeBtn = [CarpVideoCatagoryBtn buttonWithType:UIButtonTypeCustom];
-        _CarpVideoLikeBtn.CarpVideoTitle.text = @"8.5万人";
         _CarpVideoLikeBtn.CarpVideoTitle.textColor = LGDBLackColor;
         _CarpVideoLikeBtn.CarpVideoTitle.font =  KBlFont(16);
-        _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+//        _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
         [_CarpVideoLikeBtn addTarget:self action:@selector(CarpVideoCatagoryBtnLikeAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _CarpVideoLikeBtn;
@@ -264,8 +328,8 @@
 - (CarpVideoDetaillb *)CarpVideoFirstlb{
     if (!_CarpVideoFirstlb) {
         _CarpVideoFirstlb = [CarpVideoDetaillb new];
-        _CarpVideoFirstlb.CarpVideoToplb.text = @"220";
-        _CarpVideoFirstlb.CarpVideoBtomlb.text = @"万人已观电影";
+//        _CarpVideoFirstlb.CarpVideoToplb.text = @"220";
+        _CarpVideoFirstlb.CarpVideoBtomlb.text = @"豆瓣综合得分";
     }
     return _CarpVideoFirstlb;
 }
@@ -273,7 +337,7 @@
 - (CarpVideoDetaillb *)CarpVideoSecondlb{
     if (!_CarpVideoSecondlb) {
         _CarpVideoSecondlb = [CarpVideoDetaillb new];
-        _CarpVideoSecondlb.CarpVideoToplb.text = @"6000";
+//        _CarpVideoSecondlb.CarpVideoToplb.text = @"6000";
         _CarpVideoSecondlb.CarpVideoBtomlb.text = @"实时票房（万元）";
     }
     return _CarpVideoSecondlb;
@@ -293,7 +357,7 @@
         _CarpVideoIntroduceDetaillb.numberOfLines = 0;
         _CarpVideoIntroduceDetaillb.font = [UIFont boldSystemFontOfSize:12];
         _CarpVideoIntroduceDetaillb.textColor = LGDGaryColor;
-        [_CarpVideoIntroduceDetaillb setText:@"剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍" lineSpacing:RealWidth(4)];
+//        [_CarpVideoIntroduceDetaillb setText:@"剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍剧情介绍" lineSpacing:RealWidth(4)];
     }
     return _CarpVideoIntroduceDetaillb;
 }
@@ -330,14 +394,16 @@
     return _CarpVideoHotComentlb;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return self.carMoell.carpVideoHome_listArr.count;
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CarpVideoArticlCollectionViewCell * carpVideoCell = [CarpVideoArticlCollectionViewCell creatTheCollectView:collectionView AndTheIndexPath:indexPath];
+    carpVideoCell.carpDic =  self.carMoell.carpVideoHome_listArr[indexPath.row];
     return carpVideoCell;
 }
 -(void)CarpVideoCatagoryBtnLikeAction:(CarpVideoCatagoryBtn *)btn{
-    _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed: @"like-seltecd"];
+//    _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed: @"like-seltecd"];
+    [self.delegate CarpVideoDetailHeaderViewWithColltecd:btn];
 }
 #pragma mark--播放
 -(void)CarpVideoPlayBtnClick{

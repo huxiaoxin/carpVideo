@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PandaMovieMsgModel : NSObject
+@interface carpVideoMessageModel : NSObject
 @property(nonatomic,copy) NSString * imgurl;
 @property(nonatomic,copy) NSString * topname;
 @property(nonatomic,copy) NSString * content;

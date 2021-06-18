@@ -23,8 +23,9 @@
 - (UIImageView *)CarpVideoTopImgView{
     if (!_CarpVideoTopImgView) {
         _CarpVideoTopImgView = [[UIImageView alloc]init];
-        _CarpVideoTopImgView.backgroundColor = LGDMianColor;
         _CarpVideoTopImgView.layer.cornerRadius = RealWidth(5);
+        _CarpVideoTopImgView.layer.masksToBounds = YES;
+        _CarpVideoTopImgView.contentMode =  UIViewContentModeScaleAspectFill;
         _CarpVideoTopImgView.layer.masksToBounds = YES;
     }
     return _CarpVideoTopImgView;
@@ -41,5 +42,10 @@
 -(void)layoutSubviews{
     _CarpVideoTopImgView.frame = CGRectMake(RealWidth(5), RealWidth(5), self.bounds.size.width-RealWidth(10), self.bounds.size.height-RealWidth(35));
     _CarpVideoTitle.frame = CGRectMake(RealWidth(5), CGRectGetMaxY(_CarpVideoTopImgView.frame)+RealWidth(5), self.bounds.size.width-RealWidth(5), RealWidth(15));
+}
+- (void)setCarpModel:(CarpVideoHomeModels *)carpModel{
+    _carpModel = carpModel;
+    [_CarpVideoTopImgView sd_setImageWithURL:[NSURL URLWithString:carpModel.carpVideoImgThub] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoTitle.text = carpModel.carpVideoHomeName;
 }
 @end

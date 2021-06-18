@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "carpVideoAcitytyModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+typedef void(^CarpVideoAcittyDetailFooterHeightBlock)(CGFloat fotterHeight);
 @interface CarpVideoAcittyDetailFooter : UIView
+@property(nonatomic,copy) CarpVideoAcittyDetailFooterHeightBlock footerBlock;
+@property(nonatomic,strong) carpVideoAcitytyModel * carpModel;
 
 @end
 

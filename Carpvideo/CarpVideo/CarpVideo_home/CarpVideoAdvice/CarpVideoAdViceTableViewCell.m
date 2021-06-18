@@ -22,7 +22,7 @@
 @implementation CarpVideoAdViceTableViewCell
 -(void)setContentUI{
     
-//    self.selectionStyle =  UITableViewCellAccessoryNone;
+    self.selectionStyle =  UITableViewCellAccessoryNone;
     [self.contentView addSubview:self.CarpVideoThubImgView];
     [self.contentView addSubview:self.CarpVideoNamelb];
     [self.contentView addSubview:self.CarpVideoYearlb];
@@ -39,7 +39,6 @@
         _CarpVideoThubImgView = [[UIImageView alloc]initWithFrame:CGRectMake(RealWidth(15), RealWidth(15), RealWidth(80), RealWidth(100))];
         _CarpVideoThubImgView.layer.cornerRadius = RealWidth(5);
         _CarpVideoThubImgView.layer.masksToBounds = YES;
-        _CarpVideoThubImgView.backgroundColor = LGDMianColor;
         _CarpVideoThubImgView.contentMode =  UIViewContentModeScaleAspectFill;
     }
     return _CarpVideoThubImgView;
@@ -123,5 +122,15 @@
 }
 -(void)CarWriteBtnClick{
     [self.delegate CarpVideoAdViceTableViewCellWriteActionWithIndex:self.tag];
+}
+- (void)setCarpMoel:(CarpVideoHomeModels *)carpMoel{
+    _carpMoel = carpMoel;
+    [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carpMoel.carpVideoImgThub] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoNamelb.text =  carpMoel.carpVideoHomeName;
+    _CarpVideoYearlb.text = [NSString stringWithFormat:@"%@",carpMoel.carpVideoEngName];
+    [_carStarView setCurrentStar:carpMoel.carp_starNum];
+    _CarContenlb.text =  carpMoel.carpVideoHome_intrduce;
+    _CarHolderlb.text = carpMoel.carpVideoHomeArtislist;
+    
 }
 @end

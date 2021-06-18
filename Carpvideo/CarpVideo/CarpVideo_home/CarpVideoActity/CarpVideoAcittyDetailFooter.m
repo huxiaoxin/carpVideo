@@ -97,6 +97,21 @@
     }
     return self;
 }
+- (void)setCarpModel:(carpVideoAcitytyModel *)carpModel{
+    _carpModel = carpModel;
+    
+    [_CarpVideoLocationlb setText:[NSString stringWithFormat:@"   %@",carpModel.loaction] textColor:LGDLightBLackColor appendingImg:@"dingwei" imgIndex:0 lineSpacing:RealWidth(3)];
+
+    [_CarpVieoTimelb setText:[NSString stringWithFormat:@"   %@",carpModel.joinTime] textColor:LGDLightBLackColor appendingImg:@"guaqi" imgIndex:0 lineSpacing:RealWidth(3)];
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
+    if (self.footerBlock) {
+        self.footerBlock(CGRectGetMaxY(_carpDeepDetailb.frame)+RealWidth(10));
+    }
+
+}
 - (UIImageView *)CarpTopImgView{
     if (!_CarpTopImgView) {
         _CarpTopImgView = [UIImageView new];
@@ -118,7 +133,6 @@
         _CarpVideoLocationlb = [UILabel new];
         _CarpVideoLocationlb.textColor = LGDLightBLackColor;
         _CarpVideoLocationlb.font = [UIFont systemFontOfSize:13];
-        [_CarpVideoLocationlb setText:@"  金岭谷科技展厅3号会议室" textColor:LGDLightBLackColor appendingImg:@"dingwei" imgIndex:0 lineSpacing:RealWidth(3)];
     }
     return _CarpVideoLocationlb;
 }
@@ -127,7 +141,6 @@
         _CarpVieoTimelb = [UILabel new];
         _CarpVieoTimelb.textColor = LGDLightBLackColor;
         _CarpVieoTimelb.font = [UIFont systemFontOfSize:13];
-        [_CarpVieoTimelb setText:@"  1/1 - 3/8" textColor:LGDLightBLackColor appendingImg:@"guaqi" imgIndex:0 lineSpacing:RealWidth(3)];
     }
     return _CarpVieoTimelb;
 }

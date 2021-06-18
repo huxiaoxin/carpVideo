@@ -1,6 +1,6 @@
 //
 //  PrefixHeader.pch
-//  FilmFactory
+//  
 //
 //  Created by codehzx on 2021/5/10.
 //
@@ -43,6 +43,7 @@
 #import "AppDelegate.h"
 #import <MJRefresh.h>
 #import "UIView+HZXFrame.h"
+#import "CarpVideoHomeModels.h"
 #define WEAK __weak typeof(self) weakSelf = self;
 #endif
 

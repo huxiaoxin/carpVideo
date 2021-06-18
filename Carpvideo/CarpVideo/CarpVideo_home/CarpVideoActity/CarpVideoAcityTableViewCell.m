@@ -98,6 +98,7 @@
         _CarpVideoThubImgView = [UIImageView new];
         _CarpVideoThubImgView.layer.cornerRadius = RealWidth(5);
         _CarpVideoThubImgView.layer.masksToBounds = YES;
+        _CarpVideoThubImgView.contentMode =  UIViewContentModeScaleAspectFill;
         _CarpVideoThubImgView.backgroundColor = LGDLightGaryColor;
     }
     return _CarpVideoThubImgView;
@@ -175,8 +176,22 @@
         _CarpEnterBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
         _CarpEnterBtn.layer.cornerRadius = RealWidth(10);
         _CarpEnterBtn.layer.masksToBounds = YES;
+        [_CarpEnterBtn addTarget:self action:@selector(CarpEnterBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _CarpEnterBtn;
+}
+- (void)setCarpModel:(carpVideoAcitytyModel *)carpModel{
+    _carpModel = carpModel;
+    [_CarpVideoThubImgView sd_setImageWithURL:[NSURL URLWithString:carpModel.carpVideoThub] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    _CarpVideoToplb.text =  carpModel.title;
+    _CarpoVideoDetailb.text = carpModel.titleDesc;
+    _carpVideoGrenlb.text = carpModel.joinTime;
+    _carpVideoRedlb.text = carpModel.loaction;
+    _Carpbtomlb.text = [NSString stringWithFormat:@"限%ld人报名参加",carpModel.totalPersonNum];
+}
+-(void)CarpEnterBtnClick{
+    [self.delegate CarpVideoAcityTableViewCellWithIndex:self.tag];
+    
 }
 @end
     
