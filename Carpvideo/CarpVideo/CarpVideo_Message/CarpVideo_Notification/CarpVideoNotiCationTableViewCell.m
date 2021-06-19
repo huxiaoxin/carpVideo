@@ -84,7 +84,7 @@
         _CarpVideoContentlb.font = [UIFont systemFontOfSize:14];
         _CarpVideoContentlb.textColor = LGDBLackColor;
         NSString * TempFirstStr  = @"【系统提醒】 ";
-        NSString * TempSecondStr = @"因服务器升级需要，鲤鱼视频将于2021年6月25号服务器停机进行升级";
+        NSString * TempSecondStr = @"因服务器升级需要，鲤鱼视频将于2021年6月29号服务器停机进行升级";
         NSMutableParagraphStyle * parStyle = [[NSMutableParagraphStyle alloc]init];
         parStyle.lineSpacing = RealWidth(3);
         NSMutableAttributedString * mutablAtt = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@%@",TempFirstStr,TempSecondStr]];

@@ -209,7 +209,7 @@ return _CarpVideoGaryView;
 - (CarpVideoCatagoryBtn *)CarpPinbiBtn{
     if (!_CarpPinbiBtn) {
         _CarpPinbiBtn = [CarpVideoCatagoryBtn buttonWithType:UIButtonTypeCustom];
-        _CarpPinbiBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+        _CarpPinbiBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"fenxiang11"];
         _CarpPinbiBtn.CarpVideoTitle.text = @"分享";
         [_CarpPinbiBtn addTarget:self action:@selector(CarpVideoCatagoryBtnWithShareAction:) forControlEvents:UIControlEventTouchUpInside];
     }

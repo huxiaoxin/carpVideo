@@ -10,6 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarpVideoSearchViewController : CarpVideoListViewController
+@property(nonatomic,copy) NSString * CarpSearText;
+@property(nonatomic,assign) NSInteger  CarpSearID;
 
 @end
 

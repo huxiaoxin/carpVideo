@@ -13,7 +13,7 @@
 @end
 @implementation CarpVideoMyinfoTableViewCell
 -(void)setContentUI{
-    
+    self.selectionStyle =  UITableViewCellSelectionStyleNone;
     UILabel * CarpVideoLeftlb = [UILabel new];
     CarpVideoLeftlb.textColor = LGDBLackColor;
     CarpVideoLeftlb.font = [UIFont systemFontOfSize:15];
@@ -46,7 +46,7 @@
     }];
     
     UIImageView *CarpVideouserHeaderImgView = [UIImageView new];
-    CarpVideouserHeaderImgView.image = [UIImage imageNamed:@"whiteLogo"];
+    [CarpVideouserHeaderImgView sd_setImageWithURL:[NSURL URLWithString:@"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg"] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];
     CarpVideouserHeaderImgView.layer.cornerRadius = RealWidth(15);
     CarpVideouserHeaderImgView.layer.masksToBounds = YES;
     [self.contentView addSubview:CarpVideouserHeaderImgView];

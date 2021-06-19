@@ -12,7 +12,7 @@
 #import <MJRefresh.h>
 #import "CarpVideoCatagoryDetailViewController.h"
 #import <AVKit/AVKit.h>
-#import "PandaMsgDetailViewController.h"
+#import "carpVideoMessageDetailViewController.h"
 @interface CarpVideoCatagroySubViewController ()<JRWaterFallLayoutDelegate,UICollectionViewDelegate,UICollectionViewDataSource,CarpVideocatagoryCollectionViewCellDelegate>
 @property(nonatomic,strong) UICollectionView * CarpVideoCollectionView;
 @property(nonatomic,strong) NSMutableArray   * CarpVideoDataArr;
@@ -37,6 +37,9 @@
     self.gk_navigationBar.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginSuccedNotifiCation" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginOutActon" object:nil];
+
+//
     [self.view addSubview:self.CarpVideoCollectionView];
     [_CarpVideoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -252,9 +255,9 @@
     mdeld.ChatID =  catagoryModel.userID;
     mdeld.imgurl = catagoryModel.imgIcon;
     mdeld.topname = catagoryModel.userName;
-    PandaMsgDetailViewController * CarpVideoDetailVc  = [[PandaMsgDetailViewController alloc]init];
+    carpVideoMessageDetailViewController * CarpVideoDetailVc  = [[carpVideoMessageDetailViewController alloc]init];
     CarpVideoDetailVc.hidesBottomBarWhenPushed = YES;
-    CarpVideoDetailVc.pandModel =mdeld;
+    CarpVideoDetailVc.carpessModel =mdeld;
     [self.navigationController pushViewController:CarpVideoDetailVc animated:YES];
     
     

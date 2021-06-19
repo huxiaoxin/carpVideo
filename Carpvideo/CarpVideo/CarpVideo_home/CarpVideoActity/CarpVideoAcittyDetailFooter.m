@@ -52,13 +52,12 @@
         }];
                 
         [_CarpVideoLocationlb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(RealWidth(15));
+            make.right.left.inset(RealWidth(15));
             make.top.mas_equalTo(_CarpTopImgView.mas_bottom).offset(RealWidth(20));
         }];
         
         [_CarpVieoTimelb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(RealWidth(15));
-            make.top.mas_equalTo(_CarpVideoLocationlb.mas_bottom).offset(RealWidth(10));
+            make.right.left.inset(RealWidth(15));          make.top.mas_equalTo(_CarpVideoLocationlb.mas_bottom).offset(RealWidth(10));
         }];
         
         [_CarpCebterImgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -102,7 +101,7 @@
     
     [_CarpVideoLocationlb setText:[NSString stringWithFormat:@"   %@",carpModel.loaction] textColor:LGDLightBLackColor appendingImg:@"dingwei" imgIndex:0 lineSpacing:RealWidth(3)];
 
-    [_CarpVieoTimelb setText:[NSString stringWithFormat:@"   %@",carpModel.joinTime] textColor:LGDLightBLackColor appendingImg:@"guaqi" imgIndex:0 lineSpacing:RealWidth(3)];
+    [_CarpVieoTimelb setText:[NSString stringWithFormat:@"   %@",carpModel.joinTime] textColor:LGDLightBLackColor appendingImg:@"guaqi" imgIndex:0 lineSpacing:RealWidth(6)];
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
@@ -133,6 +132,7 @@
         _CarpVideoLocationlb = [UILabel new];
         _CarpVideoLocationlb.textColor = LGDLightBLackColor;
         _CarpVideoLocationlb.font = [UIFont systemFontOfSize:13];
+        _CarpVideoLocationlb.numberOfLines = 0;
     }
     return _CarpVideoLocationlb;
 }
@@ -141,6 +141,7 @@
         _CarpVieoTimelb = [UILabel new];
         _CarpVieoTimelb.textColor = LGDLightBLackColor;
         _CarpVieoTimelb.font = [UIFont systemFontOfSize:13];
+        _CarpVieoTimelb.numberOfLines = 0;
     }
     return _CarpVieoTimelb;
 }

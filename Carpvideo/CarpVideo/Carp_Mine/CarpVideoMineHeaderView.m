@@ -10,9 +10,7 @@
 @interface CarpVideoMineHeaderView ()
 @property(nonatomic,strong) UIView * CarpVideoBackView;
 @property(nonatomic,strong) UIImageView * CarpVideoBackImgView;
-@property(nonatomic,strong) UILabel     * CarpVideoNamelb;
-@property(nonatomic,strong) UILabel     * CarpVideoDetailb;
-@property(nonatomic,strong) UIImageView * CarpVideouserImgView;
+
 @property(nonatomic,strong) UIButton    * CarpVideoRightImgView;
 @property(nonatomic,strong) UIView      * CarpbtnView;
 
@@ -20,7 +18,7 @@
 @implementation CarpVideoMineHeaderView
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor =  [UIColor blueColor];
+        self.backgroundColor =  [UIColor whiteColor];
         [self addSubview:self.CarpVideoBackView];
         [self addSubview:self.CarpVideoBackImgView];
         [_CarpVideoBackImgView addSubview:self.CarpVideoNamelb];
@@ -126,7 +124,7 @@
         _CarpVideoDetailb =[UILabel new];
         _CarpVideoDetailb.font =  KBlFont(12);
         _CarpVideoDetailb.textColor = [UIColor whiteColor];
-        _CarpVideoDetailb.text = @"唯有热爱，方能抵御岁月漫长!";
+        _CarpVideoDetailb.text = @"UID :10001";
     }
     return _CarpVideoDetailb;
 }

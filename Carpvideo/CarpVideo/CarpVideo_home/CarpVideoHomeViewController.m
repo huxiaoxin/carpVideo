@@ -19,7 +19,8 @@
 #import "CarpVideoAcotityViewController.h"
 #import "CarpVieoAdviceViewController.h"
 #import "CarpVideoDetailViewController.h"
-@interface CarpVideoHomeViewController ()<CarpVideoHomeHeaderViewDelegate>
+#import <PYSearch-umbrella.h>
+@interface CarpVideoHomeViewController ()<CarpVideoHomeHeaderViewDelegate,PYSearchViewControllerDelegate,CarpVideoHomeTableViewCellDelegate>
 @property(nonatomic,strong) CarpVideoHomeHeaderView * carpVideoHeader;
 @property(nonatomic,strong) NSMutableArray * CarpVideoHomeDataArr;
 @property(nonatomic,copy) NSArray * CarpVideoHeaderDataArr;
@@ -39,20 +40,21 @@
     [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT)];
     _CarpVideoTableView.tableHeaderView = self.carpVideoHeader;
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoTableViewHeaderClicks)];
-    [_CarpVideoTableView.mj_header beginRefreshing];
+    [self CarpVideoTableViewHeaderClicks];
     
 }
 -(void)CarpVideoTableViewHeaderClicks{
     
     [LCProgressHUD showLoading:@""];
     NSArray * CarpVideoDataArr = [WHC_ModelSqlite query:[CarpVideoHomeModels class]];
-    NSDictionary * dictionary =   [self getJsonDataJsonname:@"pandaMoview"];
+    NSDictionary * dictionary =   [self getJsonDataJsonname:@"CarpVideoFIlds"];
     MJWeakSelf;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         NSArray * PandaHoemNewsArr =[[[dictionary objectForKey:@"result"] objectForKey:@"result"] objectForKey:@"list"];
         NSMutableArray * PandaHoemTempArr= [[NSMutableArray alloc]init];
-        for (NSDictionary * PandaHoemDic in PandaHoemNewsArr) {
+        for (int index = 0 ; index < 3; index ++) {
+            NSDictionary * PandaHoemDic = [PandaHoemNewsArr objectAtIndex:index];
             CarpVideoHomenewsModel * PandaHoemitem = [CarpVideoHomenewsModel BaseinitWithDic:PandaHoemDic];
             if (![PandaHoemitem.imgUrl containsString:@"https://interface.sina.cn/wap_api/video_location.d.html"]) {
                 if (![PandaHoemitem.imgUrl containsString:@"https://n.sinaimg.cn/default/2fb77759/20151125/320X320.png"]) {
@@ -63,12 +65,13 @@
                 }
                 
             }
+            
         }
         [LCProgressHUD hide];
         if (CarpVideoDataArr.count > 5) {
             weakSelf.CarpVideoHeaderDataArr =  [CarpVideoDataArr subarrayWithRange:NSMakeRange(0, 4)];
             weakSelf.carpVideoHeader.VideoDataArr = [CarpVideoDataArr subarrayWithRange:NSMakeRange(0, 4)];
-            weakSelf.CarpVideoHomeDataArr = [PandaHoemTempArr subarrayWithRange:NSMakeRange(0, 5)].mutableCopy;
+            weakSelf.CarpVideoHomeDataArr = PandaHoemTempArr;
         }else{
             weakSelf.CarpVideoHeaderDataArr = CarpVideoDataArr;
             weakSelf.carpVideoHeader.VideoDataArr = CarpVideoDataArr;
@@ -78,12 +81,15 @@
         NSMutableArray * tempBannaImgArr = [NSMutableArray array];
         NSMutableArray * tempBannaTitleArr = [NSMutableArray array];
         NSMutableArray * tempModelbanr = [NSMutableArray array];
-        for (int i = 7 ; i < 9 ; i ++) {
-            CarpVideoHomeModels * mdoel = CarpVideoDataArr[i];
-            [tempModelbanr addObject:mdoel];
-            [tempBannaImgArr addObject:mdoel.carpVideoImgThub];
-            [tempBannaTitleArr addObject:mdoel.carpVideoHomeName];
+        if (CarpVideoDataArr.count > 11) {
+            for (int i = 7 ; i < 9 ; i ++) {
+                CarpVideoHomeModels * mdoel = CarpVideoDataArr[i];
+                [tempModelbanr addObject:mdoel];
+                [tempBannaImgArr addObject:mdoel.carpVideoImgThub];
+                [tempBannaTitleArr addObject:mdoel.carpVideoHomeName];
+            }
         }
+    
         weakSelf.CarpVieeobananrDataArr = tempModelbanr.copy;
         [tempBanararr addObject:tempBannaImgArr];
         [tempBanararr addObject:tempBannaTitleArr];
@@ -120,7 +126,16 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CarpVideoHomeTableViewCell * carpVideoCell = [CarpVideoHomeTableViewCell createCellWithTheTableView:tableView AndTheIndexPath:indexPath];
     carpVideoCell.carpNewsModel = self.CarpVideoHomeDataArr[indexPath.row];
+    carpVideoCell.delegate = self;
+    carpVideoCell.tag = indexPath.row;
     return carpVideoCell;
+}
+-(void)CarpVideoHomeTableViewCellDidSeltecdWithCellIndex:(NSInteger)CellIndex{
+    CarpVideoHomenewsModel * carpModel = self.CarpVideoHomeDataArr[CellIndex];
+    CarpVideoHomeNewsDetailViewController * CarpVideoDetailVc = [[CarpVideoHomeNewsDetailViewController alloc]init];
+    CarpVideoDetailVc.hidesBottomBarWhenPushed = YES;
+    CarpVideoDetailVc.carpNewsModel =carpModel;
+    [self.navigationController pushViewController:CarpVideoDetailVc animated:YES];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return RealWidth(180);
@@ -178,9 +193,41 @@
 }
 #pragma mark--CarpVideoHomeHeaderViewDelegate
 -(void)CarpVideoHomeHeaderViewSearchAction{
-    CarpVideoSearchViewController * CarpSearchVc = [[CarpVideoSearchViewController alloc]init];
-    CarpSearchVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:CarpSearchVc animated:YES];
+    PYSearchViewController * carpSearchVc = [PYSearchViewController searchViewControllerWithHotSearches:@[@"招魂3",@"人之怒",@"007:无暇赴死",@"黑寡妇",@"电锯惊魂9"] searchBarPlaceholder:@"快速搜索"];
+    carpSearchVc.searchBar.backgroundColor = [UIColor whiteColor];
+    carpSearchVc.delegate = self;
+    carpSearchVc.hotSearchStyle  = PYHotSearchStyleARCBorderTag;
+    UITableView *baseSearchTableView =  [carpSearchVc valueForKey:@"baseSearchTableView"];
+    [baseSearchTableView setFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_SAFEAREA_BTM)];
+    UINavigationController * PandaRootVc = [UINavigationController rootVC:carpSearchVc];
+    PandaRootVc.navigationBar.barTintColor = LGDViewBJColor;
+    [self presentViewController:PandaRootVc animated:YES completion:^{
+        
+    }];
+}
+- (void)searchViewController:(PYSearchViewController *)searchViewController
+      didSearchWithSearchBar:(UISearchBar *)searchBar
+                  searchText:(NSString *)searchText{
+    NSInteger searchID;
+    if ([searchText isEqualToString:@"速度与激情9"]) {
+        searchID  = 0;
+    }else if ([searchText isEqualToString:@"人之怒"]){
+        searchID  = 17;
+    }else if ([searchText isEqualToString:@"007:无暇赴死"]){
+        searchID  = 22;
+    }else if ([searchText isEqualToString:@"黑寡妇"]){
+        searchID  = 20;
+    }else {
+        searchID  = 21;
+    }
+    MJWeakSelf;
+    [searchViewController dismissViewControllerAnimated:NO completion:^{
+        CarpVideoSearchViewController * pandaSearchVc = [[CarpVideoSearchViewController alloc]init];
+        pandaSearchVc.CarpSearText = searchText;
+        pandaSearchVc.CarpSearID = searchID;
+        pandaSearchVc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:pandaSearchVc animated:YES];
+    }];
 }
 -(void)CarpVideoHomeHeaderViewMoreDayAction{
     CarpVideoMoreDayListViewController * carpVideoVc = [[CarpVideoMoreDayListViewController alloc]init];

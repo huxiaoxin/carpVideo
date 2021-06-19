@@ -82,6 +82,7 @@
         CarpVideoContentTextView.zw_limitCount  = 1500;
         CarpVideoContentTextView.zw_placeHolder = @"请简要的说明下你的问题～";
         [ContentView addSubview:CarpVideoContentTextView];
+        _CarpVideoContentTextView = CarpVideoContentTextView;
         
         [CarpVideoContentTextView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsMake(RealWidth(5), RealWidth(5), RealWidth(5), RealWidth(5)));

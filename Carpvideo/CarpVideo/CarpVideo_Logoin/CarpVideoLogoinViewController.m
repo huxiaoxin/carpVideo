@@ -169,7 +169,7 @@
     [LCProgressHUD showLoading:@""];
     MJWeakSelf;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ([weakSelf.CarpVideoPhoneNumsTextField.text isEqualToString:@"15068761251"] && [weakSelf.CarpVideoPasswordTextField.text isEqualToString:@"test001"]) {
+        if ([weakSelf.CarpVideoPhoneNumsTextField.text isEqualToString:@"18958021939"] && [weakSelf.CarpVideoPasswordTextField.text isEqualToString:@"6850"]) {
             [CarpVideoLoginVideModelTool CarpVideoLoginViewModel_loginSucced];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"CarpVideoLoginSuccedNotifiCation" object:nil];
             [LCProgressHUD showSuccess:@"登录成功"];

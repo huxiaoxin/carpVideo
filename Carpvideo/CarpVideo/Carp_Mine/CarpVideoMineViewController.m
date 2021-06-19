@@ -14,6 +14,9 @@
 #import "CarpVideoKefuViewController.h"
 #import "CarpVideoAboutusViewController.h"
 #import "CarpVideoMyInfoViewController.h"
+#import "CarpVideoMineMyColecdViewController.h"
+#import "CarpVideoMyVideoViewsViewController.h"
+#import "CarpVideoMineMyFallowViewController.h"
 @interface CarpVideoMineViewController ()<CarpVideoMineHeaderViewDelegate>
 @property(nonatomic,strong) NSMutableArray * CarpMineDataArr;
 @property(nonatomic,strong) CarpVideoMineHeaderView * CarpMineHeader;
@@ -37,7 +40,7 @@
 }
 - (CarpVideoMineHeaderView *)CarpMineHeader{
     if (!_CarpMineHeader) {
-        _CarpMineHeader = [[CarpVideoMineHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(185)+GK_SAFEAREA_TOP)];
+        _CarpMineHeader = [[CarpVideoMineHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(185+20)+GK_SAFEAREA_TOP)];
         _CarpMineHeader.delegate = self;
     }
     return _CarpMineHeader;
@@ -66,6 +69,10 @@
     }else if (indexPath.row == 2){
         [self CarpVideoClearMemorySize];
     }else if (indexPath.row == 3){
+        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+            [self CarpVideoShowLoginVc];
+            return;
+        }
         CarpVideoKefuViewController * carpVideokefuVc = [[CarpVideoKefuViewController alloc]init];
         carpVideokefuVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:carpVideokefuVc animated:YES];
@@ -73,21 +80,36 @@
 }
 #pragma mark--CarpVideoMineHeaderViewDelegate
 -(void)CarpVideoMineHeaderViewBtnDidClickIndex:(NSInteger)btnIndex{
+    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        [self CarpVideoShowLoginVc];
+        return;
+    }
+
     if (btnIndex == 0) {
         CarpVideoMySendZoneViewController * CarpMySendVc = [[CarpVideoMySendZoneViewController alloc]init];
         CarpMySendVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:CarpMySendVc animated:YES];
     }else if (btnIndex == 1){
-        CarpVideoAboutusViewController * CarpVcAboutusVc = [[CarpVideoAboutusViewController alloc]init];
-        CarpVcAboutusVc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:CarpVcAboutusVc animated:YES];
+        CarpVideoMineMyColecdViewController * carpVideMyVc = [[CarpVideoMineMyColecdViewController alloc]init];
+        carpVideMyVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:carpVideMyVc animated:YES];
     }else if (btnIndex == 2){
-        
+        CarpVideoMyVideoViewsViewController * carpVideoMyVc = [[CarpVideoMyVideoViewsViewController alloc]init];
+        carpVideoMyVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:carpVideoMyVc animated:YES];
     }else if (btnIndex == 3){
-        [self CarpVideoShowLoginVc];
+        CarpVideoMineMyFallowViewController * carpVideoMyFallowVc = [[CarpVideoMineMyFallowViewController alloc]init];
+        carpVideoMyFallowVc.hidesBottomBarWhenPushed = YES;
+        carpVideoMyFallowVc.VCIndex = 0;
+        [self.navigationController pushViewController:carpVideoMyFallowVc animated:YES];
     }
 }
 -(void)CarpVideoMineHeaderViewTapInfoClicks{
+    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        [self CarpVideoShowLoginVc];
+        return;
+    }
+
     CarpVideoMyInfoViewController * CarpVideoInfo = [[CarpVideoMyInfoViewController alloc]init];
     CarpVideoInfo.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:CarpVideoInfo animated:YES];
@@ -111,7 +133,21 @@
             }
         }
     }
-}/*
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        _CarpMineHeader.CarpVideoNamelb.text = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
+        _CarpMineHeader.CarpVideoDetailb.text = @"UID:10001";
+        [_CarpMineHeader.CarpVideouserImgView sd_setImageWithURL:[NSURL URLWithString:@"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg"] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];
+    }else{
+        _CarpMineHeader.CarpVideoNamelb.text = @"未登录";
+        _CarpMineHeader.CarpVideoDetailb.text = @"";
+        _CarpMineHeader.CarpVideouserImgView.image = [UIImage imageNamed:@"whiteLogo"];
+    }
+}
+
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

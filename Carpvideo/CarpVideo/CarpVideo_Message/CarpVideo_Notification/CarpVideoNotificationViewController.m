@@ -27,8 +27,8 @@
     MJWeakSelf;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         weakSelf.isLoads = YES;
-        [_CarpVideoTableView.mj_header endRefreshing];
-        [_CarpVideoTableView reloadData];
+        [self->_CarpVideoTableView.mj_header endRefreshing];
+        [self->_CarpVideoTableView reloadData];
     });
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

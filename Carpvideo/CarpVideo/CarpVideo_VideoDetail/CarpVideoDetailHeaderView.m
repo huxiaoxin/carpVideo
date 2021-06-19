@@ -232,7 +232,7 @@
     if (!_CarpVideoThubImgView) {
         _CarpVideoThubImgView = [UIImageView new];
         _CarpVideoThubImgView.contentMode = UIViewContentModeScaleAspectFill;
-        _CarpVideoThubImgView.layer.masksToBounds = YES;
+//        _CarpVideoThubImgView.layer.masksToBounds = YES;
     }
     return _CarpVideoThubImgView;
 }
