@@ -16,6 +16,6 @@
 }
 +(NSString *)CarpVideoLogonViewModel_userName{
     NSString * userNmae = [[NSUserDefaults standardUserDefaults] objectForKey:@"CarpvideoName"];
-    return userNmae.length == 0 ? @"精钢芭比🐰" : userNmae;
+    return userNmae.length == 0 ? @"关耳羊羽" : userNmae;
 }
 @end

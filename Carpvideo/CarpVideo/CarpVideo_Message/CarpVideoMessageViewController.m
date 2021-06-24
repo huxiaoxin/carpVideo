@@ -14,7 +14,7 @@
 #import "CarpVideoComentViewController.h"
 #import "CarpVideoMySendZoneViewController.h"
 #import "carpVideoMessageModel.h"
-#import "PandaMsgDetailViewController.h"
+#import "carpVideoMessageDetailViewController.h"
 @interface CarpVideoMessageViewController ()
 @property(nonatomic,strong) CarpVideoMessageHeaderView * CarpHeaderView;
 @property(nonatomic,strong) NSMutableArray            * CarpVideoDataArr;
@@ -35,6 +35,8 @@
     self.gk_navTitle = @"消息";
     self.view.backgroundColor = [UIColor whiteColor];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginSuccedNotifiCation" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginOutActon" object:nil];
+
     [_CarpVideoTableView setBackgroundColor:[UIColor whiteColor]];
     [_CarpVideoTableView setFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_TABBAR_HEIGHT)];
     _CarpVideoTableView.tableHeaderView = self.CarpHeaderView;
@@ -92,18 +94,37 @@
         MJWeakSelf;
         _CarpHeaderView = [[CarpVideoMessageHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(80)) Configugration:^(NSInteger index) {
             if (index == 0) {
+                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+                    [self CarpVideoShowLoginVc];
+                    return;
+                }
+
                 CarpVideoNotificationViewController * CarpVideoNotiVc = [[CarpVideoNotificationViewController alloc]init];
                 CarpVideoNotiVc.hidesBottomBarWhenPushed = YES;
                 [weakSelf.navigationController pushViewController:CarpVideoNotiVc animated:YES];
             }else if (index == 1){
+                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+                    [self CarpVideoShowLoginVc];
+                    return;
+                }
                 CarpVideoKefuViewController * CarpVideoKefuVc = [[CarpVideoKefuViewController alloc]init];
                 CarpVideoKefuVc.hidesBottomBarWhenPushed = YES;
                 [weakSelf.navigationController pushViewController:CarpVideoKefuVc animated:YES];
             }else if (index == 2){
+                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+                    [self CarpVideoShowLoginVc];
+                    return;
+                }
+
                 CarpVideoZanViewController * carpZanvc = [[CarpVideoZanViewController alloc]init];
                 carpZanvc.hidesBottomBarWhenPushed = YES;
                 [weakSelf.navigationController pushViewController:carpZanvc animated:YES];
             }else if (index == 3){
+                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+                    [self CarpVideoShowLoginVc];
+                    return;
+                }
+
                 CarpVideoComentViewController * carpComentVc =  [[CarpVideoComentViewController alloc]init];
                 carpComentVc.hidesBottomBarWhenPushed = YES;
                 [weakSelf.navigationController pushViewController:carpComentVc animated:YES];
@@ -127,8 +148,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PandaMsgDetailViewController * CarpVidoDetailVc = [[PandaMsgDetailViewController alloc]init];
-    CarpVidoDetailVc.pandModel = self.CarpVideoDataArr[indexPath.row];
+    carpVideoMessageDetailViewController * CarpVidoDetailVc = [[carpVideoMessageDetailViewController alloc]init];
+    CarpVidoDetailVc.carpessModel = self.CarpVideoDataArr[indexPath.row];
     CarpVidoDetailVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:CarpVidoDetailVc animated:YES];
 }

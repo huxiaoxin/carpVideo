@@ -71,7 +71,7 @@
             }
 
             CarpVideoCatagoryDetailModel * detailModel  = [[CarpVideoCatagoryDetailModel alloc]init];
-            detailModel.userImgurl = @"";
+            detailModel.userImgurl = @"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg";
             detailModel.userNameText = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
             detailModel.time = @"刚刚";
             detailModel.catagoryID = self.catagoryModel.userID;
@@ -81,6 +81,7 @@
             [self.CaroVideoDataArr addObject:detailModel];
             [WHC_ModelSqlite insert:detailModel];
             [LCProgressHUD showLoading:@""];
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [LCProgressHUD hide];
                 [self->_CarpVideoTableView reloadData];

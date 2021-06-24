@@ -51,7 +51,21 @@
     
 }
 -(void)CarpVideoCommiteBtnClick{
+    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        [self CarpVideoShowLoginVc];
+        return;
+    }
     
+    if (_carpVideoHeader.CarpVideoContentTextView.text.length == 0) {
+        [LCProgressHUD showInfoMsg:@"请简要说明下原因"];
+        return;
+    }
+    
+    [LCProgressHUD showLoading:@""];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [LCProgressHUD showSuccess:@"感谢您的反馈"];
+        [self.navigationController popViewControllerAnimated:YES];
+    });
 }
 - (CarpVideoSugestionHeaderView *)carpVideoHeader{
     if (!_carpVideoHeader) {

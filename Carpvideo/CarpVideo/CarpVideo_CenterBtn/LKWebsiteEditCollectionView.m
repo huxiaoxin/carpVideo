@@ -142,7 +142,7 @@
     }];
     [lkalter addAction:lkPhotoAction];
     [lkalter addAction:lkCameraAction];
-    [lkalter addAction:lkVideoAction];
+//    [lkalter addAction:lkVideoAction];
     [lkalter addAction:lkCancleAction];
     [[AppDelegate shareDelegate].window.rootViewController  presentViewController:lkalter animated:YES completion:nil];
 }

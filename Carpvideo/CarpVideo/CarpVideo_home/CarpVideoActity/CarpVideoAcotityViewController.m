@@ -41,6 +41,9 @@
     return RealWidth(170);
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [[GKNavigationBarConfigure sharedInstance] updateConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.backStyle = GKNavigationBarBackStyleWhite;
+    }];
     CarpVideoActityDetailViewController * caropVideoDetailVc = [[CarpVideoActityDetailViewController alloc]init];
     caropVideoDetailVc.carpselMoel = self.CarpVideoDataArr[indexPath.row];
     [self.navigationController pushViewController:caropVideoDetailVc animated:YES];

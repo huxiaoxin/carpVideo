@@ -88,8 +88,12 @@
         _CarpVideoMoreBtn.titleLabel.font = [UIFont boldSystemFontOfSize:12];
         _CarpVideoMoreBtn.layer.borderColor = LGDMianColor.CGColor;
         _CarpVideoMoreBtn.layer.borderWidth = RealWidth(1);
+        [_CarpVideoMoreBtn addTarget:self action:@selector(CarpVideoMoreBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _CarpVideoMoreBtn;
+}
+-(void)CarpVideoMoreBtnClick{
+    [self.delegate CarpVideoHomeTableViewCellDidSeltecdWithCellIndex:self.tag];
 }
 - (void)setCarpNewsModel:(CarpVideoHomenewsModel *)carpNewsModel{
     _carpNewsModel = carpNewsModel;

@@ -25,6 +25,7 @@
         
         
         UIImageView *  CarpBackImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(150))];
+        CarpBackImgView.userInteractionEnabled = YES;
         CarpBackImgView.image =[UIImage imageNamed:@"lk_CloudImgV"];
         [self  addSubview:CarpBackImgView];
         
@@ -129,7 +130,8 @@
     _BanarArr = BanarArr;
     NSArray* ImgArr = [BanarArr firstObject];
     NSArray * titleArr = [BanarArr lastObject];
-    _SDCView.imageURLStringsGroup = ImgArr;
+    NSArray * imgArr =@[@"https://img2.doubanio.com/view/photo/l/public/p2659040191.jpg",@"https://img1.doubanio.com/view/photo/l/public/p2638805007.jpg"];
+    _SDCView.imageURLStringsGroup = imgArr;
     _SDCView.titlesGroup = titleArr;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

@@ -34,7 +34,6 @@
     return self;
 }
 -(void)CarpVideoMessageBtnClick:(CarpVideoMessageBtn *)messageBtn{
-    NSLog(@"-------%ld",messageBtn.tag);
     if (self.MeaasgeTapBlock) {
         self.MeaasgeTapBlock(messageBtn.tag);
     }

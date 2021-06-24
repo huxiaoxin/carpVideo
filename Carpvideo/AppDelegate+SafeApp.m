@@ -53,30 +53,30 @@
     [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic1.zhimg.com/v2-6d2f78388f2ec7e4e7406e92db700b8c_l.jpg?source=1940ef5c" FilmName:@"表姐电影" mytime:@"06-18 11:25:25" MyFilmID:5 MyComentID:10 CellHeight:0 myContent:@"这烂片我看吐了......朋友们，周末我去看了钟楚曦、罗晋和谭松韵主演的新片《八月未央》。" strarNum:4]];
     
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic4.zhimg.com/v2-4bcc284d174a3af92f619a2c3613a452_l.jpg?source=1940ef5c" FilmName:@"鹅鹅鹅" mytime:@"06-19 12:11:36" MyFilmID:6 MyComentID:11 CellHeight:0 myContent:@"疤面给人一种惊悚的感觉，其实这种可怖、迷幻的具象化，恰恰是梦的特征，因为梦就是跨越时空的，也是超越现实的。" strarNum:3]];
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img9.doubanio.com/icon/u2012686-4.jpg" FilmName:@"简洁" mytime:@"06-19 12:11:36" MyFilmID:6 MyComentID:11 CellHeight:0 myContent:@"疤面给人一种惊悚的感觉，其实这种可怖、迷幻的具象化，恰恰是梦的特征，因为梦就是跨越时空的，也是超越现实的。" strarNum:3]];
     
     
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic4.zhimg.com/v2-f46b8aa0f6bc647241570968b41f86f9_l.jpg?source=1940ef5c" FilmName:@"磕学家脆脆冰" mytime:@"06-22 10:25:31" MyFilmID:6 MyComentID:12 CellHeight:0 myContent:@"这部电影故事内核极其NB，电影想象力拉满，还引入了关于精神分析、心理学、讲了一个关于【梦中取物】的奇幻故事：" strarNum:4]];
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img9.doubanio.com/icon/u142691699-4.jpg" FilmName:@"奥利via" mytime:@"06-22 10:25:31" MyFilmID:6 MyComentID:12 CellHeight:0 myContent:@"这部电影故事内核极其NB，电影想象力拉满，还引入了关于精神分析、心理学、讲了一个关于【梦中取物】的奇幻故事：" strarNum:4]];
     
     
     
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic4.zhimg.com/v2-26467f46da7fd386d52b9a01dea0fc3b_l.jpg?source=1940ef5c" FilmName:@"大狸" mytime:@"06-20 12:11:36" MyFilmID:7 MyComentID:13 CellHeight:0 myContent:@"自《大圣归来》之后观众对孙悟空，哪吒等神话人物IP的审美疲劳已经到了一个即将爆发的点，但是其实《西游记之再世妖王》是继《大圣归来》之后，这五年里第二部以西游主题，孙悟空为主角的登上大荧幕的动画电影，也就是说，这些年动画电影并没有太多用西游IP来讲故事的，其他真人电影与网剧倒是有不少用了西游IP，所以才给观众留下了此IP出现如此频繁的印象。" strarNum:5]];
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img9.doubanio.com/icon/up81845264-144.jpg" FilmName:@"闲散人士2021" mytime:@"06-20 12:11:36" MyFilmID:7 MyComentID:13 CellHeight:0 myContent:@"自《大圣归来》之后观众对孙悟空，哪吒等神话人物IP的审美疲劳已经到了一个即将爆发的点，但是其实《西游记之再世妖王》是继《大圣归来》之后，这五年里第二部以西游主题，孙悟空为主角的登上大荧幕的动画电影，也就是说，这些年动画电影并没有太多用西游IP来讲故事的，其他真人电影与网剧倒是有不少用了西游IP，所以才给观众留下了此IP出现如此频繁的印象。" strarNum:5]];
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic2.zhimg.com/v2-08ae149e7b1126dabd16efeb04ed3e10_l.jpg?source=1940ef5c" FilmName:@"杨建东" mytime:@"06-20 16:21:18" MyFilmID:7 MyComentID:14 CellHeight:0 myContent:@"前面孙悟空大闹五庄观的部分，因为前面太过遵守原著，反倒显得孙悟空有点蛮不讲理，作为一部商业电影，我觉得改编不够巧妙" strarNum:4]];
-    
-    
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic1.zhimg.com/v2-72c70b3d202f6508138766ab6ad4a080_l.jpg?source=1940ef5c" FilmName:@"泰勒太垃" mytime:@"06-21 15:17:21" MyFilmID:8 MyComentID:15 CellHeight:0 myContent:@"一艘被当时誉为“世上最豪华”的邮轮，泰坦尼克号，于1912年4月10日从英国南安普顿出发驶往美国纽约。所有人都说它“永不沉没”，然而它却永远的沉入在北大西洋冰冷的深海里，1517具亡灵随之而去..." strarNum:3]];
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img1.doubanio.com/icon/up15688911-8.jpg" FilmName:@"芋泥啵啵不加冰" mytime:@"06-20 16:21:18" MyFilmID:7 MyComentID:14 CellHeight:0 myContent:@"前面孙悟空大闹五庄观的部分，因为前面太过遵守原著，反倒显得孙悟空有点蛮不讲理，作为一部商业电影，我觉得改编不够巧妙" strarNum:4]];
     
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic1.zhimg.com/v2-642b591aa4c9d5d00ef8f77bb856bfeb_l.jpg?source=1940ef5c" FilmName:@"导演罗飞" mytime:@"06-21 17:36:19" MyFilmID:8 MyComentID:16 CellHeight:0 myContent:@"Almost six years ago, my friend Steven Schwankert came to me and suggested that we make a documentary about the Chinese survivors of Titanic. “There were Chinese people on Titanic?!” was my immediate reaction. It’s a sentence I’ve heard a lot in the years since, pretty much every time we have told people about the film we are working on. And it is the fact that no one seemed to know about the Chinese on board the most famous shipwreck of all time that spurred us on to finish what at times seemed like an impossible task." strarNum:4]];
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img9.doubanio.com/icon/up198705611-5.jpg" FilmName:@"不加辣" mytime:@"06-21 15:17:21" MyFilmID:8 MyComentID:15 CellHeight:0 myContent:@"一艘被当时誉为“世上最豪华”的邮轮，泰坦尼克号，于1912年4月10日从英国南安普顿出发驶往美国纽约。所有人都说它“永不沉没”，然而它却永远的沉入在北大西洋冰冷的深海里，1517具亡灵随之而去..." strarNum:3]];
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic4.zhimg.com/v2-5d2d11b356a351dbeabedb44e19744c1_l.jpg?source=1940ef5c" FilmName:@"河东" mytime:@"06-21 18:14:21" MyFilmID:9 MyComentID:17 CellHeight:0 myContent:@"故事围绕冰雪世界里一场精彩的雪橇比赛展开，意外的失败发掘出了赛事背后的黑幕，弄虚作假、偷奸耍滑注定遭人唾弃，团结友爱、齐心协作才是正道。影片没有刻意说教，在诙谐幽默的气氛中让人不知不觉接受为人处世的正确态度，孩子的三观教育需要从小培养，建议家长带着小孩子一起来观看。充满正能量的片子还是太少了，这一部弥足珍贵！" strarNum:4]];
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic1.zhimg.com/v2-be6706884851de64f5f1c795018ebb88_l.jpg?source=1940ef5c" FilmName:@"舒心酱" mytime:@"06-24 12:56:21" MyFilmID:13 MyComentID:18 CellHeight:0 myContent:@"空王冠”之后，多米尼克·库克导演和本尼迪克特·康伯巴奇又合作了一部《信使》，不同于此前莎翁作品改编的理查三世、亨利六世等遥远故事，《信使》聚焦的是上个世纪中期的一场危机。" strarNum:5]];
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img9.doubanio.com/icon/up2009497-36.jpg" FilmName:@"王大璋" mytime:@"06-21 17:36:19" MyFilmID:8 MyComentID:16 CellHeight:0 myContent:@"Almost six years ago, my friend Steven Schwankert came to me and suggested that we make a documentary about the Chinese survivors of Titanic. “There were Chinese people on Titanic?!” was my immediate reaction. It’s a sentence I’ve heard a lot in the years since, pretty much every time we have told people about the film we are working on. And it is the fact that no one seemed to know about the Chinese on board the most famous shipwreck of all time that spurred us on to finish what at times seemed like an impossible task." strarNum:4]];
     
-    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://pic2.zhimg.com/v2-f84f12436f2a8d8999c5757e5c07e210_l.jpg?source=1940ef5c" FilmName:@"Atlantis" mytime:@"06-21 15:21:56" MyFilmID:15 MyComentID:19 CellHeight:0 myContent:@"影片不是在讨论技术问题，而是创造这样情形来探讨人性问题，如果只能用个体的生命来保全群体的安危，那也许我们唯一能接受的就是这种在一同努力后最终不得已的个人牺牲，且必须是个体心甘情愿的付出，这是人性的最低底线，而群体中有没有甘愿牺牲的人，则就是这个群体的命运所在了。" strarNum:5]];
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img2.doubanio.com/icon/up138581758-1.jpg" FilmName:@"老山" mytime:@"06-21 18:14:21" MyFilmID:9 MyComentID:17 CellHeight:0 myContent:@"故事围绕冰雪世界里一场精彩的雪橇比赛展开，意外的失败发掘出了赛事背后的黑幕，弄虚作假、偷奸耍滑注定遭人唾弃，团结友爱、齐心协作才是正道。影片没有刻意说教，在诙谐幽默的气氛中让人不知不觉接受为人处世的正确态度，孩子的三观教育需要从小培养，建议家长带着小孩子一起来观看。充满正能量的片子还是太少了，这一部弥足珍贵！" strarNum:4]];
+    
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img2.doubanio.com/icon/up154087440-1.jpg" FilmName:@"虞子酱20" mytime:@"06-24 12:56:21" MyFilmID:13 MyComentID:18 CellHeight:0 myContent:@"空王冠”之后，多米尼克·库克导演和本尼迪克特·康伯巴奇又合作了一部《信使》，不同于此前莎翁作品改编的理查三世、亨利六世等遥远故事，《信使》聚焦的是上个世纪中期的一场危机。" strarNum:5]];
+    
+    [tempArr addObject:[self CarpVieoRemenComentConfigarWithHeaderImgUrl:@"https://img2.doubanio.com/icon/up188671340-3.jpg" FilmName:@"相机阿飞" mytime:@"06-21 15:21:56" MyFilmID:15 MyComentID:19 CellHeight:0 myContent:@"影片不是在讨论技术问题，而是创造这样情形来探讨人性问题，如果只能用个体的生命来保全群体的安危，那也许我们唯一能接受的就是这种在一同努力后最终不得已的个人牺牲，且必须是个体心甘情愿的付出，这是人性的最低底线，而群体中有没有甘愿牺牲的人，则就是这个群体的命运所在了。" strarNum:5]];
     
     
     
@@ -125,9 +125,9 @@
     carpmodelItem1.watchingNum = @"2.42亿";
     carpmodelItem1.shangyinNum = 0;
     carpmodelItem1.total_Num = 3;
-    carpmodelItem1.carpVideoImgThub = @"https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2640266496.jpg";
-    carpmodelItem1.carpVideoHomeName = @"秘密访客";
-    carpmodelItem1.carpVideoEngName  =@"Home Sweet Home";
+    carpmodelItem1.carpVideoImgThub = @"https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2521660018.jpg";
+    carpmodelItem1.carpVideoHomeName = @"疯了，因为你！";
+    carpmodelItem1.carpVideoEngName  =@"You Drive Me Crazy";
     carpmodelItem1.carpVideoHomeType = @"悬疑 / 惊悚";
     carpmodelItem1.carpVideoHomeArtislist = @"郭富城 / 段奕宏 / 张子枫 / 许玮甯 / 荣梓杉 / 王圣迪";
     carpmodelItem1.carpVideoSourcestar_five =0.8;
@@ -137,7 +137,7 @@
     carpmodelItem1.carpVideoMoviewstar_one =0.1;
     carpmodelItem1.carpVideo_isCollected = NO;
     carpmodelItem1.carpVideoHome_listArr = @[@{@"img":@"https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1553147335.58.jpg",@"title":@"陈正道"},@{@"img":@"https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p29009.jpg",@"title":@"郭富城"},@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1514470669.12.jpg",@"title":@"段奕宏"},@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1465826349.1.jpg",@"title":@"张子枫"},@{@"img":@"https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1513228749.68.jpg",@"title":@"许玮甯"},@{@"img":@"https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1593688210.0.jpg",@"title":@"荣梓杉"}];
-    carpmodelItem1.carpVideoHome_intrduce = @"　校车司机于困樵（段奕宏 饰）因失职酿成了一起重大的校车车祸，困樵拼死救出了似与车祸背后真相息息相关的汪楚祺（荣梓杉 饰），校车上的其他学生无人生还。 得知此事家境显赫的汪父（郭富城 饰）为了隐藏这个秘密，不得不把困樵藏在自己家的地下室里长达三年，却处处暗示困樵何时自首。随着访客的到来，这个原本温馨和睦的四口之家变得越来越诡异，母亲（许玮甯 饰）整日惴惴不安，姐姐（张子枫 饰）举止一反常态，家人个个心怀鬼胎，怪事频出，这个家背后不可告人的秘密似乎即将浮出水面……";
+    carpmodelItem1.carpVideoHome_intrduce = @"该剧是讲述男女之间的爱情和友情的爱情剧，讲述8年里一直都是朋友的两个男女因为一夜情而发生的感情变化。 李裕英将在剧中饰演男主金来菀8年的女性朋友、法语同声传译韩恩星一角，是一个朝气蓬勃，无法预测她下一秒会做什么的角色。 金善浩饰演金来菀，他是外貌和性格兼具、前途无量的画家，同时也是韩恩星唯一的男性朋友。他具备来者不拒的自由灵魂，某一天他和一直以来完全不把她当女人看待的韩恩星经历了一次突发事件之后，恋爱、创作都不如意了，陷入了低谷并领悟了真爱";
     carpmodelItem1.carpVideoHome_soureNums = 6361;
     carpmodelItem1.carpVideoHomes_DBNums = 6.4;
     carpmodelItem1.caprVideHome_ID = 1;
@@ -153,7 +153,7 @@
     carpmodelItem2.carp_starNum = 4;
     carpmodelItem2.iswantWatching = NO;
     carpmodelItem2.watchingNum = @"3.65亿";
-    carpmodelItem2.shangyinNum = 0;
+    carpmodelItem2.shangyinNum = 12;
     carpmodelItem2.total_Num = 4;
     carpmodelItem2.carpVideoImgThub = @"https://img2.doubanio.com/view/photo/m/public/p2649579601.jpg";
     carpmodelItem2.carpVideoHomeName = @"老友记重聚特辑 ";
@@ -302,25 +302,25 @@
     carpmodelItem7.watchingNum = @"2.01亿";
     carpmodelItem7.shangyinNum = 12;
     carpmodelItem7.total_Num = 5;
-    carpmodelItem7.carpVideoImgThub = @"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2648436850.jpg";
-    carpmodelItem7.carpVideoHomeName = @"酸酸甜甜";
-    carpmodelItem7.carpVideoEngName  =@"새콤달콤";
-    carpmodelItem7.carpVideoHomeType = @"爱情";
-    carpmodelItem7.carpVideoHomeArtislist = @" 张基永 / 蔡秀彬 / 郑秀晶 / 赵汉哲 / 李宇济 / 柳善 / 李璟荣 / 朴哲民 / 郑熙泰 / 吴素贤赫";
+    carpmodelItem7.carpVideoImgThub = @"https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2654915204.jpg";
+    carpmodelItem7.carpVideoHomeName = @"困在时间里的父亲";
+    carpmodelItem7.carpVideoEngName  =@"The Father";
+    carpmodelItem7.carpVideoHomeType = @"剧情";
+    carpmodelItem7.carpVideoHomeArtislist = @" 安东尼·霍普金斯 / 奥利维娅·科尔曼 / 马克·加蒂斯 / 奥莉维亚·威廉姆斯 / 伊莫琴·普茨 / 卢夫斯·塞维尔 / 阿耶莎·达尔克 / 罗曼·泽勒";
     carpmodelItem7.carpVideoSourcestar_five =0.4;
     carpmodelItem7.carpVieoHomestar_foure =0.2;
     carpmodelItem7.carpVideoHomestare_three =0.1;
     carpmodelItem7.carpVideoHomeestar_two =0.1;
     carpmodelItem7.carpVideoMoviewstar_one =0.1;
     carpmodelItem7.carpVideo_isCollected = NO;
-    carpmodelItem7.carpVideoHome_listArr = @[@{@"img":@"https://img9.doubanio.com/view/celebrity/raw/public/p1570324939.04.jpg",@"title":@"李桂碧"},@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/pKz8Y8u291I8cel_avatar_uploaded1496554637.72.jpg",@"title":@"张基永"},@{@"img":@"https://img9.doubanio.com/view/celebrity/raw/public/piCUHrveBcKQcel_avatar_uploaded1441277532.94.jpg",@"title":@"蔡秀彬"},@{@"img":@"https://img2.doubanio.com/view/celebrity/raw/public/p1555294587.72.jpg",@"title":@"郑秀晶"},@{@"img":@"https://img1.doubanio.com/view/celebrity/raw/public/p1587881358.89.jpg",@"title":@"赵汉哲"}];
-    carpmodelItem7.carpVideoHome_intrduce = @"因一见钟情而开始恋爱，但因就业问题而身心疏远的情侣的爱情电影。";
+    carpmodelItem7.carpVideoHome_listArr = @[@{@"img":@"https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1601057938.27.jpg",@"title":@"Florian Zeller"},@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/p19182.jpg",@"title":@"Anthony Hopkins"},@{@"img":@"https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1513572425.69.jpg",@"title":@"Olivia Colman"},@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/p41033.jpg",@"title":@"Mark Gatiss"},@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/p27401.jpg",@"title":@"Olivia Williams"}];
+    carpmodelItem7.carpVideoHome_intrduce = @"影片以重复加碎片式的感官叙事手法，讲述了年迈且身患疾病的安东尼（安东尼·霍普金斯 Anthony Hopkins 饰）正在面临一项艰难的人生选择——是搬到养老院还是接受女儿寻找的新护工。在这个过程中，安东尼发现自己仿佛进入了一场奇怪的时空之旅，错乱的记忆和时间线交织出一段段匪夷所思的故事，而一个个陌生又熟悉的人也让他陷入迷茫。 ";
     carpmodelItem7.carpVideoHome_soureNums = 3128;
     carpmodelItem7.carpVideoHomes_DBNums = 4.2;
     carpmodelItem7.caprVideHome_ID = 7;
-    carpmodelItem7.carpVideoHomes_tagOne= @"爱情";
-    carpmodelItem7.carpVideoHome_tagtwo = @"";
-    carpmodelItem7.time = @"2021-06-04(韩国网络)";
+    carpmodelItem7.carpVideoHomes_tagOne= @"剧情";
+    carpmodelItem7.carpVideoHome_tagtwo = @"亲情";
+    carpmodelItem7.time = @"2021-02-26(美国网络)";
     carpmodelItem7.Top_filmType = 0;
     [tempArr addObject:carpmodelItem7];
     
@@ -331,25 +331,25 @@
     carpmodelItem8.watchingNum = @"3.25亿";
     carpmodelItem8.shangyinNum = 453;
     carpmodelItem8.total_Num = 3;
-    carpmodelItem8.carpVideoImgThub = @"https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2643872011.jpg";
-    carpmodelItem8.carpVideoHomeName = @"活死人军团 ";
-    carpmodelItem8.carpVideoEngName  =@"Army of the Dead";
-    carpmodelItem8.carpVideoHomeType = @"动作 / 科幻 / 恐怖";
-    carpmodelItem8.carpVideoHomeArtislist = @"施万克";
+    carpmodelItem8.carpVideoImgThub = @"https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2654767767.jpg";
+    carpmodelItem8.carpVideoHomeName = @"了不起的老爸";
+    carpmodelItem8.carpVideoEngName  =@"On Your Mark";
+    carpmodelItem8.carpVideoHomeType = @"剧情 / 喜剧 / 家庭 / 运动";
+    carpmodelItem8.carpVideoHomeArtislist = @"周青元";
     carpmodelItem8.carpVideoSourcestar_five =0.2;
     carpmodelItem8.carpVieoHomestar_foure =0.2;
     carpmodelItem8.carpVideoHomestare_three =0.1;
     carpmodelItem8.carpVideoHomeestar_two =0.1;
     carpmodelItem8.carpVideoMoviewstar_one =0.1;
     carpmodelItem8.carpVideo_isCollected = NO;
-    carpmodelItem8.carpVideoHome_listArr = @[@{@"img":@"https://img2.doubanio.com/view/celebrity/raw/public/p2381.jpg",@"title":@"扎克·施奈德 "},@{@"img":@"https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1493202154.34.jpg",@"title":@"戴夫·巴蒂斯塔"},@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1480854415.1.jpg",@"title":@"艾拉·珀内尔"},@{@"img":@"https://img2.doubanio.com/view/celebrity/raw/public/p7442.jpg",@"title":@"安娜·德拉·雷古拉"},@{@"img":@"https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1429.jpg",@"title":@"马提亚斯·施维赫夫"}];
-    carpmodelItem8.carpVideoHome_intrduce = @"影片的故事发生在丧尸危机爆发的拉斯维加斯，在此期间，一名男子集结一群雇佣兵进行最终的赌博，冒险进入隔离区，以进行有史以来最大的劫案。";
+    carpmodelItem8.carpVideoHome_listArr = @[@{@"img":@"https://img2.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1409666041.82.jpg",@"title":@"周青元 "},@{@"img":@"https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1529569635.66.jpg",@"title":@"王砚辉"},@{@"img":@"https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1555661588.6.jpg",@"title":@"张宥浩"},@{@"img":@"https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1554869246.27.jpg",@"title":@"龚蓓苾"},@{@"img":@"https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1517635414.36.jpg",@"title":@"李俊浩"}];
+    carpmodelItem8.carpVideoHome_intrduce = @"一个患有先天疾病却怀有“马拉松梦”的少年肖尔东（张宥浩 饰），一个固执逼迫儿子预习“盲人生活”的出租车司机父亲肖大明（王砚辉 饰），互不理解的父子俩，却在一场马拉松比赛中“互换身份”，并肩站在了起跑线上……影片通过对“命运”持有不同态度的一对单亲家庭父子，讲述了一个用爱向阳而生的故事。";
     carpmodelItem8.carpVideoHome_soureNums = 3131;
     carpmodelItem8.carpVideoHomes_DBNums = 3.1;
     carpmodelItem8.caprVideHome_ID = 8;
-    carpmodelItem8.carpVideoHomes_tagOne= @"动作";
-    carpmodelItem8.carpVideoHome_tagtwo = @"科幻";
-    carpmodelItem8.time = @"2021-04-16(内地)";
+    carpmodelItem8.carpVideoHomes_tagOne= @"喜剧";
+    carpmodelItem8.carpVideoHome_tagtwo = @"家庭";
+    carpmodelItem8.time = @"2021-06-18(中国内地)";
     carpmodelItem8.Top_filmType = 0;
     [tempArr addObject:carpmodelItem8];
     
@@ -1311,7 +1311,7 @@
     carpMoelitemzone.ComentCoinNum =  6.7;
     carpMoelitemzone.isBaoming = YES;
     carpMoelitemzone.imgArrs = @[@"https://img2.doubanio.com/view/page_note/large/public/p106945151-1.jpg",@"https://img2.doubanio.com/view/page_note/large/public/p106945151-2.jpg"];
-    carpMoelitemzone.carpVideoThub = @"https://img3.doubanio.com/pview/event_poster/plarge/public/f14d5ac4ecb26ae.jpg";
+    carpMoelitemzone.carpVideoThub = @"https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2504646738.jpg";
     carpMoelitemzone.title = @"原创话剧《林则徐》";
     carpMoelitemzone.titleDesc =@"戏剧-话剧";
     carpMoelitemzone.DetailDesc = @"国家大剧院与广州话剧艺术中心精心组织筹划，创作团队先后赴林则徐工作和生活过的虎门、伊犁、北京、福州、蒲城等多地采风，收集和查阅了丰富的史料，采访了众多专家学者。主创主演团队汇聚了一批国内优秀创作人才，编剧郭启宏、导演王筱頔、舞美设计季乔、作曲赵季平、灯光设计邢辛、服装造型设计陈同勋、多媒体设计胡天骥以及编舞黄豆豆，共筑那段蹒跚却又充满力量的历史。";
@@ -1410,22 +1410,22 @@
     carpVideoAcitytyModel * carpMoelitemzone4 =[[carpVideoAcitytyModel alloc]init];
     carpMoelitemzone4.preogrese = 0.2;
     carpMoelitemzone4.lastPersonNum = 579;
-    carpMoelitemzone.totalPersonNum = 1200;
+    carpMoelitemzone4.totalPersonNum = 1200;
     carpMoelitemzone4.ComentCoinNum =  7.5;
     carpMoelitemzone4.coinNum = 5;
     carpMoelitemzone4.isBaoming = NO;
-    carpMoelitemzone4.imgArrs = @[@"https://img3.doubanio.com/view/page_note/large/public/p106122976-1.jpg",@"https://img2.doubanio.com/view/page_note/large/public/p106122976-2.jpg",@"https://img2.doubanio.com/view/page_note/large/public/p106122976-3.jpg",@"https://img9.doubanio.com/view/page_note/large/public/p106122976-4.jpg"];
-    carpMoelitemzone4.carpVideoThub = @"https://img1.doubanio.com/pview/event_poster/plarge/public/16438cfbac21f07.jpg";
-    carpMoelitemzone4.title = @"百老汇全球经典创意舞台秀《STOMP破铜烂铁》";
-    carpMoelitemzone4.titleDesc = @"戏剧-其他";
-    carpMoelitemzone4.DetailDesc = @"《STOMP破铜烂铁》融入打击乐、街舞、踢踏舞、和视觉喜剧等多重表演元素，是一场放眼全球仍堪称独一无二的顶级舞台秀形式。自1991年演出以来，STOMP破铜烂铁以其非凡的创造力、贴近生活的表演，诙谐幽默又让人血脉贲张的表演，一场场引起现场观众燃情投入。虽历经27年，仍不断创新改良，成为在百老汇和伦敦西区常年驻演的传奇演出。";
-    carpMoelitemzone4.tageOne = @"百老汇";
+    carpMoelitemzone4.imgArrs = @[@"https://img2.doubanio.com/view/page_note/large/public/p107720358-2.jpg"];
+    carpMoelitemzone4.carpVideoThub = @"https://img2.doubanio.com/pview/event_poster/plarge/public/f20a05dad7bf4a3.jpg";
+    carpMoelitemzone4.title = @"黎明 2021红馆演唱会 香港";
+    carpMoelitemzone4.titleDesc = @"音乐-演唱会";
+    carpMoelitemzone4.DetailDesc = @"勇于创新及迎接挑战的天王黎明，每次举行个人演唱会都会追求突破，寻找新意，务求为所有观众带来前所未有的娱乐体验。这种永远求新、不断进步的精神，在以往的多次演唱会中已完全体现，不论是音乐风格、视像震撼，抑或是场地的选址及设计…..均已多次创新先河及带动全城话题；而今次在阔别10年后再次踏足红馆";
+    carpMoelitemzone4.tageOne = @"红馆";
     carpMoelitemzone4.tagTwo = @"";
     carpMoelitemzone4.isStart = NO;
     carpMoelitemzone4.isCollted = NO;
     carpMoelitemzone4.colltecdNum =45;
-    carpMoelitemzone4.joinTime = @"5/1 12:00:00 至 5/5 12:00:00";
-    carpMoelitemzone4.playTime = @"5/10 12:00:00 至 5/12 112:30:00";
+    carpMoelitemzone4.joinTime = @"6/29 12:00:00 至 6/29 12:00:00";
+    carpMoelitemzone4.playTime = @"6/25 12:00:00 至 6/27 12:30:00";
     carpMoelitemzone4.loaction = @"北京市通州区西海子西塔胡同1号";
     carpMoelitemzone4.phone = @"(010)80850020";
     carpMoelitemzone4.LoactionID = 4;

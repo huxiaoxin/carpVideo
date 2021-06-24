@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)CarpVideoMineHeaderViewTapInfoClicks;
 @end
 @interface CarpVideoMineHeaderView : UIView
+@property(nonatomic,strong) UILabel     * CarpVideoNamelb;
+@property(nonatomic,strong) UILabel     * CarpVideoDetailb;
+@property(nonatomic,strong) UIImageView * CarpVideouserImgView;
 @property(nonatomic,weak) id <CarpVideoMineHeaderViewDelegate>delegate;
 @end
 

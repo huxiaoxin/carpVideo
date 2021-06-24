@@ -7,7 +7,8 @@
 
 #import "CarpVideoActityDetailHeader.h"
 #import <SDCycleScrollView.h>
-@interface CarpVideoActityDetailHeader  ()
+#import <GKPhotoBrowser-umbrella.h>
+@interface CarpVideoActityDetailHeader  ()<SDCycleScrollViewDelegate>
 @property(nonatomic,strong) SDCycleScrollView * CarpVideoSDCView;
 @property(nonatomic,strong) UIView      * CarVideoContentView;
 @property(nonatomic,strong) UILabel     * CarpVideoTtitle;
@@ -25,8 +26,8 @@
         self.backgroundColor = LGDViewBJColor;
         [self addSubview:self.CarpVideoSDCView];
         [self addSubview:self.CarVideoContentView];
-        [_CarVideoContentView addSubview:self.CarpVideoTtitle];
         [_CarVideoContentView addSubview:self.CarVieoJinxingzhonImgView];
+        [_CarVideoContentView addSubview:self.CarpVideoTtitle];
         [_CarVieoJinxingzhonImgView addSubview:self.CarVideoJXZlb];
         [_CarVideoContentView addSubview:self.CarVideoContenlb];
         [_CarVideoContentView addSubview:self.CarpVideoProgresView];
@@ -43,14 +44,19 @@
             make.top.mas_equalTo(_CarpVideoSDCView.mas_bottom).offset(-RealWidth(20));
             make.height.mas_equalTo(RealWidth(180));
         }];
+        [_CarVieoJinxingzhonImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.right.mas_equalTo(_CarpVideoTtitle.mas_left).offset(-RealWidth(5));
+//            make.centerY.mas_equalTo(_CarpVideoTtitle.mas_centerY);
+            make.left.top.inset(RealWidth(15));
+            make.size.mas_equalTo(CGSizeMake(RealWidth(50), RealWidth(19)));
+        }];
+
         [_CarpVideoTtitle mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(_CarVideoContentView.mas_centerX).offset(RealWidth(25));
-            make.top.mas_equalTo(RealWidth(20));
-        }];
-        [_CarVieoJinxingzhonImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(_CarpVideoTtitle.mas_left).offset(-RealWidth(5));
-            make.centerY.mas_equalTo(_CarpVideoTtitle.mas_centerY);
-            make.size.mas_equalTo(CGSizeMake(RealWidth(50), RealWidth(19)));
+            make.right.inset(RealWidth(15));
+            make.left.mas_equalTo(_CarVieoJinxingzhonImgView.mas_right).offset(RealWidth(5));
+//            make.top.mas_equalTo(RealWidth(18));
+            make.top.mas_equalTo(_CarVieoJinxingzhonImgView.mas_top);
         }];
         [_CarVideoJXZlb mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.mas_equalTo(_CarVieoJinxingzhonImgView);
@@ -113,10 +119,25 @@
     if (!_CarpVideoSDCView) {
         _CarpVideoSDCView = [SDCycleScrollView new];
         _CarpVideoSDCView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
-
+        _CarpVideoSDCView.delegate = self;
 //        [_CarpVideoImgView sd_setImageWithURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftxt39-1.book118.com%2F2017%2F1217%2Fbook144628%2F144627049.jpg&refer=http%3A%2F%2Ftxt39-1.book118.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626506754&t=afd999788957d2bd25de13ee43b8e2c6"]];
     }
     return _CarpVideoSDCView;
+}
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+    NSMutableArray *photos = [NSMutableArray new];
+    [_carpModel.imgArrs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+       GKPhoto *photo = [GKPhoto new];
+       photo.url = [NSURL URLWithString:obj];
+       [photos addObject:photo];
+    }];
+    
+    GKPhotoBrowser *browser = [GKPhotoBrowser photoBrowserWithPhotos:photos currentIndex:index];
+    browser.showStyle = GKPhotoBrowserShowStylePush;
+    [browser showFromVC:[AppDelegate shareDelegate].window.rootViewController.gk_visibleViewControllerIfExist];
+
+
 }
 - (UIView *)CarVideoContentView{
     if (!_CarVideoContentView) {
@@ -129,6 +150,7 @@
 - (UILabel *)CarpVideoTtitle{
     if (!_CarpVideoTtitle) {
         _CarpVideoTtitle = [UILabel new];
+        _CarpVideoTtitle.numberOfLines = 0;
         _CarpVideoTtitle.textColor = LGDBLackColor;
         _CarpVideoTtitle.font = [UIFont boldSystemFontOfSize:15];
         _CarpVideoTtitle.text = @"";

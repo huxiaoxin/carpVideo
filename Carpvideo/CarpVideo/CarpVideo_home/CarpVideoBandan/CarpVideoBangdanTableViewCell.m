@@ -204,7 +204,17 @@
         _CarpScrolText.textColor = LGDLightBLackColor;
         _CarpScrolText.textFont = [UIFont boldSystemFontOfSize:10];
         _CarpScrolText.moveDirection = LMJTextScrollMoveLeft;
-        _CarpScrolText.speed = 0.5;
+        _CarpScrolText.moveMode           = LMJTextScrollContinuous;
+        _CarpScrolText.speed = 0.03;
+        
+        
+//        GuoJiQihuoScrllText.textFont =KSysFont(14);
+//        GuoJiQihuoScrllText.speed              = 0.03;
+//        GuoJiQihuoScrllText.moveDirection      = LMJTextScrollMoveLeft;
+//        GuoJiQihuoScrllText.moveMode           = LMJTextScrollContinuous;
+//        GuoJiQihuoScrllText.textColor = LGDLightBLackColor;
+//        [self.contentView addSubview:GuoJiQihuoScrllText];
+//        _GuoJiQihuoScrllText = GuoJiQihuoScrllText;
     }
     return _CarpScrolText;
     
@@ -224,7 +234,8 @@
     _CarpThreelb.text = [NSString stringWithFormat:@"%@ | %@",carpModel.carpVideoHomes_tagOne,carpModel.carpVideoHome_tagtwo];
     _CarpFourelb.text = carpModel.carpVideoHomeArtislist;
     _CarpFivelb.text = carpModel.carpVideoHome_intrduce;
-    [_CarpScrolText setText:carpModel.carpVideoHome_intrduce];
+    _CarpScrolText.text = carpModel.carpVideoHome_intrduce;
+//    [_CarpScrolText setText:carpModel.carpVideoHome_intrduce];
     [_CarpScrolText move];
 }
 - (void)awakeFromNib {

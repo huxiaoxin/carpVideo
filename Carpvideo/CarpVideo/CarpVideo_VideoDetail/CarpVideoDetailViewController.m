@@ -40,6 +40,10 @@
     return _CarpSendComentBtn;
 }
 -(void)CarpSendComentBtnClick{
+    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        [self CarpVideoShowLoginVc];
+        return;
+    }
 
     MJWeakSelf;
     [XHInputView showWithStyle:InputViewStyleDefault configurationBlock:^(XHInputView *inputView) {
@@ -66,7 +70,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [LCProgressHUD showSuccess:@"评论成功"];
         carpVideoRemneAdviceModel * carpMentModel = [[carpVideoRemneAdviceModel alloc]init];
-        carpMentModel.imgurl = @"";
+        carpMentModel.imgurl = @"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg";
         carpMentModel.name = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
         carpMentModel.FilmID = weakSelf.carpMoel.caprVideHome_ID;
         carpMentModel.ComentID = 555;
@@ -92,14 +96,16 @@
     NSArray * dataArr = [WHC_ModelSqlite query:[carpVideoRemneAdviceModel class] where:[NSString stringWithFormat:@"FilmID = '%ld'",self.carpMoel.caprVideHome_ID]];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [LCProgressHUD hide];
-        _CarpVideoHeader.carMoell = self.carpMoel;
+        self->_CarpVideoHeader.carMoell = self.carpMoel;
         weakSelf.CarpVideoDataSoure = dataArr.mutableCopy;
         if (weakSelf.CarpVideoDataSoure.count == 0) {
             LYEmptyView * emtyView = [LYEmptyView emptyViewWithImage:nil titleStr:@"暂无数据" detailStr:@"需要你的火力支持～"];
             self->_CarpVideoTableView.ly_emptyView = emtyView;
         }
         [self->_CarpVideoTableView reloadData];
-        [weakSelf CarpSendComentBtnClick];
+        if (weakSelf.isShowInput) {
+            [weakSelf CarpSendComentBtnClick];
+        }
     });
     
     self->_CarpVideoHeader.haederBlock = ^(CGFloat headerHeight) {
@@ -140,7 +146,7 @@
         self.carpMoel.carpVideo_isCollected =  !self.carpMoel.carpVideo_isCollected;
         [LCProgressHUD showSuccess:self.carpMoel.carpVideo_isCollected ? @"收藏成功" :@"取消收藏"];
     btn.CarpVideoThubImgView.image = [UIImage imageNamed:self.carpMoel.carpVideo_isCollected ? @"like-seltecd" : @"like_nomal"];
-        [WHC_ModelSqlite update:[CarpVideoHomeModels class] value:[NSString stringWithFormat:@"PandaMoview_isCollected ='%@'",@(self.carpMoel.carpVideo_isCollected)] where:[NSString stringWithFormat:@"caprVideHome_ID = '%ld'",self.carpMoel.caprVideHome_ID]];
+        [WHC_ModelSqlite update:[CarpVideoHomeModels class] value:[NSString stringWithFormat:@"carpVideo_isCollected ='%@'",@(self.carpMoel.carpVideo_isCollected)] where:[NSString stringWithFormat:@"caprVideHome_ID = '%ld'",self.carpMoel.caprVideHome_ID]];
         
     });
 }

@@ -97,7 +97,7 @@
 }
 -(void)setCarpVideoModel:(CarpVideoKefuModel *)carpVideoModel{
     _carpVideoModel =  carpVideoModel;
-    [_CarpVideoChatSEND_userImgView sd_setImageWithURL:[NSURL URLWithString:@"https://p.qqan.com/up/2021-4/16194921988015974.jpg"]];
+    [_CarpVideoChatSEND_userImgView sd_setImageWithURL:[NSURL URLWithString:@"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg"]];
     _CarpVideoChatReVICE_userImgView.image = [UIImage imageNamed:@"kefu"];
     if (carpVideoModel.msgisMe) {
         _CarpVideoChatReVICE_paopaoIMgView.hidden = YES;
@@ -140,7 +140,7 @@
 }
 - (void)setCarpDetalMoel:(carpVideoMessageDetailModel *)carpDetalMoel{
     _carpDetalMoel =  carpDetalMoel;
-    [_CarpVideoChatSEND_userImgView sd_setImageWithURL:[NSURL URLWithString:@"https://p.qqan.com/up/2021-4/16194921988015974.jpg"]];
+    [_CarpVideoChatSEND_userImgView sd_setImageWithURL:[NSURL URLWithString:@"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg"]];
     [_CarpVideoChatReVICE_userImgView sd_setImageWithURL:[NSURL URLWithString:carpDetalMoel.imgUrl] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];
     if (_carpDetalMoel.msgisMe) {
         _CarpVideoChatReVICE_paopaoIMgView.hidden = YES;
