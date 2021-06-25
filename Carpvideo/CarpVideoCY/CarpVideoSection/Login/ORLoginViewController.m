@@ -72,7 +72,7 @@
 
 - (void)setupUI
 {
-    UIButton *backButton = [UIButton ly_ButtonWithNormalImageName:@"com_back" selecteImageName:nil target:self selector:@selector(leftButtonAction:)];
+    UIButton *backButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_black_back_icon" selecteImageName:nil target:self selector:@selector(leftButtonAction:)];
     [self.view addSubview:backButton];
     [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(ORKitMacros.statusBarHeight + 20.0f - 8.5f);
@@ -158,14 +158,14 @@
     GNHWeakObj(codeCountingLb);
     codeCountingLb.formatBlock = ^NSString *(CGFloat value) {
         if (value == 1) {
-            weakcodeCountingLb.textColor = gnh_color_theme;
+            weakcodeCountingLb.textColor = LGDMianColor;
             return @"重新获取";
         } else {
             weakcodeCountingLb.textColor = RGBA_HexCOLOR(0xC4C6CD, 1.0);
             return [NSString stringWithFormat:@"%d秒后重发", (int)value];
         }
     };
-    codeCountingLb.textColor = gnh_color_theme;
+    codeCountingLb.textColor = LGDMianColor;
     codeCountingLb.font = zy_mediumSystemFont16;
     codeCountingLb.textAlignment = NSTextAlignmentCenter;
     
@@ -190,7 +190,7 @@
     self.codeCountingLb = codeCountingLb;
 
     self.submitBtn = [UIButton ly_ButtonWithTitle:@"登录" titleColor:gnh_color_b font:zy_blodFontSize17 target:self selector:@selector(submitAction)];
-    self.submitBtn.backgroundColor = gnh_color_theme;
+    self.submitBtn.backgroundColor = LGDMianColor;
     self.submitBtn.layer.cornerRadius = 22.0f;
     self.submitBtn.layer.masksToBounds = YES;
     self.submitBtn.enabled = NO;
@@ -209,7 +209,7 @@
         make.height.mas_equalTo(50.0f);
     }];
     
-    self.xieYiBtn = [MDFButton ly_ButtonWithNormalImageName:@"login_checkbox_normal" selecteImageName:@"login_checkbox_select" target:self selector:@selector(xieYiAction:)];
+    self.xieYiBtn = [MDFButton ly_ButtonWithNormalImageName:@"carpVideo_login_checkbox_nomal" selecteImageName:@"carpVideo_login_checkbox_sel" target:self selector:@selector(xieYiAction:)];
     self.xieYiBtn.touchEdgeInsets = UIEdgeInsetsMake(-10, -20, -10, -20);
     [xieYiView addSubview:self.xieYiBtn];
     [self.xieYiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -384,7 +384,7 @@
 {
     if (self.phoneTextField.text.length > 1 && self.codeTextField.text.length > 1) {
         self.submitBtn.enabled = YES;
-        self.submitBtn.backgroundColor = gnh_color_theme;
+        self.submitBtn.backgroundColor = LGDMianColor;
     } else {
         self.submitBtn.enabled = NO;
         self.submitBtn.backgroundColor = gnh_color_ee;

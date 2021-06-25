@@ -58,7 +58,7 @@
     self.contentLabel = contentLabel;
     self.contentLabel.hidden = YES;
     
-    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"com_arrow"];
+    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_arrow_gary_icon"];
     [self addSubview:arrowImageView];
     [arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(-10.0f);

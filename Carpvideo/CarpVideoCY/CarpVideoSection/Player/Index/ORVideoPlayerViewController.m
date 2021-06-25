@@ -133,7 +133,7 @@
     self.playerContainerView = playerContainerView;
     
     // 添加默认图
-    UIImageView *playerBackImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"player_cover_default"]];
+    UIImageView *playerBackImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"carpVideo_cover_defaul_thub_icon"]];
     [self.view addSubview:playerBackImageView];
     [playerBackImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.playerContainerView);
@@ -143,7 +143,7 @@
     self.playerBackImageView.hidden = YES;
     
     // 中间添加播放按钮
-    UIButton *playButton = [UIButton ly_ButtonWithNormalImageName:@"player_pause" selecteImageName:@"player_play" target:self selector:@selector(playerAction:)];
+    UIButton *playButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_zanting_icon" selecteImageName:@"carpVideo_bofang_icon" target:self selector:@selector(playerAction:)];
     [self.view addSubview:playButton];
     [playButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(playerContainerView);
@@ -204,18 +204,18 @@
         resources.progressThumbSize = 8;
         resources.progressTrackColor = [UIColor colorWithWhite:0.3 alpha:1];
         resources.progressBufferColor = [UIColor colorWithWhite:0.6 alpha:1];
-        resources.progressTraceColor = gnh_color_theme;
-        resources.progressThumbColor = gnh_color_theme;
+        resources.progressTraceColor = LGDMianColor;
+        resources.progressThumbColor = LGDMianColor;
 
         resources.bottomIndicatorTraceColor = UIColor.clearColor;
         resources.bottomIndicatorTrackColor = UIColor.clearColor;
 
-        resources.backImage = [UIImage imageNamed:@"com_back_white"];
-        resources.fullscreenImage = [UIImage imageNamed:@"player_fullscreen"];
-        resources.pauseImage = [UIImage imageNamed:@"player_pause"];
-        resources.playImage = [UIImage imageNamed:@"player_play"];
-        resources.lockImage = [UIImage imageNamed:@"player_lock"];
-        resources.unlockImage = [UIImage imageNamed:@"player_unlock"];
+        resources.backImage = [UIImage imageNamed:@"carpVideo_back_arrow_white_icon"];
+        resources.fullscreenImage = [UIImage imageNamed:@"carpVideo_full_icon"];
+        resources.pauseImage = [UIImage imageNamed:@"carpVideo_zanting_icon"];
+        resources.playImage = [UIImage imageNamed:@"carpVideo_bofang_icon"];
+        resources.lockImage = [UIImage imageNamed:@"carpVideo_mine_locks_icon"];
+        resources.unlockImage = [UIImage imageNamed:@"carpVideo_un_locks"];
     });
     
     // 建立记录模型
@@ -289,7 +289,7 @@
         self.playButton.hidden = YES;
     }
     
-    SJEdgeControlButtonItem *airplayItem = [[SJEdgeControlButtonItem alloc] initWithImage:[UIImage imageNamed:@"player_tv"] target:self action:@selector(throwScreen:) tag:10000];
+    SJEdgeControlButtonItem *airplayItem = [[SJEdgeControlButtonItem alloc] initWithImage:[UIImage imageNamed:@"carpVideo_tv_bofan_icon"] target:self action:@selector(throwScreen:) tag:10000];
     airplayItem.insets = SJEdgeInsetsMake(20, 12);
     [_player.defaultEdgeControlLayer.topAdapter addItem:airplayItem];
     [_player.defaultEdgeControlLayer.topAdapter reload];
@@ -439,7 +439,7 @@
     }];
     
     UIButton *introBtn = [UIButton ly_ButtonWithTitle:@"简介" titleColor:gnh_color_s font:zy_mediumSystemFont14 target:self selector:@selector(introBtnAction:)];
-    [introBtn setImage:[UIImage imageNamed:@"com_arrow"] forState:UIControlStateNormal];
+    [introBtn setImage:[UIImage imageNamed:@"carpVideo_arrow_gary_icon"] forState:UIControlStateNormal];
     [introBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
     [introBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
     [headerView addSubview:introBtn];
@@ -478,7 +478,7 @@
         [weakSelf chooseSource];
     }];
     
-    UIButton *dropdownBtn = [UIButton ly_ButtonWithNormalImageName:@"player_pulldownArr" selecteImageName:@"player_pullupArr" target:self selector:@selector(chooseSource)];
+    UIButton *dropdownBtn = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_xialashuainx" selecteImageName:@"carpVideo_shanglashauxin" target:self selector:@selector(chooseSource)];
     [headerView addSubview:dropdownBtn];
     [dropdownBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(copyrighLabel);
@@ -488,7 +488,7 @@
     self.dropdownBtn = dropdownBtn;
         
     // 下载
-    UIButton *downloadBtn = [UIButton ly_ButtonWithNormalImageName:@"player_fobid_download" selecteImageName:@"player_download" target:self selector:@selector(downloadAction:)];
+    UIButton *downloadBtn = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_no_xiazai_icon" selecteImageName:@"carpVideo_xiazai_icon" target:self selector:@selector(downloadAction:)];
     [headerView addSubview:downloadBtn];
     [downloadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(headerView).offset(-8.0f);
@@ -498,7 +498,7 @@
     downloadBtn.selected = self.videoPlayerDataModel.videoDetailItem.download;
     
     // 分享
-    UIButton *shareBtn = [UIButton ly_ButtonWithNormalImageName:@"player_share" selecteImageName:@"player_share" target:self selector:@selector(shareAction:)];
+    UIButton *shareBtn = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_share_icons" selecteImageName:@"carpVideo_share_icons" target:self selector:@selector(shareAction:)];
     [headerView addSubview:shareBtn];
     [shareBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(downloadBtn.mas_left).offset(-11.0f);
@@ -507,7 +507,7 @@
     }];
     
     // 收藏
-    UIButton *collectBtn = [UIButton ly_ButtonWithNormalImageName:@"player_collect" selecteImageName:@"player_collect_select" target:self selector:@selector(collectAction:)];
+    UIButton *collectBtn = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_colltec_nomal_icons" selecteImageName:@"carpVideo_colltec_sel_icons" target:self selector:@selector(collectAction:)];
     [headerView addSubview:collectBtn];
     [collectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(shareBtn.mas_left).offset(-11.0f);
@@ -533,7 +533,7 @@
         CGSize tagSize = [episodestitle textWithSize:14.0f size:CGSizeZero];
         
         UIButton *episodesBtn = [UIButton ly_ButtonWithTitle:episodestitle titleColor:gnh_color_s font:zy_mediumSystemFont14 target:self selector:@selector(episodesBtnAction:)];
-        [episodesBtn setImage:[UIImage imageNamed:@"com_arrow"] forState:UIControlStateNormal];
+        [episodesBtn setImage:[UIImage imageNamed:@"carpVideo_arrow_gary_icon"] forState:UIControlStateNormal];
         [episodesBtn setImageEdgeInsets:UIEdgeInsetsMake(0, tagSize.width, 0, 0)];
         [episodesBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 10)];
         [headerView addSubview:episodesBtn];
@@ -577,7 +577,7 @@
             tmpRect = tagBtn.frame;
             tagBtn.selected = NO;
             if ([weakSelf.videoPlayerDataModel.videoDetailItem.episode isEqualToString:obj]) {
-                tagBtn.layer.borderColor = gnh_color_theme.CGColor;
+                tagBtn.layer.borderColor = LGDMianColor.CGColor;
                 tagBtn.selected = YES;
                 weakSelf.preTagButton = tagBtn;
                 
@@ -773,7 +773,7 @@
     self.preTagButton.layer.borderColor = gnh_color_t.CGColor;
     self.preTagButton = btn;
     self.preTagButton.selected = YES;
-    self.preTagButton.layer.borderColor = gnh_color_theme.CGColor;
+    self.preTagButton.layer.borderColor = LGDMianColor.CGColor;
     
     NSString *sourceName = self.videoPlayerDataModel.videoDetailItem.source.sourceName;
     NSArray *episodes = self.videoPlayerDataModel.videoDetailItem.episodes[sourceName];

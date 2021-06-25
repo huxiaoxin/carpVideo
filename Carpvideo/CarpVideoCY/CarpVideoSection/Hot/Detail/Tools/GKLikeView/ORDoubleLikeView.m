@@ -15,7 +15,7 @@
     if (touch.tapCount <= 1.0f) return;
     
     CGPoint point = [touch locationInView:touch.view];
-    UIImage *image = [UIImage imageNamed:@"hot_detail_like_selected"];
+    UIImage *image = [UIImage imageNamed:@"carpVideo_detail_likce_sel_icon"];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ADAPTATIONRATIO * 160.0f, ADAPTATIONRATIO * 160.0f)];
     imgView.image = image;
     imgView.contentMode = UIViewContentModeScaleAspectFill;

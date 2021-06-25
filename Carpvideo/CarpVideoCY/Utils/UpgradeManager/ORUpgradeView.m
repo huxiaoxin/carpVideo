@@ -25,7 +25,7 @@
     LYCoverView *updateBgView = [LYCoverView showView:nil inView:[ORMainAPI appWindow]];
     updateBgView.touchDisMiss = NO;
     
-    UIImageView *ImgView = [UIImageView ly_ImageViewWithImageName:@"upgrade_cover"];
+    UIImageView *ImgView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_cover_thub"];
     ImgView.contentMode = UIViewContentModeScaleAspectFit;
     ImgView.backgroundColor = UIColor.clearColor;
     ImgView.layer.cornerRadius = 8.0f;
@@ -72,7 +72,7 @@
     upGradeBtn.layer.cornerRadius = 20.0f;
     [upGradeBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     upGradeBtn.titleLabel.font = zy_mediumSystemFont15;
-    upGradeBtn.backgroundColor = gnh_color_theme;
+    upGradeBtn.backgroundColor = LGDMianColor;
     [ImgView addSubview:upGradeBtn];
     [upGradeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(ImgView.mas_bottom).offset(-20.0f);
@@ -89,7 +89,7 @@
                 [weakupdateBgView disMiss];
             }];
         }];
-        [closeBtn setImage:[UIImage imageNamed:@"upgrade_close"] forState:UIControlStateNormal];
+        [closeBtn setImage:[UIImage imageNamed:@"carpVideo_ckous_uipda"] forState:UIControlStateNormal];
         [updateBgView addSubview:closeBtn];
         [closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(ImgView.mas_bottom).offset(16.5f);

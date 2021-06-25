@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"编辑资料";
+    self.navigationItem.title = @"编辑资料";
     
     UIButton * CarpVideooutBtn  = [UIButton buttonWithType:UIButtonTypeCustom];
     [CarpVideooutBtn setFrame:CGRectMake(RealWidth(50), GK_SCREEN_HEIGHT-RealWidth(100), GK_SCREEN_WIDTH-RealWidth(100), RealWidth(40))];

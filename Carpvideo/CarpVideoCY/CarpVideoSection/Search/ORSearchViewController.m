@@ -101,7 +101,7 @@
     searchTextField.clipsToBounds = YES;
     self.searchTextField = searchTextField;
     // 搜索图标 com_search
-    UIImage *image = [UIImage imageNamed:@"index_search"];
+    UIImage *image = [UIImage imageNamed:@"carpVideo_index_search_icon"];
     UIImageView *iconImageView = [[UIImageView alloc] initWithImage:image];
     searchTextField.leftView = iconImageView;
     self.navigationItem.titleView = self.searchTextField;
@@ -126,7 +126,7 @@
         make.height.mas_equalTo(14.0f);
     }];
     
-    UIButton *deleteBtn = [UIButton ly_ButtonWithNormalImageName:@"index_search_delete" selecteImageName:@"index_search_delete" target:self selector:@selector(deleteHistorySearch:)];
+    UIButton *deleteBtn = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_index_deltee_icon" selecteImageName:@"carpVideo_index_deltee_icon" target:self selector:@selector(deleteHistorySearch:)];
     [historySearchView addSubview:deleteBtn];
     [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(historySearchView).offset(-9.5f);
@@ -311,7 +311,7 @@
     [self.prehistoryButton setTitleColor:gnh_color_a forState:UIControlStateNormal];
     self.prehistoryButton = btn;
     self.prehistoryButton.backgroundColor = gnh_color_q;
-    [self.prehistoryButton setTitleColor:gnh_color_theme forState:UIControlStateNormal];
+    [self.prehistoryButton setTitleColor:LGDMianColor forState:UIControlStateNormal];
         
     self.searchTextField.text = btn.titleLabel.text;
     // 查询数据
@@ -324,7 +324,7 @@
     [self.prehotButton setTitleColor:gnh_color_a forState:UIControlStateNormal];
     self.prehotButton = btn;
     self.prehotButton.backgroundColor = gnh_color_q;
-    [self.prehotButton setTitleColor:gnh_color_theme forState:UIControlStateNormal];
+    [self.prehotButton setTitleColor:LGDMianColor forState:UIControlStateNormal];
     
     self.searchTextField.text = btn.titleLabel.text;
     // 查询数据
@@ -518,7 +518,7 @@
         _magicController.magicView.dataSource = self;
         _magicController.magicView.delegate = self;
         _magicController.magicView.itemWidth = 60.0f;
-        _magicController.magicView.sliderColor = gnh_color_theme;
+        _magicController.magicView.sliderColor = LGDMianColor;
         _magicController.magicView.sliderWidth = 15;
         _magicController.magicView.sliderHeight = 3;
         _magicController.magicView.sliderOffset = -5;

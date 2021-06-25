@@ -43,26 +43,28 @@
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
-    UIImageView *iconImageView = [UIImageView ly_ImageViewWithImageName:@"aboutme_logo"];
+    UIImageView *iconImageView = [UIImageView ly_ImageViewWithImageName:@"whiteLogo"];
+    iconImageView.layer.cornerRadius = RealWidth(5);
+    iconImageView.layer.masksToBounds = YES;
     [self.tableView addSubview:iconImageView];
     [iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.tableView.mas_top).offset(100);
         make.centerX.mas_equalTo(self.tableView.mas_centerX);
-        make.size.mas_equalTo(CGSizeMake(81.5f, 91.5f));
+        make.size.mas_equalTo(CGSizeMake(80, 80));
     }];
     
     NSDictionary *dict = [[NSBundle mainBundle] infoDictionary];
-//    UILabel *appNameLabel = [[UILabel alloc] init];
-//    appNameLabel.text = dict[@"CFBundleName"];
-//    appNameLabel.textColor = gnh_color_bb;
-//    appNameLabel.font = zy_fontSize13;
-//    appNameLabel.textAlignment = NSTextAlignmentCenter;
-//    [self.tableView addSubview:appNameLabel];
-//    [appNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(iconImageView.mas_bottom).offset(6.5f);
-//        make.centerX.mas_equalTo(self.tableView.mas_centerX);
-//        make.height.mas_equalTo(18.5f);
-//    }];
+    UILabel *appNameLabel = [[UILabel alloc] init];
+    appNameLabel.text = @"鲤鱼视频";
+    appNameLabel.textColor = gnh_color_bb;
+    appNameLabel.font = zy_fontSize13;
+    appNameLabel.textAlignment = NSTextAlignmentCenter;
+    [self.tableView addSubview:appNameLabel];
+    [appNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(iconImageView.mas_bottom).offset(6.5f);
+        make.centerX.mas_equalTo(self.tableView.mas_centerX);
+        make.height.mas_equalTo(18.5f);
+    }];
     
     UILabel *versionLabel = [[UILabel alloc] init];
     versionLabel.text = dict[@"CFBundleShortVersionString"];
@@ -71,7 +73,7 @@
     versionLabel.textAlignment = NSTextAlignmentCenter;
     [self.tableView addSubview:versionLabel];
     [versionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(iconImageView.mas_bottom).offset(2.0f);
+        make.top.mas_equalTo(versionLabel.mas_bottom).offset(5.0f);
         make.centerX.mas_equalTo(self.tableView.mas_centerX);
         make.height.mas_equalTo(18.5f);
     }];
@@ -119,7 +121,7 @@
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     
-    UIImageView *arrowImageView1 = [UIImageView ly_ImageViewWithImageName:@"mine_arrow"];
+    UIImageView *arrowImageView1 = [UIImageView ly_ImageViewWithImageName:@"carpVideo_right_icon"];
     [backView addSubview:arrowImageView1];
     [arrowImageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(backView).offset(-15.f);
@@ -141,7 +143,7 @@
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     
-    UIImageView *arrowImageView2 = [UIImageView ly_ImageViewWithImageName:@"mine_arrow"];
+    UIImageView *arrowImageView2 = [UIImageView ly_ImageViewWithImageName:@"carpVideo_right_icon"];
     [backView addSubview:arrowImageView2];
     [arrowImageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(backView).offset(-15.f);
@@ -164,7 +166,7 @@
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     
-    UIImageView *arrowImageView3 = [UIImageView ly_ImageViewWithImageName:@"mine_arrow"];
+    UIImageView *arrowImageView3 = [UIImageView ly_ImageViewWithImageName:@"carpVideo_right_icon"];
     [backView addSubview:arrowImageView3];
     [arrowImageView3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(backView).offset(-15.f);

@@ -65,7 +65,7 @@
         make.height.mas_offset(45.0f);
     }];
     
-    UIButton *closeButton = [UIButton ly_ButtonWithNormalImageName:@"com_close" selecteImageName:@"com_close" target:self selector:@selector(closeAction:)];
+    UIButton *closeButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_com_clous_icon" selecteImageName:@"carpVideo_com_clous_icon" target:self selector:@selector(closeAction:)];
     [self addSubview:closeButton];
     [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(-9.5f);
@@ -167,8 +167,8 @@
     tagLabel.layer.borderColor = gnh_color_t.CGColor;
     tagLabel.textColor = gnh_color_k;
     if (self.selectIndexPath.row == indexPath.row && self.selectIndexPath) {
-        tagLabel.layer.borderColor = gnh_color_theme.CGColor;
-        tagLabel.textColor = gnh_color_theme;
+        tagLabel.layer.borderColor = LGDMianColor.CGColor;
+        tagLabel.textColor = LGDMianColor;
     }
     
     return cell;
@@ -236,8 +236,8 @@
     
     UICollectionViewCell *selectCell = [collectionView cellForItemAtIndexPath:self.selectIndexPath];
     UILabel *tmpLabel = [selectCell.contentView viewWithTag:self.selectIndexPath.row + 100];
-    tmpLabel.layer.borderColor = gnh_color_theme.CGColor;
-    tmpLabel.textColor = gnh_color_theme;
+    tmpLabel.layer.borderColor = LGDMianColor.CGColor;
+    tmpLabel.textColor = LGDMianColor;
     
     if (self.videoEpisodesCompleteBlock) {
         self.videoEpisodesCompleteBlock(self.selectIndexPath.row);

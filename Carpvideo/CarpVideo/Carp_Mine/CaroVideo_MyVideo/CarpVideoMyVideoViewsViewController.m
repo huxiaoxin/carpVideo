@@ -21,7 +21,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"我的浏览";
+    self.navigationItem.title = @"我的浏览";
     self.view.backgroundColor = [UIColor whiteColor];
     [_CarpVideoTableView setBackgroundColor:[UIColor whiteColor]];
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVieoAdviceHeaderClicks)];
@@ -60,15 +60,12 @@
     [self.navigationController pushViewController:caropDetailVc animated:YES];
 }
 -(void)CarpVideoAdViceTableViewCellWriteActionWithIndex:(NSInteger)CellIndex{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
     CarpVideoDetailViewController * caropDetailVc = [[CarpVideoDetailViewController alloc]init];
     caropDetailVc.hidesBottomBarWhenPushed = YES;
     caropDetailVc.carpMoel = self.dataArr[CellIndex];
     caropDetailVc.isShowInput = YES;
-    [self.navigationController pushViewController:caropDetailVc animated:YES];
+        [self.navigationController pushViewController:caropDetailVc animated:YES];}
 }
 /*
 #pragma mark - Navigation

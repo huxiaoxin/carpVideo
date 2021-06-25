@@ -49,7 +49,7 @@
     firstLabel.layer.cornerRadius = 8.0f;
     firstLabel.layer.masksToBounds = YES;
     firstLabel.textAlignment = NSTextAlignmentCenter;
-    firstLabel.backgroundColor = gnh_color_theme;
+    firstLabel.backgroundColor = LGDMianColor;
     [contentScrollView addSubview:firstLabel];
     [firstLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(titleLabel.mas_bottom).offset(19.0f);
@@ -75,7 +75,7 @@
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"打开智能电视/盒子/投影仪/电视果，确认设备与手机连接着相同Wi-Fi。" attributes:attributes];
     firstContentLabel.attributedText = string;
     
-    UIImageView *firstImageView = [UIImageView ly_ImageViewWithImageName:@"throw_image_1"];
+    UIImageView *firstImageView = [UIImageView ly_ImageViewWithImageName:@"carpVieo_scredns_1"];
     [contentScrollView addSubview:firstImageView];
     [firstImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(firstContentLabel.mas_bottom).offset(30.0f);
@@ -86,7 +86,7 @@
     secondLabel.layer.cornerRadius = 8.0f;
     secondLabel.layer.masksToBounds = YES;
     secondLabel.textAlignment = NSTextAlignmentCenter;
-    secondLabel.backgroundColor = gnh_color_theme;
+    secondLabel.backgroundColor = LGDMianColor;
     [contentScrollView addSubview:secondLabel];
     [secondLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(firstImageView.mas_bottom).offset(31.0f);
@@ -106,7 +106,7 @@
     NSMutableAttributedString *secondstring = [[NSMutableAttributedString alloc] initWithString:@"点击播放器右上角的TV投屏按钮进入投屏界面，选择想投屏的设备即可完成投屏。" attributes:attributes];
     secondContentLabel.attributedText = secondstring;
     
-    UIImageView *secondImageView = [UIImageView ly_ImageViewWithImageName:@"throw_image_2"];
+    UIImageView *secondImageView = [UIImageView ly_ImageViewWithImageName:@"carpVieo_scredns_2"];
     [contentScrollView addSubview:secondImageView];
     [secondImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(secondContentLabel.mas_bottom).offset(15.0f);

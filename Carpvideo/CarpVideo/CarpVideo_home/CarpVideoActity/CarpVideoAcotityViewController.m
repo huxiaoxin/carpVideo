@@ -22,7 +22,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"活动列表";
+    self.navigationItem.title = @"活动列表";
+    _CarpVideoTableView.frame =  CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM);
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoActityHeaderClicks)];
     [_CarpVideoTableView.mj_header beginRefreshing];
     // Do any additional setup after loading the view.
@@ -41,9 +42,7 @@
     return RealWidth(170);
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [[GKNavigationBarConfigure sharedInstance] updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.backStyle = GKNavigationBarBackStyleWhite;
-    }];
+ 
     CarpVideoActityDetailViewController * caropVideoDetailVc = [[CarpVideoActityDetailViewController alloc]init];
     caropVideoDetailVc.carpselMoel = self.CarpVideoDataArr[indexPath.row];
     [self.navigationController pushViewController:caropVideoDetailVc animated:YES];

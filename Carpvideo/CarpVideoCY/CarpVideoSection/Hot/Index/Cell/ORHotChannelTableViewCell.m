@@ -53,7 +53,7 @@
     }];
     self.coverImageView = coverImageView;
     
-    UIImageView *playImageView = [UIImageView ly_ImageViewWithImageName:@"hot_play"];
+    UIImageView *playImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_play_icon"];
     [self.contentView addSubview:playImageView];
     [playImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(coverImageView);
@@ -62,7 +62,7 @@
     self.playImageView = playImageView;
     self.playImageView.hidden = YES;
     
-    UIImageView *topbackImageView = [UIImageView ly_ImageViewWithImageName:@"hot_top_back"];
+    UIImageView *topbackImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_top_back_icon"];
     [self.contentView addSubview:topbackImageView];
     [topbackImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.contentView);
@@ -109,7 +109,7 @@
     self.timeLabel = timeLabel;
     self.timeLabel.hidden = YES;
     
-    UIButton *moreButton = [UIButton ly_ButtonWithNormalImageName:@"hot_more" selecteImageName:@"hot_more" target:self selector:@selector(moreAction:)];
+    UIButton *moreButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_more_black_icon" selecteImageName:@"carpVideo_more_black_icon" target:self selector:@selector(moreAction:)];
     [bottomView addSubview:moreButton];
     [moreButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(bottomView).offset(-2.5f);
@@ -118,7 +118,7 @@
     }];
     self.moreButton = moreButton;
     
-    UIButton *likeButton = [UIButton ly_ButtonWithNormalImageName:@"hot_like" selecteImageName:@"hot_like" target:self selector:@selector(likeAction:)];
+    UIButton *likeButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_like_icon" selecteImageName:@"carpVideo_like_icon" target:self selector:@selector(likeAction:)];
     [likeButton setTitle:@"10000" forState:UIControlStateNormal];
     [likeButton setTitleColor:gnh_color_p forState:UIControlStateNormal];
     likeButton.titleLabel.font = zy_mediumSystemFont14;
@@ -131,7 +131,7 @@
     }];
     self.likeButton = likeButton;
     
-    UIButton *shareButton = [UIButton ly_ButtonWithNormalImageName:@"hot_share" selecteImageName:@"hot_share" target:self selector:@selector(shareAction:)];
+    UIButton *shareButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_share_icon-none" selecteImageName:@"carpVideo_share_icon-none" target:self selector:@selector(shareAction:)];
     [shareButton setTitle:@"分享" forState:UIControlStateNormal];
     [shareButton setTitleColor:gnh_color_p forState:UIControlStateNormal];
     shareButton.titleLabel.font = zy_mediumSystemFont14;
@@ -154,7 +154,7 @@
         ORHotChannelDataItem *channelItem = (ORHotChannelDataItem *)item;
         self.channelItem = channelItem;
         
-        [self.coverImageView sd_setImageWithURL:channelItem.coverImg.urlWithString placeholderImage:[UIImage imageNamed:@"hot_cover_default"]];
+        [self.coverImageView sd_setImageWithURL:channelItem.coverImg.urlWithString placeholderImage:[UIImage imageNamed:@"carpVideo_defaul_thub"]];
         
         NSInteger hour = [channelItem.videoSeconds integerValue]/60.0/60.0;
         NSInteger minite = [channelItem.videoSeconds integerValue]/60.0;

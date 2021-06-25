@@ -65,7 +65,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle  = self.carpessModel.topname;
+    self.navigationItem.title  = self.carpessModel.topname;
     [self.view addSubview:self.carpMessageTableView];
     [self.view addSubview:self.carpMessageToolsView];
     // Do any additional setup after loading the view.

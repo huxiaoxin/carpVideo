@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.isLoads =  NO;
-    self.gk_navTitle = @"我的消息";
+    self.navigationItem.title = @"我的消息";
     
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoNotificationHeaderClicks)];
     [_CarpVideoTableView.mj_header beginRefreshing];

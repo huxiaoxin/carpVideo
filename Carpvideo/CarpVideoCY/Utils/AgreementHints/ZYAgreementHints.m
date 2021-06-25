@@ -79,7 +79,7 @@
     self.agreeBtn = [UIButton ly_ButtonWithTitle:@"同意" titleColor:UIColor.whiteColor font:[UIFont systemFontOfSize:14] target:self selector:@selector(btnClick:)];
     self.agreeBtn.layer.cornerRadius = 7.5;
     self.agreeBtn.tag = ZYAgreementActionTypeAgree;
-    self.agreeBtn.backgroundColor = gnh_color_theme;
+    self.agreeBtn.backgroundColor = LGDMianColor;
     [self addSubview:self.agreeBtn];
     [self.agreeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentTV.mas_bottom).offset(20);

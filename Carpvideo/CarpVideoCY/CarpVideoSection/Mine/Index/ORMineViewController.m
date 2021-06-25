@@ -110,9 +110,9 @@
 - (UIView *)setupHeaderView
 {
     UIView *headerView = [UIView ly_ViewWithColor:gnh_color_d];
-    headerView.frame = CGRectMake(0, 0, kScreenWidth, 37 + kScreenWidth * (240/375.0));
+    headerView.frame = CGRectMake(0, 0, kScreenWidth, 37+10 + kScreenWidth * (240/375.0));
     
-    UIImageView *bgImageView = [UIImageView ly_ImageViewWithImageName:@"mine_bg"];
+    UIImageView *bgImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_center_BG_icon"];
     [headerView addSubview:bgImageView];
     [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(headerView);
@@ -121,7 +121,7 @@
     
     // top
     // 头像
-    UIImageView *portrailImageView = [UIImageView ly_ImageViewWithImageName:@"com_head_default"];
+    UIImageView *portrailImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_user_header_defaul_icon"];
     [headerView addSubview:portrailImageView];
     portrailImageView.layer.cornerRadius = 30.5f;
     portrailImageView.layer.masksToBounds = YES;
@@ -164,7 +164,7 @@
     }];
     self.loginName = loginName;
     
-    UIImageView *arrImageView = [UIImageView ly_ImageViewWithImageName:@"com_arrow_white"];
+    UIImageView *arrImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_com_white_icon"];
     [headerView addSubview:arrImageView];
     [arrImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(headerView).offset(-25.0f);
@@ -200,7 +200,7 @@
     
     
     // 播放历史
-    UIButton *playHistoryButton = [UIButton ly_ButtonWithNormalImageName:@"mine_watchRecord" selecteImageName:@"mine_watchRecord" target:self selector:@selector(watchHistoryAction:)];
+    UIButton *playHistoryButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_guankanhistroy" selecteImageName:@"carpVideo_guankanhistroy" target:self selector:@selector(watchHistoryAction:)];
     [playHistoryButton setTitle:@"播放历史" forState:UIControlStateNormal];
     [playHistoryButton setTitleColor:gnh_color_a forState:UIControlStateNormal];
     playHistoryButton.titleLabel.font = zy_mediumSystemFont13;
@@ -215,7 +215,7 @@
     }];
     
     // 播放历史
-    UIButton *collectButton = [UIButton ly_ButtonWithNormalImageName:@"mine_favorite" selecteImageName:@"mine_favorite" target:self selector:@selector(collectAction:)];
+    UIButton *collectButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_mine_xiai" selecteImageName:@"carpVideo_mine_xiai" target:self selector:@selector(collectAction:)];
     [collectButton setTitle:@"我的收藏" forState:UIControlStateNormal];
     [collectButton setTitleColor:gnh_color_a forState:UIControlStateNormal];
     collectButton.titleLabel.font = zy_mediumSystemFont13;
@@ -229,7 +229,7 @@
     }];
     
     // 我的下载
-    UIButton *downloadButton = [UIButton ly_ButtonWithNormalImageName:@"mine_download" selecteImageName:@"mine_download" target:self selector:@selector(downloadAction:)];
+    UIButton *downloadButton = [UIButton ly_ButtonWithNormalImageName:@"carpVieo_mine_xiazai" selecteImageName:@"carpVieo_mine_xiazai" target:self selector:@selector(downloadAction:)];
     [downloadButton setTitle:@"我的下载" forState:UIControlStateNormal];
     [downloadButton setTitleColor:gnh_color_a forState:UIControlStateNormal];
     downloadButton.titleLabel.font = zy_mediumSystemFont13;
@@ -271,18 +271,18 @@
     NSMutableArray *dataItems = [[NSMutableArray alloc] init];
     if (sectionType == 0) {
         ORMineCellItem *cellItem1 = [[ORMineCellItem alloc] init];
-        cellItem1.iconName = @"mine_feedback";
+        cellItem1.iconName = @"carpVideo_feed_back";
         cellItem1.cellType = ORMineCellTypeFeedback;
         cellItem1.title = @"意见反馈";
         cellItem1.isBeginSeperator = YES;
         
         ORMineCellItem *cellItem2 = [[ORMineCellItem alloc] init];
-        cellItem2.iconName = @"mine_share";
+        cellItem2.iconName = @"carpVideo_share_center_icon";
         cellItem2.cellType = ORMineCellTypeShare;
         cellItem2.title = @"应用分享";
         
         ORMineCellItem *cellItem3 = [[ORMineCellItem alloc] init];
-        cellItem3.iconName = @"mine_aboutme";
+        cellItem3.iconName = @"carpVideo_about_us";
         cellItem3.cellType = ORMineCellTypeAboutMe;
         cellItem3.title = @"关于我们";
         cellItem3.isEndSeperator = YES;
@@ -292,7 +292,7 @@
         [dataItems mdf_safeAddObject:cellItem3];
     } else {
         ORMineCellItem *cellItem1 = [[ORMineCellItem alloc] init];
-        cellItem1.iconName = @"mine_setting";
+        cellItem1.iconName = @"carpVideo_setting_icon";
         cellItem1.cellType = ORMineCellTypeSetting;
         cellItem1.title = @"设置";
         cellItem1.isBeginSeperator = YES;
@@ -306,7 +306,7 @@
 - (void)refreshData
 {
     // 1、更新头部
-    [self.portrailImageView sd_setImageWithURL:[NSURL URLWithString:self.userInfoItem.avatar] placeholderImage:[UIImage imageNamed:@"com_head_default"]];
+    [self.portrailImageView sd_setImageWithURL:[NSURL URLWithString:self.userInfoItem.avatar] placeholderImage:[UIImage imageNamed:@"carpVideo_user_header_defaul_icon"]];
     self.nickName.text = self.userInfoItem.username;
     self.editLabel.text = [NSString stringWithFormat:@"UID：%@", @(self.userInfoItem.userId).stringValue];
     
@@ -320,8 +320,9 @@
 
 - (void)watchHistoryAction:(UIButton *)btn
 {
+    if ([ORAccountComponent checkLogin:YES]) {
     ORWatchRecordViewController *watchRecordVC = [[ORWatchRecordViewController alloc] init];
-    [self.navigationController pushViewController:watchRecordVC animated:YES];
+        [self.navigationController pushViewController:watchRecordVC animated:YES];}
 }
 
 - (void)collectAction:(UIButton *)btn
@@ -334,8 +335,9 @@
 
 - (void)downloadAction:(UIButton *)btn
 {
+    if ([ORAccountComponent checkLogin:YES]) {
     ORDownloadViewController *downloadVC = [[ORDownloadViewController alloc] init];
-    [self.navigationController pushViewController:downloadVC animated:YES];
+        [self.navigationController pushViewController:downloadVC animated:YES];}
 }
 
 

@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"发布动态";
-    [_CarpVideoTableView setFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-RealWidth(110))];
+    self.navigationItem.title = @"发布动态";
+    [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-RealWidth(110))];
     _CarpVideoTableView.tableHeaderView = self.carpVideoHeader;
     [self.view addSubview:self.CarpBtnVBtomView];
     
@@ -33,7 +33,7 @@
 - (LKSavedeleteBtnView *)CarpBtnVBtomView{
     if (!_CarpBtnVBtomView) {
         MJWeakSelf;
-        _CarpBtnVBtomView = [[LKSavedeleteBtnView alloc]initWithFrame:CGRectMake(0, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT-RealWidth(105), GK_SCREEN_WIDTH, RealWidth(105)+GK_SAFEAREA_BTM) configurationBtnClick:^(NSInteger index) {
+        _CarpBtnVBtomView = [[LKSavedeleteBtnView alloc]initWithFrame:CGRectMake(0, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT-RealWidth(105)-GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, RealWidth(105)+GK_SAFEAREA_BTM) configurationBtnClick:^(NSInteger index) {
             if (index == 0) {
                 if (weakSelf.carpVideoHeader.CarpVideoTextView.text.length == 0) {
                     

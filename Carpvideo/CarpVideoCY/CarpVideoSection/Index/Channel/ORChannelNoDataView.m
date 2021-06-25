@@ -24,7 +24,7 @@
 
 - (void)setupView
 {
-    UIImageView *iconImageView = [UIImageView ly_ImageViewWithImageName:@"com_noData"];
+    UIImageView *iconImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_emty_data_icon"];
     [self addSubview:iconImageView];
     [iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(240.0f - kGNHNavigationBarHeight - kGNHStatusBarHeight);

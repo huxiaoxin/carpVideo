@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"关于我们";
+    self.navigationItem.title = @"关于我们";
     WKWebViewConfiguration * CarpVideoConfigar  = [[WKWebViewConfiguration alloc]init];
     WKWebView * CarpVideoWebs = [[WKWebView alloc]initWithFrame:CGRectMake(0, NaviH, SCREEN_Width, SCREEN_Height-NaviH-GK_SAFEAREA_BTM) configuration:CarpVideoConfigar];
     CarpVideoWebs.scrollView.showsVerticalScrollIndicator =  NO;

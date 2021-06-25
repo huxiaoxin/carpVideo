@@ -19,7 +19,7 @@
 #import "ORLaunchAdvertManager.h"
 #import "LBManager.h"
 #import "ORMenuChannelManager.h"
-
+#import "AppDelegate+SafeApp.h"
 @interface AppDelegate () <WXApiDelegate>
 @property (nonatomic, assign) BOOL allowRotation;  // 是否允许横屏
 
@@ -36,8 +36,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-  
-
+    [AppDelegate AppDelegateConfiguartionsafe];
+//    [self initGKNavConfigers];
     // init
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 设置rootViewController
@@ -112,6 +112,16 @@
     [BUAdSDKManager setLoglevel:BUAdSDKLogLevelDebug];
 }
 
+-(void)initGKNavConfigers{
+    GKNavigationBarConfigure *DongwangConfigers = [GKNavigationBarConfigure sharedInstance];
+    [DongwangConfigers setupDefaultConfigure];
+    DongwangConfigers.backgroundColor = [UIColor whiteColor];
+    DongwangConfigers.backStyle = GKNavigationBarBackStyleBlack;
+    DongwangConfigers.titleColor = [UIColor blackColor];
+    DongwangConfigers.titleFont = [UIFont systemFontOfSize:15];
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+   
+}
 #pragma mark - AppDelegate
 
 - (void)applicationWillResignActive:(UIApplication *)application {

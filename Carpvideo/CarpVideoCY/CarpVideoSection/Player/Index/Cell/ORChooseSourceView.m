@@ -139,8 +139,8 @@
     
     // 添加选中边框
     if ([item.sourceName isEqualToString:self.selectSourceName]) {
-        cell.nameLabel.textColor = gnh_color_theme;
-        cell.layer.borderColor = gnh_color_theme.CGColor;
+        cell.nameLabel.textColor = LGDMianColor;
+        cell.layer.borderColor = LGDMianColor.CGColor;
     } else {
         cell.nameLabel.textColor = RGBA_HexCOLOR(0x31333A, 1.0);
         cell.layer.borderColor = RGBA_HexCOLOR(0xDFDFDF, 1.0).CGColor;

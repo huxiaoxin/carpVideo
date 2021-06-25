@@ -37,7 +37,7 @@
     CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
     shapeLayer.path = bezierPath.CGPath;//设置path
     shapeLayer.lineWidth = 0.67f;
-    shapeLayer.strokeColor = gnh_color_theme.CGColor; // 圆边框颜色
+    shapeLayer.strokeColor = LGDMianColor.CGColor; // 圆边框颜色
     shapeLayer.fillColor = [UIColor clearColor].CGColor;// 圆填充颜色
     //添加layer对象
     [self.layer addSublayer:shapeLayer];

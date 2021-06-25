@@ -154,7 +154,7 @@
 - (UIImageView *)likeBeforeImgView {
     if (!_likeBeforeImgView) {
         _likeBeforeImgView = [UIImageView new];
-        _likeBeforeImgView.image = [UIImage imageNamed:@"hot_detail_like"];
+        _likeBeforeImgView.image = [UIImage imageNamed:@"carpVideo_detail_like_nomal_icon"];
     }
     return _likeBeforeImgView;
 }
@@ -162,7 +162,7 @@
 - (UIImageView *)likeAfterImgView {
     if (!_likeAfterImgView) {
         _likeAfterImgView = [UIImageView new];
-        _likeAfterImgView.image = [UIImage imageNamed:@"hot_detail_like_selected"];
+        _likeAfterImgView.image = [UIImage imageNamed:@"carpVideo_detail_likce_sel_icon"];
     }
     return _likeAfterImgView;
 }

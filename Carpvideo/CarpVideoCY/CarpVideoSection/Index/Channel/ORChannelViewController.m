@@ -260,7 +260,7 @@
     [self.pretagButton setTitleColor:gnh_color_m forState:UIControlStateNormal];
     self.pretagButton = btn;
     self.pretagButton.backgroundColor = gnh_color_q;
-    [self.pretagButton setTitleColor:gnh_color_theme forState:UIControlStateNormal];
+    [self.pretagButton setTitleColor:LGDMianColor forState:UIControlStateNormal];
 
     GNHWeakSelf;
     [self.menuArr enumerateObjectsUsingBlock:^(__kindof ORSubChannelMenuDataItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -293,7 +293,7 @@
     
     UIImageView *coverImgView = [cell.contentView viewWithTag:200];
     if(!coverImgView) {
-        coverImgView = [UIImageView ly_ImageViewWithImageName:@"index_cover_bg"];
+        coverImgView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_index_cover_background_icon"];
         coverImgView.frame = CGRectMake(0, cell.contentView.bounds.size.height - 40.0f, cell.contentView.bounds.size.width, 40.0f);
         coverImgView.tag = 200;
         [cell.contentView addSubview:coverImgView];
@@ -308,7 +308,7 @@
     }
     
     ORBannerDataItem *bannerDataItem = (ORBannerDataItem *)[self.bannerDataArr mdf_safeObjectAtIndex:index];
-    [imgView sd_setImageWithURL:bannerDataItem.image.urlWithString placeholderImage:[UIImage imageNamed:@"index_banner_cover_default"]];
+    [imgView sd_setImageWithURL:bannerDataItem.image.urlWithString placeholderImage:[UIImage imageNamed:@"carpVideo_index_thub_default_icon"]];
     descLabel.text = bannerDataItem.desc;
     
     return cell;
@@ -473,7 +473,7 @@
         _animationView.layer.masksToBounds = YES;
         
         // 遮罩层
-        UIImageView *topCoverImageView = [UIImageView ly_ImageViewWithImageName:@"index_cover_top"];
+        UIImageView *topCoverImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_cover_index_bg"];
         [_animationView addSubview:topCoverImageView];
         [topCoverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.right.equalTo(_animationView);

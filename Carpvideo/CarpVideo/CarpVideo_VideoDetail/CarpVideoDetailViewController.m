@@ -40,53 +40,55 @@
     return _CarpSendComentBtn;
 }
 -(void)CarpSendComentBtnClick{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
 
-    MJWeakSelf;
-    [XHInputView showWithStyle:InputViewStyleDefault configurationBlock:^(XHInputView *inputView) {
-        inputView.sendButtonBackgroundColor = LGDMianColor;
-        inputView.sendButtonCornerRadius = RealWidth(5);
-    } sendBlock:^BOOL(NSString *text) {
-        if (text.length > 0) {
-            [weakSelf CarpVideoSendComentWith:text];
-            return YES;
-        }else{
-            [LCProgressHUD showInfoMsg:@"请输入内容~"];
-            return NO;
-        }
-    }];
+
+    if ([ORAccountComponent checkLogin:YES]) {
+        
+        MJWeakSelf;
+        [XHInputView showWithStyle:InputViewStyleDefault configurationBlock:^(XHInputView *inputView) {
+            inputView.sendButtonBackgroundColor = LGDMianColor;
+            inputView.sendButtonCornerRadius = RealWidth(5);
+        } sendBlock:^BOOL(NSString *text) {
+            if (text.length > 0) {
+                [weakSelf CarpVideoSendComentWith:text];
+                return YES;
+            }else{
+                [LCProgressHUD showInfoMsg:@"请输入内容~"];
+                return NO;
+            }
+        }];
+    }
+    
+
 
 }
 -(void)CarpVideoSendComentWith:(NSString *)comenttext{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
-    [LCProgressHUD showLoading:@""];
-    MJWeakSelf;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [LCProgressHUD showSuccess:@"评论成功"];
-        carpVideoRemneAdviceModel * carpMentModel = [[carpVideoRemneAdviceModel alloc]init];
-        carpMentModel.imgurl = @"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg";
-        carpMentModel.name = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
-        carpMentModel.FilmID = weakSelf.carpMoel.caprVideHome_ID;
-        carpMentModel.ComentID = 555;
-        carpMentModel.CellHeight = 0;
-        carpMentModel.content = comenttext;
-        carpMentModel.StarNum =5;
-        [WHC_ModelSqlite insert:carpMentModel];
-        [weakSelf.CarpVideoDataSoure addObject:carpMentModel];
-        [_CarpVideoTableView reloadData];
+    if ([ORAccountComponent checkLogin:YES]) {
+        [LCProgressHUD showLoading:@""];
+        MJWeakSelf;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [LCProgressHUD showSuccess:@"评论成功"];
+            carpVideoRemneAdviceModel * carpMentModel = [[carpVideoRemneAdviceModel alloc]init];
+            carpMentModel.imgurl = @"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg";
+            carpMentModel.name = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
+            carpMentModel.FilmID = weakSelf.carpMoel.caprVideHome_ID;
+            carpMentModel.ComentID = 555;
+            carpMentModel.CellHeight = 0;
+            carpMentModel.content = comenttext;
+            carpMentModel.StarNum =5;
+            [WHC_ModelSqlite insert:carpMentModel];
+            [weakSelf.CarpVideoDataSoure addObject:carpMentModel];
+            [_CarpVideoTableView reloadData];
 
-    });
+        });
+        
+    }
+
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navBarAlpha = 0;
+    self.fd_prefersNavigationBarHidden = YES;
     _CarpVideoTableView.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM-RealWidth(40));
     // Do any additional setup after loading the view.
     [LCProgressHUD showLoading:@""];
@@ -136,10 +138,7 @@
 }
 #pragma marlk--CarpVideoDetailHeaderViewDelegate
 -(void)CarpVideoDetailHeaderViewWithColltecd:(CarpVideoCatagoryBtn *)btn{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
     
     [LCProgressHUD showLoading:@""];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -149,23 +148,22 @@
         [WHC_ModelSqlite update:[CarpVideoHomeModels class] value:[NSString stringWithFormat:@"carpVideo_isCollected ='%@'",@(self.carpMoel.carpVideo_isCollected)] where:[NSString stringWithFormat:@"caprVideHome_ID = '%ld'",self.carpMoel.caprVideHome_ID]];
         
     });
+    }
 }
 -(void)CarpVideoDetailTableViewCellDidSeltecdWithBtnIndex:(NSInteger)btnIndex cellIndex:(NSInteger)CellIndex{
     carpVideoRemneAdviceModel * carpMoel = self.CarpVideoDataSoure[CellIndex];
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;;
-    }
+ 
     
     if (btnIndex == 0) {
         //举报
+        if ([ORAccountComponent checkLogin:YES]) {
         CarpVideoJBLitsViewController * carpJBVc =[[CarpVideoJBLitsViewController alloc]init];
         carpJBVc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:carpJBVc animated:YES];
+            [self.navigationController pushViewController:carpJBVc animated:YES];}
     }else{
         //拉黑
         
-        
+        if ([ORAccountComponent checkLogin:YES]) {
         UIAlertController * alterVc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"你要拉黑用户（%@）发布的评论吗？",carpMoel.name] preferredStyle:UIAlertControllerStyleAlert];
         
         MJWeakSelf;
@@ -190,7 +188,7 @@
         [alterVc addAction:sureAction];
 
         [self presentViewController:alterVc animated:YES completion:nil];
-        
+        }
     }
 }
 /*

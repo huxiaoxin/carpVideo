@@ -21,8 +21,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = self.CarpSearText;
+    self.navigationItem.title = self.CarpSearText;
     self.view.backgroundColor = [UIColor whiteColor];
+    _CarpVideoTableView.frame =  CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_SAFEAREA_BTM);
     [_CarpVideoTableView setBackgroundColor:[UIColor whiteColor]];
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVieoAdviceHeaderClicks)];
     [_CarpVideoTableView.mj_header beginRefreshing];
@@ -60,15 +61,12 @@
     [self.navigationController pushViewController:caropDetailVc animated:YES];
 }
 -(void)CarpVideoAdViceTableViewCellWriteActionWithIndex:(NSInteger)CellIndex{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
     CarpVideoDetailViewController * caropDetailVc = [[CarpVideoDetailViewController alloc]init];
     caropDetailVc.hidesBottomBarWhenPushed = YES;
     caropDetailVc.carpMoel = self.dataArr[CellIndex];
     caropDetailVc.isShowInput = YES;
-    [self.navigationController pushViewController:caropDetailVc animated:YES];
+        [self.navigationController pushViewController:caropDetailVc animated:YES];}
 }
 /*
 #pragma mark - Navigation

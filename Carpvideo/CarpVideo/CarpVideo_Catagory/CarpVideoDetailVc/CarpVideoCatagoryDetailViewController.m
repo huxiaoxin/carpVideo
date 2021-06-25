@@ -27,7 +27,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"详情";
+    self.navigationItem.title = @"详情";
     self.view.backgroundColor = [UIColor whiteColor];
     _CarpVideoTableView.backgroundColor =[UIColor whiteColor];
     _CarpVideoTableView.tableHeaderView = self.carpVideoDetailHeader;
@@ -35,7 +35,7 @@
     [_CarpVideoTableView.mj_header beginRefreshing];
     
     [self.view addSubview:self.carpVideoSendView];
-    _CarpVideoTableView.frame = CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM-RealWidth(60)-GK_STATUSBAR_NAVBAR_HEIGHT);
+    _CarpVideoTableView.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM-RealWidth(60)-GK_STATUSBAR_NAVBAR_HEIGHT);
     [_carpVideoSendView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
         make.bottom.mas_equalTo(-GK_SAFEAREA_BTM-RealWidth(10));
@@ -64,28 +64,24 @@
     if (!_carpVideoSendView) {
         MJWeakSelf;
         _carpVideoSendView = [[CarpVideoCatagoryComentDetailView alloc]initWithFrame:CGRectZero CoementTextSendConfiguar:^(NSString * _Nonnull text) {
-            
-            if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-            [weakSelf CarpVideoShowLoginVc];
-            return;
+            if ([ORAccountComponent checkLogin:YES]) {
+                CarpVideoCatagoryDetailModel * detailModel  = [[CarpVideoCatagoryDetailModel alloc]init];
+                detailModel.userImgurl = @"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg";
+                detailModel.userNameText = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
+                detailModel.time = @"刚刚";
+                detailModel.catagoryID = self.catagoryModel.userID;
+                detailModel.comentID =  666;
+                detailModel.Content = text;
+                detailModel.CellHeight = 0;
+                [weakSelf.CaroVideoDataArr addObject:detailModel];
+                [WHC_ModelSqlite insert:detailModel];
+                [LCProgressHUD showLoading:@""];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [LCProgressHUD hide];
+                    [self->_CarpVideoTableView reloadData];
+                });
             }
 
-            CarpVideoCatagoryDetailModel * detailModel  = [[CarpVideoCatagoryDetailModel alloc]init];
-            detailModel.userImgurl = @"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg";
-            detailModel.userNameText = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
-            detailModel.time = @"刚刚";
-            detailModel.catagoryID = self.catagoryModel.userID;
-            detailModel.comentID =  666;
-            detailModel.Content = text;
-            detailModel.CellHeight = 0;
-            [self.CaroVideoDataArr addObject:detailModel];
-            [WHC_ModelSqlite insert:detailModel];
-            [LCProgressHUD showLoading:@""];
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [LCProgressHUD hide];
-                [self->_CarpVideoTableView reloadData];
-            });
             
         }];
         _carpVideoSendView.backgroundColor = [UIColor whiteColor];
@@ -104,31 +100,33 @@
                 [weakSelf.navigationController pushViewController:CarpVideoJubaoVc animated:YES];
             }else{
              //拉黑
-            if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-            [self CarpVideoShowLoginVc];
-            return;
-            }
-            
-                UIAlertController * CarpVideoAlterVc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"您确定要屏蔽<%@>用户发布的动态吗？",self.catagoryModel.userName] preferredStyle:UIAlertControllerStyleAlert];
                 
-                UIAlertAction * alterThkingActio = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                if ([ORAccountComponent checkLogin:YES]) {
                     
-                    [LCProgressHUD showLoading:@""];
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [LCProgressHUD showSuccess:@"屏蔽成功"];
-                    [WHC_ModelSqlite delete:[CarpVideoCatagoryModel class] where:[NSString stringWithFormat:@"userID = '%ld'",self.catagoryModel.userID]];
-                        [self.navigationController popViewControllerAnimated:YES];
-                    });
-                
-                
-                }];
-                UIAlertAction * alterCancleActio = [UIAlertAction actionWithTitle:@"再想想" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    UIAlertController * CarpVideoAlterVc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"您确定要屏蔽<%@>用户发布的动态吗？",self.catagoryModel.userName] preferredStyle:UIAlertControllerStyleAlert];
                     
-                }];
-                [CarpVideoAlterVc addAction:alterThkingActio];;
-                [CarpVideoAlterVc addAction:alterCancleActio];;
-
-                [self presentViewController:CarpVideoAlterVc animated:YES completion:nil];
+                    UIAlertAction * alterThkingActio = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        
+                        [LCProgressHUD showLoading:@""];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [LCProgressHUD showSuccess:@"屏蔽成功"];
+                            [WHC_ModelSqlite delete:[CarpVideoCatagoryModel class] where:[NSString stringWithFormat:@"userID = '%ld'",self.catagoryModel.userID]];
+                            [self.navigationController popViewControllerAnimated:YES];
+                        });
+                        
+                        
+                    }];
+                    UIAlertAction * alterCancleActio = [UIAlertAction actionWithTitle:@"再想想" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                        
+                    }];
+                    [CarpVideoAlterVc addAction:alterThkingActio];;
+                    [CarpVideoAlterVc addAction:alterCancleActio];;
+                    
+                    [self presentViewController:CarpVideoAlterVc animated:YES completion:nil];
+                    
+                }
+                
                 
                 
                 
@@ -226,10 +224,8 @@
         [self.navigationController pushViewController:CarpVideoJubaoVc animated:YES];
     }else{
         
-        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-        }
+        if ([ORAccountComponent checkLogin:YES]) {
+
         
         
         UIAlertController * CarpVideoAlterVc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"您确定要屏蔽<%@>用户发布的动态吗？",detailMoel.userNameText] preferredStyle:UIAlertControllerStyleAlert];
@@ -250,7 +246,7 @@
         [CarpVideoAlterVc addAction:alterCancleActio];;
 
         [self presentViewController:CarpVideoAlterVc animated:YES completion:nil];
-        
+        }
     }
 
 }

@@ -11,7 +11,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = _carpNewsModel.title;
+    self.navigationItem.title = _carpNewsModel.title;
     
     NSString *html2 = [NSString stringWithFormat:@"<html><head><style>div{font-size:20px;}img{width: 100%%;height: auto;</style></head><body>%@</body></html>",self.carpNewsModel.content];
     
@@ -30,7 +30,7 @@
     
     WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
     wkWebConfig.userContentController = userContentController;
-    WKWebView * web = [[WKWebView alloc]initWithFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, SCREEN_Width, SCREEN_Height-NaviH-GK_SAFEAREA_BTM) configuration:wkWebConfig];
+    WKWebView * web = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_Width, SCREEN_Height-NaviH-GK_SAFEAREA_BTM) configuration:wkWebConfig];
     web.opaque =  NO;
     web.backgroundColor = [UIColor clearColor];
     web.navigationDelegate =self;

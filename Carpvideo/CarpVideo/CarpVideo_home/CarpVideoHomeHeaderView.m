@@ -24,13 +24,13 @@
         [self addSubview:CarpVideoTopView];
         
         
-        UIImageView *  CarpBackImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(150))];
+        UIImageView *  CarpBackImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(150)+GK_SAFEAREA_TOP)];
         CarpBackImgView.userInteractionEnabled = YES;
         CarpBackImgView.image =[UIImage imageNamed:@"lk_CloudImgV"];
         [self  addSubview:CarpBackImgView];
         
         
-        UIImageView * CarpVideoLogoImgView  = [[UIImageView alloc]initWithFrame:CGRectMake(RealWidth(15), GK_STATUSBAR_HEIGHT, RealWidth(30), RealWidth(30))];
+        UIImageView * CarpVideoLogoImgView  = [[UIImageView alloc]initWithFrame:CGRectMake(RealWidth(15), 0, RealWidth(30), RealWidth(30))];
         CarpVideoLogoImgView.image = [UIImage imageNamed:@"backLogo"];
         [CarpBackImgView addSubview:CarpVideoLogoImgView];
         
@@ -48,12 +48,12 @@
         
         
         UIButton * CarpMsgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [CarpMsgBtn setFrame:CGRectMake(GK_SCREEN_WIDTH-RealWidth(35), GK_STATUSBAR_HEIGHT, RealWidth(20), RealWidth(20))];
+        [CarpMsgBtn setFrame:CGRectMake(GK_SCREEN_WIDTH-RealWidth(35), CGRectGetMinY(CarpVideoLogoImgView.frame)+2, RealWidth(20), RealWidth(20))];
         [CarpMsgBtn setImage:[UIImage imageNamed:@"sousuo"] forState:UIControlStateNormal];
         [CarpMsgBtn addTarget:self action:@selector(CarpMsgBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [CarpBackImgView addSubview:CarpMsgBtn];
         
-        SDCycleScrollView * SDCView = [[SDCycleScrollView alloc]initWithFrame:CGRectMake(RealWidth(15), RealWidth(50+30), GK_SCREEN_WIDTH-RealWidth(30), RealWidth(150))];
+        SDCycleScrollView * SDCView = [[SDCycleScrollView alloc]initWithFrame:CGRectMake(RealWidth(15), RealWidth(50+0), GK_SCREEN_WIDTH-RealWidth(30), RealWidth(150))];
         SDCView.showPageControl = NO;
         SDCView.layer.cornerRadius = RealWidth(5);
         SDCView.layer.masksToBounds = YES;

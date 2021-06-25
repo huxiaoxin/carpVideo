@@ -226,7 +226,7 @@ return _CarpVideoGaryView;
     _CarpVideoGaryView.hidden =  !carpVideoModel.isVideo;
     _CarpVideoLikeBtn.CarpVideoTitle.text = [NSString stringWithFormat:@"%ld",carpVideoModel.likeNums];
     
-    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+    if ([ORAccountComponent checkLogin:NO]) {
         _carpVideoDelebtn.selected =  carpVideoModel.isFallow;
         _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:carpVideoModel.isLike ? @"like-seltecd" : @"like_nomal"];
     }else{

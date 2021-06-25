@@ -49,7 +49,7 @@
     [iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(backView).offset(18.0f);
         make.centerY.equalTo(backView);
-        make.size.mas_equalTo(CGSizeMake(24.0f, 24.0f));
+        make.size.mas_equalTo(CGSizeMake(18.0f, 18.0f));
     }];
     self.iconImageView = iconImageView;
     
@@ -72,7 +72,7 @@
     self.contentLabel = contentLabel;
     self.contentLabel.hidden = YES;
     
-    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"mine_arrow"];
+    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_right_icon"];
     [backView addSubview:arrowImageView];
     [arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(backView).offset(-10.0f);

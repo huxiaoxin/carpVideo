@@ -27,7 +27,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"在线客服";
+    self.navigationItem.title = @"在线客服";
     self.isFirstSend = NO;
     self.isKefu = NO;
     [self.view addSubview:self.CarpVideoKefuTableView];

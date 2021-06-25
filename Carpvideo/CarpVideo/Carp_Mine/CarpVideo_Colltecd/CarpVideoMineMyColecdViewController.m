@@ -22,7 +22,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"我的收藏";
+    self.navigationItem.title = @"我的收藏";
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoActityHeaderClicks)];
     [_CarpVideoTableView.mj_header beginRefreshing];
     // Do any additional setup after loading the view.

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"意见反馈";
+    self.navigationItem.title = @"意见反馈";
     [_CarpVideoTableView setFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_SAFEAREA_BTM-RealWidth(45+15))];
     _CarpVideoTableView.tableHeaderView = self.carpVideoHeader;
     // Do any additional setup after loading the view.
@@ -51,10 +51,7 @@
     
 }
 -(void)CarpVideoCommiteBtnClick{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
     
     if (_carpVideoHeader.CarpVideoContentTextView.text.length == 0) {
         [LCProgressHUD showInfoMsg:@"请简要说明下原因"];
@@ -66,6 +63,7 @@
         [LCProgressHUD showSuccess:@"感谢您的反馈"];
         [self.navigationController popViewControllerAnimated:YES];
     });
+    }
 }
 - (CarpVideoSugestionHeaderView *)carpVideoHeader{
     if (!_carpVideoHeader) {

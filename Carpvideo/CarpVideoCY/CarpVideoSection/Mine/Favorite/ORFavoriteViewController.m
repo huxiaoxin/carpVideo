@@ -108,7 +108,7 @@
         make.size.mas_equalTo(CGSizeMake(0.5, 16.5f));
     }];
     
-    UIButton *deleteBtn = [UIButton ly_ButtonWithTitle:@"删除" titleColor:gnh_color_theme font:zy_mediumSystemFont15 target:self selector:@selector(deleteBtnClick:)];
+    UIButton *deleteBtn = [UIButton ly_ButtonWithTitle:@"删除" titleColor:LGDMianColor font:zy_mediumSystemFont15 target:self selector:@selector(deleteBtnClick:)];
     [editView addSubview:deleteBtn];
     self.deleteBtn = deleteBtn;
     [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {

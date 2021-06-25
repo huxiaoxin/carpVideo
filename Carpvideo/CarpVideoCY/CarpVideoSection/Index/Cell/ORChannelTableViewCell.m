@@ -82,7 +82,7 @@
         make.height.mas_equalTo(@43);
     }];
     
-    UIImageView *iconImageView = [UIImageView ly_ImageViewWithImageName:@"index_hot"];
+    UIImageView *iconImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_index_hot_inco"];
     [topView addSubview:iconImageView];
     [iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(topView).offset(10.5f);
@@ -98,7 +98,7 @@
     }];
     self.titleLabel = titleLabel;
     
-    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"com_arrow"];
+    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_arrow_gary_icon"];
     [topView addSubview:arrowImageView];
     [arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(topView).offset(-10.5f);
@@ -127,7 +127,7 @@
     }];
     self.collectionView = collectionView;
     
-    UIButton *refreshButton = [UIButton ly_ButtonWithNormalImageName:@"index_refresh" selecteImageName:@"index_refresh" target:self selector:@selector(refreshAction:)];
+    UIButton *refreshButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_idnex_refresh_icon" selecteImageName:@"carpVideo_idnex_refresh_icon" target:self selector:@selector(refreshAction:)];
     [refreshButton setTitle:@"换一换" forState:UIControlStateNormal];
     [refreshButton setTitleColor:gnh_color_a forState:UIControlStateNormal];
     refreshButton.titleLabel.font = zy_mediumSystemFont15;

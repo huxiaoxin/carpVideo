@@ -41,7 +41,7 @@
     pageMenu.delegate = self;
     pageMenu.bridgeScrollView = self.scrollView;
 
-    self.gk_navTitleView = pageMenu;
+    self.navigationItem.titleView = pageMenu;
     _pageMenu = pageMenu;
     [self.view addSubview:self.scrollView];
 
@@ -69,7 +69,7 @@
 #pragma mark - getter
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_TABBAR_HEIGHT)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_TABBAR_HEIGHT)];
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;
         _scrollView.showsHorizontalScrollIndicator = NO;
@@ -80,11 +80,9 @@
 #pragma mark - SPPageMenu的代理方法
 
 - (void)pageMenu:(SPPageMenu *)pageMenu itemSelectedAtIndex:(NSInteger)index {
-    NSLog(@"%zd",index);
 }
 
 - (void)pageMenu:(SPPageMenu *)pageMenu itemSelectedFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
-    NSLog(@"%zd------->%zd",fromIndex,toIndex);
 
     // 如果该代理方法是由拖拽self.scrollView而触发，说明self.scrollView已经在用户手指的拖拽下而发生偏移，此时不需要再用代码去设置偏移量，否则在跟踪模式为SPPageMenuTrackerFollowingModeHalf的情况下，滑到屏幕一半时会有闪跳现象。闪跳是因为外界设置的scrollView偏移和用户拖拽产生冲突
     if (!self.scrollView.isDragging) { // 判断用户是否在拖拽scrollView

@@ -254,11 +254,6 @@
 		8A32AF8F268488940089F8BC /* ORMineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF11268488930089F8BC /* ORMineTableViewCell.m */; };
 		8A32AF90268488940089F8BC /* ORSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF15268488930089F8BC /* ORSettingViewController.m */; };
 		8A32AF91268488940089F8BC /* ORSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF18268488930089F8BC /* ORSettingTableViewCell.m */; };
-		8A32AF92268488950089F8BC /* ORDiscoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF1F268488940089F8BC /* ORDiscoveryTableViewCell.m */; };
-		8A32AF93268488950089F8BC /* ORDiscoveryBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF20268488940089F8BC /* ORDiscoveryBaseView.m */; };
-		8A32AF94268488950089F8BC /* ORDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF21268488940089F8BC /* ORDiscoveryViewController.m */; };
-		8A32AF95268488950089F8BC /* ORDiscoveryMenuDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF25268488940089F8BC /* ORDiscoveryMenuDataModel.m */; };
-		8A32AF96268488950089F8BC /* ORDiscoveryDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF26268488940089F8BC /* ORDiscoveryDataModel.m */; };
 		8A32AF97268488950089F8BC /* ORLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF28268488940089F8BC /* ORLoginViewController.m */; };
 		8A32AF98268488950089F8BC /* ORLoginDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF2B268488940089F8BC /* ORLoginDataModel.m */; };
 		8A32AF99268488950089F8BC /* ORLoginSMSCodeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A32AF2D268488940089F8BC /* ORLoginSMSCodeDataModel.m */; };
@@ -353,6 +348,12 @@
 		8A77B6C42670B5B2007CF3A3 /* CarpVideoMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6C02670B5B2007CF3A3 /* CarpVideoMessageViewController.m */; };
 		8A77B6CD2670B9C4007CF3A3 /* CarpVideoMessageBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6CC2670B9C4007CF3A3 /* CarpVideoMessageBtn.m */; };
 		8A77B6D42670C6A6007CF3A3 /* CarpVideoLogoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B6D32670C6A6007CF3A3 /* CarpVideoLogoinViewController.m */; };
+		8A7E7A7E2685A4FA00F59988 /* UIViewController+testView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E7A7D2685A4FA00F59988 /* UIViewController+testView.m */; };
+		8A7E7A8F2685BDAB00F59988 /* ORDiscoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E7A872685BDAB00F59988 /* ORDiscoveryTableViewCell.m */; };
+		8A7E7A902685BDAB00F59988 /* ORDiscoveryBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E7A882685BDAB00F59988 /* ORDiscoveryBaseView.m */; };
+		8A7E7A912685BDAB00F59988 /* ORDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E7A892685BDAB00F59988 /* ORDiscoveryViewController.m */; };
+		8A7E7A922685BDAB00F59988 /* ORDiscoveryMenuDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E7A8D2685BDAB00F59988 /* ORDiscoveryMenuDataModel.m */; };
+		8A7E7A932685BDAB00F59988 /* ORDiscoveryDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E7A8E2685BDAB00F59988 /* ORDiscoveryDataModel.m */; };
 		8AA9A965266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A964266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m */; };
 		8AA9A96B266EFC0E00EB786A /* CarpVideoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A96A266EFC0E00EB786A /* CarpVideoBaseViewController.m */; };
 		8AA9A971266EFC2300EB786A /* CarpVideoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9A970266EFC2300EB786A /* CarpVideoHomeViewController.m */; };
@@ -935,16 +936,6 @@
 		8A32AF17268488930089F8BC /* ORSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSettingTableViewCell.h; sourceTree = "<group>"; };
 		8A32AF18268488930089F8BC /* ORSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSettingTableViewCell.m; sourceTree = "<group>"; };
 		8A32AF19268488930089F8BC /* ORSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSettingViewController.h; sourceTree = "<group>"; };
-		8A32AF1B268488940089F8BC /* ORDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryViewController.h; sourceTree = "<group>"; };
-		8A32AF1D268488940089F8BC /* ORDiscoveryBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryBaseView.h; sourceTree = "<group>"; };
-		8A32AF1E268488940089F8BC /* ORDiscoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryTableViewCell.h; sourceTree = "<group>"; };
-		8A32AF1F268488940089F8BC /* ORDiscoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryTableViewCell.m; sourceTree = "<group>"; };
-		8A32AF20268488940089F8BC /* ORDiscoveryBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryBaseView.m; sourceTree = "<group>"; };
-		8A32AF21268488940089F8BC /* ORDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryViewController.m; sourceTree = "<group>"; };
-		8A32AF23268488940089F8BC /* ORDiscoveryMenuDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryMenuDataModel.h; sourceTree = "<group>"; };
-		8A32AF24268488940089F8BC /* ORDiscoveryDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryDataModel.h; sourceTree = "<group>"; };
-		8A32AF25268488940089F8BC /* ORDiscoveryMenuDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryMenuDataModel.m; sourceTree = "<group>"; };
-		8A32AF26268488940089F8BC /* ORDiscoveryDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryDataModel.m; sourceTree = "<group>"; };
 		8A32AF28268488940089F8BC /* ORLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORLoginViewController.m; sourceTree = "<group>"; };
 		8A32AF2A268488940089F8BC /* ORLoginSMSCodeDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORLoginSMSCodeDataModel.h; sourceTree = "<group>"; };
 		8A32AF2B268488940089F8BC /* ORLoginDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORLoginDataModel.m; sourceTree = "<group>"; };
@@ -1131,6 +1122,18 @@
 		8A77B6CC2670B9C4007CF3A3 /* CarpVideoMessageBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoMessageBtn.m; sourceTree = "<group>"; };
 		8A77B6D22670C6A6007CF3A3 /* CarpVideoLogoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoLogoinViewController.h; sourceTree = "<group>"; };
 		8A77B6D32670C6A6007CF3A3 /* CarpVideoLogoinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoLogoinViewController.m; sourceTree = "<group>"; };
+		8A7E7A7C2685A4F900F59988 /* UIViewController+testView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+testView.h"; sourceTree = "<group>"; };
+		8A7E7A7D2685A4FA00F59988 /* UIViewController+testView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+testView.m"; sourceTree = "<group>"; };
+		8A7E7A832685BDAB00F59988 /* ORDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryViewController.h; sourceTree = "<group>"; };
+		8A7E7A852685BDAB00F59988 /* ORDiscoveryBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryBaseView.h; sourceTree = "<group>"; };
+		8A7E7A862685BDAB00F59988 /* ORDiscoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryTableViewCell.h; sourceTree = "<group>"; };
+		8A7E7A872685BDAB00F59988 /* ORDiscoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryTableViewCell.m; sourceTree = "<group>"; };
+		8A7E7A882685BDAB00F59988 /* ORDiscoveryBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryBaseView.m; sourceTree = "<group>"; };
+		8A7E7A892685BDAB00F59988 /* ORDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryViewController.m; sourceTree = "<group>"; };
+		8A7E7A8B2685BDAB00F59988 /* ORDiscoveryMenuDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryMenuDataModel.h; sourceTree = "<group>"; };
+		8A7E7A8C2685BDAB00F59988 /* ORDiscoveryDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDiscoveryDataModel.h; sourceTree = "<group>"; };
+		8A7E7A8D2685BDAB00F59988 /* ORDiscoveryMenuDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryMenuDataModel.m; sourceTree = "<group>"; };
+		8A7E7A8E2685BDAB00F59988 /* ORDiscoveryDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDiscoveryDataModel.m; sourceTree = "<group>"; };
 		8AA9A963266EFBF800EB786A /* CarpVideoBaseTabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoBaseTabbarViewController.h; sourceTree = "<group>"; };
 		8AA9A964266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarpVideoBaseTabbarViewController.m; sourceTree = "<group>"; };
 		8AA9A969266EFC0E00EB786A /* CarpVideoBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarpVideoBaseViewController.h; sourceTree = "<group>"; };
@@ -1355,6 +1358,8 @@
 				8A26B09F266A161B008199BD /* ViewController.m */,
 				8ACBAAAB267C2EFA0023AAB3 /* CarpVideoHomeModels.h */,
 				8ACBAAAA267C2EFA0023AAB3 /* CarpVideoHomeModels.m */,
+				8A7E7A7C2685A4F900F59988 /* UIViewController+testView.h */,
+				8A7E7A7D2685A4FA00F59988 /* UIViewController+testView.m */,
 				8A26B0A1266A161B008199BD /* Main.storyboard */,
 				8A26B0A4266A161D008199BD /* Assets.xcassets */,
 				8A26B0A6266A161D008199BD /* LaunchScreen.storyboard */,
@@ -2384,11 +2389,11 @@
 			isa = PBXGroup;
 			children = (
 				8A32AE2D2684884B0089F8BC /* ORAutoLoginDataModel.h */,
-				8A32AE2E2684884B0089F8BC /* ORUserInformDataModel.m */,
-				8A32AE2F2684884B0089F8BC /* ORUserInformManager.m */,
-				8A32AE302684884B0089F8BC /* ORUserInformDataModel.h */,
 				8A32AE312684884B0089F8BC /* ORAutoLoginDataModel.m */,
+				8A32AE302684884B0089F8BC /* ORUserInformDataModel.h */,
+				8A32AE2E2684884B0089F8BC /* ORUserInformDataModel.m */,
 				8A32AE322684884B0089F8BC /* ORUserInformManager.h */,
+				8A32AE2F2684884B0089F8BC /* ORUserInformManager.m */,
 			);
 			path = UserInform;
 			sourceTree = "<group>";
@@ -2396,8 +2401,8 @@
 		8A32AE332684884B0089F8BC /* ThrowingScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE342684884B0089F8BC /* LBManager.m */,
 				8A32AE352684884B0089F8BC /* LBManager.h */,
+				8A32AE342684884B0089F8BC /* LBManager.m */,
 			);
 			path = ThrowingScreen;
 			sourceTree = "<group>";
@@ -2406,9 +2411,9 @@
 			isa = PBXGroup;
 			children = (
 				8A32AE372684884B0089F8BC /* ORVideoReportManager.h */,
-				8A32AE382684884B0089F8BC /* ORVideoReportDataModel.m */,
-				8A32AE392684884B0089F8BC /* ORVideoReportDataModel.h */,
 				8A32AE3A2684884B0089F8BC /* ORVideoReportManager.m */,
+				8A32AE392684884B0089F8BC /* ORVideoReportDataModel.h */,
+				8A32AE382684884B0089F8BC /* ORVideoReportDataModel.m */,
 			);
 			path = ReportManager;
 			sourceTree = "<group>";
@@ -2425,8 +2430,8 @@
 		8A32AE3E2684884B0089F8BC /* URLManager */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE3F2684884B0089F8BC /* AQURLManager.m */,
 				8A32AE402684884B0089F8BC /* AQURLManager.h */,
+				8A32AE3F2684884B0089F8BC /* AQURLManager.m */,
 			);
 			path = URLManager;
 			sourceTree = "<group>";
@@ -2452,8 +2457,8 @@
 		8A32AE472684884C0089F8BC /* LaunchAdvertisement */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE482684884C0089F8BC /* ORLaunchAdvertManager.m */,
 				8A32AE492684884C0089F8BC /* ORLaunchAdvertManager.h */,
+				8A32AE482684884C0089F8BC /* ORLaunchAdvertManager.m */,
 			);
 			path = LaunchAdvertisement;
 			sourceTree = "<group>";
@@ -2461,12 +2466,12 @@
 		8A32AE4A2684884C0089F8BC /* UpgradeManager */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AE4F2684884C0089F8BC /* ORUpgradeManager.h */,
 				8A32AE4B2684884C0089F8BC /* ORUpgradeManager.m */,
 				8A32AE4C2684884C0089F8BC /* ORUpgradeView.h */,
-				8A32AE4D2684884C0089F8BC /* ORUpgradeDataModel.m */,
 				8A32AE4E2684884C0089F8BC /* ORUpgradeView.m */,
-				8A32AE4F2684884C0089F8BC /* ORUpgradeManager.h */,
 				8A32AE502684884C0089F8BC /* ORUpgradeDataModel.h */,
+				8A32AE4D2684884C0089F8BC /* ORUpgradeDataModel.m */,
 			);
 			path = UpgradeManager;
 			sourceTree = "<group>";
@@ -2474,9 +2479,9 @@
 		8A32AE512684884C0089F8BC /* AccountComponent */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AE542684884C0089F8BC /* ORAccountComponent.h */,
 				8A32AE522684884C0089F8BC /* ORAccountComponent.m */,
 				8A32AE532684884C0089F8BC /* ORAccountNotificationManager.h */,
-				8A32AE542684884C0089F8BC /* ORAccountComponent.h */,
 				8A32AE552684884C0089F8BC /* ORAccountNotificationManager.m */,
 			);
 			path = AccountComponent;
@@ -2495,9 +2500,9 @@
 			isa = PBXGroup;
 			children = (
 				8A32AE5A2684884C0089F8BC /* ORAgreementHintsConfig.h */,
-				8A32AE5B2684884C0089F8BC /* ORUMConfig.m */,
 				8A32AE5C2684884C0089F8BC /* ORAgreementHintsConfig.m */,
 				8A32AE5D2684884C0089F8BC /* ORUMConfig.h */,
+				8A32AE5B2684884C0089F8BC /* ORUMConfig.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -2505,7 +2510,7 @@
 		8A32AE79268488820089F8BC /* CarpVideoSection */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF1A268488940089F8BC /* Discovery */,
+				8A7E7A822685BDAB00F59988 /* CarpVideo_FindModule */,
 				8A32AF41268488940089F8BC /* H5 */,
 				8A32AE7A268488930089F8BC /* Hot */,
 				8A32AEC1268488930089F8BC /* Index */,
@@ -2531,11 +2536,11 @@
 		8A32AE7B268488930089F8BC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE7C268488930089F8BC /* Tools */,
+				8A32AE96268488930089F8BC /* ORHotDetailViewController.h */,
 				8A32AE87268488930089F8BC /* ORHotDetailViewController.m */,
+				8A32AE7C268488930089F8BC /* Tools */,
 				8A32AE88268488930089F8BC /* Model */,
 				8A32AE91268488930089F8BC /* View */,
-				8A32AE96268488930089F8BC /* ORHotDetailViewController.h */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -2552,10 +2557,10 @@
 		8A32AE7D268488930089F8BC /* GKSliderView */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE7E268488930089F8BC /* ORSliderView.m */,
+				8A32AE81268488930089F8BC /* ORLineLoadingView.h */,
 				8A32AE7F268488930089F8BC /* ORLineLoadingView.m */,
 				8A32AE80268488930089F8BC /* ORSliderView.h */,
-				8A32AE81268488930089F8BC /* ORLineLoadingView.h */,
+				8A32AE7E268488930089F8BC /* ORSliderView.m */,
 			);
 			path = GKSliderView;
 			sourceTree = "<group>";
@@ -2564,8 +2569,8 @@
 			isa = PBXGroup;
 			children = (
 				8A32AE83268488930089F8BC /* ORLikeView.h */,
-				8A32AE84268488930089F8BC /* ORDoubleLikeView.h */,
 				8A32AE85268488930089F8BC /* ORLikeView.m */,
+				8A32AE84268488930089F8BC /* ORDoubleLikeView.h */,
 				8A32AE86268488930089F8BC /* ORDoubleLikeView.m */,
 			);
 			path = GKLikeView;
@@ -2574,13 +2579,13 @@
 		8A32AE88268488930089F8BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE89268488930089F8BC /* ORHotVideoDetailDataModel.m */,
-				8A32AE8A268488930089F8BC /* ORHotVideoRecommendDataModel.m */,
 				8A32AE8B268488930089F8BC /* ORHotVideoPraiseDataModel.h */,
-				8A32AE8C268488930089F8BC /* ORHotVideoRemovePraiseDataModel.h */,
-				8A32AE8D268488930089F8BC /* ORHotVideoDetailDataModel.h */,
+				8A32AE89268488930089F8BC /* ORHotVideoDetailDataModel.m */,
 				8A32AE8E268488930089F8BC /* ORHotVideoRecommendDataModel.h */,
+				8A32AE8A268488930089F8BC /* ORHotVideoRecommendDataModel.m */,
+				8A32AE8C268488930089F8BC /* ORHotVideoRemovePraiseDataModel.h */,
 				8A32AE8F268488930089F8BC /* ORHotVideoRemovePraiseDataModel.m */,
+				8A32AE8D268488930089F8BC /* ORHotVideoDetailDataModel.h */,
 				8A32AE90268488930089F8BC /* ORHotVideoPraiseDataModel.m */,
 			);
 			path = Model;
@@ -2589,9 +2594,9 @@
 		8A32AE91268488930089F8BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AE94268488930089F8BC /* ORDYTableViewCell.h */,
 				8A32AE92268488930089F8BC /* ORDYTableViewCell.m */,
 				8A32AE93268488930089F8BC /* ORHotVideoView.h */,
-				8A32AE94268488930089F8BC /* ORDYTableViewCell.h */,
 				8A32AE95268488930089F8BC /* ORHotVideoView.m */,
 			);
 			path = View;
@@ -2600,12 +2605,12 @@
 		8A32AE97268488930089F8BC /* Index */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AEA0268488930089F8BC /* ORHotChannelViewController.h */,
 				8A32AE98268488930089F8BC /* ORHotChannelViewController.m */,
 				8A32AE99268488930089F8BC /* ORHotViewController.h */,
+				8A32AEA1268488930089F8BC /* ORHotViewController.m */,
 				8A32AE9A268488930089F8BC /* Cell */,
 				8A32AE9D268488930089F8BC /* Model */,
-				8A32AEA0268488930089F8BC /* ORHotChannelViewController.h */,
-				8A32AEA1268488930089F8BC /* ORHotViewController.m */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -2613,8 +2618,8 @@
 		8A32AE9A268488930089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE9B268488930089F8BC /* ORHotChannelTableViewCell.m */,
 				8A32AE9C268488930089F8BC /* ORHotChannelTableViewCell.h */,
+				8A32AE9B268488930089F8BC /* ORHotChannelTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2622,8 +2627,8 @@
 		8A32AE9D268488930089F8BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AE9E268488930089F8BC /* ORHotChannelDataModel.m */,
 				8A32AE9F268488930089F8BC /* ORHotChannelDataModel.h */,
+				8A32AE9E268488930089F8BC /* ORHotChannelDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2641,9 +2646,9 @@
 			isa = PBXGroup;
 			children = (
 				8A32AEA4268488930089F8BC /* ORVideoPlayerViewController.h */,
+				8A32AEB9268488930089F8BC /* ORVideoPlayerViewController.m */,
 				8A32AEA5268488930089F8BC /* Cell */,
 				8A32AEB2268488930089F8BC /* Model */,
-				8A32AEB9268488930089F8BC /* ORVideoPlayerViewController.m */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -2652,17 +2657,17 @@
 			isa = PBXGroup;
 			children = (
 				8A32AEA6268488930089F8BC /* ORVideoRecommendTableViewCell.h */,
+				8A32AEAE268488930089F8BC /* ORVideoRecommendTableViewCell.m */,
 				8A32AEA7268488930089F8BC /* ORChooseSourceView.h */,
+				8A32AEAD268488930089F8BC /* ORChooseSourceView.m */,
 				8A32AEA8268488930089F8BC /* ORVideoEpisodesView.h */,
+				8A32AEAC268488930089F8BC /* ORVideoEpisodesView.m */,
 				8A32AEA9268488930089F8BC /* ORVideoIntroView.h */,
+				8A32AEAF268488930089F8BC /* ORVideoIntroView.m */,
+				8A32AEB1268488930089F8BC /* ORVideoRecommendView.h */,
 				8A32AEAA268488930089F8BC /* ORVideoRecommendView.m */,
 				8A32AEAB268488930089F8BC /* ORVideoDetailTableViewCell.h */,
-				8A32AEAC268488930089F8BC /* ORVideoEpisodesView.m */,
-				8A32AEAD268488930089F8BC /* ORChooseSourceView.m */,
-				8A32AEAE268488930089F8BC /* ORVideoRecommendTableViewCell.m */,
-				8A32AEAF268488930089F8BC /* ORVideoIntroView.m */,
 				8A32AEB0268488930089F8BC /* ORVideoDetailTableViewCell.m */,
-				8A32AEB1268488930089F8BC /* ORVideoRecommendView.h */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2671,11 +2676,11 @@
 			isa = PBXGroup;
 			children = (
 				8A32AEB3268488930089F8BC /* ORAddFavoriteDataModel.h */,
-				8A32AEB4268488930089F8BC /* ORVideoPlayerDataModel.m */,
-				8A32AEB5268488930089F8BC /* ORVideoRecommendDataModel.m */,
-				8A32AEB6268488930089F8BC /* ORVideoRecommendDataModel.h */,
-				8A32AEB7268488930089F8BC /* ORVideoPlayerDataModel.h */,
 				8A32AEB8268488930089F8BC /* ORAddFavoriteDataModel.m */,
+				8A32AEB7268488930089F8BC /* ORVideoPlayerDataModel.h */,
+				8A32AEB4268488930089F8BC /* ORVideoPlayerDataModel.m */,
+				8A32AEB6268488930089F8BC /* ORVideoRecommendDataModel.h */,
+				8A32AEB5268488930089F8BC /* ORVideoRecommendDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2683,12 +2688,12 @@
 		8A32AEBA268488930089F8BC /* ThrowScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AEBE268488930089F8BC /* ORThrowScreenHelpViewController.h */,
 				8A32AEBB268488930089F8BC /* ORThrowScreenHelpViewController.m */,
 				8A32AEBC268488930089F8BC /* ORWaterVaveView.h */,
-				8A32AEBD268488930089F8BC /* ORThrowScreenViewController.m */,
-				8A32AEBE268488930089F8BC /* ORThrowScreenHelpViewController.h */,
-				8A32AEBF268488930089F8BC /* ORThrowScreenViewController.h */,
 				8A32AEC0268488930089F8BC /* ORWaterVaveView.m */,
+				8A32AEBF268488930089F8BC /* ORThrowScreenViewController.h */,
+				8A32AEBD268488930089F8BC /* ORThrowScreenViewController.m */,
 			);
 			path = ThrowScreen;
 			sourceTree = "<group>";
@@ -2725,10 +2730,10 @@
 		8A32AECF268488930089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AED0268488930089F8BC /* ORChannelTableViewCell.m */,
-				8A32AED1268488930089F8BC /* ORChannelMoreTableViewCell.m */,
 				8A32AED2268488930089F8BC /* ORChannelTableViewCell.h */,
+				8A32AED0268488930089F8BC /* ORChannelTableViewCell.m */,
 				8A32AED3268488930089F8BC /* ORChannelMoreTableViewCell.h */,
+				8A32AED1268488930089F8BC /* ORChannelMoreTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2737,23 +2742,23 @@
 			isa = PBXGroup;
 			children = (
 				8A32AED5268488930089F8BC /* ORChannelSenceDataModel.h */,
+				8A32AEDF268488930089F8BC /* ORChannelSenceDataModel.m */,
 				8A32AED6268488930089F8BC /* ORVideoBaseItem.h */,
+				8A32AEDE268488930089F8BC /* ORVideoBaseItem.m */,
 				8A32AED7268488930089F8BC /* ORFetchSubChanelMenuDataModel.h */,
+				8A32AEE1268488930089F8BC /* ORFetchSubChanelMenuDataModel.m */,
+				8A32AEE0268488930089F8BC /* ORVideoSenceRefreshDataModel.h */,
 				8A32AED8268488930089F8BC /* ORVideoSenceRefreshDataModel.m */,
+				8A32AEE4268488930089F8BC /* ORIndexChannelItem.h */,
 				8A32AED9268488930089F8BC /* ORIndexChannelItem.m */,
+				8A32AEE3268488930089F8BC /* ORVideoMoreDataModel.h */,
 				8A32AEDA268488930089F8BC /* ORVideoMoreDataModel.m */,
 				8A32AEDB268488930089F8BC /* ORChannelDataModel.h */,
-				8A32AEDC268488930089F8BC /* ORFetchChannelMenuDataModel.h */,
-				8A32AEDD268488930089F8BC /* ORBannerDataModel.m */,
-				8A32AEDE268488930089F8BC /* ORVideoBaseItem.m */,
-				8A32AEDF268488930089F8BC /* ORChannelSenceDataModel.m */,
-				8A32AEE0268488930089F8BC /* ORVideoSenceRefreshDataModel.h */,
-				8A32AEE1268488930089F8BC /* ORFetchSubChanelMenuDataModel.m */,
 				8A32AEE2268488930089F8BC /* ORChannelDataModel.m */,
-				8A32AEE3268488930089F8BC /* ORVideoMoreDataModel.h */,
-				8A32AEE4268488930089F8BC /* ORIndexChannelItem.h */,
-				8A32AEE5268488930089F8BC /* ORBannerDataModel.h */,
+				8A32AEDC268488930089F8BC /* ORFetchChannelMenuDataModel.h */,
 				8A32AEE6268488930089F8BC /* ORFetchChannelMenuDataModel.m */,
+				8A32AEE5268488930089F8BC /* ORBannerDataModel.h */,
+				8A32AEDD268488930089F8BC /* ORBannerDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2775,10 +2780,10 @@
 		8A32AEEA268488930089F8BC /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AEF4268488930089F8BC /* ORFavoriteViewController.h */,
 				8A32AEEB268488930089F8BC /* ORFavoriteViewController.m */,
 				8A32AEEC268488930089F8BC /* Cell */,
 				8A32AEEF268488930089F8BC /* Model */,
-				8A32AEF4268488930089F8BC /* ORFavoriteViewController.h */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -2786,8 +2791,8 @@
 		8A32AEEC268488930089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AEED268488930089F8BC /* ORFavoriteTableViewCell.m */,
 				8A32AEEE268488930089F8BC /* ORFavoriteTableViewCell.h */,
+				8A32AEED268488930089F8BC /* ORFavoriteTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2796,8 +2801,8 @@
 			isa = PBXGroup;
 			children = (
 				8A32AEF0268488930089F8BC /* ORDeleteFavoriteDataModel.h */,
-				8A32AEF1268488930089F8BC /* ORFavoriteListDataModel.h */,
 				8A32AEF2268488930089F8BC /* ORDeleteFavoriteDataModel.m */,
+				8A32AEF1268488930089F8BC /* ORFavoriteListDataModel.h */,
 				8A32AEF3268488930089F8BC /* ORFavoriteListDataModel.m */,
 			);
 			path = Model;
@@ -2806,10 +2811,10 @@
 		8A32AEF5268488930089F8BC /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AEF6268488930089F8BC /* ORFeedbackViewController.m */,
-				8A32AEF7268488930089F8BC /* ORFeedbackDataModel.m */,
 				8A32AEF8268488930089F8BC /* ORFeedbackViewController.h */,
+				8A32AEF6268488930089F8BC /* ORFeedbackViewController.m */,
 				8A32AEF9268488930089F8BC /* ORFeedbackDataModel.h */,
+				8A32AEF7268488930089F8BC /* ORFeedbackDataModel.m */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -2827,8 +2832,8 @@
 			isa = PBXGroup;
 			children = (
 				8A32AEFE268488930089F8BC /* ORDownloadViewController.h */,
-				8A32AEFF268488930089F8BC /* Cell */,
 				8A32AF02268488930089F8BC /* ORDownloadViewController.m */,
+				8A32AEFF268488930089F8BC /* Cell */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -2836,8 +2841,8 @@
 		8A32AEFF268488930089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF00268488930089F8BC /* ORDownLoadTableViewCell.m */,
 				8A32AF01268488930089F8BC /* ORDownLoadTableViewCell.h */,
+				8A32AF00268488930089F8BC /* ORDownLoadTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2846,9 +2851,9 @@
 			isa = PBXGroup;
 			children = (
 				8A32AF04268488930089F8BC /* ORWatchRecordViewController.h */,
+				8A32AF0D268488930089F8BC /* ORWatchRecordViewController.m */,
 				8A32AF05268488930089F8BC /* Cell */,
 				8A32AF08268488930089F8BC /* Model */,
-				8A32AF0D268488930089F8BC /* ORWatchRecordViewController.m */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -2856,8 +2861,8 @@
 		8A32AF05268488930089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF06268488930089F8BC /* ORWatchRecordTableViewCell.m */,
 				8A32AF07268488930089F8BC /* ORWatchRecordTableViewCell.h */,
+				8A32AF06268488930089F8BC /* ORWatchRecordTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2865,10 +2870,10 @@
 		8A32AF08268488930089F8BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF09268488930089F8BC /* ORDeleteWatchRecordDataModel.m */,
-				8A32AF0A268488930089F8BC /* ORWatchRecordDataModel.m */,
 				8A32AF0B268488930089F8BC /* ORDeleteWatchRecordDataModel.h */,
+				8A32AF09268488930089F8BC /* ORDeleteWatchRecordDataModel.m */,
 				8A32AF0C268488930089F8BC /* ORWatchRecordDataModel.h */,
+				8A32AF0A268488930089F8BC /* ORWatchRecordDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2876,9 +2881,9 @@
 		8A32AF0E268488930089F8BC /* Index */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AF13268488930089F8BC /* ORMineViewController.h */,
 				8A32AF0F268488930089F8BC /* ORMineViewController.m */,
 				8A32AF10268488930089F8BC /* Cell */,
-				8A32AF13268488930089F8BC /* ORMineViewController.h */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -2886,8 +2891,8 @@
 		8A32AF10268488930089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF11268488930089F8BC /* ORMineTableViewCell.m */,
 				8A32AF12268488930089F8BC /* ORMineTableViewCell.h */,
+				8A32AF11268488930089F8BC /* ORMineTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2895,9 +2900,9 @@
 		8A32AF14268488930089F8BC /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AF19268488930089F8BC /* ORSettingViewController.h */,
 				8A32AF15268488930089F8BC /* ORSettingViewController.m */,
 				8A32AF16268488930089F8BC /* Cell */,
-				8A32AF19268488930089F8BC /* ORSettingViewController.h */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -2911,45 +2916,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		8A32AF1A268488940089F8BC /* Discovery */ = {
-			isa = PBXGroup;
-			children = (
-				8A32AF1B268488940089F8BC /* ORDiscoveryViewController.h */,
-				8A32AF1C268488940089F8BC /* Cell */,
-				8A32AF21268488940089F8BC /* ORDiscoveryViewController.m */,
-				8A32AF22268488940089F8BC /* Model */,
-			);
-			path = Discovery;
-			sourceTree = "<group>";
-		};
-		8A32AF1C268488940089F8BC /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				8A32AF1D268488940089F8BC /* ORDiscoveryBaseView.h */,
-				8A32AF1E268488940089F8BC /* ORDiscoveryTableViewCell.h */,
-				8A32AF1F268488940089F8BC /* ORDiscoveryTableViewCell.m */,
-				8A32AF20268488940089F8BC /* ORDiscoveryBaseView.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		8A32AF22268488940089F8BC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8A32AF23268488940089F8BC /* ORDiscoveryMenuDataModel.h */,
-				8A32AF24268488940089F8BC /* ORDiscoveryDataModel.h */,
-				8A32AF25268488940089F8BC /* ORDiscoveryMenuDataModel.m */,
-				8A32AF26268488940089F8BC /* ORDiscoveryDataModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		8A32AF27268488940089F8BC /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AF2E268488940089F8BC /* ORLoginViewController.h */,
 				8A32AF28268488940089F8BC /* ORLoginViewController.m */,
 				8A32AF29268488940089F8BC /* Model */,
-				8A32AF2E268488940089F8BC /* ORLoginViewController.h */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -2958,9 +2930,9 @@
 			isa = PBXGroup;
 			children = (
 				8A32AF2A268488940089F8BC /* ORLoginSMSCodeDataModel.h */,
-				8A32AF2B268488940089F8BC /* ORLoginDataModel.m */,
-				8A32AF2C268488940089F8BC /* ORLoginDataModel.h */,
 				8A32AF2D268488940089F8BC /* ORLoginSMSCodeDataModel.m */,
+				8A32AF2C268488940089F8BC /* ORLoginDataModel.h */,
+				8A32AF2B268488940089F8BC /* ORLoginDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2968,10 +2940,10 @@
 		8A32AF2F268488940089F8BC /* Tab */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF30268488940089F8BC /* ORTabBar.m */,
-				8A32AF31268488940089F8BC /* ORTabBarController.m */,
 				8A32AF32268488940089F8BC /* ORTabBar.h */,
+				8A32AF30268488940089F8BC /* ORTabBar.m */,
 				8A32AF33268488940089F8BC /* ORTabBarController.h */,
+				8A32AF31268488940089F8BC /* ORTabBarController.m */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -2979,12 +2951,12 @@
 		8A32AF34268488940089F8BC /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AF3A268488940089F8BC /* ORSearchChannelViewController.h */,
 				8A32AF35268488940089F8BC /* ORSearchChannelViewController.m */,
+				8A32AF40268488940089F8BC /* ORSearchViewController.h */,
 				8A32AF36268488940089F8BC /* ORSearchViewController.m */,
 				8A32AF37268488940089F8BC /* Cell */,
-				8A32AF3A268488940089F8BC /* ORSearchChannelViewController.h */,
 				8A32AF3B268488940089F8BC /* Model */,
-				8A32AF40268488940089F8BC /* ORSearchViewController.h */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -2992,8 +2964,8 @@
 		8A32AF37268488940089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF38268488940089F8BC /* ORSearchResultTableViewCell.m */,
 				8A32AF39268488940089F8BC /* ORSearchResultTableViewCell.h */,
+				8A32AF38268488940089F8BC /* ORSearchResultTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -3001,10 +2973,10 @@
 		8A32AF3B268488940089F8BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF3C268488940089F8BC /* ORSearchDataModel.m */,
-				8A32AF3D268488940089F8BC /* ORSearchHotDataModel.m */,
 				8A32AF3E268488940089F8BC /* ORSearchDataModel.h */,
+				8A32AF3C268488940089F8BC /* ORSearchDataModel.m */,
 				8A32AF3F268488940089F8BC /* ORSearchHotDataModel.h */,
+				8A32AF3D268488940089F8BC /* ORSearchHotDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3012,8 +2984,8 @@
 		8A32AF41268488940089F8BC /* H5 */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF42268488940089F8BC /* ORH5ViewController.m */,
 				8A32AF43268488940089F8BC /* ORH5ViewController.h */,
+				8A32AF42268488940089F8BC /* ORH5ViewController.m */,
 			);
 			path = H5;
 			sourceTree = "<group>";
@@ -3041,10 +3013,10 @@
 		8A32AF4A268488940089F8BC /* Index */ = {
 			isa = PBXGroup;
 			children = (
+				8A32AF52268488940089F8BC /* ORUserInformViewController.m */,
 				8A32AF4B268488940089F8BC /* ORUserInformViewController.h */,
 				8A32AF4C268488940089F8BC /* Cell */,
 				8A32AF4F268488940089F8BC /* Model */,
-				8A32AF52268488940089F8BC /* ORUserInformViewController.m */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -3052,8 +3024,8 @@
 		8A32AF4C268488940089F8BC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8A32AF4D268488940089F8BC /* ORUserInformTableViewCell.m */,
 				8A32AF4E268488940089F8BC /* ORUserInformTableViewCell.h */,
+				8A32AF4D268488940089F8BC /* ORUserInformTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -3334,6 +3306,39 @@
 				8A77B6D32670C6A6007CF3A3 /* CarpVideoLogoinViewController.m */,
 			);
 			path = CarpVideo_Logoin;
+			sourceTree = "<group>";
+		};
+		8A7E7A822685BDAB00F59988 /* CarpVideo_FindModule */ = {
+			isa = PBXGroup;
+			children = (
+				8A7E7A832685BDAB00F59988 /* ORDiscoveryViewController.h */,
+				8A7E7A892685BDAB00F59988 /* ORDiscoveryViewController.m */,
+				8A7E7A842685BDAB00F59988 /* Cell */,
+				8A7E7A8A2685BDAB00F59988 /* Model */,
+			);
+			path = CarpVideo_FindModule;
+			sourceTree = "<group>";
+		};
+		8A7E7A842685BDAB00F59988 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A7E7A852685BDAB00F59988 /* ORDiscoveryBaseView.h */,
+				8A7E7A862685BDAB00F59988 /* ORDiscoveryTableViewCell.h */,
+				8A7E7A872685BDAB00F59988 /* ORDiscoveryTableViewCell.m */,
+				8A7E7A882685BDAB00F59988 /* ORDiscoveryBaseView.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8A7E7A8A2685BDAB00F59988 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A7E7A8B2685BDAB00F59988 /* ORDiscoveryMenuDataModel.h */,
+				8A7E7A8C2685BDAB00F59988 /* ORDiscoveryDataModel.h */,
+				8A7E7A8D2685BDAB00F59988 /* ORDiscoveryMenuDataModel.m */,
+				8A7E7A8E2685BDAB00F59988 /* ORDiscoveryDataModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8AA9A95E266EFB7E00EB786A /* CardVideoBase */ = {
@@ -3743,11 +3748,8 @@
 				8AA9AA2B266F143000EB786A /* CarpVideoHomeHeaderView.m in Sources */,
 				8A77B60726708EF5007CF3A3 /* CarpVideoCenterBtnTableViewCell.m in Sources */,
 				8A32AF82268488940089F8BC /* ORFavoriteTableViewCell.m in Sources */,
-				8A32AF93268488950089F8BC /* ORDiscoveryBaseView.m in Sources */,
-				8AA9A9C9266EFC7F00EB786A /* CHCardItemView.m in Sources */,
 				8A32ADBF268488310089F8BC /* GNHWebJSModel.m in Sources */,
 				8A32AF66268488940089F8BC /* ORVideoIntroView.m in Sources */,
-				8A77B6532670A123007CF3A3 /* ZBWPhotosManager.m in Sources */,
 				8A32AF5A268488940089F8BC /* ORHotVideoRemovePraiseDataModel.m in Sources */,
 				8A32AE0A268488320089F8BC /* NSNotificationCenter+SafeMethod.m in Sources */,
 				8AA9AA19266F125000EB786A /* CarpVideoListViewController.m in Sources */,
@@ -3769,12 +3771,12 @@
 				8A32ADEB268488320089F8BC /* UIAngleItemView.m in Sources */,
 				8A32ADC9268488310089F8BC /* GNHMJRefreshNormalHeader.m in Sources */,
 				8A32AF63268488940089F8BC /* ORVideoEpisodesView.m in Sources */,
-				8A77B64F2670A123007CF3A3 /* ZBWAlbumCollectionViewCell.m in Sources */,
 				8A32AE14268488320089F8BC /* NSURLRequest+MDF.m in Sources */,
 				8A32ADAA268488310089F8BC /* ZYBaseAlertView.m in Sources */,
 				8A6E5AB3267B3B9E00088B85 /* CarpVideoAcittyDetailFooter.m in Sources */,
 				8A32AE06268488320089F8BC /* MDFBaseItem.m in Sources */,
 				8A32AFA5268488950089F8BC /* ORUpdateUserInformDataModel.m in Sources */,
+				8A7E7A902685BDAB00F59988 /* ORDiscoveryBaseView.m in Sources */,
 				8A32ADB4268488310089F8BC /* NSURLProtocol+WebKitSupport.m in Sources */,
 				8A77B65C2670A137007CF3A3 /* LKCollectionBaseCell.m in Sources */,
 				8A32AE1A268488320089F8BC /* GTMBase64.m in Sources */,
@@ -3805,7 +3807,6 @@
 				8A32ADE4268488320089F8BC /* UIColor+MDFExtension.m in Sources */,
 				8A32AE0F268488320089F8BC /* NSString+TextSize.m in Sources */,
 				8A32AE17268488320089F8BC /* NSDate+String.m in Sources */,
-				8AA9A9CA266EFC7F00EB786A /* NSString+MD5.m in Sources */,
 				8A26B0A0266A161B008199BD /* ViewController.m in Sources */,
 				8A32AE19268488320089F8BC /* ORMainAPI.m in Sources */,
 				8A32AE1C268488320089F8BC /* SSKeychainQuery.m in Sources */,
@@ -3838,7 +3839,7 @@
 				8AA9AA1F266F12FE00EB786A /* CarpVideoBaseTableViewCell.m in Sources */,
 				8A32AF87268488940089F8BC /* ORAboutMeViewController.m in Sources */,
 				8A32AF98268488950089F8BC /* ORLoginDataModel.m in Sources */,
-				8A50F47D2679A19F00E49391 /* WindwoundwarningTabeCell.m in Sources */,
+				8A50F47D2679A19F00E49391 /* carpVideowarningTabeCell.m in Sources */,
 				8A32AF64268488940089F8BC /* ORChooseSourceView.m in Sources */,
 				8A32ADA1268488310089F8BC /* GNHBaseWebViewController.m in Sources */,
 				8A32AF9D268488950089F8BC /* ORSearchViewController.m in Sources */,
@@ -3856,6 +3857,7 @@
 				8A32ADBB268488310089F8BC /* WKWebView+SyncUserAgent.m in Sources */,
 				8A77B6282670A0EA007CF3A3 /* LKWebsiteEditCollectionView.m in Sources */,
 				8A32AE04268488320089F8BC /* MDFSessionManager.m in Sources */,
+				8A7E7A7E2685A4FA00F59988 /* UIViewController+testView.m in Sources */,
 				8AA9A965266EFBF800EB786A /* CarpVideoBaseTabbarViewController.m in Sources */,
 				8A32ADAE268488310089F8BC /* UIProgressView+WKWebView.m in Sources */,
 				8A32ADC2268488310089F8BC /* YPTabBarController.m in Sources */,
@@ -3877,8 +3879,6 @@
 				8A32AF68268488940089F8BC /* ORVideoPlayerDataModel.m in Sources */,
 				8A32AF59268488940089F8BC /* ORHotVideoRecommendDataModel.m in Sources */,
 				8A32ADA6268488310089F8BC /* GNHBaseTextField.m in Sources */,
-				8A77B64E2670A123007CF3A3 /* ZBWButton.m in Sources */,
-				8A32AF92268488950089F8BC /* ORDiscoveryTableViewCell.m in Sources */,
 				8AA9A9CE266EFC7F00EB786A /* ZLCellFakeView.m in Sources */,
 				8A32ADAD268488310089F8BC /* GNHWebModel.m in Sources */,
 				8A32AF5C268488940089F8BC /* ORDYTableViewCell.m in Sources */,
@@ -3918,21 +3918,21 @@
 				8A6E5A9B267B1A7A00088B85 /* CarpVideoAdViceTableViewCell.m in Sources */,
 				8A50F4C12679D6A400E49391 /* carpVideoMessageDetailModel.m in Sources */,
 				8A32AF71268488940089F8BC /* ORChannelMoreViewController.m in Sources */,
+				8A7E7A8F2685BDAB00F59988 /* ORDiscoveryTableViewCell.m in Sources */,
 				8A77B6D42670C6A6007CF3A3 /* CarpVideoLogoinViewController.m in Sources */,
 				8A32AE652684884C0089F8BC /* AQURLManager.m in Sources */,
 				4A59823B267DBD2D00DB97ED /* ZBWAlbumTableViewCell.m in Sources */,
 				8A62CF852671A79A00F568E9 /* CarpVideoNotifiCationDetailViewController.m in Sources */,
+				8A7E7A932685BDAB00F59988 /* ORDiscoveryDataModel.m in Sources */,
 				8A32ADDB268488320089F8BC /* UIImage+Image.m in Sources */,
 				8A77B6C42670B5B2007CF3A3 /* CarpVideoMessageViewController.m in Sources */,
 				8A32AF78268488940089F8BC /* ORIndexChannelItem.m in Sources */,
 				8A32AF61268488940089F8BC /* ORHotViewController.m in Sources */,
 				8A32ADCF268488310089F8BC /* UIImagePickerController+ZY.m in Sources */,
 				8A32AE03268488320089F8BC /* MDFDBStorage.m in Sources */,
-				8A32AF95268488950089F8BC /* ORDiscoveryMenuDataModel.m in Sources */,
 				8A487A5A267884D3006F0A8E /* CarpVideoCatagoryBtn.m in Sources */,
 				8A32AF65268488940089F8BC /* ORVideoRecommendTableViewCell.m in Sources */,
 				8A32AE1F268488320089F8BC /* SvUDIDTools.m in Sources */,
-				8AA9A9C8266EFC7F00EB786A /* CHCardItemModel.m in Sources */,
 				8A32ADE7268488320089F8BC /* UIView+LY.m in Sources */,
 				8A32ADD4268488310089F8BC /* ORKitMacros.m in Sources */,
 				8A32AE6A2684884C0089F8BC /* ORUpgradeView.m in Sources */,
@@ -3946,10 +3946,8 @@
 				8A32AD9D268488310089F8BC /* GNHHearderViewTableViewCell.m in Sources */,
 				8A32AF89268488940089F8BC /* ORDownloadViewController.m in Sources */,
 				8A32ADF6268488320089F8BC /* UITextView+LYExt.m in Sources */,
-				8A32AF94268488950089F8BC /* ORDiscoveryViewController.m in Sources */,
-				8A50F4C02679D6A400E49391 /* PandaMsgDetailViewController.m in Sources */,
+				8A50F4C02679D6A400E49391 /* carpVideoMessageDetailViewController.m in Sources */,
 				8A4850CA2673502E003CF1FB /* CarpVieoBangdanHeaderView.m in Sources */,
-				8A77B6522670A123007CF3A3 /* ZBWAlbumTableViewCell.m in Sources */,
 				8A32AF7B268488940089F8BC /* ORVideoBaseItem.m in Sources */,
 				4A598238267DBD2D00DB97ED /* ZBWButton.m in Sources */,
 				8AA9A9DD266EFC7F00EB786A /* UIView+HZXFrame.m in Sources */,
@@ -3968,6 +3966,7 @@
 				8A32ADB0268488310089F8BC /* JXBWKWebView.m in Sources */,
 				8A32ADE0268488320089F8BC /* LYTouchTrace.m in Sources */,
 				8A32AF58268488940089F8BC /* ORHotVideoDetailDataModel.m in Sources */,
+				8A7E7A922685BDAB00F59988 /* ORDiscoveryMenuDataModel.m in Sources */,
 				8A4850442672F4A5003CF1FB /* EqualSpaceFlowLayout.m in Sources */,
 				4A59821C267DB1B300DB97ED /* CarpVideoBaomingDetailViewController.m in Sources */,
 				8A487A3E267872B6006F0A8E /* AppDelegate+SafeApp.m in Sources */,
@@ -4004,10 +4003,8 @@
 				8A32AE02268488320089F8BC /* MDFDBStorageItem.m in Sources */,
 				8AA9A9C5266EFC7F00EB786A /* LMJHorizontalScrollText.m in Sources */,
 				8A32AF6A268488940089F8BC /* ORAddFavoriteDataModel.m in Sources */,
-				8AA9A9C7266EFC7F00EB786A /* CHCardView.m in Sources */,
 				8A32AF8E268488940089F8BC /* ORMineViewController.m in Sources */,
-				8A50F47E2679A19F00E49391 /* WindwoundWarningModel.m in Sources */,
-				8A77B6512670A123007CF3A3 /* UIColor+Custom.m in Sources */,
+				8A50F47E2679A19F00E49391 /* carpVideoWarningModel.m in Sources */,
 				8A50F47E2679A19F00E49391 /* carpVideoWarningModel.m in Sources */,
 				8AA9A9CB266EFC7F00EB786A /* JRWaterFallLayout.m in Sources */,
 				8A32ADB7268488310089F8BC /* WKWebView+ExternalNavigationDelegates.m in Sources */,
@@ -4033,6 +4030,7 @@
 				8A75A35926719C8200455EF0 /* CarpVideoComentViewController.m in Sources */,
 				8AA9A971266EFC2300EB786A /* CarpVideoHomeViewController.m in Sources */,
 				8A32ADAF268488310089F8BC /* WKWebView+AOP.m in Sources */,
+				8A7E7A912685BDAB00F59988 /* ORDiscoveryViewController.m in Sources */,
 				8A32AF80268488940089F8BC /* ORIndexViewController.m in Sources */,
 				8A484FFA2672F436003CF1FB /* CarpVideoSugestionCollectionViewCell.m in Sources */,
 				8AA9A9D0266EFC7F00EB786A /* ZLCollectionViewHorzontalLayout.m in Sources */,
@@ -4049,7 +4047,6 @@
 				8AA9A983266EFC4000EB786A /* CarpVideoMineViewController.m in Sources */,
 				8A75A34126719C4100455EF0 /* CarpVideoNotificationViewController.m in Sources */,
 				8A32ADFC268488320089F8BC /* FMDatabase.m in Sources */,
-				8A32AF96268488950089F8BC /* ORDiscoveryDataModel.m in Sources */,
 				8A32AE27268488320089F8BC /* LYSignalHandler.mm in Sources */,
 				8A32AE10268488320089F8BC /* NSMutableString+Safe.m in Sources */,
 				8A77B6652670A159007CF3A3 /* LKWebsiteEditModel.m in Sources */,
@@ -4064,11 +4061,9 @@
 				8A32AE11268488320089F8BC /* NSString+LY.m in Sources */,
 				8A32ADA8268488310089F8BC /* UIButton+customBtnForBkGColor.m in Sources */,
 				8A26B0AB266A161D008199BD /* main.m in Sources */,
-				8A77B6502670A123007CF3A3 /* ZBWAlbumViewController.m in Sources */,
 				8A32AF86268488940089F8BC /* ORFeedbackDataModel.m in Sources */,
 				8AA9A9DA266EFC7F00EB786A /* UIButton+CHRegex.m in Sources */,
 				8A50F5162679F43A00E49391 /* CarpVideoAcityTableViewCell.m in Sources */,
-				8A77B64D2670A123007CF3A3 /* ZBWAlbumView.m in Sources */,
 				8A32AE0B268488320089F8BC /* NSURL+Format.m in Sources */,
 				8A32AFA6268488950089F8BC /* ORUserInformViewController.m in Sources */,
 				8A32AF62268488940089F8BC /* ORVideoRecommendView.m in Sources */,
@@ -4090,7 +4085,6 @@
 				8A32ADB6268488310089F8BC /* WKMessageHandlerDispatch.m in Sources */,
 				8A62D0502671EA8E00F568E9 /* CarpVideoMySendZoneViewController.m in Sources */,
 				8AA9A9D4266EFC7F00EB786A /* ZLBaseEventModel.m in Sources */,
-				8A77B6552670A123007CF3A3 /* ZBWAlbumTableView.m in Sources */,
 				8A32AD9E268488310089F8BC /* GNHTableViewSectionObject.m in Sources */,
 				8A32AE6F2684884C0089F8BC /* ORAgreementHintsConfig.m in Sources */,
 				8A32AF90268488940089F8BC /* ORSettingViewController.m in Sources */,
@@ -4098,7 +4092,6 @@
 				8A32ADFF268488320089F8BC /* MDFAssignPropertyProxy.m in Sources */,
 				8AA9A96B266EFC0E00EB786A /* CarpVideoBaseViewController.m in Sources */,
 				8A6E5AAD267B2E8400088B85 /* CarpVideoActityDetailHeader.m in Sources */,
-				8A77B64C2670A123007CF3A3 /* ZBWPhotoModel.m in Sources */,
 				8A32AE21268488320089F8BC /* NSData+AES128Encrypt.m in Sources */,
 				8A32AF75268488940089F8BC /* ORChannelTableViewCell.m in Sources */,
 				8AA9A9E0266EFC7F00EB786A /* UITextField+AddPlaceholder.m in Sources */,
@@ -4113,14 +4106,11 @@
 				8A62D06D2671FE7B00F568E9 /* CarpVideoSugestionHeaderView.m in Sources */,
 				8A32ADA9268488310089F8BC /* ORAppWindow.m in Sources */,
 				8A32ADC6268488310089F8BC /* ORShareTool.m in Sources */,
-				8AA9A9C6266EFC7F00EB786A /* CHCardItemCustomView.m in Sources */,
 				8AA9AA25266F13F700EB786A /* CarpVideoHomeTableViewCell.m in Sources */,
-				8A77B6562670A123007CF3A3 /* ZBWAlbumModel.m in Sources */,
 				8A32ADF5268488320089F8BC /* UIButton+LYExt.m in Sources */,
 				8A32ADC7268488310089F8BC /* ORShareToolManager.m in Sources */,
 				8A32AF9C268488950089F8BC /* ORSearchChannelViewController.m in Sources */,
 				8A32AF91268488940089F8BC /* ORSettingTableViewCell.m in Sources */,
-				8A77B6542670A123007CF3A3 /* ZBWPhotoManager.m in Sources */,
 				8AA9AA25266F13F700EB786A /* CarpVideoHomeTableViewCell.m in Sources */,
 				4A598237267DBD2D00DB97ED /* ZBWAlbumViewController.m in Sources */,
 				4A598211267D9BC200DB97ED /* CarpVideoMineMyColecdViewController.m in Sources */,

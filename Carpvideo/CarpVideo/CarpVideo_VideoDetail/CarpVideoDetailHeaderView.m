@@ -45,8 +45,7 @@
     _CarpVideoFirstlb.CarpVideoToplb.text =  [NSString stringWithFormat:@"%.2f",carMoell.carpVideoHomes_DBNums];
     _CarpVideoSecondlb.CarpVideoToplb.text = [NSString stringWithFormat:@"%ld",carMoell.carpVideoHome_soureNums];
     [_CarpVideoIntroduceDetaillb setText:carMoell.carpVideoHome_intrduce lineSpacing:RealWidth(3)];
-    
-    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+    if ([ORAccountComponent checkLogin:NO]) {
         if (carMoell.carpVideo_isCollected) {
             _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like-seltecd"];
 
@@ -56,6 +55,7 @@
         }
     }else{
         _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
+
     }
     [_CarpVideoArticlCollecionView reloadData];
 
@@ -72,7 +72,6 @@
     if (self.haederBlock) {
         self.haederBlock(CGRectGetMaxY(_CarpWhiteView.frame));
     }else{
-        NSLog(@"NO-------");
     }
 }
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -202,29 +201,7 @@
             make.top.mas_equalTo(_CarpVideoArticlCollecionView.mas_bottom).offset(RealWidth(10));
         }];
         
-//        if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-//            if (carMoell.carpVideo_isCollected) {
-//                _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like-seltecd"];
-//
-//            }else{
-//                _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
-//
-//            }
-//        }else{
-//            _CarpVideoLikeBtn.CarpVideoThubImgView.image = [UIImage imageNamed:@"like_nomal"];
-//        }
-//
-//        [self setNeedsLayout];
-//        [self layoutIfNeeded];
-//        _CarpVideoTagOnelb.layer.cornerRadius = _CarpVideoTagOnelb.size.height/2;
-//        _CarpVideoTagTwolb.layer.cornerRadius = _CarpVideoTagTwolb.size.height/2;
-//        _CarpVideoTagThreelb.layer.cornerRadius = _CarpVideoTagThreelb.size.height/2;
-//        [_CarpWhiteView mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(CGRectGetMaxY(_CarpVideoHotComentlb.frame)+RealWidth(10));
-//        }];
-//        if (self.haederBlock) {
-//            self.haederBlock(CGRectGetMaxY(_CarpWhiteView.frame)-RealWidth(0));
-//        }
+
     }
     return self;
 }

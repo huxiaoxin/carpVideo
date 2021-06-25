@@ -14,7 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"影视资讯";
+    self.navigationItem.title = @"影视资讯";
     [self.view addSubview:self.PandaHoemCollectionView];
     [_PandaHoemCollectionView registerClass:[PandaHotNewsCollectionCell class] forCellWithReuseIdentifier:@"PandaHotNewsCollectionCell"];
     // Do any additional setup after loading the view.
@@ -23,7 +23,7 @@
     if (!_PandaHoemCollectionView) {
         PandaHotNewsLayoutTool * PandaHoemLayout = [[PandaHotNewsLayoutTool alloc]init];
         PandaHoemLayout.delegate = self;
-        _PandaHoemCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-NaviH-GK_SAFEAREA_BTM) collectionViewLayout:PandaHoemLayout];
+        _PandaHoemCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-NaviH-GK_SAFEAREA_BTM) collectionViewLayout:PandaHoemLayout];
         _PandaHoemCollectionView.backgroundColor = [UIColor clearColor];
         _PandaHoemCollectionView.delegate = self;
         _PandaHoemCollectionView.dataSource = self;

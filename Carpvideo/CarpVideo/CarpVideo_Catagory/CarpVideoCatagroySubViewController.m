@@ -34,8 +34,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navigationBar.hidden = YES;
-    
+    self.fd_prefersNavigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginSuccedNotifiCation" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginOutActon" object:nil];
 
@@ -115,11 +114,12 @@
             [weakSelf.CarpVideoDataArr removeAllObjects];
         }
         if (weakSelf.VCIndex == 0) {
-        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+            if ([ORAccountComponent checkLogin:NO]) {
+                weakSelf.CarpVideoDataArr =  dataArr.mutableCopy;
+
+        }else{
             LYEmptyView * emtyView = [LYEmptyView emptyActionViewWithImage:[UIImage imageNamed:@""] titleStr:@"未登录" detailStr:nil btnTitleStr:@"去登录" target:self action:@selector(gotoLoginAction)];
             weakSelf.CarpVideoCollectionView.ly_emptyView = emtyView;
-        }else{
-            weakSelf.CarpVideoDataArr =  dataArr.mutableCopy;
         }
         }else{
             weakSelf.CarpVideoDataArr = dataArr.mutableCopy;
@@ -135,7 +135,8 @@
     });
 }
 -(void)gotoLoginAction{
-    [self CarpVideoShowLoginVc];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ORAccountForceToLoginNotification object:nil];
+
 }
 #pragma mark--CarpVideocatagoryCollectionViewCellDelegate
 //播放视频
@@ -217,7 +218,7 @@
     }else{
         catagoryModel.likeNums -=1;
     }
-    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+    if ([ORAccountComponent checkLogin:YES]) {
         [LCProgressHUD showLoading:@""];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [LCProgressHUD hide];
@@ -234,7 +235,7 @@
 -(void)CarpVideocatagoryCollectionViewCellAddFalow:(NSInteger)cellIndex faloowBtn:(UIButton *)falowBtn{
     CarpVideoCatagoryModel * catagoryModel = self.CarpVideoDataArr[cellIndex];
     catagoryModel.isFallow = !catagoryModel.isFallow;
-    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+    if ([ORAccountComponent checkLogin:YES]) {
         [LCProgressHUD showLoading:@""];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [LCProgressHUD hide];
@@ -247,10 +248,7 @@
 }
 -(void)CarpVideocatagoryCollectionViewCellToChat:(NSInteger)cellIndex{
     CarpVideoCatagoryModel * catagoryModel = self.CarpVideoDataArr[cellIndex];
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
     carpVideoMessageModel *  mdeld = [[carpVideoMessageModel alloc]init];
     mdeld.ChatID =  catagoryModel.userID;
     mdeld.imgurl = catagoryModel.imgIcon;
@@ -259,7 +257,7 @@
     CarpVideoDetailVc.hidesBottomBarWhenPushed = YES;
     CarpVideoDetailVc.carpessModel =mdeld;
     [self.navigationController pushViewController:CarpVideoDetailVc animated:YES];
-    
+    }
     
 }
 /*

@@ -67,7 +67,7 @@
     }];
     self.protrailImageView = protrailImageView;
     
-    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"com_arrow"];
+    UIImageView *arrowImageView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_arrow_gary_icon"];
     [self.contentView addSubview:arrowImageView];
     [arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(-9.5f);
@@ -90,7 +90,7 @@
         if (cellItem.image) {
             self.protrailImageView.image = cellItem.image;
         } else {
-            [self.protrailImageView sd_setImageWithURL:[NSURL URLWithString:cellItem.anchorUrl] placeholderImage:[UIImage imageNamed:@"com_head_default"]];
+            [self.protrailImageView sd_setImageWithURL:[NSURL URLWithString:cellItem.anchorUrl] placeholderImage:[UIImage imageNamed:@"carpVideo_user_header_defaul_icon"]];
         }
         self.contentLabel.text = cellItem.content;
         switch (cellItem.cellType) {

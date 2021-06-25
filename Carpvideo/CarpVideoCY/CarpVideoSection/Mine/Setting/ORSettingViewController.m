@@ -77,7 +77,7 @@
     footerView.frame = CGRectMake(0, 0, kScreenWidth, 44.0f);
     
     UIButton *logoutBtn = [UIButton ly_ButtonWithTitle:@"退出登录" titleColor:gnh_color_b font:zy_fontSize14 target:self selector:@selector(logoutAction:)];
-    logoutBtn.backgroundColor = gnh_color_theme;
+    logoutBtn.backgroundColor = LGDMianColor;
     logoutBtn.layer.cornerRadius = 22.0f;
     logoutBtn.layer.masksToBounds = YES;
     [footerView addSubview:logoutBtn];

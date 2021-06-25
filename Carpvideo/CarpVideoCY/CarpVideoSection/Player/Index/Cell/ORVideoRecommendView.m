@@ -46,7 +46,7 @@
     }];
     self.coverImageView = coverImageView;
     
-    UIImageView *bottomCoverImgView = [UIImageView ly_ImageViewWithImageName:@"index_cover_bg"];
+    UIImageView *bottomCoverImgView = [UIImageView ly_ImageViewWithImageName:@"carpVideo_index_cover_background_icon"];
     [coverImageView addSubview:bottomCoverImgView];
     [bottomCoverImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(coverImageView);
@@ -78,7 +78,7 @@
 
 - (void)refreshData:(ORVideoBaseItem *)dataItem
 {
-    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:dataItem.coverImg] placeholderImage:[UIImage imageNamed:@"discovery_cover_default"]];
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:dataItem.coverImg] placeholderImage:[UIImage imageNamed:@"carpVideo_faxian_defaul_icon"]];
     self.tipsLabel.text = unemptyString(dataItem.videoTag,  [NSString stringWithFormat:@"%.1f", dataItem.score.floatValue]);
     self.nameLabel.text = dataItem.videoName;
 }

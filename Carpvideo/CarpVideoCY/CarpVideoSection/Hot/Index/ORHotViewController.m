@@ -229,7 +229,7 @@
         _magicController.magicView.dataSource = self;
         _magicController.magicView.delegate = self;
         _magicController.magicView.itemWidth = 60.0f;
-        _magicController.magicView.sliderColor = gnh_color_theme;
+        _magicController.magicView.sliderColor = LGDMianColor;
         _magicController.magicView.sliderWidth = 15;
         _magicController.magicView.sliderHeight = 3;
         _magicController.magicView.sliderOffset = -5;

@@ -50,7 +50,7 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     UINavigationController * baseNav  = (UINavigationController *)viewController;
     if ([NSStringFromClass(baseNav.topViewController.class) isEqualToString:@"CarpVideoCenterBtnViewController"]) {
-        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        if ([ORAccountComponent checkLogin:NO]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
                     CarpVideoLogoinViewController  * carpVc = [[CarpVideoLogoinViewController alloc]init];
@@ -64,6 +64,7 @@
         }else{
             return YES;
         }
+
     }else{
         return YES;
     }

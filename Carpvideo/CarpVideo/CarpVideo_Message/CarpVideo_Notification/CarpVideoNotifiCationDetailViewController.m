@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.gk_navTitle = @"详情";
+    self.navigationItem.title = @"详情";
     
     UILabel * CarpVideoTopTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, NaviH+K(10), SCREEN_Width, K(18))];
     CarpVideoTopTitle.textAlignment = NSTextAlignmentCenter;

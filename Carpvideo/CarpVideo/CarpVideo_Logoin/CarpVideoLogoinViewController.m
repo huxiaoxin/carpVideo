@@ -27,7 +27,7 @@
     [CarpVideoJumpBtn setTitleColor:LGDMianColor forState:UIControlStateNormal];
     [CarpVideoJumpBtn addTarget:self action:@selector(CarpVideoJumpBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.gk_navItemRightSpace = RealWidth(20);
-    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:CarpVideoJumpBtn];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:CarpVideoJumpBtn];
     
     UIImageView * LogoImgView = [[UIImageView alloc]initWithFrame:CGRectMake(RealWidth(20), NaviH+RealWidth(30), RealWidth(36), RealWidth(36))];
     LogoImgView.layer.cornerRadius = RealWidth(18);

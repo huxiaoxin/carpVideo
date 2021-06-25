@@ -32,7 +32,7 @@
 }
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.gk_navTitle = @"消息";
+    self.navigationItem.title = @"消息";
     self.view.backgroundColor = [UIColor whiteColor];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginSuccedNotifiCation" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CarpVideoLoginSuccedNotifiCation) name:@"CarpVideoLoginOutActon" object:nil];
@@ -54,12 +54,11 @@
             [weakSelf.CarpVideoDataArr removeAllObjects];
         }
         [LCProgressHUD hide];
-        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        if ([ORAccountComponent checkLogin:NO]) {
             LYEmptyView * emtyView = [LYEmptyView emptyActionViewWithImage:[UIImage imageNamed:@""] titleStr:@"未登录" detailStr:nil btnTitleStr:@"去登录" target:self action:@selector(gotoLoginAction)];
             self->_CarpVideoTableView.ly_emptyView = emtyView;
         }else{
             weakSelf.CarpVideoDataArr = dataArr.mutableCopy;
-
         }
         [self->_CarpVideoTableView reloadData];
         [self->_CarpVideoTableView.mj_header endRefreshing];
@@ -74,13 +73,13 @@
         if (weakSelf.CarpVideoDataArr.count > 0) {
             [weakSelf.CarpVideoDataArr removeAllObjects];
         }
-        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        if ([ORAccountComponent checkLogin:NO]) {
             LYEmptyView * emtyView = [LYEmptyView emptyActionViewWithImage:[UIImage imageNamed:@""] titleStr:@"未登录" detailStr:nil btnTitleStr:@"去登录" target:self action:@selector(gotoLoginAction)];
             self->_CarpVideoTableView.ly_emptyView = emtyView;
         }else{
             weakSelf.CarpVideoDataArr = dataArr.mutableCopy;
-
         }
+
         [self->_CarpVideoTableView reloadData];
         [self->_CarpVideoTableView.mj_header endRefreshing];
     });
@@ -94,40 +93,30 @@
         MJWeakSelf;
         _CarpHeaderView = [[CarpVideoMessageHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(80)) Configugration:^(NSInteger index) {
             if (index == 0) {
-                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-                    [self CarpVideoShowLoginVc];
-                    return;
-                }
-
+                if ([ORAccountComponent checkLogin:YES]) {
                 CarpVideoNotificationViewController * CarpVideoNotiVc = [[CarpVideoNotificationViewController alloc]init];
                 CarpVideoNotiVc.hidesBottomBarWhenPushed = YES;
-                [weakSelf.navigationController pushViewController:CarpVideoNotiVc animated:YES];
+                    [weakSelf.navigationController pushViewController:CarpVideoNotiVc animated:YES];}
             }else if (index == 1){
-                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-                    [self CarpVideoShowLoginVc];
-                    return;
-                }
+                if ([ORAccountComponent checkLogin:YES]) {
+
                 CarpVideoKefuViewController * CarpVideoKefuVc = [[CarpVideoKefuViewController alloc]init];
                 CarpVideoKefuVc.hidesBottomBarWhenPushed = YES;
-                [weakSelf.navigationController pushViewController:CarpVideoKefuVc animated:YES];
+                    [weakSelf.navigationController pushViewController:CarpVideoKefuVc animated:YES];}
             }else if (index == 2){
-                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-                    [self CarpVideoShowLoginVc];
-                    return;
-                }
+                if ([ORAccountComponent checkLogin:YES]) {
+
 
                 CarpVideoZanViewController * carpZanvc = [[CarpVideoZanViewController alloc]init];
                 carpZanvc.hidesBottomBarWhenPushed = YES;
-                [weakSelf.navigationController pushViewController:carpZanvc animated:YES];
+                    [weakSelf.navigationController pushViewController:carpZanvc animated:YES];}
             }else if (index == 3){
-                if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-                    [self CarpVideoShowLoginVc];
-                    return;
-                }
+                if ([ORAccountComponent checkLogin:YES]) {
+
 
                 CarpVideoComentViewController * carpComentVc =  [[CarpVideoComentViewController alloc]init];
                 carpComentVc.hidesBottomBarWhenPushed = YES;
-                [weakSelf.navigationController pushViewController:carpComentVc animated:YES];
+                    [weakSelf.navigationController pushViewController:carpComentVc animated:YES];}
             }
 
         }];

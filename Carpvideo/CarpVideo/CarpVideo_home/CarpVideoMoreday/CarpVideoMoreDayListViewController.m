@@ -22,7 +22,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"每日推荐";
+    self.navigationItem.title = @"每日推荐";
     [self.view addSubview:self.CarpVideoMoreCollectionView];
     // Do any additional setup after loading the view.
 }
@@ -31,7 +31,7 @@
         UICollectionViewFlowLayout * carpLayout = [[UICollectionViewFlowLayout alloc]init];
         carpLayout.itemSize =  CGSizeMake(RealWidth(160), RealWidth(120));
         carpLayout.sectionInset =  UIEdgeInsetsMake(RealWidth(10), RealWidth(16), 0, RealWidth(16));
-        _CarpVideoMoreCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, GK_STATUSBAR_NAVBAR_HEIGHT, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_SAFEAREA_BTM) collectionViewLayout:carpLayout];
+        _CarpVideoMoreCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT-GK_SAFEAREA_BTM) collectionViewLayout:carpLayout];
         _CarpVideoMoreCollectionView.delegate = self;
         _CarpVideoMoreCollectionView.dataSource = self;
         _CarpVideoMoreCollectionView.showsVerticalScrollIndicator = NO;

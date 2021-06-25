@@ -37,7 +37,7 @@
 
 - (void)setupUI
 {
-    UIImageView *chooseImageview = [UIImageView ly_ImageViewWithImageName:@"throw_image_choose"];
+    UIImageView *chooseImageview = [UIImageView ly_ImageViewWithImageName:@"carpVieo_scredns_guanbi"];
     [self.contentView addSubview:chooseImageview];
     [chooseImageview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView);
@@ -145,7 +145,7 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:helpButton];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    UIButton *refreshButton = [UIButton ly_ButtonWithNormalImageName:@"throw_image_refresh" selecteImageName:@"throw_image_refresh" target:self selector:@selector(refreshAction:)];
+    UIButton *refreshButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_img_shuxin" selecteImageName:@"carpVideo_img_shuxin" target:self selector:@selector(refreshAction:)];
     [self.view addSubview:refreshButton];
     [refreshButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(22.0f);

@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.gk_navigationBar.hidden = YES;
+    self.fd_prefersNavigationBarHidden = YES;
     [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT)];
     _CarpVideoTableView.tableHeaderView = self.CarpMineHeader;
     
@@ -69,21 +69,15 @@
     }else if (indexPath.row == 2){
         [self CarpVideoClearMemorySize];
     }else if (indexPath.row == 3){
-        if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-            [self CarpVideoShowLoginVc];
-            return;
-        }
+        if ([ORAccountComponent checkLogin:YES]) {
         CarpVideoKefuViewController * carpVideokefuVc = [[CarpVideoKefuViewController alloc]init];
         carpVideokefuVc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:carpVideokefuVc animated:YES];
+            [self.navigationController pushViewController:carpVideokefuVc animated:YES];}
     }
 }
 #pragma mark--CarpVideoMineHeaderViewDelegate
 -(void)CarpVideoMineHeaderViewBtnDidClickIndex:(NSInteger)btnIndex{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
 
     if (btnIndex == 0) {
         CarpVideoMySendZoneViewController * CarpMySendVc = [[CarpVideoMySendZoneViewController alloc]init];
@@ -102,17 +96,15 @@
         carpVideoMyFallowVc.hidesBottomBarWhenPushed = YES;
         carpVideoMyFallowVc.VCIndex = 0;
         [self.navigationController pushViewController:carpVideoMyFallowVc animated:YES];
-    }
+    }}
 }
 -(void)CarpVideoMineHeaderViewTapInfoClicks{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
+
 
     CarpVideoMyInfoViewController * CarpVideoInfo = [[CarpVideoMyInfoViewController alloc]init];
     CarpVideoInfo.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:CarpVideoInfo animated:YES];
+        [self.navigationController pushViewController:CarpVideoInfo animated:YES];}
 }
 - (void)CarpVideoClearMemorySize{
     NSString*cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)objectAtIndex:0];
@@ -136,7 +128,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+    if ([ORAccountComponent checkLogin:YES]) {
         _CarpMineHeader.CarpVideoNamelb.text = [CarpVideoLoginVideModelTool CarpVideoLogonViewModel_userName];
         _CarpMineHeader.CarpVideoDetailb.text = @"UID:10001";
         [_CarpMineHeader.CarpVideouserImgView sd_setImageWithURL:[NSURL URLWithString:@"https://img2.woyaogexing.com/2021/06/19/4e16cecbec4145c4b10e52bb0b50fd17!400x400.jpeg"] placeholderImage:[UIImage imageNamed:@"whiteLogo"]];

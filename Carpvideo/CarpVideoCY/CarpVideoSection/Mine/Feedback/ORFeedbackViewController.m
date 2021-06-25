@@ -82,7 +82,7 @@
     self.countLabel = countLabel;
     
     UIButton *submitButton = [[UIButton alloc] init];
-    submitButton.backgroundColor = gnh_color_theme;
+    submitButton.backgroundColor = LGDMianColor;
     submitButton.layer.cornerRadius = 22.0f;
     submitButton.layer.masksToBounds = YES;
     [submitButton setTitle:@"提交" forState:UIControlStateNormal];

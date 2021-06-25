@@ -33,7 +33,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"修改信息";
+    self.navigationItem.title = @"修改信息";
     self.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -45,7 +45,7 @@
     [CarpVideoCopmmitBtn addTarget:self action:@selector(CarpVideoCopmmitBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [CarpVideoCopmmitView addSubview:CarpVideoCopmmitBtn];
     
-    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:CarpVideoCopmmitView];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:CarpVideoCopmmitView];
     
     UIView * CarpVideoMyContentView = [[UIView alloc]initWithFrame:CGRectMake(K(15), NaviH+K(15), SCREEN_Width-K(30), K(40))];
     CarpVideoMyContentView.backgroundColor = LGDLightGaryColor;

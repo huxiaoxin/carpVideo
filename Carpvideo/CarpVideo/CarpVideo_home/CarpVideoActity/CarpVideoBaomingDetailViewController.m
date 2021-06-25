@@ -14,7 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"报名详情";
+    self.navigationItem.title = @"报名详情";
     //
     UIView * carpVideoJiaruFirdView = [[UIView alloc]initWithFrame:CGRectMake(0, NaviH+K(10), SCREEN_Width, K(80))];
     carpVideoJiaruFirdView.backgroundColor = [UIColor whiteColor];

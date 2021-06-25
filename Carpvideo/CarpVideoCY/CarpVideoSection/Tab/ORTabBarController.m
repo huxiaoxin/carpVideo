@@ -96,25 +96,25 @@ NSString *const kORDoubleClickTabItemNotification = @"ZYDoubleClickTabItemNotifi
     
     // 动态
     CarpVideoCatagroyViewController *interestVC = [[CarpVideoCatagroyViewController alloc] init];
-    UINavigationController *interestNVC = [self produceRootNavigationControllerWithVC:interestVC title:@"动态" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:gnh_color_theme} normalImage:[UIImage imageNamed:@"carpVideo_DT_Nomal"] selectImage:[UIImage imageNamed:@"carpVideo_DT_Seltecd"]];
+    UINavigationController *interestNVC = [self produceRootNavigationControllerWithVC:interestVC title:@"动态" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:LGDMianColor} normalImage:[UIImage imageNamed:@"carpVideo_DT_Nomal"] selectImage:[UIImage imageNamed:@"carpVideo_DT_Seltecd"]];
     [navArray mdf_safeAddObject:interestNVC];
     
     
     //发布
     CarpVideoCenterBtnViewController *fabuVC = [[CarpVideoCenterBtnViewController alloc] init];
-    UINavigationController *fabuNavVC = [self produceRootNavigationControllerWithVC:fabuVC title:@"" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:gnh_color_theme} normalImage:[UIImage imageNamed:@"fabu"] selectImage:[UIImage imageNamed:@"fabu"]];
+    UINavigationController *fabuNavVC = [self produceRootNavigationControllerWithVC:fabuVC title:@"" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:LGDMianColor} normalImage:[UIImage imageNamed:@"fabu"] selectImage:[UIImage imageNamed:@"fabu"]];
     [navArray mdf_safeAddObject:fabuNavVC];
     
     
     // 发现
     ORDiscoveryViewController *matchVC = [[ORDiscoveryViewController alloc] init];
-    UINavigationController *matchNVC = [self produceRootNavigationControllerWithVC:matchVC title:@"发现" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:gnh_color_theme} normalImage:[UIImage imageNamed:@"CarpVideo_Msg_selted"] selectImage:[UIImage imageNamed:@"CarpVideo_Msg_selted"]];
+    UINavigationController *matchNVC = [self produceRootNavigationControllerWithVC:matchVC title:@"发现" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:LGDMianColor} normalImage:[UIImage imageNamed:@"carpVideo_find_nomal"] selectImage:[UIImage imageNamed:@"carpVideo_find_seled"]];
     [navArray mdf_safeAddObject:matchNVC];
     
     // 我的
     ORMineViewController *listVC = [[ORMineViewController alloc] init];
     listVC.view.backgroundColor = UIColor.clearColor;
-    UINavigationController *listNVC = [self produceRootNavigationControllerWithVC:listVC title:@"我的" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:gnh_color_theme} normalImage:[UIImage imageNamed:@"carpVideo_mine_nomal"] selectImage:[UIImage imageNamed:@"carpVideo_mine_seltecd"]];
+    UINavigationController *listNVC = [self produceRootNavigationControllerWithVC:listVC title:@"我的" normalAttributes:@{NSForegroundColorAttributeName:gnh_color_f} selectAttributes:@{NSForegroundColorAttributeName:LGDMianColor} normalImage:[UIImage imageNamed:@"carpVideo_mine_nomal"] selectImage:[UIImage imageNamed:@"carpVideo_mine_seltecd"]];
     [navArray mdf_safeAddObject:listNVC];
     
     [self setViewControllers:navArray animated:NO];
@@ -131,7 +131,7 @@ NSString *const kORDoubleClickTabItemNotification = @"ZYDoubleClickTabItemNotifi
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:title image:normalImage selectedImage:selectedImage];
     if (@available(iOS 13.0, *)) {
         // iOS 13以上
-        self.tabBar.tintColor = gnh_color_theme;
+        self.tabBar.tintColor = LGDMianColor;
         self.tabBar.unselectedItemTintColor = gnh_color_f;
     } else {
         // iOS 13以下
@@ -139,7 +139,7 @@ NSString *const kORDoubleClickTabItemNotification = @"ZYDoubleClickTabItemNotifi
         [item setTitleTextAttributes:sAttributes forState:UIControlStateSelected];
     }
     vc.tabBarItem = item;
-    
+     
     UINavigationController *navVC = [[GNHNavigationController alloc] initWithRootViewController:vc];
     navVC.delegate = self;
     navVC.view.backgroundColor = gnh_color_b;
@@ -153,14 +153,30 @@ NSString *const kORDoubleClickTabItemNotification = @"ZYDoubleClickTabItemNotifi
 {
     
 }
+#pragma mark - 控制器跳转拦截
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     if ([self checkIsDoubleClick:viewController]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kORDoubleClickTabItemNotification object:nil];
     }
-    return YES;
-}
+    UINavigationController * baseNav  = (UINavigationController *)viewController;
+    if ([NSStringFromClass(baseNav.topViewController.class) isEqualToString:@"CarpVideoCenterBtnViewController"]) {
+        if ([ORAccountComponent checkLogin:NO]) {
+            
+            return YES;
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:ORAccountForceToLoginNotification object:nil];
+
+            return NO;
+        }
+        
+        }
+         else{
+            return YES;
+        }
+    }
+
 
 - (BOOL)checkIsDoubleClick:(UIViewController *)viewController
 {
@@ -187,13 +203,17 @@ NSString *const kORDoubleClickTabItemNotification = @"ZYDoubleClickTabItemNotifi
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    //
     BOOL isHiddenNavBar = ([NSStringFromClass(viewController.class) isEqualToString:@"ORIndexViewController"] ||
                            [NSStringFromClass(viewController.class) isEqualToString:@"ORMineViewController"] ||
                            [NSStringFromClass(viewController.class) isEqualToString:@"ORLoginViewController"] ||
                            [NSStringFromClass(viewController.class) isEqualToString:@"ORHotViewController"] ||
                            [NSStringFromClass(viewController.class) isEqualToString:@"ORCategoryViewController"] ||
                            [NSStringFromClass(viewController.class) isEqualToString:@"ORHotDetailViewController"] ||
-                           [NSStringFromClass(viewController.class) isEqualToString:@"ORVideoPlayerViewController"]);
+                           [NSStringFromClass(viewController.class) isEqualToString:@"ORVideoPlayerViewController"]||
+                           [NSStringFromClass(viewController.class) isEqualToString:@"CarpVideoHomeViewController"]||
+                           [NSStringFromClass(viewController.class) isEqualToString:@"CarpVideoCatagroySubViewController"]||
+                           [NSStringFromClass(viewController.class) isEqualToString:@"CarpVideoDetailViewController"]);
     [navigationController setNavigationBarHidden:isHiddenNavBar animated:YES];
 }
 

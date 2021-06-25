@@ -281,7 +281,7 @@
 {
     if (!_backBtn) {
         _backBtn = [UIButton new];
-        [_backBtn setImage:[UIImage imageNamed:@"com_back_white"] forState:UIControlStateNormal];
+        [_backBtn setImage:[UIImage imageNamed:@"carpVideo_back_arrow_white_icon"] forState:UIControlStateNormal];
         [_backBtn addTarget:self action:@selector(backClick:) forControlEvents:UIControlEventTouchUpInside];
         [_backBtn setEnlargeEdgeWithTop:20 right:20 bottom:20 left:20];
     }
@@ -292,7 +292,7 @@
 {
     if (!_moreBtn) {
         _moreBtn = [UIButton new];
-        [_moreBtn setImage:[UIImage imageNamed:@"com_more_white"] forState:UIControlStateNormal];
+        [_moreBtn setImage:[UIImage imageNamed:@"carpVideo_more_white_icon"] forState:UIControlStateNormal];
         [_moreBtn addTarget:self action:@selector(moreClick:) forControlEvents:UIControlEventTouchUpInside];
         [_moreBtn setEnlargeEdgeWithTop:20 right:20 bottom:20 left:20];
     }

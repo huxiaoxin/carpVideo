@@ -49,7 +49,7 @@
         }
         [self setFrame:CGRectMake(0, 0, titleArray.count*self.itemWidth, 44)];
         self.lineView = [[UIView alloc] initWithFrame:CGRectMake(20, 40, 60, 3)];
-        self.lineView.backgroundColor = gnh_color_theme;
+        self.lineView.backgroundColor = LGDMianColor;
         self.lineView.layer.cornerRadius = 1.5f;
         self.lineView.layer.masksToBounds = YES;
         [self addSubview:self.lineView];
@@ -72,7 +72,7 @@
     gradientLayer.endPoint = CGPointMake(1, 0);
     
     //设置颜色数组
-    gradientLayer.colors = @[(__bridge id)gnh_color_theme.CGColor,
+    gradientLayer.colors = @[(__bridge id)LGDMianColor.CGColor,
                              (__bridge id)UIColor.whiteColor.CGColor];
     
     //设置颜色分割点（范围：0-1）

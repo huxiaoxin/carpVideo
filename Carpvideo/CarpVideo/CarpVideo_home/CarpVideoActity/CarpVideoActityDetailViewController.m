@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navBarAlpha = 0;
+    self.navigationItem.title = @"活动详情";
     self.view.backgroundColor = [UIColor whiteColor];
     [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM)];
     // Do any additional setup after loading the view.
@@ -45,7 +45,8 @@
         _carpHeader.carpModel = self.carpselMoel;
         [self.view addSubview:self.CarpCollectibtn];
         [self.view addSubview:self.CaroBaominBtn];
-        if ([CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
+        if ([ORAccountComponent checkLogin:NO]) {
+
             _CarpCollectibtn.selected = self.carpselMoel.isCollted;
             _CaroBaominBtn.selected = self.carpselMoel.isBaoming;
             
@@ -81,7 +82,7 @@
         _CarpCollectibtn.titleLabel.font = KBlFont(17);
         _CarpCollectibtn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [_CarpCollectibtn addTarget:self action:@selector(CarpCollectibtnClick) forControlEvents:UIControlEventTouchUpInside];
-        [_CarpCollectibtn setFrame:CGRectMake(GK_SCREEN_WIDTH/2-RealWidth(120), GK_SCREEN_HEIGHT-RealWidth(40)-GK_SAFEAREA_BTM, RealWidth(120), RealWidth(36))];
+        [_CarpCollectibtn setFrame:CGRectMake(GK_SCREEN_WIDTH/2-RealWidth(120), GK_SCREEN_HEIGHT-RealWidth(40)-GK_SAFEAREA_BTM-GK_STATUSBAR_NAVBAR_HEIGHT, RealWidth(120), RealWidth(36))];
         [_CarpCollectibtn acs_radiusWithRadius:RealWidth(18) corner:UIRectCornerTopLeft | UIRectCornerBottomLeft];
     }
     return _CarpCollectibtn;
@@ -96,17 +97,15 @@
         _CaroBaominBtn.titleLabel.font = KBlFont(17);
         _CaroBaominBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [_CaroBaominBtn addTarget:self action:@selector(CaroBaominBtnClikc) forControlEvents:UIControlEventTouchUpInside];
-        [_CaroBaominBtn setFrame:CGRectMake(CGRectGetMaxX(_CarpCollectibtn.frame), GK_SCREEN_HEIGHT-RealWidth(40)-GK_SAFEAREA_BTM, RealWidth(120), RealWidth(36))];
+        [_CaroBaominBtn setFrame:CGRectMake(CGRectGetMaxX(_CarpCollectibtn.frame), GK_SCREEN_HEIGHT-RealWidth(40)-GK_SAFEAREA_BTM-GK_STATUSBAR_NAVBAR_HEIGHT, RealWidth(120), RealWidth(36))];
         [_CaroBaominBtn acs_radiusWithRadius:RealWidth(18) corner:UIRectCornerTopRight | UIRectCornerBottomRight];
     }
     return _CaroBaominBtn;
 }
 #pragma mark--收藏
 -(void)CarpCollectibtnClick{
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
+
     [LCProgressHUD showLoading:@""];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.carpselMoel.isCollted  = !self.carpselMoel.isCollted;
@@ -114,15 +113,13 @@
     [WHC_ModelSqlite update:[carpVideoAcitytyModel class] value:[NSString stringWithFormat:@"isCollted ='%@'",@(self.carpselMoel.isCollted)] where:[NSString stringWithFormat:@"LoactionID ='%ld'",self.carpselMoel.LoactionID]];
         self.CarpCollectibtn.selected = self.carpselMoel.isCollted;
     });
-    
+    }
 }
 #pragma mark--报名
 -(void)CaroBaominBtnClikc{
     
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
+
     
     if (self.carpselMoel.isBaoming) {
         [LCProgressHUD showInfoMsg:@"您已报名～"];
@@ -135,7 +132,7 @@
     CarpVideoBaomingDetailViewController * baoingDetailVc = [[CarpVideoBaomingDetailViewController alloc]init];
     baoingDetailVc.carpselMoel = self.carpselMoel;
     [self.navigationController pushViewController:baoingDetailVc animated:YES];
-    
+    }
     
   
     

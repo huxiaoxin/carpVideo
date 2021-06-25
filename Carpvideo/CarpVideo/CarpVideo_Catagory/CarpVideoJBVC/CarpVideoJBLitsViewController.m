@@ -45,12 +45,12 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"举报";
+    self.navigationItem.title = @"举报";
     self.CarVideoStatus  =NO;
     self.view.backgroundColor = [UIColor whiteColor];
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarVideoiHeaderCkucjs)];
     [_CarpVideoTableView.mj_header beginRefreshing];
-    
+    _CarpVideoTableView.frame = CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_STATUSBAR_NAVBAR_HEIGHT);
     self.view.backgroundColor = LGDLightGaryColor;
     
     UIView * CarVideoiHeadrMoreView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_Width, K(35))];
@@ -73,7 +73,7 @@
     [CarVideoiHeadcomlBtn addTarget:self action:@selector(CarVideoiHeadcomlBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [CarVideoiHeadcomtView addSubview:CarVideoiHeadcomlBtn];
     
-    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:CarVideoiHeadcomtView];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:CarVideoiHeadcomtView];
     
     
 }
@@ -117,16 +117,14 @@
         [LCProgressHUD showInfoMsg:@"请选择举报类型"];
         return;
     }
-    if (![CarpVideoLoginVideModelTool CarpVideoLoginViewModel_isLogin]) {
-        [self CarpVideoShowLoginVc];
-        return;
-    }
+    if ([ORAccountComponent checkLogin:YES]) {
+
     
     [LCProgressHUD showLoading:@""];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [LCProgressHUD showSuccess:@"感谢支持~,举报结果我们核实后会24h内通知到您"];
         [self.navigationController popViewControllerAnimated:YES];
-    });
+    });}
     
 }
 /*

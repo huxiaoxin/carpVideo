@@ -83,7 +83,7 @@
     
     MDFButton *categoryButton = [[MDFButton alloc] initWithFrame:CGRectMake(0, 0, 58, 44)];
     categoryButton.backgroundColor = UIColor.whiteColor;
-    [categoryButton setImage:[UIImage imageNamed:@"index_category"] forState:UIControlStateNormal];
+    [categoryButton setImage:[UIImage imageNamed:@"carpVideo_idex_catagory_blakc_icon"] forState:UIControlStateNormal];
     categoryButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 15);
     [categoryButton addTarget:self action:@selector(categoryAction:) forControlEvents:UIControlEventTouchUpInside];
     self.magicController.magicView.rightNavigatoinItem = categoryButton;
@@ -96,7 +96,7 @@
         origin_y = kGNHStatusBarHeight + 15;
     }
     
-    UIImageView *logoImageview = [UIImageView ly_ImageViewWithImageName:@"index_logo"];
+    UIImageView *logoImageview = [UIImageView ly_ImageViewWithImageName:@"carpVideo_index_Logo"];
     [self.view addSubview:logoImageview];
     [logoImageview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(10.0f);
@@ -123,13 +123,13 @@
     [self.view addSubview:searchTextField];
     self.searchTextField = searchTextField;
     // 搜索图标 com_search
-    UIImage *image = [UIImage imageNamed:@"index_search"];
+    UIImage *image = [UIImage imageNamed:@"carpVideo_index_search_icon"];
     UIImageView *iconImageView = [[UIImageView alloc] initWithImage:image];
     iconImageView.frame = CGRectMake(9, 0, 15.0f, 15.0f);
     searchTextField.leftView = iconImageView;
     
     UIButton *historyButton = [UIButton ly_ButtonWithTitle:@"" titleColor:nil font:nil target:self selector:@selector(historyRecord:)];
-    [historyButton setImage:[UIImage imageNamed:@"index_history"] forState:UIControlStateNormal];
+    [historyButton setImage:[UIImage imageNamed:@"carpVideo_index_history_icon"] forState:UIControlStateNormal];
     [self.view addSubview:historyButton];
     [historyButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(searchTextField.mas_right).offset(7.0f);
@@ -345,7 +345,7 @@
         _magicController.magicView.dataSource = self;
         _magicController.magicView.delegate = self;
         _magicController.magicView.itemWidth = 60.0f;
-        _magicController.magicView.sliderColor = gnh_color_theme;
+        _magicController.magicView.sliderColor = LGDMianColor;
         _magicController.magicView.sliderWidth = 15;
         _magicController.magicView.sliderHeight = 3;
         _magicController.magicView.sliderOffset = -5;

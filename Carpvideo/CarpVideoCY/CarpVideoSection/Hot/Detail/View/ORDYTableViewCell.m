@@ -288,8 +288,8 @@
 {
     if (!_collectBtn) {
         _collectBtn = [ORHotVideoItemButton new];
-        [_collectBtn setImage:[UIImage imageNamed:@"hot_detail_collect"] forState:UIControlStateNormal];
-        [_collectBtn setImage:[UIImage imageNamed:@"hot_detail_collect_selected"] forState:UIControlStateSelected];
+        [_collectBtn setImage:[UIImage imageNamed:@"carpVideo_detail_colltec_noal_icon"] forState:UIControlStateNormal];
+        [_collectBtn setImage:[UIImage imageNamed:@"carpvideo_deatail_colltec_sel_icon"] forState:UIControlStateSelected];
         [_collectBtn setTitle:@"收藏" forState:UIControlStateNormal];
         _collectBtn.titleLabel.font = zy_mediumSystemFont13;
         [_collectBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -302,7 +302,7 @@
 {
     if (!_shareBtn) {
         _shareBtn = [ORHotVideoItemButton new];
-        [_shareBtn setImage:[UIImage imageNamed:@"hot_detail_share"] forState:UIControlStateNormal];
+        [_shareBtn setImage:[UIImage imageNamed:@"carpVideo_share_icon"] forState:UIControlStateNormal];
         [_shareBtn setTitle:@"分享" forState:UIControlStateNormal];
         _shareBtn.titleLabel.font = zy_mediumSystemFont13;
         [_shareBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -348,8 +348,8 @@
 - (UIButton *)playBtn {
     if (!_playBtn) {
         _playBtn = [UIButton new];
-        [_playBtn setImage:[UIImage imageNamed:@"player_pause"] forState:UIControlStateNormal];
-        [_playBtn setImage:[UIImage imageNamed:@"player_play"] forState:UIControlStateSelected];
+        [_playBtn setImage:[UIImage imageNamed:@"carpVideo_zanting_icon"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage imageNamed:@"carpVideo_bofang_icon"] forState:UIControlStateSelected];
         _playBtn.hidden = YES;
         [_playBtn addTarget:self action:@selector(playBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }

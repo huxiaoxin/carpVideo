@@ -36,7 +36,7 @@
     NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
     NSInteger timeStamp = interval*1000 ;
     
-    NSString *unMd5sign = [NSString stringWithFormat:@"orange_video_uA4nxP1_%@_%@",@"iOS",@(timeStamp)];
+    NSString *unMd5sign = [NSString stringWithFormat:@"carpVideo_carpASDF4n_%@_%@",@"iOS",@(timeStamp)];
     NSString *sign = unMd5sign.mdf_md5.lowercaseString;
     
     [sessionManager.requestSerializer setValue:@(timeStamp).stringValue forHTTPHeaderField:@"t"];

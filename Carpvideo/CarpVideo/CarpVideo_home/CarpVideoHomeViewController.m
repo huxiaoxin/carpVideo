@@ -36,7 +36,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navigationBar.hidden = YES;
+    self.fd_prefersNavigationBarHidden = YES;
     [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_TABBAR_HEIGHT)];
     _CarpVideoTableView.tableHeaderView = self.carpVideoHeader;
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoTableViewHeaderClicks)];
@@ -115,7 +115,7 @@
 }
 -(CarpVideoHomeHeaderView *)carpVideoHeader{
     if (!_carpVideoHeader) {
-        _carpVideoHeader = [[CarpVideoHomeHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(500))];
+        _carpVideoHeader = [[CarpVideoHomeHeaderView alloc]initWithFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, RealWidth(450)+GK_SAFEAREA_TOP)];
         _carpVideoHeader.delegate = self;
     }
     return _carpVideoHeader;
@@ -236,10 +236,7 @@
 }
 -(void)CarpVideoHomeHeaderViewWithbtnIndex:(NSInteger)btnIndex{
     if (btnIndex == 0) {
-        [[GKNavigationBarConfigure sharedInstance] updateConfigure:^(GKNavigationBarConfigure *configure) {
-            configure.backStyle =  GKNavigationBarBackStyleWhite;
-            configure.titleColor = [UIColor whiteColor];
-        }];
+
         CarpVideoBandanViewController * carpbandaVc = [[CarpVideoBandanViewController alloc]init];
         carpbandaVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:carpbandaVc animated:YES];

@@ -84,8 +84,8 @@
         resources.progressThumbColor = UIColor.whiteColor;
         resources.bottomIndicatorTraceColor = UIColor.whiteColor;
         resources.bottomIndicatorTrackColor = [UIColor colorWithWhite:0.3 alpha:1];
-        resources.fullscreenImage = [UIImage imageNamed:@"player_fullscreen"];
-        resources.backImage = [UIImage imageNamed:@"com_back_white"];
+        resources.fullscreenImage = [UIImage imageNamed:@"carpVideo_full_icon"];
+        resources.backImage = [UIImage imageNamed:@"carpVideo_back_arrow_white_icon"];
     });
     
     SJVideoPlayer *player = [SJVideoPlayer player];

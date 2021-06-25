@@ -5,11 +5,10 @@
 //  Created by zjlk03 on 2021/6/8.
 //
 
-#import <GKNavigationBarViewController/GKNavigationBarViewController.h>
-
+#import "GNHBaseViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CarpVideoBaseViewController : GKNavigationBarViewController
+@interface CarpVideoBaseViewController : GNHBaseViewController
 -(void)CarpVideoShowLoginVc;
 @end
 

@@ -23,9 +23,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navBarAlpha = 0;
-    
-    [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM)];
+
+    self.navigationItem.title = @"好评榜单";
+    [_CarpVideoTableView setFrame:CGRectMake(0, 0, GK_SCREEN_WIDTH, GK_SCREEN_HEIGHT-GK_SAFEAREA_BTM-GK_STATUSBAR_NAVBAR_HEIGHT)];
     _CarpVideoTableView.tableHeaderView = self.CarpHeader;
     _CarpVideoTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(CarpVideoBandanHeaderClicks)];
     [_CarpVideoTableView.mj_header beginRefreshing];
@@ -70,10 +70,7 @@
 }
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [[GKNavigationBarConfigure sharedInstance] updateConfigure:^(GKNavigationBarConfigure *configure) {
-        configure.backStyle =  GKNavigationBarBackStyleBlack;
-        configure.titleColor = [UIColor blackColor];
-    }];
+
 }
 - (UIStatusBarStyle)preferredStatusBarStyle {
 if (@available(iOS 13.0, *)) {

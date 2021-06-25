@@ -71,7 +71,7 @@
         make.height.mas_offset(45.0f);
     }];
     
-    UIButton *closeButton = [UIButton ly_ButtonWithNormalImageName:@"com_close" selecteImageName:@"com_close" target:self selector:@selector(closeAction:)];
+    UIButton *closeButton = [UIButton ly_ButtonWithNormalImageName:@"carpVideo_com_clous_icon" selecteImageName:@"carpVideo_com_clous_icon" target:self selector:@selector(closeAction:)];
     [self addSubview:closeButton];
     [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(-9.5f);

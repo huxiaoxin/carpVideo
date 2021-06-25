@@ -17,7 +17,7 @@
 {
     if (self = [super init]) {
         self.progressTintColor = gnh_color_c;
-        self.backItemImgName = @"com_back";
+        self.backItemImgName = @"carpVideo_black_back_icon";
         self.allowsBFNavigationGesture = YES;
         self.isHiddleLeftItemBar = YES;
     }
